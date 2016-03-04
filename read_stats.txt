@@ -1,0 +1,520 @@
+L_parva_NA_transfer_1_R1.fastq.gz	58893632
+
+F_olivaceous_NA_transfer_1_R2.fastq.gz	45748388
+
+F_notatus_NA_BW_1_R1.fastq.gz	128685812
+
+F_diaphanus_NA_BW_1_R1.fastq.gz	37216108
+
+F_similis_NA_BW_1_R1.fastq.gz	60166356
+
+F_heteroclitus_MDPP_FW_3_R2.fastq.gz	69501064
+
+F_catanatus_NA_transfer_1_R2.fastq.gz	120302188
+
+F_parvapinis_NA_transfer_1_R2.fastq.gz	109043684
+
+F_sciadicus_NA_FW_1_R2.fastq.gz	30904076
+
+F_heteroclitus_MDPL_FW_3_R2.fastq.gz	85285368
+
+F_heteroclitus_MDPP_FW_3_R1.fastq.gz	69501064
+
+F_grandis_NA_BW_3_R2.fastq.gz	42886760
+
+F_heteroclitus_MDPL_transfer_3_R2.fastq.gz	183222432
+
+F_olivaceous_NA_BW_1_R1.fastq.gz	46950596
+
+L_parva_NA_transfer_3_R1.fastq.gz	51530204
+
+F_grandis_NA_BW_2_R2.fastq.gz	15026708
+
+F_grandis_NA_transfer_2_R1.fastq.gz	64920084
+
+F_chrysotus_NA_FW_2_R1.fastq.gz	61981232
+
+A_xenica_NA_transfer_3_R1.fastq.gz	45955556
+
+F_parvapinis_NA_FW_2_R1.fastq.gz	31449192
+
+L_parva_NA_BW_1_R1.fastq.gz	54145984
+
+F_rathbuni_NA_transfer_1_R1.fastq.gz	95789444
+
+F_notatus_NA_BW_2_R1.fastq.gz	42233676
+
+A_xenica_NA_FW_2_R2.fastq.gz	30441240
+
+F_sciadicus_NA_transfer_1_R2.fastq.gz	43248548
+
+F_heteroclitus_MDPL_transfer_1_R2.fastq.gz	73462980
+
+F_heteroclitus_MDPP_transfer_1_R1.fastq.gz	37747696
+
+F_olivaceous_NA_transfer_2_R2.fastq.gz	27415928
+
+F_diaphanus_NA_transfer_2_R1.fastq.gz	26285316
+
+F_rathbuni_NA_transfer_2_R2.fastq.gz	46175896
+
+L_goodei_NA_BW_3_R2.fastq.gz	53980928
+
+F_notatus_NA_FW_3_R1.fastq.gz	74922016
+
+F_similis_NA_FW_3_R2.fastq.gz	40356968
+
+L_parva_NA_BW_3_R2.fastq.gz	60418312
+
+F_olivaceous_NA_BW_1_R2.fastq.gz	46950596
+
+F_heteroclitus_MDPL_transfer_3_R1.fastq.gz	183222432
+
+L_parva_NA_transfer_2_R2.fastq.gz	78744168
+
+F_grandis_NA_BW_1_R1.fastq.gz	329720184
+
+A_xenica_NA_FW_1_R2.fastq.gz	65157692
+
+F_rathbuni_NA_BW_2_R2.fastq.gz	44125460
+
+F_notatus_NA_BW_2_R2.fastq.gz	42233676
+
+F_rathbuni_NA_FW_1_R1.fastq.gz	62763548
+
+F_notatus_NA_FW_1_R2.fastq.gz	36008924
+
+F_catanatus_NA_transfer_2_R1.fastq.gz	202895944
+
+F_catanatus_NA_BW_2_R2.fastq.gz	62572708
+
+F_heteroclitus_MDPP_BW_1_R2.fastq.gz	79093504
+
+F_grandis_NA_transfer_3_R2.fastq.gz	80327740
+
+F_rathbuni_NA_BW_1_R2.fastq.gz	54056344
+
+F_grandis_NA_BW_1_R2.fastq.gz	329720184
+
+F_notatus_NA_FW_1_R1.fastq.gz	36008924
+
+F_chrysotus_NA_FW_1_R1.fastq.gz	57101476
+
+F_heteroclitus_MDPP_transfer_2_R2.fastq.gz	56874044
+
+L_parva_NA_FW_3_R1.fastq.gz	48406984
+
+F_heteroclitus_MDPL_BW_1_R2.fastq.gz	66093280
+
+F_similis_NA_transfer_1_R2.fastq.gz	58221504
+
+F_olivaceous_NA_FW_3_R1.fastq.gz	35585672
+
+F_grandis_NA_transfer_1_R2.fastq.gz	94784456
+
+F_rathbuni_NA_BW_2_R1.fastq.gz	44125460
+
+F_heteroclitus_MDPP_BW_2_R2.fastq.gz	81824700
+
+A_xenica_NA_transfer_2_R2.fastq.gz	66638896
+
+F_similis_NA_BW_3_R2.fastq.gz	40038064
+
+F_rathbuni_NA_transfer_3_R2.fastq.gz	72395092
+
+F_chrysotus_NA_transfer_2_R1.fastq.gz	79521904
+
+F_grandis_NA_FW_1_R1.fastq.gz	134646568
+
+L_parva_NA_BW_2_R2.fastq.gz	43859160
+
+F_grandis_NA_BW_2_R1.fastq.gz	15026708
+
+F_rathbuni_NA_FW_2_R1.fastq.gz	211286456
+
+F_grandis_NA_FW_1_R2.fastq.gz	134646568
+
+L_parva_NA_transfer_2_R1.fastq.gz	78744168
+
+F_notti_NA_FW_2_R1.fastq.gz	48235636
+
+F_similis_NA_BW_2_R2.fastq.gz	43286876
+
+F_catanatus_NA_BW_2_R1.fastq.gz	62572708
+
+F_parvapinis_NA_FW_1_R2.fastq.gz	38218304
+
+F_similis_NA_FW_2_R2.fastq.gz	37472120
+
+F_grandis_NA_FW_3_R2.fastq.gz	124446288
+
+L_goodei_NA_FW_2_R1.fastq.gz	28085776
+
+F_olivaceous_NA_FW_2_R2.fastq.gz	39150800
+
+A_xenica_NA_transfer_3_R2.fastq.gz	45955556
+
+L_goodei_NA_transfer_1_R1.fastq.gz	37346940
+
+F_similis_NA_BW_1_R2.fastq.gz	60166356
+
+F_rathbuni_NA_transfer_2_R1.fastq.gz	46175896
+
+F_olivaceous_NA_FW_1_R1.fastq.gz	57343252
+
+F_notatus_NA_transfer_3_R2.fastq.gz	57773772
+
+F_heteroclitus_MDPL_BW_2_R2.fastq.gz	44290960
+
+F_olivaceous_NA_FW_1_R2.fastq.gz	57343252
+
+F_heteroclitus_MDPP_FW_1_R2.fastq.gz	77573892
+
+F_zebrinus_NA_BW_1_R2.fastq.gz	48127320
+
+F_zebrinus_NA_BW_2_R1.fastq.gz	35911416
+
+F_notatus_NA_transfer_1_R1.fastq.gz	134525152
+
+F_diaphanus_NA_FW_3_R2.fastq.gz	54489924
+
+L_goodei_NA_FW_3_R2.fastq.gz	32440612
+
+F_notatus_NA_transfer_2_R2.fastq.gz	49351480
+
+F_similis_NA_FW_1_R1.fastq.gz	68077584
+
+F_rathbuni_NA_transfer_1_R2.fastq.gz	95789444
+
+F_heteroclitus_MDPP_transfer_2_R1.fastq.gz	56874044
+
+F_heteroclitus_MDPL_FW_1_R2.fastq.gz	56589832
+
+F_parvapinis_NA_transfer_1_R1.fastq.gz	109043684
+
+F_grandis_NA_FW_2_R2.fastq.gz	51921884
+
+F_similis_NA_BW_2_R1.fastq.gz	43286876
+
+F_heteroclitus_MDPP_BW_1_R1.fastq.gz	79093504
+
+F_heteroclitus_MDPL_FW_2_R2.fastq.gz	36460604
+
+F_sciadicus_NA_BW_2_R1.fastq.gz	37940168
+
+F_notti_NA_FW_1_R1.fastq.gz	45158340
+
+F_similis_NA_transfer_3_R2.fastq.gz	41235212
+
+F_catanatus_NA_FW_2_R1.fastq.gz	147442152
+
+F_heteroclitus_MDPL_BW_2_R1.fastq.gz	44290960
+
+F_sciadicus_NA_FW_2_R1.fastq.gz	23545568
+
+F_sciadicus_NA_BW_1_R2.fastq.gz	107005176
+
+L_parva_NA_FW_3_R2.fastq.gz	48406984
+
+F_chrysotus_NA_transfer_2_R2.fastq.gz	79521904
+
+F_chrysotus_NA_BW_1_R1.fastq.gz	55072588
+
+F_catanatus_NA_BW_3_R2.fastq.gz	64210524
+
+A_xenica_NA_transfer_2_R1.fastq.gz	66638896
+
+F_catanatus_NA_transfer_2_R2.fastq.gz	202895944
+
+F_similis_NA_transfer_2_R2.fastq.gz	27601712
+
+L_goodei_NA_BW_2_R2.fastq.gz	56433136
+
+F_grandis_NA_FW_2_R1.fastq.gz	51921884
+
+L_parva_NA_transfer_3_R2.fastq.gz	51530204
+
+F_olivaceous_NA_transfer_2_R1.fastq.gz	27415928
+
+F_heteroclitus_MDPL_FW_1_R1.fastq.gz	56589832
+
+F_zebrinus_NA_FW_1_R1.fastq.gz	59054696
+
+F_diaphanus_NA_FW_1_R2.fastq.gz	125601200
+
+A_xenica_NA_BW_2_R2.fastq.gz	57838296
+
+F_grandis_NA_BW_3_R1.fastq.gz	42886760
+
+F_diaphanus_NA_BW_2_R2.fastq.gz	43140252
+
+F_parvapinis_NA_FW_1_R1.fastq.gz	38218304
+
+F_notatus_NA_FW_2_R2.fastq.gz	48454640
+
+F_notti_NA_FW_2_R2.fastq.gz	48235636
+
+F_catanatus_NA_transfer_1_R1.fastq.gz	120302188
+
+F_similis_NA_FW_1_R2.fastq.gz	68077584
+
+A_xenica_NA_BW_1_R2.fastq.gz	78014300
+
+F_chrysotus_NA_BW_2_R1.fastq.gz	93107928
+
+F_heteroclitus_MDPP_BW_3_R2.fastq.gz	47803364
+
+F_parvapinis_NA_BW_3_R2.fastq.gz	29441540
+
+L_goodei_NA_transfer_2_R2.fastq.gz	52453332
+
+L_parva_NA_transfer_1_R2.fastq.gz	58893632
+
+F_rathbuni_NA_FW_3_R1.fastq.gz	63144316
+
+F_sciadicus_NA_transfer_1_R1.fastq.gz	43248548
+
+F_parvapinis_NA_transfer_2_R2.fastq.gz	73650100
+
+F_parvapinis_NA_FW_3_R1.fastq.gz	32299036
+
+F_olivaceous_NA_transfer_1_R1.fastq.gz	45748388
+
+F_notatus_NA_BW_3_R1.fastq.gz	130194060
+
+L_goodei_NA_BW_2_R1.fastq.gz	56433136
+
+L_parva_NA_FW_2_R2.fastq.gz	72639000
+
+F_diaphanus_NA_transfer_1_R2.fastq.gz	72835688
+
+L_parva_NA_FW_1_R1.fastq.gz	43205956
+
+F_parvapinis_NA_BW_2_R1.fastq.gz	30765420
+
+F_catanatus_NA_FW_1_R1.fastq.gz	30877680
+
+F_parvapinis_NA_BW_3_R1.fastq.gz	29441540
+
+F_zebrinus_NA_FW_2_R1.fastq.gz	54403148
+
+F_catanatus_NA_FW_1_R2.fastq.gz	30877680
+
+F_sciadicus_NA_BW_1_R1.fastq.gz	107005176
+
+F_heteroclitus_MDPP_transfer_3_R2.fastq.gz	60261328
+
+F_heteroclitus_MDPL_FW_2_R1.fastq.gz	36460604
+
+F_olivaceous_NA_BW_2_R1.fastq.gz	80819948
+
+A_xenica_NA_BW_3_R2.fastq.gz	76805244
+
+F_chrysotus_NA_BW_1_R2.fastq.gz	55072588
+
+F_notatus_NA_transfer_2_R1.fastq.gz	49351480
+
+F_olivaceous_NA_BW_3_R2.fastq.gz	72722044
+
+F_heteroclitus_MDPL_BW_1_R1.fastq.gz	66093280
+
+F_diaphanus_NA_FW_2_R1.fastq.gz	41493064
+
+F_chrysotus_NA_FW_2_R2.fastq.gz	61981232
+
+F_heteroclitus_MDPP_BW_3_R1.fastq.gz	47803364
+
+F_heteroclitus_MDPP_BW_2_R1.fastq.gz	81824700
+
+A_xenica_NA_FW_3_R1.fastq.gz	47039612
+
+F_sciadicus_NA_FW_1_R1.fastq.gz	30904076
+
+F_zebrinus_NA_FW_1_R2.fastq.gz	59054696
+
+F_parvapinis_NA_BW_1_R2.fastq.gz	25495992
+
+L_goodei_NA_transfer_1_R2.fastq.gz	37346940
+
+F_parvapinis_NA_BW_2_R2.fastq.gz	30765420
+
+F_rathbuni_NA_BW_3_R1.fastq.gz	50749200
+
+F_catanatus_NA_BW_1_R1.fastq.gz	32122712
+
+F_heteroclitus_MDPL_transfer_2_R1.fastq.gz	82143612
+
+F_grandis_NA_transfer_1_R1.fastq.gz	94784456
+
+F_heteroclitus_MDPL_BW_3_R2.fastq.gz	14602556
+
+F_heteroclitus_MDPL_transfer_2_R2.fastq.gz	82143612
+
+F_diaphanus_NA_BW_1_R2.fastq.gz	37216108
+
+F_parvapinis_NA_BW_1_R1.fastq.gz	25495992
+
+L_goodei_NA_FW_3_R1.fastq.gz	32440612
+
+F_heteroclitus_MDPL_BW_3_R1.fastq.gz	14602556
+
+F_heteroclitus_MDPP_transfer_3_R1.fastq.gz	60261328
+
+F_parvapinis_NA_transfer_2_R1.fastq.gz	73650100
+
+A_xenica_NA_BW_2_R1.fastq.gz	57838296
+
+F_rathbuni_NA_BW_3_R2.fastq.gz	50749200
+
+F_parvapinis_NA_FW_3_R2.fastq.gz	32299036
+
+L_parva_NA_FW_1_R2.fastq.gz	43205956
+
+F_catanatus_NA_FW_2_R2.fastq.gz	147442152
+
+F_diaphanus_NA_FW_1_R1.fastq.gz	125601200
+
+F_diaphanus_NA_FW_3_R1.fastq.gz	54489924
+
+F_rathbuni_NA_FW_3_R2.fastq.gz	63144316
+
+F_heteroclitus_MDPP_FW_1_R1.fastq.gz	77573892
+
+A_xenica_NA_FW_2_R1.fastq.gz	30441240
+
+L_goodei_NA_FW_2_R2.fastq.gz	28085776
+
+F_similis_NA_transfer_2_R1.fastq.gz	27601712
+
+F_diaphanus_NA_transfer_1_R1.fastq.gz	72835688
+
+L_goodei_NA_transfer_3_R1.fastq.gz	46687372
+
+L_goodei_NA_transfer_3_R2.fastq.gz	46687372
+
+F_chrysotus_NA_BW_3_R2.fastq.gz	61510508
+
+F_grandis_NA_transfer_3_R1.fastq.gz	80327740
+
+F_olivaceous_NA_FW_3_R2.fastq.gz	35585672
+
+L_parva_NA_BW_3_R1.fastq.gz	60418312
+
+A_xenica_NA_BW_1_R1.fastq.gz	78014300
+
+F_olivaceous_NA_BW_2_R2.fastq.gz	80819948
+
+F_catanatus_NA_BW_1_R2.fastq.gz	32122712
+
+F_similis_NA_BW_3_R1.fastq.gz	40038064
+
+A_xenica_NA_transfer_1_R1.fastq.gz	35252592
+
+F_notatus_NA_BW_3_R2.fastq.gz	130194060
+
+F_olivaceous_NA_FW_2_R1.fastq.gz	39150800
+
+F_rathbuni_NA_FW_1_R2.fastq.gz	62763548
+
+L_parva_NA_BW_2_R1.fastq.gz	43859160
+
+F_heteroclitus_MDPL_transfer_1_R1.fastq.gz	73462980
+
+F_similis_NA_transfer_1_R1.fastq.gz	58221504
+
+F_chrysotus_NA_transfer_1_R1.fastq.gz	36399796
+
+F_rathbuni_NA_transfer_3_R1.fastq.gz	72395092
+
+F_zebrinus_NA_BW_2_R2.fastq.gz	35911416
+
+F_notatus_NA_transfer_3_R1.fastq.gz	57773772
+
+F_similis_NA_transfer_3_R1.fastq.gz	41235212
+
+L_goodei_NA_FW_1_R1.fastq.gz	91209504
+
+L_goodei_NA_BW_3_R1.fastq.gz	53980928
+
+F_notatus_NA_transfer_1_R2.fastq.gz	134525152
+
+F_heteroclitus_MDPP_transfer_1_R2.fastq.gz	37747696
+
+A_xenica_NA_BW_3_R1.fastq.gz	76805244
+
+F_catanatus_NA_BW_3_R1.fastq.gz	64210524
+
+F_olivaceous_NA_BW_3_R1.fastq.gz	72722044
+
+F_grandis_NA_FW_3_R1.fastq.gz	124446288
+
+F_rathbuni_NA_FW_2_R2.fastq.gz	211286456
+
+L_goodei_NA_FW_1_R2.fastq.gz	91209504
+
+L_goodei_NA_BW_1_R1.fastq.gz	41449704
+
+L_parva_NA_BW_1_R2.fastq.gz	54145984
+
+F_chrysotus_NA_FW_3_R2.fastq.gz	75158496
+
+F_heteroclitus_MDPP_FW_2_R1.fastq.gz	43461948
+
+A_xenica_NA_FW_1_R1.fastq.gz	65157692
+
+F_diaphanus_NA_BW_2_R1.fastq.gz	43140252
+
+F_chrysotus_NA_FW_1_R2.fastq.gz	57101476
+
+F_zebrinus_NA_FW_2_R2.fastq.gz	54403148
+
+L_goodei_NA_transfer_2_R1.fastq.gz	52453332
+
+F_sciadicus_NA_BW_2_R2.fastq.gz	37940168
+
+F_notti_NA_FW_1_R2.fastq.gz	45158340
+
+A_xenica_NA_FW_3_R2.fastq.gz	47039612
+
+F_chrysotus_NA_transfer_1_R2.fastq.gz	36399796
+
+L_goodei_NA_BW_1_R2.fastq.gz	41449704
+
+F_notatus_NA_FW_2_R1.fastq.gz	48454640
+
+F_zebrinus_NA_BW_1_R1.fastq.gz	48127320
+
+L_parva_NA_FW_2_R1.fastq.gz	72639000
+
+F_heteroclitus_MDPP_FW_2_R2.fastq.gz	43461948
+
+F_rathbuni_NA_BW_1_R1.fastq.gz	54056344
+
+A_xenica_NA_transfer_1_R2.fastq.gz	35252592
+
+F_parvapinis_NA_FW_2_R2.fastq.gz	31449192
+
+F_sciadicus_NA_FW_2_R2.fastq.gz	23545568
+
+F_notatus_NA_FW_3_R2.fastq.gz	74922016
+
+F_chrysotus_NA_FW_3_R1.fastq.gz	75158496
+
+F_grandis_NA_transfer_2_R2.fastq.gz	64920084
+
+F_notatus_NA_BW_1_R2.fastq.gz	128685812
+
+F_chrysotus_NA_BW_3_R1.fastq.gz	61510508
+
+F_similis_NA_FW_2_R1.fastq.gz	37472120
+
+F_similis_NA_FW_3_R1.fastq.gz	40356968
+
+F_diaphanus_NA_transfer_2_R2.fastq.gz	26285316
+
+F_diaphanus_NA_FW_2_R2.fastq.gz	41493064
+
+F_heteroclitus_MDPL_FW_3_R1.fastq.gz	85285368
+
+F_chrysotus_NA_BW_2_R2.fastq.gz	93107928
+
