@@ -34,11 +34,11 @@ def sbatch_file(basedir,process_name,module_name_list,filename,process_string):
          sbatch_file.write("#!/bin/bash -l\n")
          sbatch_file.write("#SBATCH -D "+sbatch_dir+"\n")
 	 sbatch_file.write("#SBATCH -J "+process_name+"\n")
-	 #sbatch_file.write("#SBATCH -p hi\n")
-	 sbatch_file.write("#SBATHC -p med\n")
+	 sbatch_file.write("#SBATCH -p hi\n")
+	 #sbatch_file.write("#SBATHC -p med\n")
 	 sbatch_file.write("#SBATCH --mail-user=ljcohen@ucdavis.edu"+"\n")
-         sbatch_file.write("#SBATCH --cpus-per-task=16"+"\n")
-	 sbatch_file.write("#SBATCH --mem=32GB\n")
+         sbatch_file.write("#SBATCH --cpus-per-task=2"+"\n")
+	 sbatch_file.write("#SBATCH --mem=8GB\n")
          for module_string in module_load:
              sbatch_file.write(module_string+"\n")
              #print module_string

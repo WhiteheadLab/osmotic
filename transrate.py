@@ -33,20 +33,20 @@ def get_assemblies(assemblydir,readsdir):
 			print "Assembly not completed:",genus_species
 
 def transrate(trinity_out_dir,fixed_trinity_fasta,genus_species,left,right,assemblydir):
-#	transrate_command="""
-#transrate --assembly {} \\
-#--left {} \\
-#--right {} \\
-#--reference /home/ljcohen/reference/kfish2rae5/kfish2rae5g.mrna.combined \\
-#--threads 8 > {}{}.transrate.out
-#""".format(fixed_trinity_fasta,left,right,assemblydir,genus_species)	
-
 	transrate_command="""
 transrate --assembly {} \\
---reference /home/ljcohen/reference/kf2evg367mixx11/kfish2evg367mixx11pub2.mrna \\
---output {}kf2evg367mixx11.transrate/ \\
+--left {} \\
+--right {} \\
+--reference /home/ljcohen/reference/kfish2rae5/kfish2rae5g.mrna.combined \\
 --threads 32
-""".format(fixed_trinity_fasta,trinity_out_dir)
+""".format(fixed_trinity_fasta,left,right,assemblydir,genus_species)	
+
+#	transrate_command="""
+#transrate --assembly {} \\
+#--reference /home/ljcohen/reference/kf2evg367mixx11/kfish2evg367mixx11pub2.mrna \\
+#--output {}kf2evg367mixx11.transrate/ \\
+#--threads 32
+#""".format(fixed_trinity_fasta,trinity_out_dir)
 	return transrate_command
 
 #--reference /home/ljcohen/reference/kfish2rae5/kfish2rae5g.mrna.combined

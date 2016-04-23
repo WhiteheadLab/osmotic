@@ -83,25 +83,26 @@ for dirname in listofdirs:
 				saf.write("Strand"+"\n")
 				for line in transcriptome_assembly:
 					if line.startswith(">"):
-						print sequence
 						sequence=""
 						split_line=line.split(" ")
 						transcript_id=split_line[0][1:]
-						print transcript_id
-						ref_id=transcript_id_data[transcript_id]
-						saf.write(ref_id+"\t")
-						saf.write(transcript_id+"\t")
-						saf.write("1"+"\t")
 					else:
-						if line == 60: 
+						if len(line) == 61: 
 							sequence+=line
-						elif line < 60 and sequence > 0: 
+						elif len(line) < 61 and len(line) > 0: 
 							sequence+=line
 							contig_length=len(sequence)
 							print contig_length
-							saf.write(contig_length+"\t")
-							saf.write("+"+"\n")
-						elif line == 0:
+							if transcript_id in transcript_id_data.keys():
+								ref_id=transcript_id_data[transcript_id]
+								print transcript_id
+								print ref_id
+								saf.write(ref_id+"\t")
+                                                		saf.write(transcript_id+"\t")
+                                                		saf.write("1"+"\t")
+								saf.write(str(contig_length)+"\t")
+								saf.write("-"+"\n")
+						elif len(line) == 0:
 							print "Blank line?"
 	else:
 		print "Skipping:", dirname
