@@ -12,8 +12,8 @@ def check_dir(dirname):
         print "Directory created:",dirname
 
 def get_sbatch_filename(basedir,process_name,filename):
-    #sbatch_dir=basedir+"sbatch_files/"
-    sbatch_dir="/home/ljcohen/bin/"
+    sbatch_dir=basedir+"sbatch_files/"
+    #sbatch_dir="/home/ljcohen/bin/"
     check_dir(sbatch_dir)
     sbatch_filename=sbatch_dir+process_name+"_"+filename+".sbatch"
     return sbatch_dir,sbatch_filename
@@ -38,7 +38,7 @@ def sbatch_file(basedir,process_name,module_name_list,filename,process_string):
 	 #sbatch_file.write("#SBATHC -p med\n")
 	 sbatch_file.write("#SBATCH --mail-user=ljcohen@ucdavis.edu"+"\n")
          sbatch_file.write("#SBATCH --cpus-per-task=2"+"\n")
-	 sbatch_file.write("#SBATCH --mem=8GB\n")
+	 sbatch_file.write("#SBATCH --mem=4GB\n")
          for module_string in module_load:
              sbatch_file.write(module_string+"\n")
              #print module_string

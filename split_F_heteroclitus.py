@@ -7,14 +7,15 @@ import clusterfunc
 
 def parse_filename(filename):
         fields=filename.split("_")
-        genus=fields[0]
+        print fields
+	genus=fields[0]
         species=fields[1]
         population=fields[2]
-	species_population=species+population
+	#species_population="heteroclitus"+"."+speciespopulation[-4:]
         treatment=fields[3]
-        sample=fields[4]
-        read_extension=fields[5]
-        new_filename="_".join([genus,species_population,treatment,sample,read_extension])
+        read_extension=fields[4]
+	species_population=species+"."+population
+        new_filename="_".join([genus,species_population,treatment,read_extension])
 	return new_filename
 
 def get_rename(fastq_files_dir,filename,newfilename):
@@ -29,11 +30,12 @@ def rename_F_heteroclitus(fastq_files_dir):
 		if filename.startswith("F_heteroclitus"):
 			# combine genus_speciespopulation
 			new_filename=parse_filename(filename)
- 			print new_filename
+ 			#print new_filename
 			rename_command=get_rename(fastq_files_dir,filename,new_filename)
 			print rename_command
 			#s=subprocess.Popen(rename_command,shell=True)
 			#s.wait()
 
-fastq_files_dir="/home/ljcohen/osmotic_combined/"
+#fastq_files_dir="/home/ljcohen/osmotic_combined/"
+fastq_files_dir="/home/ljcohen/osmotic_trim/"
 rename_F_heteroclitus(fastq_files_dir)

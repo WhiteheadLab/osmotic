@@ -48,7 +48,7 @@ basedir="/home/ljcohen/msu_assemblies_finished/"
 listofdirs=os.listdir(basedir)
 trinityfile="Trinity.fasta"
 for dirname in listofdirs:
-	if dirname == "A_xenica":
+	#if dirname == "A_xenica":
 		newdir=basedir+dirname+"/"
 		trinity=newdir+trinityfile
 		print trinity
@@ -104,8 +104,8 @@ for dirname in listofdirs:
 								saf.write("-"+"\n")
 						elif len(line) == 0:
 							print "Blank line?"
-	else:
-		print "Skipping:", dirname
+	#else:
+		#print "Skipping:", dirname
 # make saf file
 # gene ID
 # transcript ID
