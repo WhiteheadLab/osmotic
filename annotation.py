@@ -45,32 +45,29 @@ def get_transcript_id(id_file):
 	return transcript_id_data	
 
 basedir="/home/ljcohen/msu_assemblies_finished/"
-listofdirs=os.listdir(basedir)
+#listofdirs=os.listdir(basedir)
+listofdirs=["F_diaphanus/F_diaphanus.trinity.2","F_sciadicus/F_sciadicus.trinity.2"]
 trinityfile="Trinity.fasta"
-for dirname in listofdirs:
-	#if dirname == "A_xenica":
-		newdir=basedir+dirname+"/"
+for dirs in listofdirs:
+	#if dirname == "F_chrysotus":
+		dirname = dirs.split("/")[0]
+		newdir=basedir+dirs+"/"
 		trinity=newdir+trinityfile
 		print trinity
 		id_file=newdir+dirname+".id"
 		sorted_bed_file=newdir+dirname+".sorted.bed"
-		if os.path.isfile(sorted_bed_file):
-			print sorted_bed_file
-		else:
-			make_bed=create_bed_file(newdir,dirname)
-			print make_bed
-			#s=subprocess.Popen(make_bed,shell=True)
-			#s.wait()
-		if os.path.isfile(id_file):
-			print id_file
-		else:
-			id_command=create_id_file(newdir,dirname,sorted_bed_file)
-			print id_command
-			id_command=[id_command]
-			process_name="annotation_id"
-			module_name_list=""
-			#clusterfunc.sbatch_file(newdir,process_name,module_name_list,dirname,id_command)
-	
+		print sorted_bed_file
+		make_bed=create_bed_file(newdir,dirname)
+		print make_bed
+		#s=subprocess.Popen(make_bed,shell=True)
+		#s.wait()
+		#print id_file
+		id_command=create_id_file(newdir,dirname,sorted_bed_file)
+		print id_command
+		id_command=[id_command]
+		process_name="annotation_id"
+		module_name_list=""
+		#clusterfunc.sbatch_file(newdir,process_name,module_name_list,dirname,id_command)
 		saf_file=newdir+dirname+".saf"
 		transcript_id_data=get_transcript_id(id_file)
 		with open(trinity,"rU") as transcriptome_assembly:
@@ -98,17 +95,11 @@ for dirname in listofdirs:
 								print transcript_id
 								print ref_id
 								saf.write(ref_id+"\t")
-                                                		saf.write(transcript_id+"\t")
+                	                               		saf.write(transcript_id+"\t")
                                                 		saf.write("1"+"\t")
 								saf.write(str(contig_length)+"\t")
 								saf.write("-"+"\n")
 						elif len(line) == 0:
 							print "Blank line?"
 	#else:
-		#print "Skipping:", dirname
-# make saf file
-# gene ID
-# transcript ID
-# start = 1
-# end = len(Trinity.fasta contig entry)
-# strand (fake)
+	#	print "Skipping:", dirname

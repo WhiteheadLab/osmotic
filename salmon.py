@@ -32,51 +32,46 @@ def get_data(thefile):
                 url_data[name_read_tuple] = [ftp]
         return url_data
 
-def salmon_index(salmondir,genus_species,trinity_fasta,basedir):
+def salmon_index(newdir,genus_species,trinity_fasta):
 	index=genus_species+"_index"
-	salmondir_genus_species=salmondir+genus_species+"/"
-	#os.chdir(salmondir_genus_species)
-	salmon_index="salmon index --index "+index+" --transcripts "+trinity_fasta+" --type quasi"
-	#print salmon_index	
-	#s=subprocess.Popen(salmon_index,shell=True)
-	#s.wait()
-	#print "Indexed."
-	#os.chdir(basedir)
-	return index
+	salmon_index_string="salmon index --index "+newdir+index+" --transcripts "+trinity_fasta+" --type quasi"
+	return salmon_index_string,index
 
-def quant_salmon(newdir,index,genus_species,trimdir):
-	#os.chdir(salmondir)
+def quant_salmon(newdir,dirname,genus_species,trinity_fasta):
+	salmon_index_string,index=salmon_index(newdir,genus_species,trinity_fasta)
+	print salmon_index_string
 	salmon_string="""
-for i in {}{}*.trim_1P.fq
+for i in {}*.trim_1P.fq
 do
 	BASE=$(basename $i .trim_1P.fq)
 	salmon quant -i {}{} --libType IU -1 {}$BASE.trim_1P.fq -2 {}$BASE.trim_2P.fq -o {}$BASE.quant;
 done
-""".format(trimdir,genus_species,newdir,index,trimdir,trimdir,newdir,genus_species)
+""".format(dirname,newdir,index,dirname,dirname,newdir)
 	print salmon_string
-        #s=subprocess.Popen(salmon_string,shell=True)
-	#s.wait(i)
-	salmonstring=[salmon_string]
+	salmonstring=[salmon_index_string,salmon_string]
         process_name="salmon"
         module_name_list=""
         clusterfunc.sbatch_file(newdir,process_name,module_name_list,genus_species,salmonstring)
 
 	
 def execute(assemblydirs,salmondir,assemblydir,basedir,trimdir):
-	for genus_species in assemblydirs:
+	for dirs in assemblydirs:
+		genus_species=dirs.split("/")[0]
+		print genus_species
+		dirname=trimdir+genus_species+"/"
 		newdir=salmondir+genus_species+"/"
 		clusterfunc.check_dir(newdir)
-		trinity_fasta=assemblydir+genus_species+"/"+genus_species+".Trinity.fixed.fa"
-		index=salmon_index(salmondir,genus_species,trinity_fasta,basedir)
-		quant_salmon(newdir,index,genus_species,trimdir)
+		trinity_fasta=assemblydir+dirs+genus_species+".Trinity.fixed.fa"
+		quant_salmon(newdir,dirname,genus_species,trinity_fasta)
 
 
 basedir="/home/ljcohen/osmotic/"
-trimdir="/home/ljcohen/osmotic_trim/"
+trimdir="/home/ljcohen/osmotic_trim_"
 assemblydir="/home/ljcohen/msu_assemblies_finished/"
 salmondir="/home/ljcohen/osmotic_salmon/"
 clusterfunc.check_dir(trimdir)
 clusterfunc.check_dir(assemblydir)
 clusterfunc.check_dir(salmondir)
-assemblydirs=os.listdir(assemblydir)
+#assemblydirs=os.listdir(assemblydir)
+assemblydirs=["F_diaphanus/F_diaphanus.trinity.2/","F_sciadicus/F_sciadicus.trinity.2/"]
 execute(assemblydirs,salmondir,assemblydir,basedir,trimdir)

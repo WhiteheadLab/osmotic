@@ -8,10 +8,14 @@ import clusterfunc
 
 
 def get_assemblies(assemblydir,readsdir):
-	genus_species_dirs=os.listdir(readsdir)
-	for genus_species in genus_species_dirs:
-		left=readsdir+genus_species+"/"+genus_species+".left.fq"
-		right=readsdir+genus_species+"/"+genus_species+".right.fq"
+	#genus_species_dirs=os.listdir(readsdir)
+	genus_species_dirs=["F_diaphanus/F_diaphanus.trinity","F_sciadicus/F_sciadicus.trinity"]
+	for dirname in genus_species_dirs:
+		genus_species=dirname.split("/")[0]
+		genus_species_dir=assemblydir+genus_species+"/"
+		reads=readsdir+genus_species+"/"+"diginorm/"
+		left=reads+genus_species+".left.fq"
+		right=reads+genus_species+".right.fq"
 		if os.path.isfile(left):
 			print left
 		else:
@@ -20,26 +24,29 @@ def get_assemblies(assemblydir,readsdir):
 			print right
 		else:
 			print "there's a problem:",right
-		trinity_out_dir=assemblydir+genus_species+"/"
-		trinity_fasta=trinity_out_dir+"Trinity.fasta"
-		if os.path.isfile(trinity_fasta):
-			fixed_trinity_fasta=fix_fasta(trinity_fasta,trinity_out_dir,genus_species)
-			transrate_command=transrate(trinity_out_dir,fixed_trinity_fasta,genus_species,left,right,assemblydir)
-        		transrate_command=[transrate_command]
-			module_load_list=["blast/2.2.29"]
-        		process_name="transrate"
-        		clusterfunc.sbatch_file(trinity_out_dir,process_name,module_load_list,genus_species,transrate_command)
-		else:
-			print "Assembly not completed:",genus_species
+		trinity_out_dir1=assemblydir+dirname+".1/"
+		trinity_out_dir2=assemblydir+dirname+".2/"
+		trinity_fasta1=trinity_out_dir1+"Trinity.fasta"
+		trinity_fasta2=trinity_out_dir2+"Trinity.fasta"
+		fixed_trinity_fasta1=fix_fasta(trinity_fasta1,trinity_out_dir1,genus_species)
+		print fixed_trinity_fasta1
+		fixed_trinity_fasta2=fix_fasta(trinity_fasta2,trinity_out_dir2,genus_species)
+		print fixed_trinity_fasta2
+		transrate_command=transrate(trinity_out_dir1,trinity_out_dir2,fixed_trinity_fasta1,fixed_trinity_fasta2,genus_species,left,right,assemblydir)
+        	print transrate_command
+		transrate_command=[transrate_command]
+		module_load_list=["blast/2.2.29"]
+        	process_name="transrate"
+        	clusterfunc.sbatch_file(genus_species_dir,process_name,module_load_list,genus_species,transrate_command)
 
-def transrate(trinity_out_dir,fixed_trinity_fasta,genus_species,left,right,assemblydir):
+def transrate(trinity_out_dir1,trinity_out_dir2,fixed_trinity_fasta1,fixed_trinity_fasta2,genus_species,left,right,assemblydir):
 	transrate_command="""
-transrate --assembly {} \\
+transrate --assembly {},{} \\
 --left {} \\
 --right {} \\
 --reference /home/ljcohen/reference/kfish2rae5/kfish2rae5g.mrna.combined \\
 --threads 32
-""".format(fixed_trinity_fasta,left,right,assemblydir,genus_species)	
+""".format(fixed_trinity_fasta1,fixed_trinity_fasta2,left,right)	
 
 #	transrate_command="""
 #transrate --assembly {} \\
@@ -63,5 +70,5 @@ sed 's_|_-_g' {} > {}
 	return trinity_out 
 
 assemblydir="/home/ljcohen/msu_assemblies_finished/"
-readsdir="/home/ljcohen/osmotic_assemblies_completed/"
+readsdir="/home/ljcohen/osmotic_trim_"
 get_assemblies(assemblydir,readsdir)

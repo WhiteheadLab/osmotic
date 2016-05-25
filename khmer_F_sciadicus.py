@@ -84,7 +84,7 @@ def interleave_reads(trimdir,interleavedir,files_list,sample):
 	process_name="interleave"
 	module_name_list=""
 	filename=sample
-	clusterfunc.sbatch_file(interleavedir,process_name,module_name_list,filename,interleave_string)
+	#clusterfunc.sbatch_file(interleavedir,process_name,module_name_list,filename,interleave_string)
 	return interleavefile
 
 def get_diginorm_string(diginorm_keep_file,diginormdir,orphansfile,interleavedir,genus_species):
@@ -130,7 +130,7 @@ def run_filt_abund(diginormdir,graph_count_filename,genus_species):
         process_name="abundfilt"
         module_name_list=""
         filename=genus_species
-        #clusterfunc.sbatch_file(diginormdir,process_name,module_name_list,filename,abund_filt_command)
+        clusterfunc.sbatch_file(diginormdir,process_name,module_name_list,filename,abund_filt_command)
 	return abundfilt_filename
 	
 def get_rename(genus_species_dir,sample,abund_filt_filename):
@@ -157,135 +157,30 @@ def get_diginorm_files(diginormdir):
 def execute(listoffiles,trimdir,interleavedir,diginormdir,assemblydir):
         files_dictionary=get_files(listoffiles,trimdir)
 	print files_dictionary
-	diginorm_files=get_diginorm_files(diginormdir)
-	print diginorm_files
 	for sample in files_dictionary.keys():
                 fileslist=sorted(files_dictionary[sample])
-		get_orphans(fileslist,trimdir,sample)
+		#get_orphans(fileslist,trimdir,sample)
 		interleavefile=interleave_reads(trimdir,interleavedir,fileslist,sample)
 # run diginorm for each genus_species
 # you were running it per sample before
 # does this make a difference?
-	#interleave_files=os.listdir(interleavedir)
-	#genus_species_files=get_genus_species(interleave_files)
-	#print genus_species_files
-	#for genus_species in genus_species_files: 
-		#print genus_species
-		#orphansfile=trimdir+genus_species+"_all.orphans.fq.gz"
-		#graph_count_filename=run_diginorm(diginormdir,orphansfile,interleavedir,genus_species)
-	#diginorm_files=get_diginorm_files(diginormdir)
+	interleave_files=os.listdir(interleavedir)
+	genus_species_files=get_genus_species(interleave_files)
+	print genus_species_files
+	for genus_species in genus_species_files: 
+		print genus_species
+		orphansfile=trimdir+genus_species+"_all.orphans.fq.gz"
+		print os.path.isfile(orphansfile)
+		print orphansfile
+		print "If false, run this:"
+		print "cd "+trimdir
+		print "zcat *.orphans.fq.gz | gzip -9c > F_sciadicus_all.orphans.fq.gz"
+		graph_count_filename=run_diginorm(diginormdir,orphansfile,interleavedir,genus_species)
+	diginorm_files=get_diginorm_files(diginormdir)
+	#print diginorm_files
 	#for diginormfile in diginorm_files[sample]:
 		#run_filt_abund(diginormdir,graph_count_filename,genus_species)
 		
-def get_abund_filt_files(diginormdir):
-	listoffiles=os.listdir(diginormdir)
-	abund_filt_files=[]
-	for filename in listoffiles:
-		if filename.endswith(".abundfilt"):
-			abund_filt_files.append(filename)
-	return abund_filt_files
-
-def get_genus_species(abund_filt_files):
-	genus_species_files={}
-	for filename in abund_filt_files:
-		if filename != "sbatch_files":
-			sample_info=filename.split("_")
-			genus_species=sample_info[0]+"_"+sample_info[1]
-			if genus_species in genus_species_files.keys():
-				genus_species_files[genus_species].append(filename)
-			else:
-				genus_species_files[genus_species]=[filename]
-	return genus_species_files
-
-def consolidate(assemblydir,genus_species):
-	j="""
-touch {}{}.orphans.keep.abundfilt.fq.gz
-
-for file1 in {}*orphans.se.keep.abundfilt.fq
-do
-	gzip -9c ${{file1}} >> {}{}.orphans.keep.abundfilt.fq.gz
-done
-
-for file2 in {}*abundfilt.se.keep.abundfilt.fq
-do
-	gzip -9c ${{file2}} >> {}{}.orphans.keep.abundfilt.fq.gz
-done
-""".format(assemblydir,genus_species,assemblydir,assemblydir,genus_species,assemblydir,assemblydir,genus_species)
-	return j
-
-def group_assembly_files(diginormdir,assemblydir):		
-	abund_filt_files=get_abund_filt_files(diginormdir)
-	genus_species_files=get_genus_species(abund_filt_files)
-	for genus_species in genus_species_files:
-		genus_species_dir=assemblydir+genus_species+"/"
-		clusterfunc.check_dir(genus_species_dir)
-		for filename in genus_species_files[genus_species]:
-			abund_filt_filename=diginormdir+filename
-			sample_info=filename.split("_")
-			extension=sample_info[-1].split(".")
-			sample="_".join(sample_info[:-1])
-			sample=sample+"_"+extension[0]+"_"+extension[2]
-			rename_command=get_rename(genus_species_dir,sample,abund_filt_filename)
-			process_name="split"
-			rename_command=[rename_command]
-        		module_name_list=""
-        		filename=sample
-        		#clusterfunc.sbatch_file(genus_species_dir,process_name,module_name_list,filename,rename_command)
-		
-def combine_orphans(assemblydir):
-	assemblydirs=os.listdir(assemblydir)
-	for genus_species in assemblydirs:
-		genus_species_dir=assemblydir+genus_species+"/"
-		listoffiles=os.listdir(genus_species_dir)
-		consolidate_command=consolidate(genus_species_dir,genus_species)			
-		consolidate_command=[consolidate_command]
-		process_name="gzip"
-		module_name_list=""
-		filename=genus_species
-		#clusterfunc.sbatch_file(genus_species_dir,process_name,module_name_list,filename,consolidate_command)
-		for filename in listoffiles:
-			if filename.endswith("pe.keep.abundfilt.fq"):
-				gzip_command="""
-gzip -9c {}{}
-""".format(genus_species_dir,filename)
-				print gzip_command
-				process_name="gzip"
-                        	rename_command=[gzip_command]
-                        	module_name_list=""
-                        	filename=genus_species
-                        	#clusterfunc.sbatch_file(genus_species_dir,process_name,module_name_list,filename,rename_command)
-
-
-def split_reads(assemblydir):
-	assemblydirs=os.listdir(assemblydir)
-	for genus_species in assemblydirs:
-		genus_species_dir=assemblydir+genus_species+"/"
-		listoffiles=os.listdir(genus_species_dir)
-		for filename in listoffiles:
-			
-			if filename.endswith("pe.keep.abundfilt.fq"):
-# next time you run this, specify output file,
-# otherwise output will be put in sbatch_files directory
-# moved manually 2/7/2016
-				split_command="""
-split-paired-reads.py -1 {}{}.1 -2 {}{}.2 {}{}
-""".format(genus_species_dir,filename,genus_species_dir,filename,genus_species_dir,filename)
-				process_name="split"
-				module_name_list=""
-				split_command=[split_command]
-				#clusterfunc.sbatch_file(genus_species_dir,process_name,module_name_list,filename,split_command)
-			#else:
-			#	print "Not found:",filename
-		combine="""
-cat {}*.1 > {}{}.left.fq
-cat {}*.2 > {}{}.right.fq
-gunzip -c {}*orphans.keep.abundfilt.fq.gz >> {}{}.left.fq
-""".format(genus_species_dir,genus_species_dir,genus_species,genus_species_dir,genus_species_dir,genus_species,genus_species_dir,genus_species_dir,genus_species)
-		combine_command=[combine]
-		process_name="combine"
-                module_name_list=""
-		#clusterfunc.sbatch_file(genus_species_dir,process_name,module_name_list,genus_species,combine_command)
-
 trimdir="/home/ljcohen/osmotic_trim_F_sciadicus/"
 interleavedir=trimdir+"interleave/"
 diginormdir=trimdir+"diginorm/"
@@ -294,7 +189,7 @@ clusterfunc.check_dir(interleavedir)
 clusterfunc.check_dir(diginormdir)
 clusterfunc.check_dir(assemblydir)
 listoffiles=os.listdir(trimdir)
-execute(listoffiles,trimdir,interleavedir,diginormdir,assemblydir)
+#execute(listoffiles,trimdir,interleavedir,diginormdir,assemblydir)
 #group_assembly_files(diginormdir,assemblydir)
 #combine_orphans(assemblydir)
-#split_reads(assemblydir)
+split_reads(assemblydir)

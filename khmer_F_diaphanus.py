@@ -84,7 +84,7 @@ def interleave_reads(trimdir,interleavedir,files_list,sample):
 	process_name="interleave"
 	module_name_list=""
 	filename=sample
-	clusterfunc.sbatch_file(interleavedir,process_name,module_name_list,filename,interleave_string)
+	#clusterfunc.sbatch_file(interleavedir,process_name,module_name_list,filename,interleave_string)
 	return interleavefile
 
 def get_diginorm_string(diginorm_keep_file,diginormdir,orphansfile,interleavedir,genus_species):
@@ -130,7 +130,7 @@ def run_filt_abund(diginormdir,graph_count_filename,genus_species):
         process_name="abundfilt"
         module_name_list=""
         filename=genus_species
-        #clusterfunc.sbatch_file(diginormdir,process_name,module_name_list,filename,abund_filt_command)
+        clusterfunc.sbatch_file(diginormdir,process_name,module_name_list,filename,abund_filt_command)
 	return abundfilt_filename
 	
 def get_rename(genus_species_dir,sample,abund_filt_filename):
@@ -157,25 +157,26 @@ def get_diginorm_files(diginormdir):
 def execute(listoffiles,trimdir,interleavedir,diginormdir,assemblydir):
         files_dictionary=get_files(listoffiles,trimdir)
 	print files_dictionary
-	diginorm_files=get_diginorm_files(diginormdir)
-	print diginorm_files
 	for sample in files_dictionary.keys():
                 fileslist=sorted(files_dictionary[sample])
-		get_orphans(fileslist,trimdir,sample)
+		#get_orphans(fileslist,trimdir,sample)
 		interleavefile=interleave_reads(trimdir,interleavedir,fileslist,sample)
 # run diginorm for each genus_species
 # you were running it per sample before
 # does this make a difference?
-	#interleave_files=os.listdir(interleavedir)
-	#genus_species_files=get_genus_species(interleave_files)
-	#print genus_species_files
-	#for genus_species in genus_species_files: 
-		#print genus_species
-		#orphansfile=trimdir+genus_species+"_all.orphans.fq.gz"
-		#graph_count_filename=run_diginorm(diginormdir,orphansfile,interleavedir,genus_species)
-	#diginorm_files=get_diginorm_files(diginormdir)
-	#for diginormfile in diginorm_files[sample]:
-		#run_filt_abund(diginormdir,graph_count_filename,genus_species)
+	interleave_files=os.listdir(interleavedir)
+	genus_species_files=get_genus_species(interleave_files)
+	print genus_species_files
+	for genus_species in genus_species_files: 
+		print genus_species
+		orphansfile=trimdir+genus_species+"_all.orphans.fq.gz"
+		print os.path.isfile(orphansfile)
+		print orphansfile
+		graph_count_filename=run_diginorm(diginormdir,orphansfile,interleavedir,genus_species)
+	diginorm_files=get_diginorm_files(diginormdir)
+	print diginorm_files
+	for diginormfile in diginorm_files[sample]:
+		run_filt_abund(diginormdir,graph_count_filename,genus_species)
 		
 def get_abund_filt_files(diginormdir):
 	listoffiles=os.listdir(diginormdir)
