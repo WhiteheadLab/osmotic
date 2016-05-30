@@ -20,11 +20,10 @@ from scipy import stats, integrate
 
 def get_assemblies(assemblydir):
 	#genus_species_dirs=os.listdir(assemblydir)
-	genus_species_dirs=["F_sciadicus/F_sciadicus.trinity.2/","F_diaphanus/F_diaphanus.trinity.2/"]
-	for genus_species_dir in genus_species_dirs:
-		genus_species=genus_species_dir.split("/")[0]
+	genus_species_dirs=["F_heteroclitus.MDPP","F_heteroclitus.MDPL"]
+	for genus_species in genus_species_dirs:
 		print genus_species
-		genus_species_dir=assemblydir+genus_species_dir
+		genus_species_dir=assemblydir+genus_species+"/"
 		assemblyfile=genus_species_dir+"Trinity.fasta"
 		bam_out=genus_species_dir+genus_species+".bam"
 		flagstat_out=genus_species_dir+genus_species+".flagstat.txt"

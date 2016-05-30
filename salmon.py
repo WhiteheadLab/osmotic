@@ -37,16 +37,16 @@ def salmon_index(newdir,genus_species,trinity_fasta):
 	salmon_index_string="salmon index --index "+newdir+index+" --transcripts "+trinity_fasta+" --type quasi"
 	return salmon_index_string,index
 
-def quant_salmon(newdir,dirname,genus_species,trinity_fasta):
+def quant_salmon(newdir,dirname,genus_species,trinity_fasta,species):
 	salmon_index_string,index=salmon_index(newdir,genus_species,trinity_fasta)
 	print salmon_index_string
 	salmon_string="""
-for i in {}*.trim_1P.fq
+for i in {}{}*.trim_1P.fq
 do
 	BASE=$(basename $i .trim_1P.fq)
 	salmon quant -i {}{} --libType IU -1 {}$BASE.trim_1P.fq -2 {}$BASE.trim_2P.fq -o {}$BASE.quant;
 done
-""".format(dirname,newdir,index,dirname,dirname,newdir)
+""".format(dirname,species,newdir,index,dirname,dirname,newdir)
 	print salmon_string
 	salmonstring=[salmon_index_string,salmon_string]
         process_name="salmon"
@@ -55,14 +55,17 @@ done
 
 	
 def execute(assemblydirs,salmondir,assemblydir,basedir,trimdir):
-	for dirs in assemblydirs:
-		genus_species=dirs.split("/")[0]
+	for genus_species_names in assemblydirs:
+		genus_species = genus_species_names.split(".")[0]
+		species = genus_species+genus_species_names.split(".")[1]
 		print genus_species
+		print species
 		dirname=trimdir+genus_species+"/"
-		newdir=salmondir+genus_species+"/"
+		newdir=salmondir+genus_species_names+"/"
 		clusterfunc.check_dir(newdir)
-		trinity_fasta=assemblydir+dirs+genus_species+".Trinity.fixed.fa"
-		quant_salmon(newdir,dirname,genus_species,trinity_fasta)
+		
+		trinity_fasta=assemblydir+genus_species_names+"/"+genus_species_names+".Trinity.fixed.fa"
+		quant_salmon(newdir,dirname,genus_species_names,trinity_fasta,species)
 
 
 basedir="/home/ljcohen/osmotic/"
@@ -73,5 +76,5 @@ clusterfunc.check_dir(trimdir)
 clusterfunc.check_dir(assemblydir)
 clusterfunc.check_dir(salmondir)
 #assemblydirs=os.listdir(assemblydir)
-assemblydirs=["F_diaphanus/F_diaphanus.trinity.2/","F_sciadicus/F_sciadicus.trinity.2/"]
+assemblydirs=["F_heteroclitus.MDPL","F_heteroclitus.MDPP"]
 execute(assemblydirs,salmondir,assemblydir,basedir,trimdir)

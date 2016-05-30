@@ -46,29 +46,28 @@ def get_transcript_id(id_file):
 
 basedir="/home/ljcohen/msu_assemblies_finished/"
 #listofdirs=os.listdir(basedir)
-listofdirs=["F_diaphanus/F_diaphanus.trinity.2","F_sciadicus/F_sciadicus.trinity.2"]
+listofdirs=["F_heteroclitus.MDPP","F_heteroclitus.MDPL"]
 trinityfile="Trinity.fasta"
-for dirs in listofdirs:
+for genus_species in listofdirs:
 	#if dirname == "F_chrysotus":
-		dirname = dirs.split("/")[0]
-		newdir=basedir+dirs+"/"
+		newdir=basedir+genus_species+"/"
 		trinity=newdir+trinityfile
 		print trinity
-		id_file=newdir+dirname+".id"
-		sorted_bed_file=newdir+dirname+".sorted.bed"
+		id_file=newdir+genus_species+".id"
+		sorted_bed_file=newdir+genus_species+".sorted.bed"
 		print sorted_bed_file
-		make_bed=create_bed_file(newdir,dirname)
+		make_bed=create_bed_file(newdir,genus_species)
 		print make_bed
 		#s=subprocess.Popen(make_bed,shell=True)
 		#s.wait()
 		#print id_file
-		id_command=create_id_file(newdir,dirname,sorted_bed_file)
+		id_command=create_id_file(newdir,genus_species,sorted_bed_file)
 		print id_command
 		id_command=[id_command]
 		process_name="annotation_id"
 		module_name_list=""
-		#clusterfunc.sbatch_file(newdir,process_name,module_name_list,dirname,id_command)
-		saf_file=newdir+dirname+".saf"
+		#clusterfunc.sbatch_file(newdir,process_name,module_name_list,genus_species,id_command)
+		saf_file=newdir+genus_species+".saf"
 		transcript_id_data=get_transcript_id(id_file)
 		with open(trinity,"rU") as transcriptome_assembly:
 			sequence=""
@@ -96,7 +95,7 @@ for dirs in listofdirs:
 								print ref_id
 								saf.write(ref_id+"\t")
                 	                               		saf.write(transcript_id+"\t")
-                                                		saf.write("1"+"\t")
+                	                               		saf.write("1"+"\t")
 								saf.write(str(contig_length)+"\t")
 								saf.write("-"+"\n")
 						elif len(line) == 0:
