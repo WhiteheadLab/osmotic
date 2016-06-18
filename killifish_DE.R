@@ -14,10 +14,6 @@ id<-data.1$GeneID
 rownames(data.1)<-id
 head(data.1)
 
-combined_BW_FW<-c()
-combined_transfer_FW<-c()
-combined_transfer_BW<-c()
-
 ######
 ##F_heteroclitus.MDPL
 ######
@@ -69,27 +65,38 @@ id<-rownames(F_heteroclitus.MDPL_norm_counts)
 F_heteroclitus.MDPL_norm_counts<-cbind(F_heteroclitus.MDPL_norm_counts,id)
 
 # merge res1, res2, res3 with counts
+# "BW","FW"
 res1_df<-as.data.frame(res.1)
+colnames(res1_df)<-paste(colnames(res1_df),"BW_FW", sep='.')
 id<-rownames(res1_df)
 res1_df<-cbind(res1_df,id)
+dim(res1_df)
+# "transfer","FW"
 res2_df<-as.data.frame(res.2)
+colnames(res2_df)<-paste(colnames(res2_df),"transfer_FW", sep='.')
 id<-rownames(res2_df)
 res2_df<-cbind(res2_df,id)
+dim(res2_df)
+# "transfer","BW"
 res3_df<-as.data.frame(res.3)
-res3_id<-rownames(res3_df)
+colnames(res3_df)<-paste(colnames(res3_df),"transfer_BW", sep='.')
+id<-rownames(res3_df)
 res3_df<-cbind(res3_df,id)
+dim(res3_df)
 F_heteroclitus.MDPL_res<-merge(F_heteroclitus.MDPL_norm_counts,res1_df,by="id")
+dim(F_heteroclitus.MDPL_res)
+colnames(F_heteroclitus.MDPL_res)
 F_heteroclitus.MDPL_res<-merge(F_heteroclitus.MDPL_res,res2_df,by="id")
+dim(F_heteroclitus.MDPL_res)
+colnames(F_heteroclitus.MDPL_res)
 F_heteroclitus.MDPL_res<-merge(F_heteroclitus.MDPL_res,res3_df,by="id")
 dim(F_heteroclitus.MDPL_res)
-F_heteroclitus.MDPL_res<-subset(F_heteroclitus.MDPL_res,F_heteroclitus.MDPL_res$padj!="NA")
+colnames(F_heteroclitus.MDPL_res)
+F_heteroclitus.MDPL_res<-F_heteroclitus.MDPL_res[complete.cases(F_heteroclitus.MDPL_res),]
 dim(F_heteroclitus.MDPL_res)
 F_heteroclitus.MDPL_annotated<-merge(F_heteroclitus.MDPL_res,annotation,by="id")
+F_heteroclitus.MDPL_annotated<-F_heteroclitus.MDPL_annotated[,c(ncol(F_heteroclitus.MDPL_annotated),1:(ncol(F_heteroclitus.MDPL_annotated)-1))]
 write.csv(F_heteroclitus.MDPL_annotated,"F_heteroclitus.MDPL_results_all.csv")
-
-
-
-
 
 plot(log2(res.1$baseMean), res.1$log2FoldChange, 
      col=ifelse(res.1$padj < 0.05, "red","gray67"),
@@ -113,7 +120,9 @@ setlist <- list(BW_FW=as.vector(m),transfer_FW=as.vector(n),transfer_BW=as.vecto
 OLlist <- overLapper(setlist=setlist, sep="", type="vennsets")
 counts <- sapply(OLlist$Venn_List, length)
 vennPlot(counts=counts)
+
 # extract intersections:
+
 names(OLlist$Venn_List)
 overlap_BW_FWtransfer_FW<-OLlist$Venn_List$BW_FWtransfer_FW
 length(overlap_BW_FWtransfer_FW)
@@ -121,18 +130,16 @@ overlap_BW_FWtransfer_BW<-OLlist$Venn_List$BW_FWtransfer_BW
 length(overlap_BW_FWtransfer_BW)
 overlap_transfer_FWtransfer_BW<-OLlist$Venn_List$transfer_FWtransfer_BW
 length(overlap_transfer_FWtransfer_BW)
-overlap_BW_FW<-OLlist$Venn_List$BW_FW
-length(overlap_BW_FW)
-overlap_transfer_FW<-OLlist$Venn_List$transfer_FW
-length(overlap_transfer_FW)
-overlap_transfer_BW<-OLlist$Venn_List$transfer_BW
-length(overlap_transfer_BW)
-combined_BW_FW<-union(overlap_BW_FW,combined_BW_FW)
-length(combined_BW_FW)
-combined_transfer_FW<-union(overlap_transfer_FW,combined_transfer_FW)
-length(combined_transfer_FW)
-combined_transfer_BW<-union(overlap_transfer_BW,combined_transfer_BW)
-length(combined_transfer_BW)
+
+# get lists of unique genes for each comparison
+F_heteroclitus.MDPL_BW_FW<-OLlist$Venn_List$BW_FW
+length(F_heteroclitus.MDPL_BW_FW)
+F_heteroclitus.MDPL_transfer_FW<-OLlist$Venn_List$transfer_FW
+length(F_heteroclitus.MDPL_transfer_FW)
+F_heteroclitus.MDPL_transfer_BW<-OLlist$Venn_List$transfer_BW
+length(F_heteroclitus.MDPL_transfer_BW)
+
+
 
 #######
 ##F_heteroclitus.MDPP
@@ -186,22 +193,29 @@ id<-rownames(F_heteroclitus.MDPP_norm_counts)
 F_heteroclitus.MDPP_norm_counts<-cbind(F_heteroclitus.MDPP_norm_counts,id)
 
 # merge res1, res2, res3 with counts
+# "BW","FW"
 res1_df<-as.data.frame(res.1)
+colnames(res1_df)<-paste(colnames(res1_df),"BW_FW", sep='.')
 id<-rownames(res1_df)
 res1_df<-cbind(res1_df,id)
+# "transfer","FW"
 res2_df<-as.data.frame(res.2)
+colnames(res2_df)<-paste(colnames(res2_df),"transfer_FW", sep='.')
 id<-rownames(res2_df)
 res2_df<-cbind(res2_df,id)
+# "transfer","BW"
 res3_df<-as.data.frame(res.3)
-res3_id<-rownames(res3_df)
+colnames(res3_df)<-paste(colnames(res3_df),"transfer_BW", sep='.')
+id<-rownames(res3_df)
 res3_df<-cbind(res3_df,id)
 F_heteroclitus.MDPP_res<-merge(F_heteroclitus.MDPP_norm_counts,res1_df,by="id")
 F_heteroclitus.MDPP_res<-merge(F_heteroclitus.MDPP_res,res2_df,by="id")
 F_heteroclitus.MDPP_res<-merge(F_heteroclitus.MDPP_res,res3_df,by="id")
 dim(F_heteroclitus.MDPP_res)
-F_heteroclitus.MDPP_res<-subset(F_heteroclitus.MDPP_res,F_heteroclitus.MDPP_res$padj!="NA")
+F_heteroclitus.MDPP_res<-F_heteroclitus.MDPP_res[complete.cases(F_heteroclitus.MDPP_res),]
 dim(F_heteroclitus.MDPP_res)
 F_heteroclitus.MDPP_annotated<-merge(F_heteroclitus.MDPP_res,annotation,by="id")
+F_heteroclitus.MDPP_annotated<-F_heteroclitus.MDPP_annotated[,c(ncol(F_heteroclitus.MDPP_annotated),1:(ncol(F_heteroclitus.MDPP_annotated)-1))]
 write.csv(F_heteroclitus.MDPP_annotated,"F_heteroclitus.MDPP_results_all.csv")
 
 plot(log2(res.1$baseMean), res.1$log2FoldChange, 
@@ -234,18 +248,14 @@ overlap_BW_FWtransfer_BW<-OLlist$Venn_List$BW_FWtransfer_BW
 length(overlap_BW_FWtransfer_BW)
 overlap_transfer_FWtransfer_BW<-OLlist$Venn_List$transfer_FWtransfer_BW
 length(overlap_transfer_FWtransfer_BW)
-overlap_BW_FW<-OLlist$Venn_List$BW_FW
-length(overlap_BW_FW)
-overlap_transfer_FW<-OLlist$Venn_List$transfer_FW
-length(overlap_transfer_FW)
-overlap_transfer_BW<-OLlist$Venn_List$transfer_BW
-length(overlap_transfer_BW)
-combined_BW_FW<-union(overlap_BW_FW,combined_BW_FW)
-length(combined_BW_FW)
-combined_transfer_FW<-union(overlap_transfer_FW,combined_transfer_FW)
-length(combined_transfer_FW)
-combined_transfer_BW<-union(overlap_transfer_BW,combined_transfer_BW)
-length(combined_transfer_BW)
+
+# get lists of unique genes for each comparison
+F_heteroclitus.MDPP_BW_FW<-OLlist$Venn_List$BW_FW
+length(F_heteroclitus.MDPP_BW_FW)
+F_heteroclitus.MDPP_transfer_FW<-OLlist$Venn_List$transfer_FW
+length(F_heteroclitus.MDPP_transfer_FW)
+F_heteroclitus.MDPP_transfer_BW<-OLlist$Venn_List$transfer_BW
+length(F_heteroclitus.MDPP_transfer_BW)
 
 #######
 ##F_chrysotus
@@ -297,22 +307,29 @@ id<-rownames(F_chrysotus_norm_counts)
 F_chrysotus_norm_counts<-cbind(F_chrysotus_norm_counts,id)
 
 # merge res1, res2, res3 with counts
+# "BW","FW"
 res1_df<-as.data.frame(res.1)
+colnames(res1_df)<-paste(colnames(res1_df),"BW_FW", sep='.')
 id<-rownames(res1_df)
 res1_df<-cbind(res1_df,id)
+# "transfer","FW"
 res2_df<-as.data.frame(res.2)
+colnames(res2_df)<-paste(colnames(res2_df),"transfer_FW", sep='.')
 id<-rownames(res2_df)
 res2_df<-cbind(res2_df,id)
+# "transfer","BW"
 res3_df<-as.data.frame(res.3)
-res3_id<-rownames(res3_df)
+colnames(res3_df)<-paste(colnames(res3_df),"transfer_BW", sep='.')
+id<-rownames(res3_df)
 res3_df<-cbind(res3_df,id)
 F_chrysotus_res<-merge(F_chrysotus_norm_counts,res1_df,by="id")
 F_chrysotus_res<-merge(F_chrysotus_res,res2_df,by="id")
 F_chrysotus_res<-merge(F_chrysotus_res,res3_df,by="id")
 dim(F_chrysotus_res)
-F_chrysotus_res<-subset(F_chrysotus_res,F_chrysotus_res$padj!="NA")
+F_chrysotus_res<-F_chrysotus_res[complete.cases(F_chrysotus_res),]
 dim(F_chrysotus_res)
 F_chrysotus_annotated<-merge(F_chrysotus_res,annotation,by="id")
+F_chrysotus_annotated<-F_chrysotus_annotated[,c(ncol(F_chrysotus_annotated),1:(ncol(F_chrysotus_annotated)-1))]
 write.csv(F_chrysotus_annotated,"F_chrysotus_results_all.csv")
 
 plot(log2(res.1$baseMean), res.1$log2FoldChange, 
@@ -345,18 +362,14 @@ overlap_BW_FWtransfer_BW<-OLlist$Venn_List$BW_FWtransfer_BW
 length(overlap_BW_FWtransfer_BW)
 overlap_transfer_FWtransfer_BW<-OLlist$Venn_List$transfer_FWtransfer_BW
 length(overlap_transfer_FWtransfer_BW)
-overlap_BW_FW<-OLlist$Venn_List$BW_FW
-length(overlap_BW_FW)
-overlap_transfer_FW<-OLlist$Venn_List$transfer_FW
-length(overlap_transfer_FW)
-overlap_transfer_BW<-OLlist$Venn_List$transfer_BW
-length(overlap_transfer_BW)
-combined_BW_FW<-union(overlap_BW_FW,combined_BW_FW)
-length(combined_BW_FW)
-combined_transfer_FW<-union(overlap_transfer_FW,combined_transfer_FW)
-length(combined_transfer_FW)
-combined_transfer_BW<-union(overlap_transfer_BW,combined_transfer_BW)
-length(combined_transfer_BW)
+
+# get lists of unique genes for each comparison
+F_chrysotus_BW_FW<-OLlist$Venn_List$BW_FW
+length(F_chrysotus_BW_FW)
+F_chrysotus_transfer_FW<-OLlist$Venn_List$transfer_FW
+length(F_chrysotus_transfer_FW)
+F_chrysotus_transfer_BW<-OLlist$Venn_List$transfer_BW
+length(F_chrysotus_transfer_BW)
 
 #######
 ##F_diaphanus
@@ -409,22 +422,29 @@ id<-rownames(F_diaphanus_norm_counts)
 F_diaphanus_norm_counts<-cbind(F_diaphanus_norm_counts,id)
 
 # merge res1, res2, res3 with counts
+# "BW","FW"
 res1_df<-as.data.frame(res.1)
+colnames(res1_df)<-paste(colnames(res1_df),"BW_FW", sep='.')
 id<-rownames(res1_df)
 res1_df<-cbind(res1_df,id)
+# "transfer","FW"
 res2_df<-as.data.frame(res.2)
+colnames(res2_df)<-paste(colnames(res2_df),"transfer_FW", sep='.')
 id<-rownames(res2_df)
 res2_df<-cbind(res2_df,id)
+# "transfer","BW"
 res3_df<-as.data.frame(res.3)
-res3_id<-rownames(res3_df)
+colnames(res3_df)<-paste(colnames(res3_df),"transfer_BW", sep='.')
+id<-rownames(res3_df)
 res3_df<-cbind(res3_df,id)
 F_diaphanus_res<-merge(F_diaphanus_norm_counts,res1_df,by="id")
 F_diaphanus_res<-merge(F_diaphanus_res,res2_df,by="id")
 F_diaphanus_res<-merge(F_diaphanus_res,res3_df,by="id")
 dim(F_diaphanus_res)
-F_diaphanus_res<-subset(F_diaphanus_res,F_diaphanus_res$padj!="NA")
+F_diaphanus_res<-F_diaphanus_res[complete.cases(F_diaphanus_res),]
 dim(F_diaphanus_res)
 F_diaphanus_annotated<-merge(F_diaphanus_res,annotation,by="id")
+F_diaphanus_annotated<-F_diaphanus_annotated[,c(ncol(F_diaphanus_annotated),1:(ncol(F_diaphanus_annotated)-1))]
 write.csv(F_diaphanus_annotated,"F_diaphanus_results_all.csv")
 
 plot(log2(res.1$baseMean), res.1$log2FoldChange, 
@@ -457,18 +477,14 @@ overlap_BW_FWtransfer_BW<-OLlist$Venn_List$BW_FWtransfer_BW
 length(overlap_BW_FWtransfer_BW)
 overlap_transfer_FWtransfer_BW<-OLlist$Venn_List$transfer_FWtransfer_BW
 length(overlap_transfer_FWtransfer_BW)
-overlap_BW_FW<-OLlist$Venn_List$BW_FW
-length(overlap_BW_FW)
-overlap_transfer_FW<-OLlist$Venn_List$transfer_FW
-length(overlap_transfer_FW)
-overlap_transfer_BW<-OLlist$Venn_List$transfer_BW
-length(overlap_transfer_BW)
-combined_BW_FW<-union(overlap_BW_FW,combined_BW_FW)
-length(combined_BW_FW)
-combined_transfer_FW<-union(overlap_transfer_FW,combined_transfer_FW)
-length(combined_transfer_FW)
-combined_transfer_BW<-union(overlap_transfer_BW,combined_transfer_BW)
-length(combined_transfer_BW)
+
+# get lists of unique genes for each comparison
+F_diaphanus_BW_FW<-OLlist$Venn_List$BW_FW
+length(F_diaphanus_BW_FW)
+F_diaphanus_transfer_FW<-OLlist$Venn_List$transfer_FW
+length(F_diaphanus_transfer_FW)
+F_diaphanus_transfer_BW<-OLlist$Venn_List$transfer_BW
+length(F_diaphanus_transfer_BW)
 
 #######
 ##F_grandis
@@ -521,31 +537,38 @@ id<-rownames(F_grandis_norm_counts)
 F_grandis_norm_counts<-cbind(F_grandis_norm_counts,id)
 
 # merge res1, res2, res3 with counts
+# "BW","FW"
 res1_df<-as.data.frame(res.1)
+colnames(res1_df)<-paste(colnames(res1_df),"BW_FW", sep='.')
 id<-rownames(res1_df)
 res1_df<-cbind(res1_df,id)
+# "transfer","FW"
 res2_df<-as.data.frame(res.2)
+colnames(res2_df)<-paste(colnames(res2_df),"transfer_FW", sep='.')
 id<-rownames(res2_df)
 res2_df<-cbind(res2_df,id)
+# "transfer","BW"
 res3_df<-as.data.frame(res.3)
-res3_id<-rownames(res3_df)
+colnames(res3_df)<-paste(colnames(res3_df),"transfer_BW", sep='.')
+id<-rownames(res3_df)
 res3_df<-cbind(res3_df,id)
 F_grandis_res<-merge(F_grandis_norm_counts,res1_df,by="id")
 F_grandis_res<-merge(F_grandis_res,res2_df,by="id")
 F_grandis_res<-merge(F_grandis_res,res3_df,by="id")
 dim(F_grandis_res)
-F_grandis_res<-subset(F_grandis_res,F_grandis_res$padj!="NA")
+F_grandis_res<-F_grandis_res[complete.cases(F_grandis_res),]
 dim(F_grandis_res)
 F_grandis_annotated<-merge(F_grandis_res,annotation,by="id")
+F_grandis_annotated<-F_grandis_annotated[,c(ncol(F_grandis_annotated),1:(ncol(F_grandis_annotated)-1))]
 write.csv(F_grandis_annotated,"F_grandis_results_all.csv")
 
 plot(log2(res.1$baseMean), res.1$log2FoldChange, 
      col=ifelse(res.1$padj < 0.05, "red","gray67"),
-     main="F. heteroclitus.MDPL (BW vs. FW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
+     main="F. grandis (BW vs. FW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
 abline(h=c(-1,1), col="blue")
 plot(log2(res.2$baseMean), res.2$log2FoldChange, 
      col=ifelse(res.2$padj < 0.05, "red","gray67"),
-     main="F. heteroclitus.MDPL (transfer vs. FW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
+     main="F. grandis (transfer vs. FW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
 abline(h=c(-1,1), col="blue")
 plot(log2(res.3$baseMean), res.3$log2FoldChange, 
      col=ifelse(res.3$padj < 0.05, "red","gray67"),
@@ -569,18 +592,14 @@ overlap_BW_FWtransfer_BW<-OLlist$Venn_List$BW_FWtransfer_BW
 length(overlap_BW_FWtransfer_BW)
 overlap_transfer_FWtransfer_BW<-OLlist$Venn_List$transfer_FWtransfer_BW
 length(overlap_transfer_FWtransfer_BW)
-overlap_BW_FW<-OLlist$Venn_List$BW_FW
-length(overlap_BW_FW)
-overlap_transfer_FW<-OLlist$Venn_List$transfer_FW
-length(overlap_transfer_FW)
-overlap_transfer_BW<-OLlist$Venn_List$transfer_BW
-length(overlap_transfer_BW)
-combined_BW_FW<-union(overlap_BW_FW,combined_BW_FW)
-length(combined_BW_FW)
-combined_transfer_FW<-union(overlap_transfer_FW,combined_transfer_FW)
-length(combined_transfer_FW)
-combined_transfer_BW<-union(overlap_transfer_BW,combined_transfer_BW)
-length(combined_transfer_BW)
+
+# get lists of unique genes for each comparison
+F_grandis_BW_FW<-OLlist$Venn_List$BW_FW
+length(F_grandis_BW_FW)
+F_grandis_transfer_FW<-OLlist$Venn_List$transfer_FW
+length(F_grandis_transfer_FW)
+F_grandis_transfer_BW<-OLlist$Venn_List$transfer_BW
+length(F_grandis_transfer_BW)
 
 #######
 ##F_olivaceous
@@ -633,22 +652,29 @@ id<-rownames(F_olivaceous_norm_counts)
 F_olivaceous_norm_counts<-cbind(F_olivaceous_norm_counts,id)
 
 # merge res1, res2, res3 with counts
+# "BW","FW"
 res1_df<-as.data.frame(res.1)
+colnames(res1_df)<-paste(colnames(res1_df),"BW_FW", sep='.')
 id<-rownames(res1_df)
 res1_df<-cbind(res1_df,id)
+# "transfer","FW"
 res2_df<-as.data.frame(res.2)
+colnames(res2_df)<-paste(colnames(res2_df),"transfer_FW", sep='.')
 id<-rownames(res2_df)
 res2_df<-cbind(res2_df,id)
+# "transfer","BW"
 res3_df<-as.data.frame(res.3)
-res3_id<-rownames(res3_df)
+colnames(res3_df)<-paste(colnames(res3_df),"transfer_BW", sep='.')
+id<-rownames(res3_df)
 res3_df<-cbind(res3_df,id)
 F_olivaceous_res<-merge(F_olivaceous_norm_counts,res1_df,by="id")
 F_olivaceous_res<-merge(F_olivaceous_res,res2_df,by="id")
 F_olivaceous_res<-merge(F_olivaceous_res,res3_df,by="id")
 dim(F_olivaceous_res)
-F_olivaceous_res<-subset(F_olivaceous_res,F_olivaceous_res$padj!="NA")
+F_olivaceous_res<-F_olivaceous_res[complete.cases(F_olivaceous_res),]
 dim(F_olivaceous_res)
 F_olivaceous_annotated<-merge(F_olivaceous_res,annotation,by="id")
+F_olivaceous_annotated<-F_olivaceous_annotated[,c(ncol(F_olivaceous_annotated),1:(ncol(F_olivaceous_annotated)-1))]
 write.csv(F_olivaceous_annotated,"F_olivaceous_results_all.csv")
 
 plot(log2(res.1$baseMean), res.1$log2FoldChange, 
@@ -657,11 +683,11 @@ plot(log2(res.1$baseMean), res.1$log2FoldChange,
 abline(h=c(-1,1), col="blue")
 plot(log2(res.2$baseMean), res.2$log2FoldChange, 
      col=ifelse(res.2$padj < 0.05, "red","gray67"),
-     main="F. heteroclitus.MDPL (transfer vs. FW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
+     main="F. olivaceous (transfer vs. FW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
 abline(h=c(-1,1), col="blue")
 plot(log2(res.3$baseMean), res.3$log2FoldChange, 
      col=ifelse(res.3$padj < 0.05, "red","gray67"),
-     main="F. heteroclitus.MDPL (transfer vs. BW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
+     main="F. olivaceous (transfer vs. BW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
 abline(h=c(-1,1), col="blue")
 m<-res1_filtered$id
 length(m)
@@ -681,18 +707,14 @@ overlap_BW_FWtransfer_BW<-OLlist$Venn_List$BW_FWtransfer_BW
 length(overlap_BW_FWtransfer_BW)
 overlap_transfer_FWtransfer_BW<-OLlist$Venn_List$transfer_FWtransfer_BW
 length(overlap_transfer_FWtransfer_BW)
-overlap_BW_FW<-OLlist$Venn_List$BW_FW
-length(overlap_BW_FW)
-overlap_transfer_FW<-OLlist$Venn_List$transfer_FW
-length(overlap_transfer_FW)
-overlap_transfer_BW<-OLlist$Venn_List$transfer_BW
-length(overlap_transfer_BW)
-combined_BW_FW<-union(overlap_BW_FW,combined_BW_FW)
-length(combined_BW_FW)
-combined_transfer_FW<-union(overlap_transfer_FW,combined_transfer_FW)
-length(combined_transfer_FW)
-combined_transfer_BW<-union(overlap_transfer_BW,combined_transfer_BW)
-length(combined_transfer_BW)
+
+# get lists of unique genes for each comparison
+F_olivaceous_BW_FW<-OLlist$Venn_List$BW_FW
+length(F_olivaceous_BW_FW)
+F_olivaceous_transfer_FW<-OLlist$Venn_List$transfer_FW
+length(F_olivaceous_transfer_FW)
+F_olivaceous_transfer_BW<-OLlist$Venn_List$transfer_BW
+length(F_olivaceous_transfer_BW)
 
 #######
 ##F_parvapinis
@@ -745,22 +767,29 @@ id<-rownames(F_parvapinis_norm_counts)
 F_parvapinis_norm_counts<-cbind(F_parvapinis_norm_counts,id)
 
 # merge res1, res2, res3 with counts
+# "BW","FW"
 res1_df<-as.data.frame(res.1)
+colnames(res1_df)<-paste(colnames(res1_df),"BW_FW", sep='.')
 id<-rownames(res1_df)
 res1_df<-cbind(res1_df,id)
+# "transfer","FW"
 res2_df<-as.data.frame(res.2)
+colnames(res2_df)<-paste(colnames(res2_df),"transfer_FW", sep='.')
 id<-rownames(res2_df)
 res2_df<-cbind(res2_df,id)
+# "transfer","BW"
 res3_df<-as.data.frame(res.3)
-res3_id<-rownames(res3_df)
+colnames(res3_df)<-paste(colnames(res3_df),"transfer_BW", sep='.')
+id<-rownames(res3_df)
 res3_df<-cbind(res3_df,id)
 F_parvapinis_res<-merge(F_parvapinis_norm_counts,res1_df,by="id")
 F_parvapinis_res<-merge(F_parvapinis_res,res2_df,by="id")
 F_parvapinis_res<-merge(F_parvapinis_res,res3_df,by="id")
 dim(F_parvapinis_res)
-F_parvapinis_res<-subset(F_parvapinis_res,F_parvapinis_res$padj!="NA")
+F_parvapinis_res<-F_parvapinis_res[complete.cases(F_parvapinis_res),]
 dim(F_parvapinis_res)
 F_parvapinis_annotated<-merge(F_parvapinis_res,annotation,by="id")
+F_parvapinis_annotated<-F_parvapinis_annotated[,c(ncol(F_parvapinis_annotated),1:(ncol(F_parvapinis_annotated)-1))]
 write.csv(F_parvapinis_annotated,"F_parvapinis_results_all.csv")
 
 plot(log2(res.1$baseMean), res.1$log2FoldChange, 
@@ -769,11 +798,11 @@ plot(log2(res.1$baseMean), res.1$log2FoldChange,
 abline(h=c(-1,1), col="blue")
 plot(log2(res.2$baseMean), res.2$log2FoldChange, 
      col=ifelse(res.2$padj < 0.05, "red","gray67"),
-     main="F. heteroclitus.MDPL (transfer vs. FW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
+     main="F. parvapinis (transfer vs. FW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
 abline(h=c(-1,1), col="blue")
 plot(log2(res.3$baseMean), res.3$log2FoldChange, 
      col=ifelse(res.3$padj < 0.05, "red","gray67"),
-     main="F. heteroclitus.MDPL (transfer vs. BW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
+     main="F. parvapinis (transfer vs. BW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
 abline(h=c(-1,1), col="blue")
 m<-res1_filtered$id
 length(m)
@@ -793,18 +822,14 @@ overlap_BW_FWtransfer_BW<-OLlist$Venn_List$BW_FWtransfer_BW
 length(overlap_BW_FWtransfer_BW)
 overlap_transfer_FWtransfer_BW<-OLlist$Venn_List$transfer_FWtransfer_BW
 length(overlap_transfer_FWtransfer_BW)
-overlap_BW_FW<-OLlist$Venn_List$BW_FW
-length(overlap_BW_FW)
-overlap_transfer_FW<-OLlist$Venn_List$transfer_FW
-length(overlap_transfer_FW)
-overlap_transfer_BW<-OLlist$Venn_List$transfer_BW
-length(overlap_transfer_BW)
-combined_BW_FW<-union(overlap_BW_FW,combined_BW_FW)
-length(combined_BW_FW)
-combined_transfer_FW<-union(overlap_transfer_FW,combined_transfer_FW)
-length(combined_transfer_FW)
-combined_transfer_BW<-union(overlap_transfer_BW,combined_transfer_BW)
-length(combined_transfer_BW)
+
+# get lists of unique genes for each comparison
+F_parvapinis_BW_FW<-OLlist$Venn_List$BW_FW
+length(F_parvapinis_BW_FW)
+F_parvapinis_transfer_FW<-OLlist$Venn_List$transfer_FW
+length(F_parvapinis_transfer_FW)
+F_parvapinis_transfer_BW<-OLlist$Venn_List$transfer_BW
+length(F_parvapinis_transfer_BW)
 
 #######
 ##F_rathbuni
@@ -858,28 +883,34 @@ id<-rownames(F_rathbuni_norm_counts)
 F_rathbuni_norm_counts<-cbind(F_rathbuni_norm_counts,id)
 
 # merge res1, res2, res3 with counts
+# "BW","FW"
 res1_df<-as.data.frame(res.1)
+colnames(res1_df)<-paste(colnames(res1_df),"BW_FW", sep='.')
 id<-rownames(res1_df)
 res1_df<-cbind(res1_df,id)
+# "transfer","FW"
 res2_df<-as.data.frame(res.2)
+colnames(res2_df)<-paste(colnames(res2_df),"transfer_FW", sep='.')
 id<-rownames(res2_df)
 res2_df<-cbind(res2_df,id)
+# "transfer","BW"
 res3_df<-as.data.frame(res.3)
-res3_id<-rownames(res3_df)
+colnames(res3_df)<-paste(colnames(res3_df),"transfer_BW", sep='.')
+id<-rownames(res3_df)
 res3_df<-cbind(res3_df,id)
 F_rathbuni_res<-merge(F_rathbuni_norm_counts,res1_df,by="id")
 F_rathbuni_res<-merge(F_rathbuni_res,res2_df,by="id")
 F_rathbuni_res<-merge(F_rathbuni_res,res3_df,by="id")
 dim(F_rathbuni_res)
-F_rathbuni_res<-subset(F_rathbuni_res,F_rathbuni_res$padj!="NA")
+F_rathbuni_res<-F_rathbuni_res[complete.cases(F_rathbuni_res),]
 dim(F_rathbuni_res)
 F_rathbuni_annotated<-merge(F_rathbuni_res,annotation,by="id")
+F_rathbuni_annotated<-F_rathbuni_annotated[,c(ncol(F_rathbuni_annotated),1:(ncol(F_rathbuni_annotated)-1))]
 write.csv(F_rathbuni_annotated,"F_rathbuni_results_all.csv")
-
 
 plot(log2(res.1$baseMean), res.1$log2FoldChange, 
      col=ifelse(res.1$padj < 0.05, "red","gray67"),
-     main="F. heteroclitus.MDPL (BW vs. FW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
+     main="F. rathbuni (BW vs. FW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
 abline(h=c(-1,1), col="blue")
 plot(log2(res.2$baseMean), res.2$log2FoldChange, 
      col=ifelse(res.2$padj < 0.05, "red","gray67"),
@@ -887,7 +918,7 @@ plot(log2(res.2$baseMean), res.2$log2FoldChange,
 abline(h=c(-1,1), col="blue")
 plot(log2(res.3$baseMean), res.3$log2FoldChange, 
      col=ifelse(res.3$padj < 0.05, "red","gray67"),
-     main="F. heteroclitus.MDPL (transfer vs. BW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
+     main="F. rathbuni (transfer vs. BW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
 abline(h=c(-1,1), col="blue")
 m<-res1_filtered$id
 length(m)
@@ -907,21 +938,17 @@ overlap_BW_FWtransfer_BW<-OLlist$Venn_List$BW_FWtransfer_BW
 length(overlap_BW_FWtransfer_BW)
 overlap_transfer_FWtransfer_BW<-OLlist$Venn_List$transfer_FWtransfer_BW
 length(overlap_transfer_FWtransfer_BW)
-overlap_BW_FW<-OLlist$Venn_List$BW_FW
-length(overlap_BW_FW)
-overlap_transfer_FW<-OLlist$Venn_List$transfer_FW
-length(overlap_transfer_FW)
-overlap_transfer_BW<-OLlist$Venn_List$transfer_BW
-length(overlap_transfer_BW)
-combined_BW_FW<-union(overlap_BW_FW,combined_BW_FW)
-length(combined_BW_FW)
-combined_transfer_FW<-union(overlap_transfer_FW,combined_transfer_FW)
-length(combined_transfer_FW)
-combined_transfer_BW<-union(overlap_transfer_BW,combined_transfer_BW)
-length(combined_transfer_BW)
+
+# get lists of unique genes for each comparison
+F_rathbuni_BW_FW<-OLlist$Venn_List$BW_FW
+length(F_rathbuni_BW_FW)
+F_rathbuni_transfer_FW<-OLlist$Venn_List$transfer_FW
+length(F_rathbuni_transfer_FW)
+F_rathbuni_transfer_BW<-OLlist$Venn_List$transfer_BW
+length(F_rathbuni_transfer_BW)
 
 #######
-##F_goodei
+##L_goodei
 #######
 
 L_goodei<-data.1[,c(112:120)]
@@ -971,22 +998,29 @@ id<-rownames(L_goodei_norm_counts)
 L_goodei_norm_counts<-cbind(L_goodei_norm_counts,id)
 
 # merge res1, res2, res3 with counts
+# "BW","FW"
 res1_df<-as.data.frame(res.1)
+colnames(res1_df)<-paste(colnames(res1_df),"BW_FW", sep='.')
 id<-rownames(res1_df)
 res1_df<-cbind(res1_df,id)
+# "transfer","FW"
 res2_df<-as.data.frame(res.2)
+colnames(res2_df)<-paste(colnames(res2_df),"transfer_FW", sep='.')
 id<-rownames(res2_df)
 res2_df<-cbind(res2_df,id)
+# "transfer","BW"
 res3_df<-as.data.frame(res.3)
-res3_id<-rownames(res3_df)
+colnames(res3_df)<-paste(colnames(res3_df),"transfer_BW", sep='.')
+id<-rownames(res3_df)
 res3_df<-cbind(res3_df,id)
 L_goodei_res<-merge(L_goodei_norm_counts,res1_df,by="id")
 L_goodei_res<-merge(L_goodei_res,res2_df,by="id")
 L_goodei_res<-merge(L_goodei_res,res3_df,by="id")
 dim(L_goodei_res)
-L_goodei_res<-subset(L_goodei_res,L_goodei_res$padj!="NA")
+L_goodei_res<-L_goodei_res[complete.cases(L_goodei_res),]
 dim(L_goodei_res)
 L_goodei_annotated<-merge(L_goodei_res,annotation,by="id")
+L_goodei_annotated<-L_goodei_annotated[,c(ncol(L_goodei_annotated),1:(ncol(L_goodei_annotated)-1))]
 write.csv(L_goodei_annotated,"L_goodei_results_all.csv")
 
 
@@ -996,11 +1030,11 @@ plot(log2(res.1$baseMean), res.1$log2FoldChange,
 abline(h=c(-1,1), col="blue")
 plot(log2(res.2$baseMean), res.2$log2FoldChange, 
      col=ifelse(res.2$padj < 0.05, "red","gray67"),
-     main="L_goodei (transfer vs. FW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
+     main="L. goodei (transfer vs. FW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
 abline(h=c(-1,1), col="blue")
 plot(log2(res.3$baseMean), res.3$log2FoldChange, 
      col=ifelse(res.3$padj < 0.05, "red","gray67"),
-     main="F. heteroclitus.MDPL (transfer vs. BW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
+     main="L. goodei (transfer vs. BW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
 abline(h=c(-1,1), col="blue")
 m<-res1_filtered$id
 length(m)
@@ -1020,18 +1054,14 @@ overlap_BW_FWtransfer_BW<-OLlist$Venn_List$BW_FWtransfer_BW
 length(overlap_BW_FWtransfer_BW)
 overlap_transfer_FWtransfer_BW<-OLlist$Venn_List$transfer_FWtransfer_BW
 length(overlap_transfer_FWtransfer_BW)
-overlap_BW_FW<-OLlist$Venn_List$BW_FW
-length(overlap_BW_FW)
-overlap_transfer_FW<-OLlist$Venn_List$transfer_FW
-length(overlap_transfer_FW)
-overlap_transfer_BW<-OLlist$Venn_List$transfer_BW
-length(overlap_transfer_BW)
-combined_BW_FW<-union(overlap_BW_FW,combined_BW_FW)
-length(combined_BW_FW)
-combined_transfer_FW<-union(overlap_transfer_FW,combined_transfer_FW)
-length(combined_transfer_FW)
-combined_transfer_BW<-union(overlap_transfer_BW,combined_transfer_BW)
-length(combined_transfer_BW)
+
+# get lists of unique genes for each comparison
+L_goodei_BW_FW<-OLlist$Venn_List$BW_FW
+length(L_goodei_BW_FW)
+L_goodei_transfer_FW<-OLlist$Venn_List$transfer_FW
+length(L_goodei_transfer_FW)
+L_goodei_transfer_BW<-OLlist$Venn_List$transfer_BW
+length(L_goodei_transfer_BW)
 
 #######
 ##L_parva
@@ -1083,22 +1113,29 @@ id<-rownames(L_parva_norm_counts)
 L_parva_norm_counts<-cbind(L_parva_norm_counts,id)
 
 # merge res1, res2, res3 with counts
+# "BW","FW"
 res1_df<-as.data.frame(res.1)
+colnames(res1_df)<-paste(colnames(res1_df),"BW_FW", sep='.')
 id<-rownames(res1_df)
 res1_df<-cbind(res1_df,id)
+# "transfer","FW"
 res2_df<-as.data.frame(res.2)
+colnames(res2_df)<-paste(colnames(res2_df),"transfer_FW", sep='.')
 id<-rownames(res2_df)
 res2_df<-cbind(res2_df,id)
+# "transfer","BW"
 res3_df<-as.data.frame(res.3)
-res3_id<-rownames(res3_df)
+colnames(res3_df)<-paste(colnames(res3_df),"transfer_BW", sep='.')
+id<-rownames(res3_df)
 res3_df<-cbind(res3_df,id)
 L_parva_res<-merge(L_parva_norm_counts,res1_df,by="id")
 L_parva_res<-merge(L_parva_res,res2_df,by="id")
 L_parva_res<-merge(L_parva_res,res3_df,by="id")
 dim(L_parva_res)
-L_parva_res<-subset(L_parva_res,L_parva_res$padj!="NA")
+L_parva_res<-L_parva_res[complete.cases(L_parva_res),]
 dim(L_parva_res)
 L_parva_annotated<-merge(L_parva_res,annotation,by="id")
+L_parva_annotated<-L_parva_annotated[,c(ncol(L_parva_annotated),1:(ncol(L_parva_annotated)-1))]
 write.csv(L_parva_annotated,"L_parva_results_all.csv")
 
 plot(log2(res.1$baseMean), res.1$log2FoldChange, 
@@ -1131,25 +1168,71 @@ overlap_BW_FWtransfer_BW<-OLlist$Venn_List$BW_FWtransfer_BW
 length(overlap_BW_FWtransfer_BW)
 overlap_transfer_FWtransfer_BW<-OLlist$Venn_List$transfer_FWtransfer_BW
 length(overlap_transfer_FWtransfer_BW)
-overlap_BW_FW<-OLlist$Venn_List$BW_FW
-length(overlap_BW_FW)
-overlap_transfer_FW<-OLlist$Venn_List$transfer_FW
-length(overlap_transfer_FW)
-overlap_transfer_BW<-OLlist$Venn_List$transfer_BW
-length(overlap_transfer_BW)
-combined_BW_FW<-union(overlap_BW_FW,combined_BW_FW)
-length(combined_BW_FW)
-combined_transfer_FW<-union(overlap_transfer_FW,combined_transfer_FW)
-length(combined_transfer_FW)
-combined_transfer_BW<-union(overlap_transfer_BW,combined_transfer_BW)
-length(combined_transfer_BW)
+
+# get lists of unique genes for each comparison
+L_parva_BW_FW<-OLlist$Venn_List$BW_FW
+length(L_parva_BW_FW)
+L_parva_transfer_FW<-OLlist$Venn_List$transfer_FW
+length(L_parva_transfer_FW)
+L_parva_transfer_BW<-OLlist$Venn_List$transfer_BW
+length(L_parva_transfer_BW)
 
 
-m<-combined_BW_FW
+# get list of unique results from each species
+# BW_FW
+length(F_heteroclitus.MDPL_BW_FW)
+length(F_heteroclitus.MDPP_BW_FW)
+length(F_chrysotus_BW_FW)
+length(F_diaphanus_BW_FW)
+length(F_grandis_BW_FW)
+length(F_olivaceous_BW_FW)
+length(F_parvapinis_BW_FW)
+length(F_rathbuni_BW_FW)
+length(L_goodei_BW_FW)
+length(L_parva_BW_FW)
+# transfer_FW
+length(F_heteroclitus.MDPL_transfer_FW)
+length(F_heteroclitus.MDPP_transfer_FW)
+length(F_chrysotus_transfer_FW)
+length(F_diaphanus_transfer_FW)
+length(F_grandis_transfer_FW)
+length(F_olivaceous_transfer_FW)
+length(F_parvapinis_transfer_FW)
+length(F_rathbuni_transfer_FW)
+length(L_goodei_transfer_FW)
+length(L_parva_transfer_FW)
+# transfer_BW
+length(F_heteroclitus.MDPL_transfer_BW)
+length(F_heteroclitus.MDPP_transfer_BW)
+length(F_chrysotus_transfer_BW)
+length(F_diaphanus_transfer_BW)
+length(F_grandis_transfer_BW)
+length(F_olivaceous_transfer_BW)
+length(F_parvapinis_transfer_BW)
+length(F_rathbuni_transfer_BW)
+length(L_goodei_transfer_BW)
+length(L_parva_transfer_BW)
+
+all_transfer_BW <- list(F_heteroclitus.MDPL_transfer_BW,F_heteroclitus.MDPP_transfer_BW,F_chrysotus_transfer_BW,
+                        F_diaphanus_transfer_BW, F_grandis_transfer_BW,F_olivaceous_transfer_BW,F_parvapinis_transfer_BW,
+                        F_rathbuni_transfer_BW,L_goodei_transfer_BW,L_parva_transfer_BW)
+
+all_transfer_FW <- list(F_heteroclitus.MDPL_transfer_FW,F_heteroclitus.MDPP_transfer_FW,F_chrysotus_transfer_FW,
+                        F_diaphanus_transfer_FW,F_grandis_transfer_FW,F_olivaceous_transfer_FW,F_parvapinis_transfer_FW,
+                        F_rathbuni_transfer_FW,L_goodei_transfer_FW,L_parva_transfer_FW)
+all_BW_FW <- list(F_heteroclitus.MDPL_BW_FW,F_heteroclitus.MDPP_BW_FW,F_chrysotus_BW_FW,F_diaphanus_BW_FW,
+                  F_grandis_BW_FW,F_olivaceous_BW_FW,F_parvapinis_BW_FW,F_rathbuni_BW_FW,L_goodei_BW_FW,L_parva_BW_FW)
+
+
+all_overlap_BW_FW <- Reduce(intersect, all_BW_FW)
+all_overlap_transfer_FW <- Reduce(intersect, all_transfer_FW)
+all_overlap_transfer_BW <- Reduce(intersect, all_transfer_BW)
+
+m<-all_overlap_BW_FW
 length(m)
-n<-combined_transfer_FW
+n<-all_overlap_transfer_FW
 length(n)
-o<-combined_transfer_BW
+o<-all_overlap_transfer_BW
 length(o)
 setlist <- list(BW_FW=as.vector(m),transfer_FW=as.vector(n),transfer_BW=as.vector(o))
 OLlist <- overLapper(setlist=setlist, sep="", type="vennsets")
@@ -1158,10 +1241,11 @@ vennPlot(counts=counts)
 
 
 
+
 overlap_BW_FW_transfer <- OLlist$Venn_List$BW_FWtransfer_FW
-overlap_BW_FW_transfer <- union(overlap_BW_FW_transfer,OLlist$Venn_List$BW_FWtransfer_BW)
-overlap_BW_FW_transfer <- union(overlap_BW_FW_transfer,OLlist$Venn_List$transfer_FWtransfer_BW)
-overlap_BW_FW_transfer <- union(overlap_BW_FW_transfer,OLlist$Venn_List$BW_FWtransfer_FWtransfer_BW)
+overlap_BW_FW_transfer <- intersect(overlap_BW_FW_transfer,OLlist$Venn_List$BW_FWtransfer_BW)
+overlap_BW_FW_transfer <- intersect(overlap_BW_FW_transfer,OLlist$Venn_List$transfer_FWtransfer_BW)
+overlap_BW_FW_transfer <- intersect(overlap_BW_FW_transfer,OLlist$Venn_List$BW_FWtransfer_FWtransfer_BW)
 
 
 
@@ -1275,7 +1359,7 @@ clusterCols <- rainbow(length(unique(mycl)))
 myClusterSideBar <- clusterCols[mycl]
 myheatcol <- greenred(75)
 png(filename="heatmap_BW_FW.png",width=3.25,height=3.25,units="in",res=1200,pointsize = 4)
-heatmap.2(d, main="Killifish (M,B,F), union of padj<0.05, log2FC +-1", 
+heatmap.2(d, main="Killifish (M,B,F), intersect of padj<0.05, log2FC +-1", 
           Rowv=as.dendrogram(hr),
           cexRow=0.45,cexCol=0.45,srtCol= 90,
           adjCol = c(NA,0),offsetCol=2,offsetRow=0.1,
@@ -1295,7 +1379,7 @@ clusterCols <- rainbow(length(unique(mycl)))
 myClusterSideBar <- clusterCols[mycl]
 myheatcol <- greenred(75)
 png(filename="heatmap_sig_counts_transfer_FW.png",width=3.25,height=3.25,units="in",res=1200,pointsize = 4)
-heatmap.2(d, main="Killifish (M,B,F), union of padj<0.05, log2FC +-1", 
+heatmap.2(d, main="Killifish (M,B,F), intersect of padj<0.05, log2FC +-1", 
           Rowv=as.dendrogram(hr),
           cexRow=0.45,cexCol=0.45,srtCol= 90,
           adjCol = c(NA,0),offsetCol=2,offsetRow=0.1,
@@ -1314,7 +1398,7 @@ clusterCols <- rainbow(length(unique(mycl)))
 myClusterSideBar <- clusterCols[mycl]
 myheatcol <- greenred(75)
 png(filename="heatmap_transfer_BW.png",width=3.25,height=3.25,units="in",res=1200,pointsize = 4)
-heatmap.2(d, main="Killifish (M,B,F), union of padj<0.05, log2FC +-1", 
+heatmap.2(d, main="Killifish (M,B,F), intersect of padj<0.05, log2FC +-1", 
           Rowv=as.dendrogram(hr),
           cexRow=0.45,cexCol=0.45,srtCol= 90,
           adjCol = c(NA,0),offsetCol=2,offsetRow=0.1,
@@ -1323,5 +1407,7 @@ heatmap.2(d, main="Killifish (M,B,F), union of padj<0.05, log2FC +-1",
           density.info="none", 
           trace="none", RowSideColors= myClusterSideBar)
 dev.off()
+
+
 
 
