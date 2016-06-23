@@ -6,13 +6,142 @@ source('~/Documents/scripts/overLapper_original.R')
 setwd("~/Documents/UCDavis/osmotic")
 
 data.1<-read.csv("killifish_allcounts.csv")
-annotation<-read.table("kfish2rae5g.annotation.transcript.name.id")
+annotation<-read.table("kfish2rae5g.annotation.transcript.name.id", fill=TRUE,header=FALSE)
 colnames(annotation)<-c("id","gene")
 head(data.1)
 colnames(data.1)
 id<-data.1$GeneID
 rownames(data.1)<-id
 head(data.1)
+
+######
+##F_similis
+######
+F_similis<-data.1[,c(99:107)]
+colnames(F_similis)
+col.names<-colnames(F_similis)
+head(F_similis)
+conditions = sapply(strsplit(col.names,"_"),`[`,4)
+genus = sapply(strsplit(col.names,"_"),`[`,1)
+species = sapply(strsplit(col.names,"_"),`[`,2)
+genus_species = paste(genus,species,sep="_")
+pop = sapply(strsplit(col.names,"_"),`[`,3)
+genus_species_pop = paste(genus_species,pop,sep=".")
+genus_species = gsub(".NA", "", genus_species_pop)
+ExpDesign <- data.frame(row.names=colnames(F_similis), condition = conditions,genus_species = genus_species)
+ExpDesign
+cds<-DESeqDataSetFromMatrix(countData=F_similis, 
+                            colData=ExpDesign,design= ~ condition)
+cds<-DESeq(cds, betaPrior=FALSE)
+log_cds<-rlog(cds)
+plotPCAWithSampleNames(log_cds,intgroup="condition",ntop=40000)
+res.1<-results(cds,contrast=c("condition","BW","FW"))
+dim(res.1)
+res.2<-results(cds,contrast=c("condition","transfer","FW"))
+res.3<-results(cds,contrast=c("condition","transfer","BW"))
+resultsNames(cds)
+res1_ordered <-as.data.frame(res.1[order(res.1$padj),])
+dim(res1_ordered)
+res1_filtered <-subset(res1_ordered,res1_ordered$padj<0.05)
+res1_filtered <-subset(res1_filtered,res1_filtered$log2FoldChange>1 | res1_filtered$log2FoldChange< -1)
+id<-rownames(res1_filtered)
+res1_filtered<-cbind(res1_filtered,id)
+dim(res1_filtered)
+res2_ordered <-as.data.frame(res.2[order(res.2$padj),])
+res2_filtered<-subset(res2_ordered,res2_ordered$padj<0.05)
+res2_filtered <-subset(res2_filtered,res2_filtered$log2FoldChange>1 | res2_filtered$log2FoldChange< -1)
+id<-rownames(res2_filtered)
+res2_filtered<-cbind(res2_filtered,id)
+res3_ordered<-as.data.frame(res.3[order(res.3$padj),])
+res3_filtered<-subset(res3_ordered,res3_ordered$padj<0.05)
+res3_filtered <-subset(res3_filtered,res3_filtered$log2FoldChange>1 | res3_filtered$log2FoldChange< -1)
+id<-rownames(res3_filtered)
+res3_filtered<-cbind(res3_filtered,id)
+
+# get normalized counts
+# add id column
+F_similis_norm_counts<-counts(cds,normalized=TRUE)
+id<-rownames(F_similis_norm_counts)
+F_similis_norm_counts<-cbind(F_similis_norm_counts,id)
+
+# merge res1, res2, res3 with counts
+# "BW","FW"
+res1_df<-as.data.frame(res.1)
+colnames(res1_df)<-paste(colnames(res1_df),"BW_FW", sep='.')
+id<-rownames(res1_df)
+res1_df<-cbind(res1_df,id)
+dim(res1_df)
+# "transfer","FW"
+res2_df<-as.data.frame(res.2)
+colnames(res2_df)<-paste(colnames(res2_df),"transfer_FW", sep='.')
+id<-rownames(res2_df)
+res2_df<-cbind(res2_df,id)
+dim(res2_df)
+# "transfer","BW"
+res3_df<-as.data.frame(res.3)
+colnames(res3_df)<-paste(colnames(res3_df),"transfer_BW", sep='.')
+id<-rownames(res3_df)
+res3_df<-cbind(res3_df,id)
+dim(res3_df)
+F_similis_res<-merge(F_similis_norm_counts,res1_df,by="id")
+dim(F_similis_res)
+colnames(F_similis_res)
+F_similis_res<-merge(F_similis_res,res2_df,by="id")
+dim(F_similis_res)
+colnames(F_similis_res)
+F_similis_res<-merge(F_similis_res,res3_df,by="id")
+dim(F_similis_res)
+colnames(F_similis_res)
+head(F_similis_res)
+# remove rows with NA
+F_similis_res<-F_similis_res[complete.cases(F_similis_res),]
+dim(F_similis_res)
+F_similis_annotated<-merge(F_similis_res,annotation,by="id")
+#F_similis_annotated<-F_similis_annotated[,c(ncol(F_similis_annotated),1:(ncol(F_similis_annotated)-1))]
+write.csv(F_similis_annotated,"F_similis_results_all.csv")
+
+plot(log2(res.1$baseMean), res.1$log2FoldChange, 
+     col=ifelse(res.1$padj < 0.05, "red","gray67"),
+     main="F. similis (BW vs. FW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
+abline(h=c(-1,1), col="blue")
+plot(log2(res.2$baseMean), res.2$log2FoldChange, 
+     col=ifelse(res.2$padj < 0.05, "red","gray67"),
+     main="F. similis (transfer vs. FW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
+abline(h=c(-1,1), col="blue")
+plot(log2(res.3$baseMean), res.3$log2FoldChange, 
+     col=ifelse(res.3$padj < 0.05, "red","gray67"),
+     main="F. similis (transfer vs. BW) (padj<0.05)",xlim=c(1,15),pch=20,cex=1)
+abline(h=c(-1,1), col="blue")
+m<-res1_filtered$id
+length(m)
+n<-res2_filtered$id
+length(n)
+o<-res3_filtered$id
+length(o)
+setlist <- list(BW_FW=as.vector(m),transfer_FW=as.vector(n),transfer_BW=as.vector(o))
+OLlist <- overLapper(setlist=setlist, sep="", type="vennsets")
+counts <- sapply(OLlist$Venn_List, length)
+vennPlot(counts=counts)
+
+# extract intersections:
+
+names(OLlist$Venn_List)
+overlap_BW_FWtransfer_FW<-OLlist$Venn_List$BW_FWtransfer_FW
+length(overlap_BW_FWtransfer_FW)
+overlap_BW_FWtransfer_BW<-OLlist$Venn_List$BW_FWtransfer_BW
+length(overlap_BW_FWtransfer_BW)
+overlap_transfer_FWtransfer_BW<-OLlist$Venn_List$transfer_FWtransfer_BW
+length(overlap_transfer_FWtransfer_BW)
+
+# get lists of unique genes for each comparison
+F_similis_BW_FW<-OLlist$Venn_List$BW_FW
+length(F_similis_BW_FW)
+F_similis_transfer_FW<-OLlist$Venn_List$transfer_FW
+length(F_similis_transfer_FW)
+F_similis_transfer_BW<-OLlist$Venn_List$transfer_BW
+length(F_similis_transfer_BW)
+
+
 
 ######
 ##F_heteroclitus.MDPL
@@ -96,7 +225,7 @@ F_heteroclitus.MDPL_res<-F_heteroclitus.MDPL_res[complete.cases(F_heteroclitus.M
 dim(F_heteroclitus.MDPL_res)
 F_heteroclitus.MDPL_annotated<-merge(F_heteroclitus.MDPL_res,annotation,by="id")
 F_heteroclitus.MDPL_annotated<-F_heteroclitus.MDPL_annotated[,c(ncol(F_heteroclitus.MDPL_annotated),1:(ncol(F_heteroclitus.MDPL_annotated)-1))]
-write.csv(F_heteroclitus.MDPL_annotated,"F_heteroclitus.MDPL_results_all.csv")
+#write.csv(F_heteroclitus.MDPL_annotated,"F_heteroclitus.MDPL_results_all.csv")
 
 plot(log2(res.1$baseMean), res.1$log2FoldChange, 
      col=ifelse(res.1$padj < 0.05, "red","gray67"),
