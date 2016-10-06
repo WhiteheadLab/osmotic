@@ -1,70 +1,115 @@
 import os
 import os.path
 from os.path import basename
+from urllib import urlopen
+from urlparse import urlparse
 import subprocess
 from subprocess import Popen, PIPE
+import urllib
+import shutil
+import glob
+# custom Lisa module
 import clusterfunc
+import pandas as pd
 
+def get_pairs(listoffiles,basedir):
+        pairs_dictionary={}
+        for basefilename in listoffiles:
+                if basefilename.endswith(".fastq.gz"):
+                        filename=basedir+basefilename
+                        fields=basefilename.split("_")
+                        sample_name_info=fields[:-1]
+                        sample_name="_".join(sample_name_info)
+                        if sample_name in pairs_dictionary.keys():
+                                pairs_dictionary[sample_name].append(basedir+basefilename)
+                        else:
+                                pairs_dictionary[sample_name]=[basedir+basefilename]
+        return pairs_dictionary
 
-
-def get_assemblies(assemblydir,readsdir):
-	#genus_species_dirs=os.listdir(readsdir)
-	genus_species_dirs=["F_heteroclitus.MDPL","F_heteroclitus.MDPP"]
-	for genus_species_name in genus_species_dirs:
-		genus_species=genus_species_name.split(".")[0]
-		genus_species_dir=assemblydir+genus_species+"/"
-		reads=readsdir+genus_species+"/"+"diginorm/"
-		left=reads+genus_species_name+".left.fq"
-		right=reads+genus_species_name+".right.fq"
-		if os.path.isfile(left):
-			print left
-		else:
-			print "there's a problem:",left
-		if os.path.isfile(right):
-			print right
-		else:
-			print "there's a problem:",right
-		trinity_out_dir=assemblydir+genus_species_name+"/"
-		trinity_fasta=trinity_out_dir+"Trinity.fasta"
-		fixed_trinity_fasta=fix_fasta(trinity_fasta,trinity_out_dir,genus_species_name)
-		print fixed_trinity_fasta
-		#transrate_command=transrate(trinity_out_dir,trinity_out_dir,fixed_trinity_fasta,fixed_trinity_fasta2,genus_species,left,right,assemblydir)
-        	#print transrate_command
-		#transrate_command=[transrate_command]
-		#module_load_list=["blast/2.2.29"]
-        	#process_name="transrate"
-        	#clusterfunc.sbatch_file(genus_species_dir,process_name,module_load_list,genus_species,transrate_command)
-
-#def transrate(trinity_out_dir1,trinity_out_dir2,fixed_trinity_fasta1,fixed_trinity_fasta2,genus_species,left,right,assemblydir):
-#	transrate_command="""
-#transrate --assembly {},{} \\
-#--left {} \\
-#--right {} \\
-#--reference /home/ljcohen/reference/kfish2rae5/kfish2rae5g.mrna.combined \\
-#--threads 32
-#""".format(fixed_trinity_fasta1,fixed_trinity_fasta2,left,right)	
-
-#	transrate_command="""
-#transrate --assembly {} \\
-#--reference /home/ljcohen/reference/kf2evg367mixx11/kfish2evg367mixx11pub2.mrna \\
-#--output {}kf2evg367mixx11.transrate/ \\
-#--threads 32
-#""".format(fixed_trinity_fasta,trinity_out_dir)
-#	return transrate_command
-
-#--reference /home/ljcohen/reference/kfish2rae5/kfish2rae5g.mrna.combined
-#--reference /home/ljcohen/reference/kf2evg367mixx11/kfish2evg367mixx11pub2.mrna \\
-
-def fix_fasta(trinity_fasta,trinity_dir,sample):
-	trinity_out=trinity_dir+sample+".Trinity.fixed.fa"
-	fix="""
+def fix_fasta(trinity_fasta, trinity_dir, sample):
+        # os.chdir(trinity_dir)
+    trinity_out = trinity_dir + sample + ".Trinity.fixed.fa"
+    fix = """
 sed 's_|_-_g' {} > {}
-""".format(trinity_fasta,trinity_out)
-	s=subprocess.Popen(fix,shell=True)
-	print fix
-        s.wait()
-	return trinity_out 
+""".format(trinity_fasta, trinity_out)
+    # s=subprocess.Popen(fix,shell=True)
+    print fix
+    # s.wait()
+    # os.chdir("/mnt/home/ljcohen/MMETSP/")
+    return trinity_out
 
-assemblydir="/home/ljcohen/msu_assemblies_finished/"
-readsdir="/home/ljcohen/osmotic_trim_"
-get_assemblies(assemblydir,readsdir)
+
+def transrate(transratedir,transrate_out,trinity_fasta,sample,left,right):
+	transrate_command = """
+transrate --assembly={} --threads=4 \
+--left={} \
+--right={} \
+--output={}
+""".format(trinity_fasta,left,right,transrate_out)
+    	print transrate_command
+    	commands = [transrate_command]
+    	process_name = "transrate"
+   	module_name_list = ""
+    	filename = sample
+    	clusterfunc.sbatch_file(transratedir, process_name,module_name_list, filename, commands)
+
+def parse_transrate_stats(transrate_assemblies):
+    print transrate_assemblies
+    if os.stat(transrate_assemblies).st_size != 0:
+        data = pd.DataFrame.from_csv(transrate_assemblies, header=0, sep=',')
+        return data
+
+def build_DataFrame(data_frame, transrate_data):
+    # columns=["n_bases","gc","gc_skew","mean_orf_percent"]
+    frames = [data_frame, transrate_data]
+    data_frame = pd.concat(frames)
+    return data_frame
+
+def execute(data_frame, listoffiles, assemblydir,transratedir):
+	samples = os.listdir(assemblydir)
+	sample_dictionary = {}
+	#pairs_dictionary=get_pairs(listoffiles,basedir)
+    	# construct an empty pandas dataframe to add on each assembly.csv to
+    	for sample in samples:
+        	if sample.startswith("F_heteroclitus"):
+			diginormdir = "/home/ljcohen/osmotic_trim_F_heteroclitus/diginorm/"
+		elif sample.startswith("F_diaphanus"):
+			diginormdir = "/home/ljcohen/osmotic_trim_F_diaphanus/diginorm/"
+		elif sample.startswith("F_sciadicus"):
+			diginormdir = "/home/ljcohen/osmotic_trim_F_sciadicus/diginorm/"
+		else:
+			diginormdir = "/home/ljcohen/osmotic_trim/assemblies_msu/"+sample+"/"
+		if os.path.isdir(diginormdir):
+			#print diginormdir
+			left = diginormdir + sample +".left.fq"
+			right = diginormdir + sample + ".right.fq"
+			if os.path.isfile(left) and os.path.isfile(right):
+				print left
+				print right
+			else:
+				print "Does not exist.",left,right
+		else:
+			print "Does not exist:",diginormdir
+        	trinity_fasta = assemblydir + sample + "/" + sample + ".Trinity.fixed.fa"
+		transrate_out = transratedir + sample + "/"
+        	transrate_assemblies = transrate_out + "/" + "assemblies.csv"
+		if os.path.isfile(trinity_fasta):
+        		print trinity_fasta
+        	else:
+                	print "Trinity failed:", trinity_fasta
+		if os.path.isfile(transrate_assemblies):
+        	        data = parse_transrate_stats(transrate_assemblies)
+                    	data_frame = build_DataFrame(data_frame, data)
+        	else:  
+                    	print "Running transrate..."
+                  	transrate(transratedir,transrate_out,trinity_fasta,sample,left,right)
+	return data_frame
+
+assemblydir = "/home/ljcohen/msu_assemblies_finished/"
+basedir = "/home/ljcohen/osmotic_combined/"
+transratedir = "/home/ljcohen/osmotic_transrate_scores/"
+clusterfunc.check_dir(transratedir)
+listoffiles = os.listdir(basedir)
+data_frame = pd.DataFrame()
+data_frame = execute(data_frame,listoffiles, assemblydir, transratedir)
+#data_frame.to_csv("transrate_scores.csv")
