@@ -31,14 +31,15 @@ def sbatch_file(basedir,process_name,module_name_list,filename,process_string):
     os.chdir(sbatch_dir)
     module_load=get_module_load_list(module_name_list)
     with open(sbatch_filename,"w") as sbatch_file:
-         sbatch_file.write("#!/bin/bash -l\n")
+         sbatch_file.write("#!/bin/bash -l"+"\n")
          sbatch_file.write("#SBATCH -D "+sbatch_dir+"\n")
 	 sbatch_file.write("#SBATCH -J "+process_name+"\n")
-	 sbatch_file.write("#SBATCH -p hi\n")
+	 sbatch_file.write("#SBATCH -p high"+"\n")
+	 sbatch_file.write("#SBATCH -t 04:00:00"+"\n")
 	 #sbatch_file.write("#SBATHC -p med\n")
 	 sbatch_file.write("#SBATCH --mail-user=ljcohen@ucdavis.edu"+"\n")
-         sbatch_file.write("#SBATCH --cpus-per-task=4"+"\n")
-	 sbatch_file.write("#SBATCH --mem=32GB\n")
+         sbatch_file.write("#SBATCH --cpus-per-task=16"+"\n")
+	 sbatch_file.write("#SBATCH --mem=32GB"+"\n")
          for module_string in module_load:
              sbatch_file.write(module_string+"\n")
              #print module_string
