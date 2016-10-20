@@ -77,9 +77,8 @@ def get_diginorm_string(diginorm_keep_file,diginormdir,orphansfile,interleavedir
 normalize-by-median.py -p -k 20 -C 20 -M 4e9 \\
 --savegraph {}{}.norm.C20k20.ct \\
 -u {} \\
--o {}{}.keep \\
 {}{}*.interleaved.fq.gz
-""".format(diginormdir,sample,orphansfile,diginormdir,sample,interleavedir,sample)
+""".format(diginormdir,sample,orphansfile,interleavedir,sample)
 	return j
 	
 def run_diginorm(trimdir,diginormdir,orphansfile,interleaveadir,sample):
@@ -89,33 +88,27 @@ def run_diginorm(trimdir,diginormdir,orphansfile,interleaveadir,sample):
 		process_name="diginorm"
 		module_name_list=""
 		filename=sample
-		clusterfunc.sbatch_file(trimdir,process_name,module_name_list,filename,diginorm_command)
+		#clusterfunc.sbatch_file(trimdir,process_name,module_name_list,filename,diginorm_command)
 		graph_count_filename=diginormdir+sample+".norm.C20k20.ct"
-		return graph_count_filename
 
-def get_filter_abund(abundfilt_filename,diginormfile,diginormdir,sample):
+def get_filter_abund(diginormdir,sample):
 	#if glob.glob(diginormdir+"*keep.abundfilt*"):
 	#	print "filter-abund.py already run"
 	#else:
 	j="""
 filter-abund.py -V -Z 18 -o {}.abundfilt \\
-{}{}.norm.C20k20.ct \\
-{}{}
-""".format(abundfilt_filename,diginormdir,sample,diginormdir,diginormfile)
+{}{}/{}.norm.C20k20.ct \\
+{}{}/*.keep
+""".format(sample,diginormdir,sample,sample,diginormdir,sample)
 	return j
 
-def run_filt_abund(trimdir,diginormdir,graph_count_filename,diginormfile,diginorm_sample):
-	if diginormfile.endswith("orphans.fq.gz.keep"):
-		abundfilt_filename=diginormdir+diginorm_sample+".orphans"
-	else:
-		abundfilt_filename=diginormdir+diginorm_sample
-	abund_filt=get_filter_abund(abundfilt_filename,diginormfile,diginormdir,diginorm_sample)
+def run_filt_abund(trimdir,diginormdir,sample):
+	abund_filt=get_filter_abund(diginormdir,sample)
 	abund_filt_command=[abund_filt]
         process_name="abundfilt"
         module_name_list=""
-        filename=diginorm_sample
+        filename=sample
         clusterfunc.sbatch_file(trimdir,process_name,module_name_list,filename,abund_filt_command)
-	return abundfilt_filename
 	
 def get_rename(genus_species_dir,sample,abund_filt_filename):
         j="""
@@ -136,18 +129,18 @@ def get_samples(interleavefileslist,interleavedir):
 				file_info.pop(-1)
 				file_info.pop(-1)
 				#file_info.append(sample_num)
-				print file_info
+				#print file_info
 				sample = "_".join(file_info)
-				print sample
+				#print sample
 				
 			else:
 				sample_num = file_info[-2]
 				file_info.pop(-1)
 				file_info.pop(-1)
 				file_info.pop(-1)
-				print file_info
+				#print file_info
 				sample = "_".join(file_info)
-				print sample
+				#print sample
 			if sample in interleave_files:
 				if filename in interleave_files[sample]:
 					print "exists",filename
@@ -156,21 +149,6 @@ def get_samples(interleavefileslist,interleavedir):
 			else:
 				interleave_files[sample] = [filename]
 	return interleave_files			
-
-def get_diginorm_files(diginormdir):
-        listoffiles=os.listdir(diginormdir)
-        diginorm_files={}
-        for filename in listoffiles:
-                if filename.endswith(".keep"):
-			file_info=filename.split("_")
-			extension=file_info[-1].split(".")
-			sample="_".join(file_info[:-1])
-			sample=sample+"_"+extension[0]+".trim"
-			if sample in diginorm_files.keys():
-				diginorm_files[sample].append(filename)
-			else:
-				diginorm_files[sample]=[filename]
-        return diginorm_files
 
 def combine_orphans(trimdir,sample):
 	orphansfile = trimdir + sample + ".orphans.fq.gz"
@@ -192,19 +170,17 @@ def execute(listoffiles,trimdir,interleavedir,diginormdir,assemblydir):
                 fileslist=sorted(files_dictionary[sample])
 		matching = [s for s in fileslist if "orphans" in s]
 		#print matching
-		if len(matching) == 0:
-			interleave_reads(trimdir,interleavedir,fileslist,sample)
-			#interleavefileslist = os.listdir(interleavedir)
-			#interleave_files = get_samples(interleavefileslist,interleavedir)
-			#print interleave_files
-			#for sample in interleave_files:
-			#	orphansfile = combine_orphans(trimdir,sample)
-			#	sample_diginormdir = diginormdir + sample + "/"
-			#	clusterfunc.check_dir(sample_diginormdir)
-				#graph_count_filename=run_diginorm(trimdir,sample_diginormdir,orphansfile,interleavedir,sample)
-			#	diginorm_files=get_diginorm_files(diginormdir)
-			#	for diginormfile in diginorm_files[sample]:
-			#		run_filt_abund(diginormdir,graph_count_filename,diginormfile,sample)
+		#if len(matching) == 0:
+			#interleave_reads(trimdir,interleavedir,fileslist,sample)
+	interleavefileslist = os.listdir(interleavedir)
+	interleave_files = get_samples(interleavefileslist,interleavedir)
+	print interleave_files
+	for sample in interleave_files:
+		orphansfile = combine_orphans(trimdir,sample)
+		sample_diginormdir = diginormdir + sample + "/"
+		clusterfunc.check_dir(sample_diginormdir)
+		run_diginorm(trimdir,sample_diginormdir,orphansfile,interleavedir,sample)
+		run_filt_abund(trimdir,diginormdir,sample)
 		
 def get_abund_filt_files(diginormdir):
 	listoffiles=os.listdir(diginormdir)

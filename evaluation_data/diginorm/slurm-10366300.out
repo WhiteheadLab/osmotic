@@ -1,0 +1,960 @@
+Module slurm/16.05.5 loaded 
+Module openmpi/2.0.1 loaded 
+
+|| This is the script normalize-by-median.py in khmer.
+|| You are running khmer version 2.0
+|| You are also using screed version 0.9
+||
+|| If you use this script in a publication, please cite EACH of the following:
+||
+||   * MR Crusoe et al., 2015. http://dx.doi.org/10.12688/f1000research.6924.1
+||   * CT Brown et al., arXiv:1203.4802 [q-bio.GN]
+||
+|| Please see http://khmer.readthedocs.org/en/latest/citations.html for details.
+
+
+PARAMETERS:
+ - kmer size =    20 		(-k)
+ - n tables =     4 		(-N)
+ - max tablesize = 1e+09 	(-x)
+
+Estimated memory usage is 4e+09 bytes (n_tables x max_tablesize)
+--------
+making countgraph
+... kept 98312 of 100000 or 98.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 191978 of 200000 or 96.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 283252 of 300000 or 94.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 372736 of 400000 or 93.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 460280 of 500000 or 92.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 546574 of 600000 or 91.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 632426 of 700000 or 90.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 717752 of 800000 or 89.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 802270 of 900000 or 89.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 885926 of 1000000 or 88.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 969230 of 1100000 or 88.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 1052452 of 1200000 or 87.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 1134980 of 1300000 or 87.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 1217698 of 1400000 or 87.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 1300764 of 1500000 or 86.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 1379642 of 1600000 or 86.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 1457808 of 1700000 or 85.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 1536340 of 1800000 or 85.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 1614244 of 1900000 or 85.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 1691596 of 2000000 or 84.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 1768692 of 2100000 or 84.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 1845570 of 2200000 or 83.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 1922138 of 2300000 or 83.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 1998876 of 2400000 or 83.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 2074722 of 2500000 or 83.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 2150652 of 2600000 or 82.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 2226218 of 2700000 or 82.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 2302250 of 2800000 or 82.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 2386952 of 2900000 or 82.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 2459894 of 3000000 or 82.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 2532560 of 3100000 or 81.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 2605140 of 3200000 or 81.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 2677494 of 3300000 or 81.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 2749374 of 3400000 or 80.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 2820990 of 3500000 or 80.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 2892550 of 3600000 or 80.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 2964620 of 3700000 or 80.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 3036068 of 3800000 or 79.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 3107610 of 3900000 or 79.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 3178784 of 4000000 or 79.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 3250318 of 4100000 or 79.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 3321556 of 4200000 or 79.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 3394400 of 4300000 or 78.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 3466616 of 4400000 or 78.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 3538330 of 4500000 or 78.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 3607424 of 4600000 or 78.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 3675562 of 4700000 or 78.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 3744102 of 4800000 or 78.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 3811594 of 4900000 or 77.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 3880282 of 5000000 or 77.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 3948222 of 5100000 or 77.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 4017788 of 5200000 or 77.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 4086404 of 5300000 or 77.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 4155658 of 5400000 or 77.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 4225266 of 5500000 or 76.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 4294280 of 5600000 or 76.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 4366350 of 5700000 or 76.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 4441628 of 5800000 or 76.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 4506942 of 5900000 or 76.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 4572340 of 6000000 or 76.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 4636148 of 6100000 or 76.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 4700406 of 6200000 or 75.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 4763334 of 6300000 or 75.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 4826316 of 6400000 or 75.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 4891146 of 6500000 or 75.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 4954398 of 6600000 or 75.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 5017326 of 6700000 or 74.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 5079870 of 6800000 or 74.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 5143218 of 6900000 or 74.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 5205948 of 7000000 or 74.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 5273026 of 7100000 or 74.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 5334612 of 7200000 or 74.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 5396268 of 7300000 or 73.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 5457710 of 7400000 or 73.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 5518846 of 7500000 or 73.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 5580046 of 7600000 or 73.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 5641124 of 7700000 or 73.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 5702486 of 7800000 or 73.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 5764626 of 7900000 or 73.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 5826706 of 8000000 or 72.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 5888952 of 8100000 or 72.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 5951462 of 8200000 or 72.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 6014132 of 8300000 or 72.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 6077088 of 8400000 or 72.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 6143018 of 8500000 or 72.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 6206982 of 8600000 or 72.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 6265338 of 8700000 or 72.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 6323728 of 8800000 or 71.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 6382402 of 8900000 or 71.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 6440724 of 9000000 or 71.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 6499012 of 9100000 or 71.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 6556572 of 9200000 or 71.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 6615140 of 9300000 or 71.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 6674608 of 9400000 or 71.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 6733590 of 9500000 or 70.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 6793534 of 9600000 or 70.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 6853002 of 9700000 or 70.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 6912144 of 9800000 or 70.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 6972184 of 9900000 or 70.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7034016 of 10000000 or 70.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7088964 of 10100000 or 70.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7144122 of 10200000 or 70.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7199540 of 10300000 or 69.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7254790 of 10400000 or 69.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7310490 of 10500000 or 69.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7365898 of 10600000 or 69.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7421604 of 10700000 or 69.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7477326 of 10800000 or 69.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7533862 of 10900000 or 69.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7589136 of 11000000 or 69.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7645734 of 11100000 or 68.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7702464 of 11200000 or 68.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7758818 of 11300000 or 68.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7815990 of 11400000 or 68.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7872274 of 11500000 or 68.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7924400 of 11600000 or 68.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 7977006 of 11700000 or 68.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8029968 of 11800000 or 68.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8082802 of 11900000 or 67.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8135932 of 12000000 or 67.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8189196 of 12100000 or 67.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8242792 of 12200000 or 67.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8296682 of 12300000 or 67.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8350762 of 12400000 or 67.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8404610 of 12500000 or 67.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8458736 of 12600000 or 67.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8512852 of 12700000 or 67.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8567130 of 12800000 or 66.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8623490 of 12900000 or 66.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8676924 of 13000000 or 66.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8731228 of 13100000 or 66.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8784084 of 13200000 or 66.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8837416 of 13300000 or 66.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8888674 of 13400000 or 66.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8941318 of 13500000 or 66.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 8993942 of 13600000 or 66.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9046226 of 13700000 or 66.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9097442 of 13800000 or 65.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9149354 of 13900000 or 65.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9204966 of 14000000 or 65.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9261076 of 14100000 or 65.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9314662 of 14200000 or 65.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9365896 of 14300000 or 65.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9413678 of 14400000 or 65.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9462070 of 14500000 or 65.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9510388 of 14600000 or 65.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9558196 of 14700000 or 65.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9606100 of 14800000 or 64.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9653816 of 14900000 or 64.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9700590 of 15000000 or 64.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9748552 of 15100000 or 64.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9795920 of 15200000 or 64.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9843696 of 15300000 or 64.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9893118 of 15400000 or 64.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9941568 of 15500000 or 64.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 9988666 of 15600000 or 64.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10036144 of 15700000 or 63.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10083668 of 15800000 or 63.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10131982 of 15900000 or 63.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10179782 of 16000000 or 63.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10228312 of 16100000 or 63.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10276208 of 16200000 or 63.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10324932 of 16300000 or 63.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10374326 of 16400000 or 63.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10422862 of 16500000 or 63.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10472676 of 16600000 or 63.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10523350 of 16700000 or 63.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10575550 of 16800000 or 62.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10627546 of 16900000 or 62.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10680384 of 17000000 or 62.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10721378 of 17100000 or 62.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10762056 of 17200000 or 62.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10802786 of 17300000 or 62.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10844042 of 17400000 or 62.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10885264 of 17500000 or 62.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10926472 of 17600000 or 62.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 10967654 of 17700000 or 62.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11010788 of 17800000 or 61.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11052806 of 17900000 or 61.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11093248 of 18000000 or 61.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11133020 of 18100000 or 61.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11173084 of 18200000 or 61.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11213416 of 18300000 or 61.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11253928 of 18400000 or 61.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11294480 of 18500000 or 61.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11335776 of 18600000 or 60.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11377944 of 18700000 or 60.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11418948 of 18800000 or 60.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11457924 of 18900000 or 60.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11497052 of 19000000 or 60.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11536528 of 19100000 or 60.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11575724 of 19200000 or 60.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11615700 of 19300000 or 60.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11656770 of 19400000 or 60.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11698696 of 19500000 or 60.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11740798 of 19600000 or 59.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11780132 of 19700000 or 59.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11818674 of 19800000 or 59.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11856338 of 19900000 or 59.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11894494 of 20000000 or 59.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11932294 of 20100000 or 59.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 11971036 of 20200000 or 59.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12009874 of 20300000 or 59.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12048590 of 20400000 or 59.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12088126 of 20500000 or 59.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12125736 of 20600000 or 58.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12162146 of 20700000 or 58.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12199098 of 20800000 or 58.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12235990 of 20900000 or 58.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12273090 of 21000000 or 58.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12310180 of 21100000 or 58.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12347806 of 21200000 or 58.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12385266 of 21300000 or 58.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12423294 of 21400000 or 58.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12459844 of 21500000 or 58.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12495860 of 21600000 or 57.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12531864 of 21700000 or 57.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12567638 of 21800000 or 57.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12603758 of 21900000 or 57.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12640200 of 22000000 or 57.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12678198 of 22100000 or 57.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12716032 of 22200000 or 57.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+... kept 12754072 of 22300000 or 57.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz
+DONE with /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_1.trim.interleaved.fq.gz; kept 12764144 of 22324626 or 57.2%
+output in F_notti_NA_FW_1.trim.interleaved.fq.gz.keep
+... kept 12797266 of 22400000 or 57.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 12840932 of 22500000 or 57.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 12885298 of 22600000 or 57.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 12929562 of 22700000 or 57.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 12972164 of 22800000 or 56.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13017118 of 22900000 or 56.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13062362 of 23000000 or 56.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13108836 of 23100000 or 56.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13155682 of 23200000 or 56.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13202968 of 23300000 or 56.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13252292 of 23400000 or 56.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13303958 of 23500000 or 56.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13356084 of 23600000 or 56.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13398142 of 23700000 or 56.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13440828 of 23800000 or 56.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13484054 of 23900000 or 56.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13526290 of 24000000 or 56.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13570042 of 24100000 or 56.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13614070 of 24200000 or 56.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13659002 of 24300000 or 56.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13704398 of 24400000 or 56.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13749764 of 24500000 or 56.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13797180 of 24600000 or 56.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13844198 of 24700000 or 56.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13895302 of 24800000 or 56.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13945032 of 24900000 or 56.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 13984564 of 25000000 or 55.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14025112 of 25100000 or 55.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14066220 of 25200000 or 55.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14106820 of 25300000 or 55.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14147594 of 25400000 or 55.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14189796 of 25500000 or 55.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14232744 of 25600000 or 55.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14275380 of 25700000 or 55.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14318572 of 25800000 or 55.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14362678 of 25900000 or 55.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14406930 of 26000000 or 55.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14454594 of 26100000 or 55.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14498696 of 26200000 or 55.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14541790 of 26300000 or 55.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14588312 of 26400000 or 55.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14632586 of 26500000 or 55.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14673318 of 26600000 or 55.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14720024 of 26700000 or 55.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14767874 of 26800000 or 55.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14815760 of 26900000 or 55.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14862290 of 27000000 or 55.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14909568 of 27100000 or 55.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 14954408 of 27200000 or 55.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15006468 of 27300000 or 55.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15056672 of 27400000 or 55.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15100624 of 27500000 or 54.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15145858 of 27600000 or 54.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15192016 of 27700000 or 54.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15235772 of 27800000 or 54.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15281528 of 27900000 or 54.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15327808 of 28000000 or 54.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15375428 of 28100000 or 54.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15422808 of 28200000 or 54.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15470708 of 28300000 or 54.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15520740 of 28400000 or 54.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15578550 of 28500000 or 54.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15638386 of 28600000 or 54.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15676602 of 28700000 or 54.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15715226 of 28800000 or 54.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15754416 of 28900000 or 54.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15792938 of 29000000 or 54.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15831914 of 29100000 or 54.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15871362 of 29200000 or 54.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15912120 of 29300000 or 54.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15953352 of 29400000 or 54.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 15994728 of 29500000 or 54.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16036984 of 29600000 or 54.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16080178 of 29700000 or 54.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16134634 of 29800000 or 54.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16186830 of 29900000 or 54.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16223824 of 30000000 or 54.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16261468 of 30100000 or 54.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16299480 of 30200000 or 54.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16336554 of 30300000 or 53.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16375820 of 30400000 or 53.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16415814 of 30500000 or 53.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16456560 of 30600000 or 53.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16496682 of 30700000 or 53.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16538728 of 30800000 or 53.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16581732 of 30900000 or 53.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16625370 of 31000000 or 53.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16674230 of 31100000 or 53.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16710614 of 31200000 or 53.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16747424 of 31300000 or 53.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16784740 of 31400000 or 53.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16821642 of 31500000 or 53.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16858668 of 31600000 or 53.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16896500 of 31700000 or 53.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16935838 of 31800000 or 53.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 16976570 of 31900000 or 53.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17017416 of 32000000 or 53.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17058534 of 32100000 or 53.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17099710 of 32200000 or 53.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17143684 of 32300000 or 53.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17194424 of 32400000 or 53.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17229340 of 32500000 or 53.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17265536 of 32600000 or 53.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17301848 of 32700000 or 52.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17338470 of 32800000 or 52.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17375616 of 32900000 or 52.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17413136 of 33000000 or 52.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17452058 of 33100000 or 52.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17489960 of 33200000 or 52.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17528940 of 33300000 or 52.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17569064 of 33400000 or 52.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17610912 of 33500000 or 52.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17657792 of 33600000 or 52.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17696070 of 33700000 or 52.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17732182 of 33800000 or 52.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17770678 of 33900000 or 52.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17806462 of 34000000 or 52.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17841990 of 34100000 or 52.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17880990 of 34200000 or 52.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17919250 of 34300000 or 52.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17958666 of 34400000 or 52.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 17997706 of 34500000 or 52.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18038630 of 34600000 or 52.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18081358 of 34700000 or 52.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18125962 of 34800000 or 52.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18162548 of 34900000 or 52.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18194356 of 35000000 or 52.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18228520 of 35100000 or 51.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18261624 of 35200000 or 51.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18294228 of 35300000 or 51.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18328972 of 35400000 or 51.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18362830 of 35500000 or 51.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18396698 of 35600000 or 51.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18430338 of 35700000 or 51.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18465218 of 35800000 or 51.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18504014 of 35900000 or 51.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18543544 of 36000000 or 51.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18578124 of 36100000 or 51.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18612038 of 36200000 or 51.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18647702 of 36300000 or 51.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18683056 of 36400000 or 51.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18718958 of 36500000 or 51.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18755300 of 36600000 or 51.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18792568 of 36700000 or 51.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18830970 of 36800000 or 51.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18869754 of 36900000 or 51.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18909794 of 37000000 or 51.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18950290 of 37100000 or 51.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 18999326 of 37200000 or 51.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19042140 of 37300000 or 51.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19067330 of 37400000 or 51.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19092978 of 37500000 or 50.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19119316 of 37600000 or 50.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19143816 of 37700000 or 50.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19168908 of 37800000 or 50.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19194322 of 37900000 or 50.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19219796 of 38000000 or 50.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19244462 of 38100000 or 50.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19269540 of 38200000 or 50.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19295226 of 38300000 or 50.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19321082 of 38400000 or 50.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19346056 of 38500000 or 50.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19371962 of 38600000 or 50.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19398278 of 38700000 or 50.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19422934 of 38800000 or 50.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19447594 of 38900000 or 50.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19472628 of 39000000 or 49.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19497872 of 39100000 or 49.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19521962 of 39200000 or 49.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19546028 of 39300000 or 49.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19571932 of 39400000 or 49.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19598586 of 39500000 or 49.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19629154 of 39600000 or 49.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19659420 of 39700000 or 49.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19689524 of 39800000 or 49.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19719634 of 39900000 or 49.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19749478 of 40000000 or 49.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19779736 of 40100000 or 49.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19810272 of 40200000 or 49.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19841506 of 40300000 or 49.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19872622 of 40400000 or 49.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19904042 of 40500000 or 49.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19942206 of 40600000 or 49.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 19972992 of 40700000 or 49.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20003598 of 40800000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20033834 of 40900000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20063678 of 41000000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20093380 of 41100000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20124568 of 41200000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20155394 of 41300000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20186524 of 41400000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20217832 of 41500000 or 48.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20250288 of 41600000 or 48.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20284906 of 41700000 or 48.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20317966 of 41800000 or 48.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20348234 of 41900000 or 48.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20378152 of 42000000 or 48.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20407834 of 42100000 or 48.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20437736 of 42200000 or 48.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20468660 of 42300000 or 48.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20499260 of 42400000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20530354 of 42500000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20561698 of 42600000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20593276 of 42700000 or 48.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20625994 of 42800000 or 48.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20663170 of 42900000 or 48.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20692404 of 43000000 or 48.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20720644 of 43100000 or 48.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20749220 of 43200000 or 48.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20777664 of 43300000 or 48.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20806520 of 43400000 or 47.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20834882 of 43500000 or 47.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20864014 of 43600000 or 47.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20893578 of 43700000 or 47.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20924140 of 43800000 or 47.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 20955576 of 43900000 or 47.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21009418 of 44000000 or 47.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21044562 of 44100000 or 47.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21073184 of 44200000 or 47.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21101120 of 44300000 or 47.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21129736 of 44400000 or 47.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21157338 of 44500000 or 47.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21186354 of 44600000 or 47.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21216050 of 44700000 or 47.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21245568 of 44800000 or 47.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21275962 of 44900000 or 47.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21307150 of 45000000 or 47.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21342292 of 45100000 or 47.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21397208 of 45200000 or 47.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21425978 of 45300000 or 47.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21455006 of 45400000 or 47.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21483324 of 45500000 or 47.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21511828 of 45600000 or 47.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21540668 of 45700000 or 47.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21569970 of 45800000 or 47.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21599784 of 45900000 or 47.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21630296 of 46000000 or 47.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21661408 of 46100000 or 47.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+... kept 21694922 of 46200000 or 47.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz
+DONE with /home/ljcohen/osmotic_trim/interleaved/F_notti_NA_FW_2.trim.interleaved.fq.gz; kept 21715232 of 46256486 or 46.9%
+output in F_notti_NA_FW_2.trim.interleaved.fq.gz.keep
+... kept 21743658 of 46300000 or 47.0% sofar
+... in file /home/ljcohen/osmotic_trim/F_notti.orphans.fq.gz
+... kept 21810411 of 46400000 or 47.0% sofar
+... in file /home/ljcohen/osmotic_trim/F_notti.orphans.fq.gz
+DONE with /home/ljcohen/osmotic_trim/F_notti.orphans.fq.gz; kept 21860955 of 46463472 or 47.0%
+output in F_notti.orphans.fq.gz.keep
+Total number of unique k-mers: 493595457
+...saving to /home/ljcohen/osmotic_trim/diginorm/F_notti/F_notti.norm.C20k20.ct
+fp rate estimated to be 0.024

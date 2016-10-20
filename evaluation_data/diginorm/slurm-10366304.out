@@ -1,0 +1,2784 @@
+Module slurm/16.05.5 loaded 
+Module openmpi/2.0.1 loaded 
+
+|| This is the script normalize-by-median.py in khmer.
+|| You are running khmer version 2.0
+|| You are also using screed version 0.9
+||
+|| If you use this script in a publication, please cite EACH of the following:
+||
+||   * MR Crusoe et al., 2015. http://dx.doi.org/10.12688/f1000research.6924.1
+||   * CT Brown et al., arXiv:1203.4802 [q-bio.GN]
+||
+|| Please see http://khmer.readthedocs.org/en/latest/citations.html for details.
+
+
+PARAMETERS:
+ - kmer size =    20 		(-k)
+ - n tables =     4 		(-N)
+ - max tablesize = 1e+09 	(-x)
+
+Estimated memory usage is 4e+09 bytes (n_tables x max_tablesize)
+--------
+making countgraph
+... kept 96042 of 100000 or 96.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 186134 of 200000 or 93.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 272730 of 300000 or 90.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 356774 of 400000 or 89.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 440254 of 500000 or 88.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 522806 of 600000 or 87.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 604316 of 700000 or 86.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 685724 of 800000 or 85.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 767572 of 900000 or 85.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 845954 of 1000000 or 84.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 923524 of 1100000 or 84.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1000932 of 1200000 or 83.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1077572 of 1300000 or 82.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1154532 of 1400000 or 82.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1231316 of 1500000 or 82.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1307534 of 1600000 or 81.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1384156 of 1700000 or 81.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1461680 of 1800000 or 81.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1539146 of 1900000 or 81.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1612140 of 2000000 or 80.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1684628 of 2100000 or 80.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1756970 of 2200000 or 79.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1829462 of 2300000 or 79.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1901690 of 2400000 or 79.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1973906 of 2500000 or 79.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2046440 of 2600000 or 78.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2118864 of 2700000 or 78.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2192410 of 2800000 or 78.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2263974 of 2900000 or 78.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2336048 of 3000000 or 77.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2407220 of 3100000 or 77.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2477510 of 3200000 or 77.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2550966 of 3300000 or 77.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2623102 of 3400000 or 77.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2695144 of 3500000 or 77.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2766782 of 3600000 or 76.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2842076 of 3700000 or 76.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2913274 of 3800000 or 76.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2983696 of 3900000 or 76.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3054334 of 4000000 or 76.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3124558 of 4100000 or 76.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3195446 of 4200000 or 76.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3266122 of 4300000 or 76.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3337232 of 4400000 or 75.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3408954 of 4500000 or 75.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3485992 of 4600000 or 75.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3558580 of 4700000 or 75.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3624266 of 4800000 or 75.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3689774 of 4900000 or 75.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3755406 of 5000000 or 75.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3821284 of 5100000 or 74.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3887440 of 5200000 or 74.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3953888 of 5300000 or 74.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4020702 of 5400000 or 74.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4087810 of 5500000 or 74.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4162732 of 5600000 or 74.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4225838 of 5700000 or 74.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4289352 of 5800000 or 74.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4352364 of 5900000 or 73.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4416126 of 6000000 or 73.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4480284 of 6100000 or 73.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4544424 of 6200000 or 73.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4609244 of 6300000 or 73.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4674078 of 6400000 or 73.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4741470 of 6500000 or 72.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4802254 of 6600000 or 72.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4863960 of 6700000 or 72.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4925686 of 6800000 or 72.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4987256 of 6900000 or 72.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5049222 of 7000000 or 72.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5111576 of 7100000 or 72.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5175076 of 7200000 or 71.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5238556 of 7300000 or 71.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5303494 of 7400000 or 71.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5367670 of 7500000 or 71.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5427022 of 7600000 or 71.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5486982 of 7700000 or 71.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5546762 of 7800000 or 71.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5606918 of 7900000 or 71.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5667770 of 8000000 or 70.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5728146 of 8100000 or 70.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5789220 of 8200000 or 70.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5851262 of 8300000 or 70.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5913716 of 8400000 or 70.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5972516 of 8500000 or 70.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6032262 of 8600000 or 70.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6090478 of 8700000 or 70.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6150182 of 8800000 or 69.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6209540 of 8900000 or 69.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6270102 of 9000000 or 69.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6330900 of 9100000 or 69.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6392756 of 9200000 or 69.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6453048 of 9300000 or 69.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6508584 of 9400000 or 69.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6565176 of 9500000 or 69.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6621084 of 9600000 or 69.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6677954 of 9700000 or 68.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6734690 of 9800000 or 68.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6791302 of 9900000 or 68.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6848204 of 10000000 or 68.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6908088 of 10100000 or 68.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6965660 of 10200000 or 68.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7021098 of 10300000 or 68.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7076578 of 10400000 or 68.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7132356 of 10500000 or 67.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7188310 of 10600000 or 67.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7245032 of 10700000 or 67.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7302024 of 10800000 or 67.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7360310 of 10900000 or 67.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7419776 of 11000000 or 67.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7482032 of 11100000 or 67.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7532292 of 11200000 or 67.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7582742 of 11300000 or 67.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7633156 of 11400000 or 67.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7682914 of 11500000 or 66.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7732904 of 11600000 or 66.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7782384 of 11700000 or 66.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7831514 of 11800000 or 66.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7880746 of 11900000 or 66.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7930544 of 12000000 or 66.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7979888 of 12100000 or 65.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8029134 of 12200000 or 65.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8079342 of 12300000 or 65.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8127796 of 12400000 or 65.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8176228 of 12500000 or 65.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8225438 of 12600000 or 65.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8273376 of 12700000 or 65.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8321538 of 12800000 or 65.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8370144 of 12900000 or 64.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8420350 of 13000000 or 64.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8471652 of 13100000 or 64.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8522788 of 13200000 or 64.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8573926 of 13300000 or 64.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8624130 of 13400000 or 64.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8674918 of 13500000 or 64.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8725954 of 13600000 or 64.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8777288 of 13700000 or 64.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8829096 of 13800000 or 64.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8883804 of 13900000 or 63.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8934622 of 14000000 or 63.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8984354 of 14100000 or 63.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9034504 of 14200000 or 63.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9084650 of 14300000 or 63.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9135360 of 14400000 or 63.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9185830 of 14500000 or 63.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9236910 of 14600000 or 63.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9288336 of 14700000 or 63.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9342412 of 14800000 or 63.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9392266 of 14900000 or 63.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9441572 of 15000000 or 62.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9490362 of 15100000 or 62.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9539178 of 15200000 or 62.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9588906 of 15300000 or 62.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9638354 of 15400000 or 62.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9687668 of 15500000 or 62.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9737696 of 15600000 or 62.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9788550 of 15700000 or 62.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9840658 of 15800000 or 62.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9887922 of 15900000 or 62.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9935146 of 16000000 or 62.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9982512 of 16100000 or 62.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10030202 of 16200000 or 61.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10077756 of 16300000 or 61.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10125706 of 16400000 or 61.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10174108 of 16500000 or 61.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10223922 of 16600000 or 61.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10290238 of 16700000 or 61.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10337710 of 16800000 or 61.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10384028 of 16900000 or 61.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10430630 of 17000000 or 61.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10476578 of 17100000 or 61.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10523900 of 17200000 or 61.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10571030 of 17300000 or 61.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10618642 of 17400000 or 61.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10667552 of 17500000 or 61.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10727918 of 17600000 or 61.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10781188 of 17700000 or 60.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10827506 of 17800000 or 60.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10873134 of 17900000 or 60.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10918648 of 18000000 or 60.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10965100 of 18100000 or 60.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 11011450 of 18200000 or 60.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 11058828 of 18300000 or 60.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 11106834 of 18400000 or 60.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+... kept 11156730 of 18500000 or 60.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz
+DONE with /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_1.trim.interleaved.fq.gz; kept 11161490 of 18509218 or 60.3%
+output in F_diaphanus_NA_BW_1.trim.interleaved.fq.gz.keep
+... kept 11207398 of 18600000 or 60.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11258048 of 18700000 or 60.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11308844 of 18800000 or 60.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11359564 of 18900000 or 60.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11410172 of 19000000 or 60.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11460184 of 19100000 or 60.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11511466 of 19200000 or 60.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11563400 of 19300000 or 59.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11614924 of 19400000 or 59.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11666798 of 19500000 or 59.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11719232 of 19600000 or 59.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11771470 of 19700000 or 59.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11828104 of 19800000 or 59.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11876816 of 19900000 or 59.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11924318 of 20000000 or 59.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11972350 of 20100000 or 59.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12019804 of 20200000 or 59.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12067606 of 20300000 or 59.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12114948 of 20400000 or 59.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12163176 of 20500000 or 59.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12211534 of 20600000 or 59.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12259712 of 20700000 or 59.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12308246 of 20800000 or 59.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12357338 of 20900000 or 59.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12406858 of 21000000 or 59.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12471158 of 21100000 or 59.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12517338 of 21200000 or 59.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12563096 of 21300000 or 59.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12609836 of 21400000 or 58.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12656190 of 21500000 or 58.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12702570 of 21600000 or 58.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12749068 of 21700000 or 58.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12796116 of 21800000 or 58.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12843970 of 21900000 or 58.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12890924 of 22000000 or 58.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12938726 of 22100000 or 58.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12986922 of 22200000 or 58.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13035030 of 22300000 or 58.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13086458 of 22400000 or 58.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13136496 of 22500000 or 58.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13186268 of 22600000 or 58.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13232960 of 22700000 or 58.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13278914 of 22800000 or 58.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13324664 of 22900000 or 58.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13370528 of 23000000 or 58.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13417444 of 23100000 or 58.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13466278 of 23200000 or 58.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13515048 of 23300000 or 58.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13563642 of 23400000 or 58.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13614614 of 23500000 or 57.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13664484 of 23600000 or 57.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13726042 of 23700000 or 57.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13770296 of 23800000 or 57.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13816518 of 23900000 or 57.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13860534 of 24000000 or 57.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13904738 of 24100000 or 57.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13948248 of 24200000 or 57.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13991870 of 24300000 or 57.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14037130 of 24400000 or 57.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14081268 of 24500000 or 57.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14125422 of 24600000 or 57.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14169480 of 24700000 or 57.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14214806 of 24800000 or 57.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14259708 of 24900000 or 57.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14309308 of 25000000 or 57.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14351672 of 25100000 or 57.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14394792 of 25200000 or 57.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14438358 of 25300000 or 57.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14481504 of 25400000 or 57.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14524984 of 25500000 or 57.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14568604 of 25600000 or 56.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14613042 of 25700000 or 56.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14658458 of 25800000 or 56.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14703636 of 25900000 or 56.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14749834 of 26000000 or 56.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14795870 of 26100000 or 56.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14843916 of 26200000 or 56.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14894886 of 26300000 or 56.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14936114 of 26400000 or 56.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14977008 of 26500000 or 56.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15018930 of 26600000 or 56.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15060140 of 26700000 or 56.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15102138 of 26800000 or 56.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15143186 of 26900000 or 56.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15185788 of 27000000 or 56.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15229952 of 27100000 or 56.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15273332 of 27200000 or 56.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15317078 of 27300000 or 56.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15361316 of 27400000 or 56.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15405926 of 27500000 or 56.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15450454 of 27600000 or 56.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15490102 of 27700000 or 55.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15529874 of 27800000 or 55.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15570238 of 27900000 or 55.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15610542 of 28000000 or 55.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15651142 of 28100000 or 55.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15691358 of 28200000 or 55.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15732976 of 28300000 or 55.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15775218 of 28400000 or 55.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15817074 of 28500000 or 55.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15859608 of 28600000 or 55.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15902074 of 28700000 or 55.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15945204 of 28800000 or 55.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15987996 of 28900000 or 55.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16026200 of 29000000 or 55.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16064520 of 29100000 or 55.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16103782 of 29200000 or 55.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16142946 of 29300000 or 55.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16182036 of 29400000 or 55.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16221160 of 29500000 or 55.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16260938 of 29600000 or 54.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16302478 of 29700000 or 54.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16342718 of 29800000 or 54.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16384108 of 29900000 or 54.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16425186 of 30000000 or 54.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16467142 of 30100000 or 54.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16510674 of 30200000 or 54.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16551002 of 30300000 or 54.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16592426 of 30400000 or 54.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16633066 of 30500000 or 54.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16673336 of 30600000 or 54.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16713740 of 30700000 or 54.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16754682 of 30800000 or 54.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16795146 of 30900000 or 54.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16836062 of 31000000 or 54.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16876486 of 31100000 or 54.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16922354 of 31200000 or 54.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16966682 of 31300000 or 54.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17009546 of 31400000 or 54.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17048052 of 31500000 or 54.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17084652 of 31600000 or 54.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17121744 of 31700000 or 54.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17158794 of 31800000 or 54.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17195968 of 31900000 or 53.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17233766 of 32000000 or 53.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17270760 of 32100000 or 53.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17308990 of 32200000 or 53.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17346462 of 32300000 or 53.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17386324 of 32400000 or 53.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17427190 of 32500000 or 53.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17466178 of 32600000 or 53.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17502596 of 32700000 or 53.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17539016 of 32800000 or 53.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17576228 of 32900000 or 53.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17613578 of 33000000 or 53.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17651098 of 33100000 or 53.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17688864 of 33200000 or 53.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17727100 of 33300000 or 53.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17766830 of 33400000 or 53.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17806038 of 33500000 or 53.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17846324 of 33600000 or 53.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17888700 of 33700000 or 53.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17930932 of 33800000 or 53.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17975104 of 33900000 or 53.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18007970 of 34000000 or 53.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18039966 of 34100000 or 52.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18072226 of 34200000 or 52.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18104814 of 34300000 or 52.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18137766 of 34400000 or 52.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18171802 of 34500000 or 52.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18205730 of 34600000 or 52.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18240630 of 34700000 or 52.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18276696 of 34800000 or 52.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18312830 of 34900000 or 52.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18344552 of 35000000 or 52.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18376606 of 35100000 or 52.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18409442 of 35200000 or 52.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18442302 of 35300000 or 52.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18475670 of 35400000 or 52.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18509886 of 35500000 or 52.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18543744 of 35600000 or 52.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18579324 of 35700000 or 52.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18615926 of 35800000 or 52.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18650762 of 35900000 or 52.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18682558 of 36000000 or 51.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18714418 of 36100000 or 51.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18746972 of 36200000 or 51.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18779280 of 36300000 or 51.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18812428 of 36400000 or 51.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18846246 of 36500000 or 51.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18881230 of 36600000 or 51.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18917138 of 36700000 or 51.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18953570 of 36800000 or 51.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18987174 of 36900000 or 51.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19020116 of 37000000 or 51.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19051418 of 37100000 or 51.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19082156 of 37200000 or 51.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19113970 of 37300000 or 51.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19146176 of 37400000 or 51.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19178502 of 37500000 or 51.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19211368 of 37600000 or 51.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19244066 of 37700000 or 51.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19277922 of 37800000 or 51.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19309788 of 37900000 or 50.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19340238 of 38000000 or 50.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19370910 of 38100000 or 50.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19401434 of 38200000 or 50.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19431882 of 38300000 or 50.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19462946 of 38400000 or 50.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19494240 of 38500000 or 50.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19526042 of 38600000 or 50.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19558822 of 38700000 or 50.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19591236 of 38800000 or 50.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19624172 of 38900000 or 50.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19654154 of 39000000 or 50.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19684052 of 39100000 or 50.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19713756 of 39200000 or 50.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19743164 of 39300000 or 50.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19773530 of 39400000 or 50.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19804608 of 39500000 or 50.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19837082 of 39600000 or 50.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19870496 of 39700000 or 50.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19903960 of 39800000 or 50.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz
+DONE with /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_BW_2.trim.interleaved.fq.gz; kept 19935844 of 39893786 or 50.0%
+output in F_diaphanus_NA_BW_2.trim.interleaved.fq.gz.keep
+... kept 19937688 of 39900000 or 50.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 19967358 of 40000000 or 49.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 19996128 of 40100000 or 49.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20027436 of 40200000 or 49.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20057792 of 40300000 or 49.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20088266 of 40400000 or 49.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20119356 of 40500000 or 49.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20151350 of 40600000 or 49.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20182808 of 40700000 or 49.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20215222 of 40800000 or 49.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20248348 of 40900000 or 49.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20281118 of 41000000 or 49.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20315750 of 41100000 or 49.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20344776 of 41200000 or 49.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20373172 of 41300000 or 49.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20403340 of 41400000 or 49.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20433082 of 41500000 or 49.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20463142 of 41600000 or 49.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20494110 of 41700000 or 49.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20525540 of 41800000 or 49.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20556584 of 41900000 or 49.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20588948 of 42000000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20621470 of 42100000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20654042 of 42200000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20689238 of 42300000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20718978 of 42400000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20746944 of 42500000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20775682 of 42600000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20804642 of 42700000 or 48.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20833680 of 42800000 or 48.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20863118 of 42900000 or 48.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20893016 of 43000000 or 48.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20924064 of 43100000 or 48.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20954834 of 43200000 or 48.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 20985980 of 43300000 or 48.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21016896 of 43400000 or 48.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21049348 of 43500000 or 48.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21079758 of 43600000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21108394 of 43700000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21137650 of 43800000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21167098 of 43900000 or 48.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21196522 of 44000000 or 48.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21226860 of 44100000 or 48.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21257230 of 44200000 or 48.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21289162 of 44300000 or 48.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21320422 of 44400000 or 48.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21353452 of 44500000 or 48.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21388054 of 44600000 or 48.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21424868 of 44700000 or 47.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21459350 of 44800000 or 47.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21486736 of 44900000 or 47.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21514700 of 45000000 or 47.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21543598 of 45100000 or 47.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21572012 of 45200000 or 47.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21600076 of 45300000 or 47.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21628142 of 45400000 or 47.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21657742 of 45500000 or 47.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21687134 of 45600000 or 47.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21717250 of 45700000 or 47.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21750984 of 45800000 or 47.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21781914 of 45900000 or 47.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21812454 of 46000000 or 47.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21842380 of 46100000 or 47.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21873798 of 46200000 or 47.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21905644 of 46300000 or 47.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21937142 of 46400000 or 47.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 21969330 of 46500000 or 47.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22002752 of 46600000 or 47.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22036450 of 46700000 or 47.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22070560 of 46800000 or 47.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22105480 of 46900000 or 47.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22141820 of 47000000 or 47.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22179892 of 47100000 or 47.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22212616 of 47200000 or 47.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22238786 of 47300000 or 47.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22265766 of 47400000 or 47.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22292192 of 47500000 or 46.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22318666 of 47600000 or 46.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22346204 of 47700000 or 46.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22373424 of 47800000 or 46.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22401960 of 47900000 or 46.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22430680 of 48000000 or 46.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22459708 of 48100000 or 46.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22489210 of 48200000 or 46.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22519790 of 48300000 or 46.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22547320 of 48400000 or 46.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22572782 of 48500000 or 46.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22599602 of 48600000 or 46.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22626102 of 48700000 or 46.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22651938 of 48800000 or 46.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22679020 of 48900000 or 46.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22706988 of 49000000 or 46.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22735318 of 49100000 or 46.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22763598 of 49200000 or 46.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22792242 of 49300000 or 46.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22821564 of 49400000 or 46.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22852760 of 49500000 or 46.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22879042 of 49600000 or 46.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22904516 of 49700000 or 46.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22930356 of 49800000 or 46.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22956382 of 49900000 or 46.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 22982444 of 50000000 or 46.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23008894 of 50100000 or 45.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23036146 of 50200000 or 45.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23064326 of 50300000 or 45.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23092860 of 50400000 or 45.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23121978 of 50500000 or 45.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23151224 of 50600000 or 45.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23181682 of 50700000 or 45.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23209826 of 50800000 or 45.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23235446 of 50900000 or 45.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23261238 of 51000000 or 45.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23287506 of 51100000 or 45.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23312830 of 51200000 or 45.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23339470 of 51300000 or 45.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23366576 of 51400000 or 45.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23395512 of 51500000 or 45.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23424322 of 51600000 or 45.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23453598 of 51700000 or 45.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23483668 of 51800000 or 45.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23514934 of 51900000 or 45.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23544604 of 52000000 or 45.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23569652 of 52100000 or 45.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23597036 of 52200000 or 45.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23623748 of 52300000 or 45.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23648502 of 52400000 or 45.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23674852 of 52500000 or 45.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23701482 of 52600000 or 45.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23729442 of 52700000 or 45.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23757782 of 52800000 or 45.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23785678 of 52900000 or 45.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23814100 of 53000000 or 44.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23844146 of 53100000 or 44.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23874648 of 53200000 or 44.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23900298 of 53300000 or 44.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23925666 of 53400000 or 44.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23951636 of 53500000 or 44.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 23977328 of 53600000 or 44.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24003232 of 53700000 or 44.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24030656 of 53800000 or 44.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24058790 of 53900000 or 44.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24086956 of 54000000 or 44.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24115634 of 54100000 or 44.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24145340 of 54200000 or 44.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24175512 of 54300000 or 44.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24206684 of 54400000 or 44.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24229656 of 54500000 or 44.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24251454 of 54600000 or 44.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24273896 of 54700000 or 44.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24296594 of 54800000 or 44.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24320596 of 54900000 or 44.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24345778 of 55000000 or 44.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24371684 of 55100000 or 44.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24398446 of 55200000 or 44.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24426378 of 55300000 or 44.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24457188 of 55400000 or 44.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24479720 of 55500000 or 44.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24501988 of 55600000 or 44.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24524176 of 55700000 or 44.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24547142 of 55800000 or 44.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24571156 of 55900000 or 44.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24596458 of 56000000 or 43.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24622926 of 56100000 or 43.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24650636 of 56200000 or 43.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24679148 of 56300000 or 43.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24708642 of 56400000 or 43.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24730930 of 56500000 or 43.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24753492 of 56600000 or 43.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24776450 of 56700000 or 43.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24799882 of 56800000 or 43.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24824774 of 56900000 or 43.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24849744 of 57000000 or 43.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24876398 of 57100000 or 43.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24905410 of 57200000 or 43.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24935592 of 57300000 or 43.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24965066 of 57400000 or 43.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 24987340 of 57500000 or 43.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25009858 of 57600000 or 43.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25032336 of 57700000 or 43.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25054796 of 57800000 or 43.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25077794 of 57900000 or 43.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25102500 of 58000000 or 43.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25126792 of 58100000 or 43.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25152102 of 58200000 or 43.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25177946 of 58300000 or 43.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25205256 of 58400000 or 43.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25229380 of 58500000 or 43.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25251192 of 58600000 or 43.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25273242 of 58700000 or 43.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25294898 of 58800000 or 43.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25317222 of 58900000 or 43.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25339540 of 59000000 or 42.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25362638 of 59100000 or 42.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25386760 of 59200000 or 42.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25412208 of 59300000 or 42.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25437526 of 59400000 or 42.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25462850 of 59500000 or 42.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25484668 of 59600000 or 42.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25507056 of 59700000 or 42.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25529038 of 59800000 or 42.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25550978 of 59900000 or 42.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25573624 of 60000000 or 42.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25597360 of 60100000 or 42.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25621164 of 60200000 or 42.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25648308 of 60300000 or 42.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25678102 of 60400000 or 42.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+... kept 25704958 of 60500000 or 42.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz
+DONE with /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_2.trim.interleaved.fq.gz; kept 25719036 of 60550866 or 42.5%
+output in F_diaphanus_NA_FW_2.trim.interleaved.fq.gz.keep
+... kept 25731904 of 60600000 or 42.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 25758276 of 60700000 or 42.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 25783476 of 60800000 or 42.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 25810940 of 60900000 or 42.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 25837908 of 61000000 or 42.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 25864934 of 61100000 or 42.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 25892036 of 61200000 or 42.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 25920078 of 61300000 or 42.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 25948822 of 61400000 or 42.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 25978608 of 61500000 or 42.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26007490 of 61600000 or 42.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26036470 of 61700000 or 42.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26066396 of 61800000 or 42.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26096986 of 61900000 or 42.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26126724 of 62000000 or 42.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26158264 of 62100000 or 42.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26190922 of 62200000 or 42.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26216342 of 62300000 or 42.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26241200 of 62400000 or 42.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26267444 of 62500000 or 42.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26293658 of 62600000 or 42.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26320178 of 62700000 or 42.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26347276 of 62800000 or 42.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26374540 of 62900000 or 41.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26402450 of 63000000 or 41.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26431916 of 63100000 or 41.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26460836 of 63200000 or 41.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26489870 of 63300000 or 41.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26520268 of 63400000 or 41.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26550730 of 63500000 or 41.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26581252 of 63600000 or 41.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26612344 of 63700000 or 41.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26645738 of 63800000 or 41.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26674976 of 63900000 or 41.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26700026 of 64000000 or 41.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26723690 of 64100000 or 41.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26749652 of 64200000 or 41.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26775692 of 64300000 or 41.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26801270 of 64400000 or 41.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26827408 of 64500000 or 41.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26854156 of 64600000 or 41.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26881344 of 64700000 or 41.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26910006 of 64800000 or 41.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26938326 of 64900000 or 41.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26966394 of 65000000 or 41.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 26995078 of 65100000 or 41.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27024234 of 65200000 or 41.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27053062 of 65300000 or 41.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27083622 of 65400000 or 41.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27116636 of 65500000 or 41.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27141236 of 65600000 or 41.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27166222 of 65700000 or 41.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27192238 of 65800000 or 41.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27218468 of 65900000 or 41.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27244396 of 66000000 or 41.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27270624 of 66100000 or 41.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27298156 of 66200000 or 41.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27326028 of 66300000 or 41.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27354422 of 66400000 or 41.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27382706 of 66500000 or 41.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27411110 of 66600000 or 41.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27441320 of 66700000 or 41.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27472246 of 66800000 or 41.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27505812 of 66900000 or 41.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27542580 of 67000000 or 41.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27576570 of 67100000 or 41.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27605994 of 67200000 or 41.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27629528 of 67300000 or 41.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27653626 of 67400000 or 41.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27678762 of 67500000 or 41.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27704286 of 67600000 or 41.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27728944 of 67700000 or 41.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27753372 of 67800000 or 40.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27777998 of 67900000 or 40.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27803454 of 68000000 or 40.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27830390 of 68100000 or 40.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27856388 of 68200000 or 40.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27882840 of 68300000 or 40.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27910070 of 68400000 or 40.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27941494 of 68500000 or 40.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27968662 of 68600000 or 40.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 27996618 of 68700000 or 40.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28024074 of 68800000 or 40.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28050820 of 68900000 or 40.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28079436 of 69000000 or 40.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28108522 of 69100000 or 40.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28137260 of 69200000 or 40.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28166642 of 69300000 or 40.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28196762 of 69400000 or 40.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28227432 of 69500000 or 40.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28259462 of 69600000 or 40.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28290568 of 69700000 or 40.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28322654 of 69800000 or 40.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28355108 of 69900000 or 40.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28389264 of 70000000 or 40.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28423600 of 70100000 or 40.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28459534 of 70200000 or 40.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28500418 of 70300000 or 40.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28524390 of 70400000 or 40.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28547968 of 70500000 or 40.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28571946 of 70600000 or 40.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28596356 of 70700000 or 40.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28620114 of 70800000 or 40.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28643650 of 70900000 or 40.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28668570 of 71000000 or 40.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28694320 of 71100000 or 40.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28720476 of 71200000 or 40.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28746694 of 71300000 or 40.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28773328 of 71400000 or 40.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28800846 of 71500000 or 40.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28829008 of 71600000 or 40.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28857678 of 71700000 or 40.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28885830 of 71800000 or 40.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28916458 of 71900000 or 40.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28940408 of 72000000 or 40.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28963506 of 72100000 or 40.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 28987110 of 72200000 or 40.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29011292 of 72300000 or 40.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29035226 of 72400000 or 40.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29057834 of 72500000 or 40.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29082426 of 72600000 or 40.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29107744 of 72700000 or 40.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29133906 of 72800000 or 40.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29160240 of 72900000 or 40.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29187180 of 73000000 or 40.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29213638 of 73100000 or 40.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29240244 of 73200000 or 39.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29267374 of 73300000 or 39.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29295780 of 73400000 or 39.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29326744 of 73500000 or 39.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29350952 of 73600000 or 39.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29373924 of 73700000 or 39.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29397208 of 73800000 or 39.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29421664 of 73900000 or 39.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29445636 of 74000000 or 39.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29468730 of 74100000 or 39.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29493540 of 74200000 or 39.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29518266 of 74300000 or 39.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29544450 of 74400000 or 39.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29570974 of 74500000 or 39.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29597550 of 74600000 or 39.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29624650 of 74700000 or 39.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29652318 of 74800000 or 39.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29680204 of 74900000 or 39.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29707942 of 75000000 or 39.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29736958 of 75100000 or 39.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29767634 of 75200000 or 39.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29790414 of 75300000 or 39.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29813582 of 75400000 or 39.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29836602 of 75500000 or 39.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29860286 of 75600000 or 39.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29883830 of 75700000 or 39.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29906736 of 75800000 or 39.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29931618 of 75900000 or 39.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29956380 of 76000000 or 39.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 29983368 of 76100000 or 39.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30009718 of 76200000 or 39.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30036118 of 76300000 or 39.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30063900 of 76400000 or 39.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30092144 of 76500000 or 39.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30120964 of 76600000 or 39.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30150946 of 76700000 or 39.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30182516 of 76800000 or 39.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30207050 of 76900000 or 39.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30229708 of 77000000 or 39.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30255546 of 77100000 or 39.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30279682 of 77200000 or 39.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30303356 of 77300000 or 39.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30325704 of 77400000 or 39.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30349454 of 77500000 or 39.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30373726 of 77600000 or 39.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30399002 of 77700000 or 39.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30425846 of 77800000 or 39.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30452270 of 77900000 or 39.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30478576 of 78000000 or 39.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30505360 of 78100000 or 39.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30533106 of 78200000 or 39.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30562042 of 78300000 or 39.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30592086 of 78400000 or 39.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30620272 of 78500000 or 39.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30643470 of 78600000 or 39.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30666668 of 78700000 or 39.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30691048 of 78800000 or 38.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30715004 of 78900000 or 38.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30738706 of 79000000 or 38.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30762490 of 79100000 or 38.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30787980 of 79200000 or 38.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30813798 of 79300000 or 38.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30841204 of 79400000 or 38.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30868076 of 79500000 or 38.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30895854 of 79600000 or 38.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30923816 of 79700000 or 38.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30951758 of 79800000 or 38.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 30980478 of 79900000 or 38.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31010280 of 80000000 or 38.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31041702 of 80100000 or 38.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31063342 of 80200000 or 38.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31081534 of 80300000 or 38.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31100000 of 80400000 or 38.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31118812 of 80500000 or 38.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31138132 of 80600000 or 38.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31158062 of 80700000 or 38.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31179794 of 80800000 or 38.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31201462 of 80900000 or 38.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31223780 of 81000000 or 38.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31246804 of 81100000 or 38.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31270412 of 81200000 or 38.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31296206 of 81300000 or 38.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31318404 of 81400000 or 38.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31336560 of 81500000 or 38.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31355018 of 81600000 or 38.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31373836 of 81700000 or 38.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31392896 of 81800000 or 38.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31412646 of 81900000 or 38.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31433364 of 82000000 or 38.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31455144 of 82100000 or 38.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31477464 of 82200000 or 38.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31500920 of 82300000 or 38.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31524838 of 82400000 or 38.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31551126 of 82500000 or 38.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31573822 of 82600000 or 38.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31592342 of 82700000 or 38.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31611308 of 82800000 or 38.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31630488 of 82900000 or 38.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31649600 of 83000000 or 38.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31669936 of 83100000 or 38.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31690952 of 83200000 or 38.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31712240 of 83300000 or 38.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31734404 of 83400000 or 38.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31758754 of 83500000 or 38.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31784560 of 83600000 or 38.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31810102 of 83700000 or 38.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31837358 of 83800000 or 38.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31856184 of 83900000 or 38.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31874884 of 84000000 or 37.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31893348 of 84100000 or 37.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31911902 of 84200000 or 37.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31930596 of 84300000 or 37.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31949844 of 84400000 or 37.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31970198 of 84500000 or 37.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 31990956 of 84600000 or 37.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32012366 of 84700000 or 37.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32034366 of 84800000 or 37.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32056680 of 84900000 or 37.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32080164 of 85000000 or 37.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32102980 of 85100000 or 37.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32121122 of 85200000 or 37.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32139246 of 85300000 or 37.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32157212 of 85400000 or 37.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32175624 of 85500000 or 37.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32194034 of 85600000 or 37.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32212980 of 85700000 or 37.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32232582 of 85800000 or 37.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32252424 of 85900000 or 37.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32273296 of 86000000 or 37.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32294678 of 86100000 or 37.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32316092 of 86200000 or 37.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32338894 of 86300000 or 37.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32359402 of 86400000 or 37.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32378056 of 86500000 or 37.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32396726 of 86600000 or 37.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32415310 of 86700000 or 37.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32434090 of 86800000 or 37.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32453122 of 86900000 or 37.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32472490 of 87000000 or 37.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32492778 of 87100000 or 37.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32513798 of 87200000 or 37.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32536290 of 87300000 or 37.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32561972 of 87400000 or 37.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32586626 of 87500000 or 37.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+... kept 32609946 of 87600000 or 37.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz
+DONE with /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_FW_3.trim.interleaved.fq.gz; kept 32625914 of 87665760 or 37.2%
+output in F_diaphanus_NA_FW_3.trim.interleaved.fq.gz.keep
+... kept 32636104 of 87700000 or 37.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 32665884 of 87800000 or 37.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 32695810 of 87900000 or 37.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 32725928 of 88000000 or 37.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 32757234 of 88100000 or 37.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 32787838 of 88200000 or 37.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 32817424 of 88300000 or 37.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 32847066 of 88400000 or 37.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 32878668 of 88500000 or 37.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 32911106 of 88600000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 32943414 of 88700000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 32977340 of 88800000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33010856 of 88900000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33045114 of 89000000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33080444 of 89100000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33115554 of 89200000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33154290 of 89300000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33194670 of 89400000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33239008 of 89500000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33268196 of 89600000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33297774 of 89700000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33327308 of 89800000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33357726 of 89900000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33388002 of 90000000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33418812 of 90100000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33447710 of 90200000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33478976 of 90300000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33510760 of 90400000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33543470 of 90500000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33576108 of 90600000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33609774 of 90700000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33643530 of 90800000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33677984 of 90900000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33713294 of 91000000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33749120 of 91100000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33784936 of 91200000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33824886 of 91300000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33868928 of 91400000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33896558 of 91500000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33924258 of 91600000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33952400 of 91700000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 33981532 of 91800000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34009800 of 91900000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34038374 of 92000000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34067640 of 92100000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34097014 of 92200000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34127276 of 92300000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34158008 of 92400000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34189780 of 92500000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34220738 of 92600000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34252558 of 92700000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34285382 of 92800000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34318504 of 92900000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34351640 of 93000000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34385468 of 93100000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34421556 of 93200000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34457506 of 93300000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34489378 of 93400000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34520968 of 93500000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34554598 of 93600000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34590308 of 93700000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34623996 of 93800000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34654664 of 93900000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34684972 of 94000000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34718728 of 94100000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34759858 of 94200000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34796318 of 94300000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34833770 of 94400000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34869700 of 94500000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34905154 of 94600000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34941922 of 94700000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 34979564 of 94800000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35021158 of 94900000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35060328 of 95000000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35104370 of 95100000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35137214 of 95200000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35170078 of 95300000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35204072 of 95400000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35239174 of 95500000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35274168 of 95600000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35306888 of 95700000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35342032 of 95800000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35377594 of 95900000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35414154 of 96000000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35449124 of 96100000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35487736 of 96200000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35524974 of 96300000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35562426 of 96400000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35600828 of 96500000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35640188 of 96600000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35690566 of 96700000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35739040 of 96800000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35790790 of 96900000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35818780 of 97000000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35847154 of 97100000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35875588 of 97200000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35904684 of 97300000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35933396 of 97400000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35962204 of 97500000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 35991482 of 97600000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36021036 of 97700000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36050604 of 97800000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36081028 of 97900000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36113518 of 98000000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36145100 of 98100000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36176610 of 98200000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36208560 of 98300000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36241968 of 98400000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36276186 of 98500000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36311388 of 98600000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36364022 of 98700000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36406848 of 98800000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36434242 of 98900000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36461802 of 99000000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36490050 of 99100000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36518568 of 99200000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36548004 of 99300000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36575130 of 99400000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36605292 of 99500000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36635634 of 99600000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36665768 of 99700000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36696176 of 99800000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36728470 of 99900000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36760416 of 100000000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36792996 of 100100000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36825770 of 100200000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36859706 of 100300000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36893028 of 100400000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36929244 of 100500000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36969274 of 100600000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 36996010 of 100700000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37023422 of 100800000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37051312 of 100900000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37080130 of 101000000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37108426 of 101100000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37136432 of 101200000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37164946 of 101300000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37194308 of 101400000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37224232 of 101500000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37255390 of 101600000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37287558 of 101700000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37319376 of 101800000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37351428 of 101900000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37384258 of 102000000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37416874 of 102100000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37450594 of 102200000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37484280 of 102300000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37529054 of 102400000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37561510 of 102500000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37588422 of 102600000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37615680 of 102700000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37643706 of 102800000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37671634 of 102900000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37699308 of 103000000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37728072 of 103100000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37756774 of 103200000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37785450 of 103300000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37814876 of 103400000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37844924 of 103500000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37875890 of 103600000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37906326 of 103700000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37937342 of 103800000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 37969134 of 103900000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38001264 of 104000000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38034436 of 104100000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38069582 of 104200000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38108636 of 104300000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38137168 of 104400000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38165038 of 104500000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38193478 of 104600000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38224714 of 104700000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38253080 of 104800000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38281196 of 104900000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38308980 of 105000000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38339364 of 105100000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38370412 of 105200000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38400928 of 105300000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38433296 of 105400000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38464892 of 105500000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38496492 of 105600000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38529892 of 105700000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38563364 of 105800000 or 36.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38598382 of 105900000 or 36.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38634086 of 106000000 or 36.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38667674 of 106100000 or 36.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38693426 of 106200000 or 36.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38718698 of 106300000 or 36.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38744654 of 106400000 or 36.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38771916 of 106500000 or 36.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38798508 of 106600000 or 36.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38823174 of 106700000 or 36.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38849030 of 106800000 or 36.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38877794 of 106900000 or 36.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38904466 of 107000000 or 36.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38931950 of 107100000 or 36.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38959008 of 107200000 or 36.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 38986150 of 107300000 or 36.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39013760 of 107400000 or 36.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39041956 of 107500000 or 36.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39070794 of 107600000 or 36.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39106444 of 107700000 or 36.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39139140 of 107800000 or 36.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39166206 of 107900000 or 36.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39193328 of 108000000 or 36.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39220668 of 108100000 or 36.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39248838 of 108200000 or 36.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39277114 of 108300000 or 36.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39305470 of 108400000 or 36.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39334234 of 108500000 or 36.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39362956 of 108600000 or 36.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39391806 of 108700000 or 36.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39421274 of 108800000 or 36.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39452516 of 108900000 or 36.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39482998 of 109000000 or 36.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39514280 of 109100000 or 36.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39547184 of 109200000 or 36.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39580644 of 109300000 or 36.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39614310 of 109400000 or 36.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39649274 of 109500000 or 36.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39697010 of 109600000 or 36.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39727142 of 109700000 or 36.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39747000 of 109800000 or 36.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39767104 of 109900000 or 36.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39787552 of 110000000 or 36.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39808502 of 110100000 or 36.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39829528 of 110200000 or 36.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39849188 of 110300000 or 36.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39869144 of 110400000 or 36.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39888828 of 110500000 or 36.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39909364 of 110600000 or 36.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39930076 of 110700000 or 36.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39950900 of 110800000 or 36.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39970420 of 110900000 or 36.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 39990282 of 111000000 or 36.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40010176 of 111100000 or 36.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40030940 of 111200000 or 36.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40051224 of 111300000 or 36.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40072530 of 111400000 or 36.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40092840 of 111500000 or 36.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40113244 of 111600000 or 35.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40133456 of 111700000 or 35.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40155108 of 111800000 or 35.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40176476 of 111900000 or 35.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40196940 of 112000000 or 35.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40216700 of 112100000 or 35.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40236366 of 112200000 or 35.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40256072 of 112300000 or 35.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40276608 of 112400000 or 35.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40296672 of 112500000 or 35.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40316994 of 112600000 or 35.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40336178 of 112700000 or 35.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40356274 of 112800000 or 35.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40375798 of 112900000 or 35.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40396862 of 113000000 or 35.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40418208 of 113100000 or 35.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40439668 of 113200000 or 35.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40464620 of 113300000 or 35.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40489314 of 113400000 or 35.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40514008 of 113500000 or 35.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40538782 of 113600000 or 35.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40563398 of 113700000 or 35.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40588182 of 113800000 or 35.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40612556 of 113900000 or 35.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40637456 of 114000000 or 35.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40662136 of 114100000 or 35.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40686958 of 114200000 or 35.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40712454 of 114300000 or 35.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40737990 of 114400000 or 35.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40763990 of 114500000 or 35.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40789760 of 114600000 or 35.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40815748 of 114700000 or 35.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40842616 of 114800000 or 35.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40874222 of 114900000 or 35.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40905444 of 115000000 or 35.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40930822 of 115100000 or 35.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40956128 of 115200000 or 35.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 40981002 of 115300000 or 35.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41005320 of 115400000 or 35.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41030212 of 115500000 or 35.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41055448 of 115600000 or 35.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41079606 of 115700000 or 35.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41105850 of 115800000 or 35.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41132630 of 115900000 or 35.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41158536 of 116000000 or 35.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41184446 of 116100000 or 35.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41210966 of 116200000 or 35.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41237646 of 116300000 or 35.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41264004 of 116400000 or 35.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41291678 of 116500000 or 35.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41320722 of 116600000 or 35.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41351860 of 116700000 or 35.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41380026 of 116800000 or 35.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41405426 of 116900000 or 35.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41430578 of 117000000 or 35.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41455600 of 117100000 or 35.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41480426 of 117200000 or 35.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41505480 of 117300000 or 35.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41530686 of 117400000 or 35.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41555184 of 117500000 or 35.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41581776 of 117600000 or 35.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41607622 of 117700000 or 35.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41633444 of 117800000 or 35.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41659498 of 117900000 or 35.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41685502 of 118000000 or 35.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41712546 of 118100000 or 35.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41739282 of 118200000 or 35.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41766890 of 118300000 or 35.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41795132 of 118400000 or 35.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41825636 of 118500000 or 35.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41857492 of 118600000 or 35.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41882230 of 118700000 or 35.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41906196 of 118800000 or 35.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41930372 of 118900000 or 35.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41954112 of 119000000 or 35.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 41978274 of 119100000 or 35.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42002558 of 119200000 or 35.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42026212 of 119300000 or 35.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42050472 of 119400000 or 35.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42074726 of 119500000 or 35.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42099352 of 119600000 or 35.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42124540 of 119700000 or 35.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42149888 of 119800000 or 35.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42175468 of 119900000 or 35.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42201698 of 120000000 or 35.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42229040 of 120100000 or 35.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42258218 of 120200000 or 35.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42323916 of 120300000 or 35.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42357422 of 120400000 or 35.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42382512 of 120500000 or 35.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42406940 of 120600000 or 35.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42430726 of 120700000 or 35.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42454476 of 120800000 or 35.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42478580 of 120900000 or 35.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42502616 of 121000000 or 35.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42526246 of 121100000 or 35.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42551444 of 121200000 or 35.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42576416 of 121300000 or 35.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42601822 of 121400000 or 35.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42628028 of 121500000 or 35.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42653764 of 121600000 or 35.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42679870 of 121700000 or 35.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42706600 of 121800000 or 35.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42733192 of 121900000 or 35.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42762076 of 122000000 or 35.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42817870 of 122100000 or 35.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42858312 of 122200000 or 35.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42883070 of 122300000 or 35.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42907830 of 122400000 or 35.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42932012 of 122500000 or 35.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42956226 of 122600000 or 35.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 42980660 of 122700000 or 35.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 43005300 of 122800000 or 35.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 43029192 of 122900000 or 35.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 43054094 of 123000000 or 35.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 43079500 of 123100000 or 35.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 43105124 of 123200000 or 35.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 43131030 of 123300000 or 35.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 43157300 of 123400000 or 35.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 43183964 of 123500000 or 35.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 43211054 of 123600000 or 35.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 43240356 of 123700000 or 35.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+... kept 43270792 of 123800000 or 35.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz
+DONE with /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz; kept 43281672 of 123833124 or 35.0%
+output in F_diaphanus_NA_transfer_1.trim.interleaved.fq.gz.keep
+... kept 43297566 of 123900000 or 34.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43321956 of 124000000 or 34.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43347018 of 124100000 or 34.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43372068 of 124200000 or 34.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43398942 of 124300000 or 34.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43427768 of 124400000 or 34.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43457382 of 124500000 or 34.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43487870 of 124600000 or 34.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43516640 of 124700000 or 34.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43540024 of 124800000 or 34.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43564044 of 124900000 or 34.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43588216 of 125000000 or 34.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43613698 of 125100000 or 34.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43639492 of 125200000 or 34.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43666266 of 125300000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43698510 of 125400000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43723438 of 125500000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43747688 of 125600000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43771566 of 125700000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43796542 of 125800000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43822966 of 125900000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43849638 of 126000000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43877632 of 126100000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43908000 of 126200000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43938120 of 126300000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43963890 of 126400000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 43988788 of 126500000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44014420 of 126600000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44042458 of 126700000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44071524 of 126800000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44103166 of 126900000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44144880 of 127000000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44168790 of 127100000 or 34.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44191764 of 127200000 or 34.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44215314 of 127300000 or 34.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44237992 of 127400000 or 34.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44262216 of 127500000 or 34.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44285376 of 127600000 or 34.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44309978 of 127700000 or 34.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44338392 of 127800000 or 34.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44362408 of 127900000 or 34.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44387524 of 128000000 or 34.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44412882 of 128100000 or 34.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44439192 of 128200000 or 34.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44467634 of 128300000 or 34.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44496482 of 128400000 or 34.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44526912 of 128500000 or 34.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44559506 of 128600000 or 34.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44582198 of 128700000 or 34.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44606572 of 128800000 or 34.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44631092 of 128900000 or 34.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44655740 of 129000000 or 34.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44683192 of 129100000 or 34.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44711460 of 129200000 or 34.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44740698 of 129300000 or 34.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44768734 of 129400000 or 34.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44791020 of 129500000 or 34.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44814682 of 129600000 or 34.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44838702 of 129700000 or 34.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44863722 of 129800000 or 34.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44890756 of 129900000 or 34.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44918190 of 130000000 or 34.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44946498 of 130100000 or 34.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44972714 of 130200000 or 34.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 44994866 of 130300000 or 34.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45018646 of 130400000 or 34.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45042486 of 130500000 or 34.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45067220 of 130600000 or 34.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45093438 of 130700000 or 34.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45120610 of 130800000 or 34.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45148226 of 130900000 or 34.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45176224 of 131000000 or 34.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45202412 of 131100000 or 34.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45228570 of 131200000 or 34.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45254554 of 131300000 or 34.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45280670 of 131400000 or 34.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45306046 of 131500000 or 34.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45338006 of 131600000 or 34.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45366576 of 131700000 or 34.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45388534 of 131800000 or 34.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45409990 of 131900000 or 34.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45431318 of 132000000 or 34.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45453028 of 132100000 or 34.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45475760 of 132200000 or 34.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45499248 of 132300000 or 34.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45524188 of 132400000 or 34.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45547062 of 132500000 or 34.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45570948 of 132600000 or 34.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45595184 of 132700000 or 34.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45620498 of 132800000 or 34.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45647414 of 132900000 or 34.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45674832 of 133000000 or 34.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45705122 of 133100000 or 34.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45737280 of 133200000 or 34.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45752742 of 133300000 or 34.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45769612 of 133400000 or 34.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45787078 of 133500000 or 34.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45806020 of 133600000 or 34.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45825678 of 133700000 or 34.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45847046 of 133800000 or 34.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45863872 of 133900000 or 34.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45881688 of 134000000 or 34.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45899902 of 134100000 or 34.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45919480 of 134200000 or 34.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45940536 of 134300000 or 34.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45961930 of 134400000 or 34.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45979078 of 134500000 or 34.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 45996716 of 134600000 or 34.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46015532 of 134700000 or 34.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46035730 of 134800000 or 34.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46058412 of 134900000 or 34.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46079486 of 135000000 or 34.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46097144 of 135100000 or 34.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46113756 of 135200000 or 34.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46131816 of 135300000 or 34.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46150200 of 135400000 or 34.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46169554 of 135500000 or 34.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46189890 of 135600000 or 34.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46206564 of 135700000 or 34.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46223578 of 135800000 or 34.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46240672 of 135900000 or 34.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46258494 of 136000000 or 34.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46277552 of 136100000 or 34.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46298048 of 136200000 or 34.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46314984 of 136300000 or 34.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46331668 of 136400000 or 34.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46348704 of 136500000 or 34.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46366692 of 136600000 or 33.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46387050 of 136700000 or 33.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+... kept 46407728 of 136800000 or 33.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz
+DONE with /home/ljcohen/osmotic_trim/interleaved/F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz; kept 46415394 of 136831460 or 33.9%
+output in F_diaphanus_NA_transfer_2.trim.interleaved.fq.gz.keep
+... kept 46456878 of 136900000 or 33.9% sofar
+... in file /home/ljcohen/osmotic_trim/F_diaphanus.orphans.fq.gz
+... kept 46524956 of 137000000 or 34.0% sofar
+... in file /home/ljcohen/osmotic_trim/F_diaphanus.orphans.fq.gz
+... kept 46583984 of 137100000 or 34.0% sofar
+... in file /home/ljcohen/osmotic_trim/F_diaphanus.orphans.fq.gz
+... kept 46657788 of 137200000 or 34.0% sofar
+... in file /home/ljcohen/osmotic_trim/F_diaphanus.orphans.fq.gz
+DONE with /home/ljcohen/osmotic_trim/F_diaphanus.orphans.fq.gz; kept 46692192 of 137246213 or 34.0%
+output in F_diaphanus.orphans.fq.gz.keep
+Total number of unique k-mers: 1046979112
+...saving to /home/ljcohen/osmotic_trim/diginorm/F_diaphanus/F_diaphanus.norm.C20k20.ct
+fp rate estimated to be 0.204

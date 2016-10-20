@@ -60,13 +60,16 @@ def get_sample_dictionary(sample_dictionary,trim_out_file,sample):
 
 def trim_table(sample_dictionary):
 	trim_table_filename = "/home/ljcohen/osmotic/evaluation_data/"+"trim_reads_data.txt"
-	header=["Sample","Input Reads","Surviving Reads","Percent Surviving"]
+	header=["Genus_species","Sample","Input Reads","Surviving Reads","Percent Surviving"]
     	with open(trim_table_filename,"w") as datafile:
         	datafile.write("\t".join(header))
         	datafile.write("\n")
         	for sample in sample_dictionary.keys():
-            		important_nums=sample_dictionary[sample]
-            		datafile.write(sample+"\t")
+            		genus_species = sample.split("_")[0] + "_" + sample.split("_")[1]
+			print genus_species	
+			important_nums=sample_dictionary[sample]
+            		datafile.write(genus_species+"\t")
+			datafile.write(sample+"\t")
             		datafile.write("\t".join(important_nums))
             		datafile.write("\n")
     	datafile.close()
@@ -76,7 +79,7 @@ def trim_table(sample_dictionary):
 def execute(listoffiles,basedir):
 	sample_dictionary = {}
 	pairs_dictionary=get_pairs(listoffiles,basedir)
-	#print pairs_dictionary
+	print pairs_dictionary
 	for sample in pairs_dictionary:
 		print sample
 		if sample.startswith("F_heteroclitus"):
