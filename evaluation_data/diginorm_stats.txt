@@ -1,32 +1,1 @@
-F_sciadicus.left.fq.readcount	32831153
-F_sciadicus.right.fq.readcount	28928413
-F_chrysotus.left.fq.readcount	64425984
-F_chrysotus.right.fq.readcount	56189043
-F_diaphanus.left.fq.readcount	53447394
-F_diaphanus.right.fq.readcount	47621437
-F_notti.right.fq.readcount	11706626
-F_notti.left.fq.readcount	13468145
-F_similis.left.fq.readcount	54675604
-F_similis.right.fq.readcount	49492544
-F_parvapinis.right.fq.readcount	39000915
-F_parvapinis.left.fq.readcount	43582744
-A_xenica.left.fq.readcount	64346035
-A_xenica.right.fq.readcount	56916892
-F_heteroclitus.right.fq.readcount	126852164
-F_heteroclitus.left.fq.readcount	143032103
-F_rathbuni.right.fq.readcount	71141378
-F_rathbuni.left.fq.readcount	80404734
-F_olivaceous.right.fq.readcount	48134704
-F_olivaceous.left.fq.readcount	54248282
-L_goodei.right.fq.readcount	51138920
-L_goodei.left.fq.readcount	56911637
-F_catanatus.left.fq.readcount	65441200
-F_catanatus.right.fq.readcount	56792679
-F_notatus.right.fq.readcount	67636992
-F_notatus.left.fq.readcount	77063437
-L_parva.right.fq.readcount	57187676
-L_parva.left.fq.readcount	63365704
-F_grandis.right.fq.readcount	81083268
-F_grandis.left.fq.readcount	90293097
-F_zebrinus.right.fq.readcount	23037515
-F_zebrinus.left.fq.readcount	25862793
+species	Diginorm_bysample	Reads_Input	Diginorm_byspecies	Unique kmers	Percent_survivingF_sciadicus	61759566	101937160	37932302	929778741	37.2F_chrysotus	120615027	258850289	66146703	1434123391	25.6F_diaphanus	101068831	137246213	46692192	1046979112	34F_notti	25174771	46463472	21860955	493595457	47F_similis	104168148	207444577	63352801	1420704983	30.5F_parvapinis	82583659	184254591	50597794	1231605484	27.5A_xenica	121262927	250627759	62070035	1366099384	24.8F_heteroclitus.MDPL	269884267	319925008	79472815	1570605946	24.8F_heteroclitus.MDPP	269884267	275951932	77784067	1593032868	28.2F_rathbuni	151546112	348759075	79184398	1603165556	22.7F_olivaceous	102382986	202133952	56164901	1283222161	27.8L_goodei	108050557	219175639	61476480	1391181944	28F_catanatus	122233879	328807408	71067870	1508176669	21.6F_notatus	144700429	349630701	75563103	1545405076	21.6L_parva	120553380	255219214	63705405	1367885577	25F_grandis	171376365	467432867	108411122	1867426837	23.2F_zebrinus	48900308	98327251	35987974	842367207	36.6
