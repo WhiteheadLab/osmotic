@@ -1,5 +1,7 @@
 # RNAseq project, Osmotic tolerance in multiple species of killifish
 
+[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/ljcohen/osmotic)
+
 References
 ===========
 
