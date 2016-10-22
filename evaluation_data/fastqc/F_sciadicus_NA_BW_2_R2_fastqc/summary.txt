@@ -1,0 +1,11 @@
+PASS	Basic Statistics	F_sciadicus_NA_BW_2_R2.fastq.gz
+FAIL	Per base sequence quality	F_sciadicus_NA_BW_2_R2.fastq.gz
+PASS	Per sequence quality scores	F_sciadicus_NA_BW_2_R2.fastq.gz
+FAIL	Per base sequence content	F_sciadicus_NA_BW_2_R2.fastq.gz
+FAIL	Per base GC content	F_sciadicus_NA_BW_2_R2.fastq.gz
+WARN	Per sequence GC content	F_sciadicus_NA_BW_2_R2.fastq.gz
+PASS	Per base N content	F_sciadicus_NA_BW_2_R2.fastq.gz
+PASS	Sequence Length Distribution	F_sciadicus_NA_BW_2_R2.fastq.gz
+WARN	Sequence Duplication Levels	F_sciadicus_NA_BW_2_R2.fastq.gz
+WARN	Overrepresented sequences	F_sciadicus_NA_BW_2_R2.fastq.gz
+WARN	Kmer Content	F_sciadicus_NA_BW_2_R2.fastq.gz

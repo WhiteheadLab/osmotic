@@ -1,0 +1,11 @@
+PASS	Basic Statistics	F_diaphanus_NA_FW_1_R1.fastq.gz
+PASS	Per base sequence quality	F_diaphanus_NA_FW_1_R1.fastq.gz
+PASS	Per sequence quality scores	F_diaphanus_NA_FW_1_R1.fastq.gz
+FAIL	Per base sequence content	F_diaphanus_NA_FW_1_R1.fastq.gz
+FAIL	Per base GC content	F_diaphanus_NA_FW_1_R1.fastq.gz
+WARN	Per sequence GC content	F_diaphanus_NA_FW_1_R1.fastq.gz
+PASS	Per base N content	F_diaphanus_NA_FW_1_R1.fastq.gz
+PASS	Sequence Length Distribution	F_diaphanus_NA_FW_1_R1.fastq.gz
+WARN	Sequence Duplication Levels	F_diaphanus_NA_FW_1_R1.fastq.gz
+PASS	Overrepresented sequences	F_diaphanus_NA_FW_1_R1.fastq.gz
+FAIL	Kmer Content	F_diaphanus_NA_FW_1_R1.fastq.gz

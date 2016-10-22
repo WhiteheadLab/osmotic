@@ -1,0 +1,11 @@
+PASS	Basic Statistics	F_catanatus_NA_transfer_2_R1.fastq.gz
+PASS	Per base sequence quality	F_catanatus_NA_transfer_2_R1.fastq.gz
+PASS	Per sequence quality scores	F_catanatus_NA_transfer_2_R1.fastq.gz
+FAIL	Per base sequence content	F_catanatus_NA_transfer_2_R1.fastq.gz
+FAIL	Per base GC content	F_catanatus_NA_transfer_2_R1.fastq.gz
+WARN	Per sequence GC content	F_catanatus_NA_transfer_2_R1.fastq.gz
+PASS	Per base N content	F_catanatus_NA_transfer_2_R1.fastq.gz
+PASS	Sequence Length Distribution	F_catanatus_NA_transfer_2_R1.fastq.gz
+FAIL	Sequence Duplication Levels	F_catanatus_NA_transfer_2_R1.fastq.gz
+PASS	Overrepresented sequences	F_catanatus_NA_transfer_2_R1.fastq.gz
+WARN	Kmer Content	F_catanatus_NA_transfer_2_R1.fastq.gz
