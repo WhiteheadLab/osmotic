@@ -38,8 +38,8 @@ def sbatch_file(basedir,process_name,module_name_list,filename,process_string):
 	 sbatch_file.write("#SBATCH -t 04:00:00"+"\n")
 	 #sbatch_file.write("#SBATHC -p med\n")
 	 sbatch_file.write("#SBATCH --mail-user=ljcohen@ucdavis.edu"+"\n")
-         sbatch_file.write("#SBATCH --cpus-per-task=16"+"\n")
-	 sbatch_file.write("#SBATCH --mem=48GB"+"\n")
+         sbatch_file.write("#SBATCH --cpus-per-task=4"+"\n")
+	 sbatch_file.write("#SBATCH --mem=16GB"+"\n")
          for module_string in module_load:
              sbatch_file.write(module_string+"\n")
              #print module_string
