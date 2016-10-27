@@ -1,0 +1,11 @@
+PASS	Basic Statistics	F_heteroclitus_MDPL_FW_2_R2.fastq.gz
+FAIL	Per base sequence quality	F_heteroclitus_MDPL_FW_2_R2.fastq.gz
+PASS	Per sequence quality scores	F_heteroclitus_MDPL_FW_2_R2.fastq.gz
+FAIL	Per base sequence content	F_heteroclitus_MDPL_FW_2_R2.fastq.gz
+FAIL	Per base GC content	F_heteroclitus_MDPL_FW_2_R2.fastq.gz
+WARN	Per sequence GC content	F_heteroclitus_MDPL_FW_2_R2.fastq.gz
+PASS	Per base N content	F_heteroclitus_MDPL_FW_2_R2.fastq.gz
+PASS	Sequence Length Distribution	F_heteroclitus_MDPL_FW_2_R2.fastq.gz
+WARN	Sequence Duplication Levels	F_heteroclitus_MDPL_FW_2_R2.fastq.gz
+PASS	Overrepresented sequences	F_heteroclitus_MDPL_FW_2_R2.fastq.gz
+WARN	Kmer Content	F_heteroclitus_MDPL_FW_2_R2.fastq.gz

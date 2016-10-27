@@ -1,0 +1,11 @@
+PASS	Basic Statistics	F_similis_NA_FW_1_R2.fastq.gz
+FAIL	Per base sequence quality	F_similis_NA_FW_1_R2.fastq.gz
+PASS	Per sequence quality scores	F_similis_NA_FW_1_R2.fastq.gz
+FAIL	Per base sequence content	F_similis_NA_FW_1_R2.fastq.gz
+FAIL	Per base GC content	F_similis_NA_FW_1_R2.fastq.gz
+FAIL	Per sequence GC content	F_similis_NA_FW_1_R2.fastq.gz
+PASS	Per base N content	F_similis_NA_FW_1_R2.fastq.gz
+PASS	Sequence Length Distribution	F_similis_NA_FW_1_R2.fastq.gz
+FAIL	Sequence Duplication Levels	F_similis_NA_FW_1_R2.fastq.gz
+FAIL	Overrepresented sequences	F_similis_NA_FW_1_R2.fastq.gz
+FAIL	Kmer Content	F_similis_NA_FW_1_R2.fastq.gz
