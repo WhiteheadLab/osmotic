@@ -49,7 +49,7 @@ for sample_name in sample_dict:
     print(sample_name)
     for info in sample_dict[sample_name]:
        print(info)
-       df2 = pd.DataFrame({'Sample':sample_name,'Info':info})
+       df2 = pd.DataFrame({'Sample':sample_name,'Flowcell':[info[0]],'Pool':[info[1]],'Lane':[info[2]],'Barcode':[info[3]]})
        data_frame = pd.concat([df2, data_frame])
 print(sample_dict.keys())
 print("Num samples:",len(sample_dict.keys()))
