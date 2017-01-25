@@ -3,27 +3,32 @@ import os.path
 from os.path import basename
 import subprocess
 from subprocess import Popen, PIPE
-import clusterfunc
-
-def get_assemblies(assemblydir):
-	genus_species_dirs=os.listdir(assemblydir)
-	for genus_species in genus_species_dirs:
-		trinity_out_dir=assemblydir+genus_species+"/"
-		trinity_fasta=trinity_out_dir+genus_species+".Trinity.fixed.fa"
-		if os.path.isfile(trinity_fasta):
-			dammit_command=[dammit(trinity_fasta)]
-			module_load_list=["blast/2.2.29"]
-        		process_name="dammit"
-        		clusterfunc.sbatch_file(trinity_out_dir,process_name,module_load_list,genus_species,dammit_command)
-		else:
-			print "Assembly not completed:",genus_species
-
-def dammit(trinity_fasta):
-	dammit_command="""
-dammit annotate {} --busco-group eukaryota --database-dir /home/ljcohen/reference/dammit --n_threads 16
-""".format(trinity_fasta)
-	return dammit_command
+import clusterfunc_py3
 
 
-assemblydir="/home/ljcohen/msu_assemblies_finished/"
-get_assemblies(assemblydir)
+def dammit(trinity_fasta,genus_species,dammitdir):
+    dammit_command="""
+dammit annotate {} --busco-group metazoa --user-databases /home/ljcohen/osmotic/kfish_reference_genome_files/protein.fa -o {}{}.dammit_out --n_threads 16
+""".format(trinity_fasta,dammitdir,genus_species)
+    return dammit_command
+
+def run_dammit(dammit_command,dammitdir,genus_species):
+    dammitstring=[dammit_command]
+    process_name="dammit_"+genus_species
+    module_name_list=""
+    clusterfunc_py3.sbatch_file(dammitdir,process_name,module_name_list,genus_species,dammitstring)
+
+def execute(assemblies,assemblydir,dammitdir):
+    for assembly in assemblies:
+        genus_species = assembly.split(".")[0]
+        print(genus_species)
+        trinity_fasta=assemblydir+assembly
+        dammit_command=dammit(trinity_fasta,genus_species,dammitdir)
+        run_dammit(dammit_command,dammitdir,genus_species)
+
+assemblydir="/home/ljcohen/osmotic_assemblies_farm/"
+dammitdir = "/home/ljcohen/osmotic_damit/"
+clusterfunc_py3.check_dir(dammitdir)
+assemblies=os.listdir(assemblydir)
+execute(assemblies,assemblydir,dammitdir)
+

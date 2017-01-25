@@ -187,11 +187,15 @@ def execute(listoffiles,trimdir,interleavedir,diginormdir,assemblydir):
 		orphansfile = combine_orphans(trimdir,sample)
 		sample_diginormdir = diginormdir + sample + "/"
 		clusterfunc.check_dir(sample_diginormdir)
+		genus_species_assemblydir = assemblydir + sample + "/"
+		clusterfunc.check_dir(genus_species_assemblydir)	
 		#run_diginorm(trimdir,sample_diginormdir,orphansfile,interleavedir,sample)
 		#run_filt_abund(sample_diginormdir,sample)
 		#run_extract_paired(sample_diginormdir,sample)
-		combine_orphans_after_diginorm(sample_diginormdir,sample)
-	
+		#combine_orphans_after_diginorm(sample_diginormdir,sample)
+		#run_split_paired(sample_diginormdir,sample)
+		combine(genus_species_assemblydir,sample_diginormdir,sample)
+
 def get_abund_filt_files(diginormdir):
 	listoffiles=os.listdir(diginormdir)
 	abund_filt_files=[]
@@ -218,24 +222,21 @@ gzip -9c {}{}.se.keep.abundfilt.fq >> {}{}.orphans.keep.abundfilt.fq.gz
 """.format(genus_species_diginormdir,sample,genus_species_diginormdir,sample,genus_species_diginormdir,sample,genus_species_diginormdir,sample)
 	return j
 
-def group_assembly_files(diginormdir,assemblydir):		
-	abund_filt_files=get_abund_filt_files(diginormdir)
-	genus_species_files=get_genus_species(abund_filt_files)
-	for genus_species in genus_species_files:
-		genus_species_dir=assemblydir+genus_species+"/"
-		clusterfunc.check_dir(genus_species_dir)
-		for filename in genus_species_files[genus_species]:
-			abund_filt_filename=diginormdir+filename
-			sample_info=filename.split("_")
-			extension=sample_info[-1].split(".")
-			sample="_".join(sample_info[:-1])
-			sample=sample+"_"+extension[0]+"_"+extension[2]
-			rename_command=get_rename(genus_species_dir,sample,abund_filt_filename)
-			process_name="split"
-			rename_command=[rename_command]
-        		module_name_list=""
-        		filename=sample
-        		#clusterfunc.sbatch_file(genus_species_dir,process_name,module_name_list,filename,rename_command)
+
+def split_paired(genus_species_diginormdir,sample):
+	j = """ 
+split-paired-reads.py -d {} {}{}.pe.keep.abundfilt.fq
+""".format(genus_species_diginormdir,genus_species_diginormdir,sample)
+	return j
+
+def run_split_paired(genus_species_diginormdir,sample):
+	split_command=split_paired(genus_species_diginormdir,sample)
+        split_paired_command=[split_command]
+        process_name="split"
+        module_name_list=""
+        filename=sample
+        clusterfunc.sbatch_file(genus_species_diginormdir,process_name,module_name_list,filename,split_paired_command)
+
 		
 def combine_orphans_after_diginorm(genus_species_diginormdir,sample):
 	consolidate_command=consolidate(genus_species_diginormdir,sample)			
@@ -245,34 +246,16 @@ def combine_orphans_after_diginorm(genus_species_diginormdir,sample):
 	filename=sample
 	clusterfunc.sbatch_file(genus_species_diginormdir,process_name,module_name_list,filename,consolidate_command)
 
-def split_reads(assemblydir):
-	assemblydirs=os.listdir(assemblydir)
-	for genus_species in assemblydirs:
-		genus_species_dir=assemblydir+genus_species+"/"
-		listoffiles=os.listdir(genus_species_dir)
-		for filename in listoffiles:
-			if filename.endswith("pe.keep.abundfilt.fq"):
-# next time you run this, specify output file,
-# otherwise output will be put in sbatch_files directory
-# moved manually 2/7/2016
-				split_command="""
-split-paired-reads.py -1 {}{}.1 -2 {}{}.2 {}{}
-""".format(genus_species_dir,filename,genus_species_dir,filename,genus_species_dir,filename)
-				process_name="split"
-				module_name_list=""
-				split_command=[split_command]
-				#clusterfunc.sbatch_file(genus_species_dir,process_name,module_name_list,filename,split_command)
-			#else:
-			#	print "Not found:",filename
+def combine(genus_species_assemblydir,genus_species_diginormdir,sample):
 		combine="""
-cat {}*.1 > {}{}.left.fq
-cat {}*.2 > {}{}.right.fq
-gunzip -c {}*orphans.keep.abundfilt.fq.gz >> {}{}.left.fq
-""".format(genus_species_dir,genus_species_dir,genus_species,genus_species_dir,genus_species_dir,genus_species,genus_species_dir,genus_species_dir,genus_species)
+cat {}{}*.1 > {}{}.left.fq
+cat {}{}*.2 > {}{}.right.fq
+gunzip -c {}{}.orphans.keep.abundfilt.fq.gz >> {}{}.left.fq
+""".format(genus_species_diginormdir,sample,genus_species_assemblydir,sample,genus_species_diginormdir,sample,genus_species_assemblydir,sample,genus_species_diginormdir,sample,genus_species_assemblydir,sample)
 		combine_command=[combine]
 		process_name="combine"
                 module_name_list=""
-		clusterfunc.sbatch_file(genus_species_dir,process_name,module_name_list,genus_species,combine_command)
+		clusterfunc.sbatch_file(genus_species_diginormdir,process_name,module_name_list,sample,combine_command)
 
 trimdir="/home/ljcohen/osmotic_trim/"
 interleavedir="/home/ljcohen/osmotic_trim/interleaved/"
