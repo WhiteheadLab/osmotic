@@ -44,12 +44,12 @@ transrate --assembly=/home/ljcohen/reference/kf2evg367mixx11/kfish2evg367mixx11p
     process_name="transrate_rev"
     clusterfunc_py3.sbatch_file(transrate_outdir2,process_name,module_load_list,genus_species,transrate_command)
 
-def parse_transrate_stats(transrate_assemblies):
+def parse_transrate_stats(transrate_assemblies,genus_species):
     data = pd.DataFrame.from_csv(transrate_assemblies, header=0, sep=',')
+    data['SampleName'] = genus_species
     return data
 
 def build_DataFrame(data_frame, transrate_data):
-    # columns=["n_bases","gc","gc_skew","mean_orf_percent"]
     frames = [data_frame, transrate_data]
     data_frame = pd.concat(frames)
     return data_frame
@@ -59,21 +59,29 @@ def get_contigs_data(data_frame1, data_frame2,transrate_dir1,transrate_dir2):
     listofdirs2 = os.listdir(transrate_dir2)
     for dirname1 in listofdirs1:
         if dirname1 != "sbatch_files":
+            genus_species_info = dirname1.split("_")
+            genus = genus_species_info[0]
+            species = genus_species_info[2]
+            genus_species = genus + "_" + species
             transrate_dirname1 = transrate_dir1 + dirname1 + "/"
             transrate_assemblies1 = transrate_dirname1 + "assemblies.csv"
             if os.path.isfile(transrate_assemblies1):
                 print(transrate_assemblies1)
-                data1 = parse_transrate_stats(transrate_assemblies1)
+                data1 = parse_transrate_stats(transrate_assemblies1,genus_species)
                 data_frame1 = build_DataFrame(data_frame1, data1)
             else:
                 print("File missing:", transrate_assemblies1)
     for dirname2 in listofdirs2:
         if dirname2 != "sbatch_files":
+            genus_species_info = dirname2.split("_")
+            genus = genus_species_info[2]
+            species = genus_species_info[3]
+            genus_species = genus + "_" + species
             transrate_dirname2 = transrate_dir2 + dirname2 + "/"
             transrate_assemblies2 = transrate_dirname2 + "assemblies.csv"
             if os.path.isfile(transrate_assemblies2):
                 print(transrate_assemblies2)
-                data2 = parse_transrate_stats(transrate_assemblies2)
+                data2 = parse_transrate_stats(transrate_assemblies2,genus_species)
                 data_frame2 = build_DataFrame(data_frame2,data2)
             else:
                 print("Files missing:",transrate_assemblies2)
