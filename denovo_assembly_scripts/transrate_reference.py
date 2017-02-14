@@ -61,7 +61,7 @@ def get_contigs_data(data_frame1, data_frame2,transrate_dir1,transrate_dir2):
         if dirname1 != "sbatch_files":
             genus_species_info = dirname1.split("_")
             genus = genus_species_info[0]
-            species = genus_species_info[2]
+            species = genus_species_info[1]
             genus_species = genus + "_" + species
             transrate_dirname1 = transrate_dir1 + dirname1 + "/"
             transrate_assemblies1 = transrate_dirname1 + "assemblies.csv"
