@@ -16,7 +16,7 @@ def get_assemblies(assemblydir,transrate_outdir1,transrate_outdir2):
             fixed_trinity_fasta=fix_fasta(trinity_fasta,assemblydir,genus_species)
             print(fixed_trinity_fasta)
             transrate_reference_forward(transrate_outdir1,fixed_trinity_fasta,genus_species)
-            transrate_reference_forward(transrate_outdir2,fixed_trinity_fasta,genus_species)
+            #transrate_reference_reverse(transrate_outdir2,fixed_trinity_fasta,genus_species)
 
 def transrate_reference_forward(transrate_outdir1,fixed_trinity_fasta,genus_species):
     transrate_command="""
@@ -29,7 +29,7 @@ transrate --assembly {} \\
     transrate_command=[transrate_command]
     module_load_list=["blast/2.2.29"]
     process_name="transrate"
-    #clusterfunc_py3.sbatch_file(transrate_outdir1,process_name,module_load_list,genus_species,transrate_command)
+    clusterfunc_py3.sbatch_file(transrate_outdir1,process_name,module_load_list,genus_species,transrate_command)
 
 def transrate_reference_reverse(transrate_outdir2,fixed_trinity_fasta,genus_species):
     transrate_command="""
@@ -42,7 +42,7 @@ transrate --assembly=/home/ljcohen/reference/kf2evg367mixx11/kfish2evg367mixx11p
     transrate_command=[transrate_command]
     module_load_list=["blast/2.2.29"]
     process_name="transrate_rev"
-    #clusterfunc_py3.sbatch_file(transrate_outdir2,process_name,module_load_list,genus_species,transrate_command)
+    clusterfunc_py3.sbatch_file(transrate_outdir2,process_name,module_load_list,genus_species,transrate_command)
 
 def parse_transrate_stats(transrate_assemblies):
     data = pd.DataFrame.from_csv(transrate_assemblies, header=0, sep=',')
