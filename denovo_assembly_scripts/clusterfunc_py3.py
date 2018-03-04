@@ -36,7 +36,7 @@ def sbatch_file(basedir,process_name,module_name_list,filename,process_string):
         sbatch_file.write("#SBATCH -J "+process_name+"\n")
         #sbatch_file.write("#SBATCH -p bigmemh"+"\n")
         #sbatch_file.write("#SBATCH -A millermrgrp"+"\n")
-        sbatch_file.write("#SBATCH -t 8:00:00"+"\n")
+        sbatch_file.write("#SBATCH -t 48:00:00"+"\n")
         sbatch_file.write("#SBATCH -N 1"+"\n")
         sbatch_file.write("#SBATCH -n 1"+"\n")
         sbatch_file.write("#BATCH -p high\n")

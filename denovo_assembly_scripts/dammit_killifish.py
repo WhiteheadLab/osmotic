@@ -10,8 +10,15 @@ def dammit(trinity_fasta,genus_species,dammitdir):
     dammit_command="""
 source /home/ljcohen/.bashrc
 source activate /home/ljcohen/anaconda2/envs/py3.dammit
-dammit annotate {} --busco-group metazoa --user-databases /home/ljcohen/reference/kfish2rae5/kfish2rae5g.combined.aa -o {}{}.dammit_out --n_threads 16
-""".format(trinity_fasta,dammitdir,genus_species)
+
+mkdir /scratch/$SLURM_JOBID
+cd /scratch/$SLURM_JOBID
+
+dammit annotate {} --busco-group metazoa --user-databases /home/ljcohen/reference/kfish2rae5/kfish2rae5g.combined.aa -o {}.dammit_out --n_threads 12
+
+cp -r /scratch/$SLURM_JOBID/{}.dammit_out {}
+rm -rf /scratch/$SLURM_JOBID*
+""".format(trinity_fasta,genus_species,genus_species,dammitdir)
     return dammit_command
 
 def run_dammit(dammit_command,dammitdir,genus_species):
