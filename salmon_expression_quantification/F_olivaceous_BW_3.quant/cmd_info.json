@@ -1,0 +1,11 @@
+{
+    "salmon_version": "0.7.2",
+    "index": "F_olivaceous_index",
+    "libType": "IU",
+    "mates1": "/home/ljcohen/osmotic_trim/F_olivaceous_BW_3.trim_1P.fq",
+    "mates2": "/home/ljcohen/osmotic_trim/F_olivaceous_BW_3.trim_2P.fq",
+    "output": "F_olivaceous_BW_3.quant",
+    "dumpEq": [],
+    "auxDir": "aux",
+    "auxDir": "aux"
+}
