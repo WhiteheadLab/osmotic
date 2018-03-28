@@ -26,18 +26,13 @@ def get_pairs(listoffiles,basedir):
                                 pairs_dictionary[sample_name]=[basedir+basefilename]
         return pairs_dictionary
 
-def fix_fasta(trinity_fasta, trinity_dir, sample):
-        # os.chdir(trinity_dir)
-    trinity_out = trinity_dir + sample + ".Trinity.fixed.fa"
-    fix = """
+def fix_fasta(trinity_fasta, fixed_trinity_fasta):
+	fix = """
 sed 's_|_-_g' {} > {}
-""".format(trinity_fasta, trinity_out)
-    # s=subprocess.Popen(fix,shell=True)
-    print fix
-    # s.wait()
-    # os.chdir("/mnt/home/ljcohen/MMETSP/")
-    return trinity_out
-
+""".format(trinity_fasta, fixed_trinity_fasta)
+    	s=subprocess.Popen(fix,shell=True)
+    	print fix
+    	s.wait()
 
 def transrate(transratedir,transrate_out,trinity_fasta,sample,left,right):
 	transrate_command = """
@@ -51,7 +46,7 @@ transrate --assembly={} --threads=4 \
     	process_name = "transrate"
    	module_name_list = ""
     	filename = sample
-    	clusterfunc.sbatch_file(transratedir, process_name,module_name_list, filename, commands)
+    	#clusterfunc.qsub_file(transratedir, process_name,module_name_list, filename, commands)
 
 def parse_transrate_stats(transrate_assemblies):
     print transrate_assemblies
@@ -65,20 +60,26 @@ def build_DataFrame(data_frame, transrate_data):
     data_frame = pd.concat(frames)
     return data_frame
 
-def execute(data_frame, listoffiles, assemblydir,transratedir):
-	samples = os.listdir(assemblydir)
-	sample_dictionary = {}
+def execute(data_frame, listoffiles, transratedir):
+	samples = ["F_diaphanus","F_grandis","F_heteroclitus.MDPL","F_heteroclitus.MDPP","F_sciadicus","A_xenica","F_catanatus","F_chrysotus","F_notatus","F_notti","F_olivaceous","F_parvapinis","F_rathbuni","F_similis","F_zebrinus","L_goodei","L_parva"]
 	#pairs_dictionary=get_pairs(listoffiles,basedir)
     	# construct an empty pandas dataframe to add on each assembly.csv to
     	for sample in samples:
         	if sample.startswith("F_heteroclitus"):
-			diginormdir = "/home/ljcohen/osmotic_trim_F_heteroclitus/diginorm/"
+			diginormdir = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/"
+			trinity_fasta = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/trinity_out/"+"Trinity.fasta"
+			fixed_trinity_fasta = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/"+sample + ".Trinity.fixed.fa"
 		elif sample.startswith("F_diaphanus"):
-			diginormdir = "/home/ljcohen/osmotic_trim_F_diaphanus/diginorm/"
+			diginormdir = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/"
+			trinity_fasta = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/trinity_out/"+"Trinity.fasta"
+			fixed_trinity_fasta = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/"+sample + ".Trinity.fixed.fa"
 		elif sample.startswith("F_sciadicus"):
-			diginormdir = "/home/ljcohen/osmotic_trim_F_sciadicus/diginorm/"
+			diginormdir = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/"
+			trinity_fasta = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/trinity_out/"+"Trinity.fasta"
+			fixed_trinity_fasta = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/"+sample + ".Trinity.fixed.fa"
 		else:
-			diginormdir = "/home/ljcohen/osmotic_trim/assemblies_msu/"+sample+"/"
+			diginormdir = "/mnt/research/ged/lisa/osmotic_killifish/assemblies_msu/"+sample+"/"
+			trinity_fasta = "/mnt/research/ged/lisa/osmotic_killifish/assemblies_msu/"+sample+"/trinity_out/"+"Trinity.fasta"
 		if os.path.isdir(diginormdir):
 			#print diginormdir
 			left = diginormdir + sample +".left.fq"
@@ -90,7 +91,6 @@ def execute(data_frame, listoffiles, assemblydir,transratedir):
 				print "Does not exist.",left,right
 		else:
 			print "Does not exist:",diginormdir
-        	trinity_fasta = assemblydir + sample + "/" + sample + ".Trinity.fixed.fa"
 		transrate_out = transratedir + sample + "/"
         	transrate_assemblies = transrate_out + "/" + "assemblies.csv"
 		if os.path.isfile(trinity_fasta):
@@ -102,14 +102,16 @@ def execute(data_frame, listoffiles, assemblydir,transratedir):
                     	data_frame = build_DataFrame(data_frame, data)
         	else:  
                     	print "Running transrate..."
-                  	transrate(transratedir,transrate_out,trinity_fasta,sample,left,right)
+			if os.path.isfile(fixed_trinity_fasta):
+				transrate(transratedir,transrate_out,fixed_trinity_fasta,sample,left,right)
+			else:
+				fix_fasta(trinity_fasta,fixed_trinity_fasta)
 	return data_frame
 
-assemblydir = "/home/ljcohen/msu_assemblies_finished/"
-basedir = "/home/ljcohen/osmotic_combined/"
-transratedir = "/home/ljcohen/osmotic_transrate_scores/"
+basedir = "/mnt/research/ged/lisa/osmotic_killifish/assemblies_msu/"
+transratedir = "/mnt/research/ged/lisa/osmotic_killifish/transrate/"
 clusterfunc.check_dir(transratedir)
 listoffiles = os.listdir(basedir)
 data_frame = pd.DataFrame()
-data_frame = execute(data_frame,listoffiles, assemblydir, transratedir)
+data_frame = execute(data_frame, listoffiles, transratedir)
 #data_frame.to_csv("transrate_scores.csv")
