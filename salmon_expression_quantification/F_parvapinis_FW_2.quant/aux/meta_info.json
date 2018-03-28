@@ -1,0 +1,20 @@
+{
+    "salmon_version": "0.7.2",
+    "samp_type": "none",
+    "num_libraries": 1,
+    "library_types": [
+        "IU"
+    ],
+    "frag_dist_length": 1001,
+    "seq_bias_correct": false,
+    "gc_bias_correct": false,
+    "num_bias_bins": 4096,
+    "mapping_type": "mapping",
+    "num_targets": 352346,
+    "num_bootstraps": 0,
+    "num_processed": 7796602,
+    "num_mapped": 6888160,
+    "percent_mapped": 88.348231704016698,
+    "call": "quant",
+    "start_time": "Mon Jan 23 02:31:37 2017"
+}

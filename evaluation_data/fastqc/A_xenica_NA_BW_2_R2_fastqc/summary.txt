@@ -1,0 +1,11 @@
+PASS	Basic Statistics	A_xenica_NA_BW_2_R2.fastq.gz
+PASS	Per base sequence quality	A_xenica_NA_BW_2_R2.fastq.gz
+PASS	Per sequence quality scores	A_xenica_NA_BW_2_R2.fastq.gz
+FAIL	Per base sequence content	A_xenica_NA_BW_2_R2.fastq.gz
+FAIL	Per base GC content	A_xenica_NA_BW_2_R2.fastq.gz
+WARN	Per sequence GC content	A_xenica_NA_BW_2_R2.fastq.gz
+PASS	Per base N content	A_xenica_NA_BW_2_R2.fastq.gz
+PASS	Sequence Length Distribution	A_xenica_NA_BW_2_R2.fastq.gz
+WARN	Sequence Duplication Levels	A_xenica_NA_BW_2_R2.fastq.gz
+WARN	Overrepresented sequences	A_xenica_NA_BW_2_R2.fastq.gz
+FAIL	Kmer Content	A_xenica_NA_BW_2_R2.fastq.gz

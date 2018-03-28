@@ -1,70 +1,84 @@
 import os
 import os.path
 from os.path import basename
-import subprocess
-from subprocess import Popen, PIPE
-import clusterfunc
+# custom Lisa module
+import clusterfunc_py3
+import pandas as pd
 
+def get_pairs(listoffiles,basedir):
+        pairs_dictionary={}
+        for basefilename in listoffiles:
+                if basefilename.endswith(".fastq.gz"):
+                        filename=basedir+basefilename
+                        fields=basefilename.split("_")
+                        sample_name_info=fields[:-1]
+                        sample_name="_".join(sample_name_info)
+                        if sample_name in pairs_dictionary.keys():
+                                pairs_dictionary[sample_name].append(basedir+basefilename)
+                        else:
+                                pairs_dictionary[sample_name]=[basedir+basefilename]
+        return pairs_dictionary
 
-
-def get_assemblies(assemblydir,readsdir):
-	#genus_species_dirs=os.listdir(readsdir)
-	genus_species_dirs=["F_heteroclitus.MDPL","F_heteroclitus.MDPP"]
-	for genus_species_name in genus_species_dirs:
-		genus_species=genus_species_name.split(".")[0]
-		genus_species_dir=assemblydir+genus_species+"/"
-		reads=readsdir+genus_species+"/"+"diginorm/"
-		left=reads+genus_species_name+".left.fq"
-		right=reads+genus_species_name+".right.fq"
-		if os.path.isfile(left):
-			print left
-		else:
-			print "there's a problem:",left
-		if os.path.isfile(right):
-			print right
-		else:
-			print "there's a problem:",right
-		trinity_out_dir=assemblydir+genus_species_name+"/"
-		trinity_fasta=trinity_out_dir+"Trinity.fasta"
-		fixed_trinity_fasta=fix_fasta(trinity_fasta,trinity_out_dir,genus_species_name)
-		print fixed_trinity_fasta
-		#transrate_command=transrate(trinity_out_dir,trinity_out_dir,fixed_trinity_fasta,fixed_trinity_fasta2,genus_species,left,right,assemblydir)
-        	#print transrate_command
-		#transrate_command=[transrate_command]
-		#module_load_list=["blast/2.2.29"]
-        	#process_name="transrate"
-        	#clusterfunc.sbatch_file(genus_species_dir,process_name,module_load_list,genus_species,transrate_command)
-
-#def transrate(trinity_out_dir1,trinity_out_dir2,fixed_trinity_fasta1,fixed_trinity_fasta2,genus_species,left,right,assemblydir):
-#	transrate_command="""
-#transrate --assembly {},{} \\
-#--left {} \\
-#--right {} \\
-#--reference /home/ljcohen/reference/kfish2rae5/kfish2rae5g.mrna.combined \\
-#--threads 32
-#""".format(fixed_trinity_fasta1,fixed_trinity_fasta2,left,right)	
-
-#	transrate_command="""
-#transrate --assembly {} \\
-#--reference /home/ljcohen/reference/kf2evg367mixx11/kfish2evg367mixx11pub2.mrna \\
-#--output {}kf2evg367mixx11.transrate/ \\
-#--threads 32
-#""".format(fixed_trinity_fasta,trinity_out_dir)
-#	return transrate_command
-
-#--reference /home/ljcohen/reference/kfish2rae5/kfish2rae5g.mrna.combined
-#--reference /home/ljcohen/reference/kf2evg367mixx11/kfish2evg367mixx11pub2.mrna \\
-
-def fix_fasta(trinity_fasta,trinity_dir,sample):
-	trinity_out=trinity_dir+sample+".Trinity.fixed.fa"
-	fix="""
+def fix_fasta(trinity_fasta, trinity_dir, sample):
+        # os.chdir(trinity_dir)
+    trinity_out = trinity_dir + sample + ".Trinity.fixed.fa"
+    fix = """
 sed 's_|_-_g' {} > {}
-""".format(trinity_fasta,trinity_out)
-	s=subprocess.Popen(fix,shell=True)
-	print fix
-        s.wait()
-	return trinity_out 
+""".format(trinity_fasta, trinity_out)
+    # s=subprocess.Popen(fix,shell=True)
+    print fix
+    # s.wait()
+    # os.chdir("/mnt/home/ljcohen/MMETSP/")
+    return trinity_out
 
-assemblydir="/home/ljcohen/msu_assemblies_finished/"
-readsdir="/home/ljcohen/osmotic_trim_"
-get_assemblies(assemblydir,readsdir)
+
+def transrate(transratedir,transrate_out,trinity_fasta,sample,reference):
+	transrate_command = """
+transrate --assembly={} --reference={} \
+--threads=4 \
+--output={}
+""".format(trinity_fasta,reference,transrate_out)
+    	print transrate_command
+    	commands = [transrate_command]
+    	process_name = "transrate"
+   	module_name_list = ""
+    	filename = sample
+    	clusterfunc_py3.sbatch_file(transratedir, process_name,module_name_list, filename, commands)
+
+def parse_transrate_stats(transrate_assemblies):
+    print transrate_assemblies
+    if os.stat(transrate_assemblies).st_size != 0:
+        data = pd.DataFrame.from_csv(transrate_assemblies, header=0, sep=',')
+        return data
+
+def build_DataFrame(data_frame, transrate_data):
+    # columns=["n_bases","gc","gc_skew","mean_orf_percent"]
+    frames = [data_frame, transrate_data]
+    data_frame = pd.concat(frames)
+    return data_frame
+
+def execute(data_frame, listoffiles, assemblydir,transratedir,reference):
+	#pairs_dictionary=get_pairs(listoffiles,basedir)
+    	# construct an empty pandas dataframe to add on each assembly.csv to
+    	for fasta in listoffiles:
+            if fasta.endswith(".fasta"):
+                sample = fasta.split(".")[0]
+        	trinity_fasta = assemblydir + fasta
+		transrate_out = transratedir + sample + "/"
+        	transrate_assemblies = transrate_out + "/" + "assemblies.csv"
+		if os.path.isfile(transrate_assemblies):
+        	        data = parse_transrate_stats(transrate_assemblies)
+                    	data_frame = build_DataFrame(data_frame, data)
+        	else:  
+                    	print "Running transrate..."
+                  	transrate(transratedir,transrate_out,trinity_fasta,sample,reference)
+	return data_frame
+
+assemblydir = "/home/ljcohen/public_html/killifish/transcriptome_assemblies/"
+transratedir = "/home/ljcohen/osmotic_transrate/kfish2rae5g_mrna.combined/"
+reference = "/home/ljcohen/reference/kfish2rae5/kfish2rae5g.mrna.combined"
+clusterfunc_py3.check_dir(transratedir)
+listoffiles = os.listdir(assemblydir)
+data_frame = pd.DataFrame()
+data_frame = execute(data_frame,listoffiles, assemblydir, transratedir,reference)
+#data_frame.to_csv("transrate_scores.csv")

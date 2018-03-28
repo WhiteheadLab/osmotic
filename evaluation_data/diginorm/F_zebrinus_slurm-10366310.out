@@ -1,0 +1,2002 @@
+Module slurm/16.05.5 loaded 
+Module openmpi/2.0.1 loaded 
+
+|| This is the script normalize-by-median.py in khmer.
+|| You are running khmer version 2.0
+|| You are also using screed version 0.9
+||
+|| If you use this script in a publication, please cite EACH of the following:
+||
+||   * MR Crusoe et al., 2015. http://dx.doi.org/10.12688/f1000research.6924.1
+||   * CT Brown et al., arXiv:1203.4802 [q-bio.GN]
+||
+|| Please see http://khmer.readthedocs.org/en/latest/citations.html for details.
+
+
+PARAMETERS:
+ - kmer size =    20 		(-k)
+ - n tables =     4 		(-N)
+ - max tablesize = 1e+09 	(-x)
+
+Estimated memory usage is 4e+09 bytes (n_tables x max_tablesize)
+--------
+making countgraph
+... kept 95526 of 100000 or 95.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 180102 of 200000 or 90.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 259192 of 300000 or 86.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 335250 of 400000 or 83.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 409336 of 500000 or 81.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 483270 of 600000 or 80.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 556758 of 700000 or 79.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 629640 of 800000 or 78.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 702380 of 900000 or 78.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 774660 of 1000000 or 77.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 847564 of 1100000 or 77.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 921100 of 1200000 or 76.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 992870 of 1300000 or 76.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1059574 of 1400000 or 75.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1126742 of 1500000 or 75.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1193048 of 1600000 or 74.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1258612 of 1700000 or 74.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1324258 of 1800000 or 73.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1390480 of 1900000 or 73.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1456656 of 2000000 or 72.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1522650 of 2100000 or 72.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1588616 of 2200000 or 72.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1655248 of 2300000 or 72.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1721460 of 2400000 or 71.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1790122 of 2500000 or 71.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1857418 of 2600000 or 71.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1918296 of 2700000 or 71.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 1978834 of 2800000 or 70.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2039534 of 2900000 or 70.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2100218 of 3000000 or 70.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2160390 of 3100000 or 69.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2221356 of 3200000 or 69.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2281932 of 3300000 or 69.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2342574 of 3400000 or 68.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2403972 of 3500000 or 68.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2465608 of 3600000 or 68.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2526828 of 3700000 or 68.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2589668 of 3800000 or 68.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2650866 of 3900000 or 68.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2710296 of 4000000 or 67.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2770884 of 4100000 or 67.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2830652 of 4200000 or 67.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2887898 of 4300000 or 67.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 2947554 of 4400000 or 67.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3009884 of 4500000 or 66.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3071146 of 4600000 or 66.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3131298 of 4700000 or 66.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3192178 of 4800000 or 66.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3251870 of 4900000 or 66.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3315032 of 5000000 or 66.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3377886 of 5100000 or 66.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3434878 of 5200000 or 66.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3492192 of 5300000 or 65.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3550438 of 5400000 or 65.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3606644 of 5500000 or 65.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3664334 of 5600000 or 65.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3722328 of 5700000 or 65.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3781446 of 5800000 or 65.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3840122 of 5900000 or 65.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3899438 of 6000000 or 65.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 3959884 of 6100000 or 64.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4026566 of 6200000 or 64.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4098064 of 6300000 or 65.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4150150 of 6400000 or 64.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4202238 of 6500000 or 64.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4254602 of 6600000 or 64.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4307160 of 6700000 or 64.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4359278 of 6800000 or 64.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4411980 of 6900000 or 63.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4464618 of 7000000 or 63.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4518864 of 7100000 or 63.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4572306 of 7200000 or 63.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4627070 of 7300000 or 63.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4682372 of 7400000 or 63.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4739736 of 7500000 or 63.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4808040 of 7600000 or 63.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4858156 of 7700000 or 63.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4908078 of 7800000 or 62.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 4958388 of 7900000 or 62.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5008060 of 8000000 or 62.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5058280 of 8100000 or 62.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5108784 of 8200000 or 62.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5160852 of 8300000 or 62.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5212788 of 8400000 or 62.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5265062 of 8500000 or 61.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5317732 of 8600000 or 61.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5370754 of 8700000 or 61.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5427872 of 8800000 or 61.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5479136 of 8900000 or 61.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5526840 of 9000000 or 61.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5574766 of 9100000 or 61.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5622506 of 9200000 or 61.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5670166 of 9300000 or 61.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5719010 of 9400000 or 60.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5768648 of 9500000 or 60.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5818324 of 9600000 or 60.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5868284 of 9700000 or 60.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5918650 of 9800000 or 60.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 5969222 of 9900000 or 60.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6020226 of 10000000 or 60.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6082102 of 10100000 or 60.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6127452 of 10200000 or 60.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6172880 of 10300000 or 59.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6218924 of 10400000 or 59.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6264936 of 10500000 or 59.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6311574 of 10600000 or 59.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6357818 of 10700000 or 59.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6404676 of 10800000 or 59.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6452636 of 10900000 or 59.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6500066 of 11000000 or 59.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6548366 of 11100000 or 59.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6597388 of 11200000 or 58.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6647706 of 11300000 or 58.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6700206 of 11400000 or 58.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6744776 of 11500000 or 58.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6790758 of 11600000 or 58.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6836526 of 11700000 or 58.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6880672 of 11800000 or 58.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6926568 of 11900000 or 58.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 6973390 of 12000000 or 58.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7020320 of 12100000 or 58.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7067230 of 12200000 or 57.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7114900 of 12300000 or 57.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7163426 of 12400000 or 57.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7213174 of 12500000 or 57.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7263012 of 12600000 or 57.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7303638 of 12700000 or 57.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7344530 of 12800000 or 57.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7386954 of 12900000 or 57.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7427194 of 13000000 or 57.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7468852 of 13100000 or 57.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7511096 of 13200000 or 56.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7552654 of 13300000 or 56.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7593966 of 13400000 or 56.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7635682 of 13500000 or 56.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7677600 of 13600000 or 56.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7724714 of 13700000 or 56.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7768630 of 13800000 or 56.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7809546 of 13900000 or 56.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7851586 of 14000000 or 56.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7893774 of 14100000 or 56.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7935680 of 14200000 or 55.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 7977796 of 14300000 or 55.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8020670 of 14400000 or 55.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8064148 of 14500000 or 55.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8108692 of 14600000 or 55.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8153892 of 14700000 or 55.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8199776 of 14800000 or 55.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8246168 of 14900000 or 55.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8307794 of 15000000 or 55.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8343090 of 15100000 or 55.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8376504 of 15200000 or 55.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8409928 of 15300000 or 55.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8444182 of 15400000 or 54.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8477298 of 15500000 or 54.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8510788 of 15600000 or 54.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8544394 of 15700000 or 54.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8577532 of 15800000 or 54.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8610384 of 15900000 or 54.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8643378 of 16000000 or 54.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8676668 of 16100000 or 53.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8710132 of 16200000 or 53.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8742708 of 16300000 or 53.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8776290 of 16400000 or 53.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8809144 of 16500000 or 53.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8841332 of 16600000 or 53.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8872802 of 16700000 or 53.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8905638 of 16800000 or 53.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8937728 of 16900000 or 52.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 8969952 of 17000000 or 52.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9001710 of 17100000 or 52.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9034700 of 17200000 or 52.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9069444 of 17300000 or 52.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9104960 of 17400000 or 52.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9140644 of 17500000 or 52.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9175894 of 17600000 or 52.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9210880 of 17700000 or 52.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9246210 of 17800000 or 51.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9281498 of 17900000 or 51.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9317318 of 18000000 or 51.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9353296 of 18100000 or 51.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9389060 of 18200000 or 51.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9427776 of 18300000 or 51.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9467120 of 18400000 or 51.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9501942 of 18500000 or 51.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9536144 of 18600000 or 51.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9570766 of 18700000 or 51.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9604550 of 18800000 or 51.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9640114 of 18900000 or 51.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9675132 of 19000000 or 50.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9710588 of 19100000 or 50.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9746052 of 19200000 or 50.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9782158 of 19300000 or 50.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9819586 of 19400000 or 50.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9857144 of 19500000 or 50.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9891118 of 19600000 or 50.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9924950 of 19700000 or 50.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9958424 of 19800000 or 50.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 9992154 of 19900000 or 50.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10026694 of 20000000 or 50.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10060736 of 20100000 or 50.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10095514 of 20200000 or 50.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10130218 of 20300000 or 49.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10165024 of 20400000 or 49.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10201046 of 20500000 or 49.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10241268 of 20600000 or 49.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10273676 of 20700000 or 49.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10305960 of 20800000 or 49.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10337676 of 20900000 or 49.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10370302 of 21000000 or 49.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10402272 of 21100000 or 49.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10434378 of 21200000 or 49.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10466982 of 21300000 or 49.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10500264 of 21400000 or 49.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10534448 of 21500000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10570166 of 21600000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10631128 of 21700000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10663464 of 21800000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10695010 of 21900000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10726626 of 22000000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10758018 of 22100000 or 48.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10789524 of 22200000 or 48.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10821596 of 22300000 or 48.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10853960 of 22400000 or 48.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10886760 of 22500000 or 48.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10920348 of 22600000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 10954458 of 22700000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 11008816 of 22800000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 11046454 of 22900000 or 48.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 11077936 of 23000000 or 48.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 11109068 of 23100000 or 48.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 11140088 of 23200000 or 48.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 11170810 of 23300000 or 47.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 11202764 of 23400000 or 47.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 11234720 of 23500000 or 47.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 11267266 of 23600000 or 47.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 11300468 of 23700000 or 47.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+... kept 11335272 of 23800000 or 47.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz
+DONE with /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_1.trim.interleaved.fq.gz; kept 11362496 of 23874458 or 47.6%
+output in F_zebrinus_NA_BW_1.trim.interleaved.fq.gz.keep
+... kept 11376822 of 23900000 or 47.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11432636 of 24000000 or 47.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11488196 of 24100000 or 47.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11543886 of 24200000 or 47.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11598754 of 24300000 or 47.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11653858 of 24400000 or 47.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11709932 of 24500000 or 47.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11766738 of 24600000 or 47.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11823114 of 24700000 or 47.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11880632 of 24800000 or 47.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 11938496 of 24900000 or 47.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12000728 of 25000000 or 48.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12053478 of 25100000 or 48.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12105422 of 25200000 or 48.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12158850 of 25300000 or 48.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12211378 of 25400000 or 48.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12263482 of 25500000 or 48.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12316614 of 25600000 or 48.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12370994 of 25700000 or 48.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12424910 of 25800000 or 48.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12479158 of 25900000 or 48.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12533710 of 26000000 or 48.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12598258 of 26100000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12654264 of 26200000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12705644 of 26300000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12757364 of 26400000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12809112 of 26500000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12861140 of 26600000 or 48.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12914268 of 26700000 or 48.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 12967622 of 26800000 or 48.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13020606 of 26900000 or 48.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13074560 of 27000000 or 48.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13128192 of 27100000 or 48.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13182902 of 27200000 or 48.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13240210 of 27300000 or 48.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13295182 of 27400000 or 48.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13348072 of 27500000 or 48.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13399866 of 27600000 or 48.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13450876 of 27700000 or 48.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13503648 of 27800000 or 48.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13556474 of 27900000 or 48.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13611854 of 28000000 or 48.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13666654 of 28100000 or 48.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13723148 of 28200000 or 48.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13779884 of 28300000 or 48.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13842222 of 28400000 or 48.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13893302 of 28500000 or 48.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13943414 of 28600000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 13992652 of 28700000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14042416 of 28800000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14092152 of 28900000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14143358 of 29000000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14192690 of 29100000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14241782 of 29200000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14292192 of 29300000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14346430 of 29400000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14396214 of 29500000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14445572 of 29600000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14496048 of 29700000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14546050 of 29800000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14596902 of 29900000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14647496 of 30000000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14699486 of 30100000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14751296 of 30200000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14804036 of 30300000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14857334 of 30400000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14915278 of 30500000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 14967186 of 30600000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15015508 of 30700000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15064928 of 30800000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15114478 of 30900000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15163932 of 31000000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15213032 of 31100000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15264406 of 31200000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15315440 of 31300000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15367564 of 31400000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15419912 of 31500000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15472474 of 31600000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15524848 of 31700000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15572126 of 31800000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15620334 of 31900000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15668240 of 32000000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15716770 of 32100000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15765116 of 32200000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15815040 of 32300000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15865316 of 32400000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15915442 of 32500000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 15966030 of 32600000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16017164 of 32700000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16069468 of 32800000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16116218 of 32900000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16162778 of 33000000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16210346 of 33100000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16258040 of 33200000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16305996 of 33300000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16354256 of 33400000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16403416 of 33500000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16452418 of 33600000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16501824 of 33700000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16551662 of 33800000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16603538 of 33900000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16653910 of 34000000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16703582 of 34100000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16752652 of 34200000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16801608 of 34300000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16850726 of 34400000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16899916 of 34500000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16948402 of 34600000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 16995944 of 34700000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17049610 of 34800000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17100876 of 34900000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17149826 of 35000000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17194496 of 35100000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17239738 of 35200000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17284888 of 35300000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17329924 of 35400000 or 49.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17374952 of 35500000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17420024 of 35600000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17464948 of 35700000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17511130 of 35800000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17558388 of 35900000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17604062 of 36000000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17649948 of 36100000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17696700 of 36200000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17743258 of 36300000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17790202 of 36400000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17837138 of 36500000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17884682 of 36600000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17933298 of 36700000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 17982410 of 36800000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18032832 of 36900000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18084232 of 37000000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18136852 of 37100000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18176884 of 37200000 or 48.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18217012 of 37300000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18257616 of 37400000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18298394 of 37500000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18340192 of 37600000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18382208 of 37700000 or 48.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18425710 of 37800000 or 48.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18466840 of 37900000 or 48.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18506950 of 38000000 or 48.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18547190 of 38100000 or 48.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18587462 of 38200000 or 48.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18628456 of 38300000 or 48.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18670088 of 38400000 or 48.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18712904 of 38500000 or 48.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18755900 of 38600000 or 48.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18795594 of 38700000 or 48.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18835846 of 38800000 or 48.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18876244 of 38900000 or 48.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18917236 of 39000000 or 48.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 18958942 of 39100000 or 48.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19002356 of 39200000 or 48.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19046262 of 39300000 or 48.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19087140 of 39400000 or 48.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19126854 of 39500000 or 48.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19166474 of 39600000 or 48.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19206296 of 39700000 or 48.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19246724 of 39800000 or 48.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19287722 of 39900000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19329060 of 40000000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19370096 of 40100000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19409422 of 40200000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19448668 of 40300000 or 48.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19487940 of 40400000 or 48.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19527222 of 40500000 or 48.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19566946 of 40600000 or 48.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19607474 of 40700000 or 48.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19648280 of 40800000 or 48.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19688496 of 40900000 or 48.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19727380 of 41000000 or 48.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19765836 of 41100000 or 48.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19804436 of 41200000 or 48.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19843328 of 41300000 or 48.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19883516 of 41400000 or 48.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19925092 of 41500000 or 48.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+... kept 19966458 of 41600000 or 48.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz
+DONE with /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_BW_2.trim.interleaved.fq.gz; kept 19978026 of 41626714 or 48.0%
+output in F_zebrinus_NA_BW_2.trim.interleaved.fq.gz.keep
+... kept 20005780 of 41700000 or 48.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20043228 of 41800000 or 48.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20080474 of 41900000 or 47.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20118640 of 42000000 or 47.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20157042 of 42100000 or 47.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20192866 of 42200000 or 47.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20231098 of 42300000 or 47.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20270460 of 42400000 or 47.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20310160 of 42500000 or 47.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20350634 of 42600000 or 47.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20391498 of 42700000 or 47.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20432730 of 42800000 or 47.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20476138 of 42900000 or 47.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20521710 of 43000000 or 47.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20569476 of 43100000 or 47.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20605624 of 43200000 or 47.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20642100 of 43300000 or 47.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20678920 of 43400000 or 47.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20715756 of 43500000 or 47.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20752074 of 43600000 or 47.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20789408 of 43700000 or 47.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20827026 of 43800000 or 47.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20865530 of 43900000 or 47.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20905274 of 44000000 or 47.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20944506 of 44100000 or 47.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 20984504 of 44200000 or 47.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21025636 of 44300000 or 47.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21066856 of 44400000 or 47.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21112540 of 44500000 or 47.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21158850 of 44600000 or 47.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21192738 of 44700000 or 47.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21227324 of 44800000 or 47.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21261604 of 44900000 or 47.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21296060 of 45000000 or 47.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21331094 of 45100000 or 47.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21366012 of 45200000 or 47.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21401584 of 45300000 or 47.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21437480 of 45400000 or 47.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21474932 of 45500000 or 47.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21511840 of 45600000 or 47.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21549790 of 45700000 or 47.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21588560 of 45800000 or 47.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21626770 of 45900000 or 47.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21667314 of 46000000 or 47.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21708628 of 46100000 or 47.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21745280 of 46200000 or 47.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21783200 of 46300000 or 47.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21824178 of 46400000 or 47.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21863028 of 46500000 or 47.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21899134 of 46600000 or 47.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21936054 of 46700000 or 47.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 21980872 of 46800000 or 47.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22021972 of 46900000 or 47.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22064440 of 47000000 or 46.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22105180 of 47100000 or 46.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22146740 of 47200000 or 46.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22189762 of 47300000 or 46.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22235316 of 47400000 or 46.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22285672 of 47500000 or 46.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22324946 of 47600000 or 46.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22363986 of 47700000 or 46.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22403472 of 47800000 or 46.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22444242 of 47900000 or 46.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22484532 of 48000000 or 46.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22523918 of 48100000 or 46.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22564740 of 48200000 or 46.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22606792 of 48300000 or 46.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22649358 of 48400000 or 46.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22691756 of 48500000 or 46.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22735570 of 48600000 or 46.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22779570 of 48700000 or 46.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22827078 of 48800000 or 46.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22882874 of 48900000 or 46.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22939018 of 49000000 or 46.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 22971266 of 49100000 or 46.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23003822 of 49200000 or 46.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23036682 of 49300000 or 46.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23070154 of 49400000 or 46.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23103470 of 49500000 or 46.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23137332 of 49600000 or 46.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23171772 of 49700000 or 46.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23206154 of 49800000 or 46.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23242126 of 49900000 or 46.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23277636 of 50000000 or 46.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23313406 of 50100000 or 46.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23350326 of 50200000 or 46.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23388778 of 50300000 or 46.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23428508 of 50400000 or 46.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23487284 of 50500000 or 46.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23518284 of 50600000 or 46.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23548996 of 50700000 or 46.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23580784 of 50800000 or 46.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23613088 of 50900000 or 46.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23644166 of 51000000 or 46.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23677382 of 51100000 or 46.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23711094 of 51200000 or 46.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23745226 of 51300000 or 46.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23780724 of 51400000 or 46.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23815754 of 51500000 or 46.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23851668 of 51600000 or 46.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23887810 of 51700000 or 46.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23924904 of 51800000 or 46.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 23966086 of 51900000 or 46.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24002064 of 52000000 or 46.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24032394 of 52100000 or 46.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24062924 of 52200000 or 46.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24094650 of 52300000 or 46.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24126286 of 52400000 or 46.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24157344 of 52500000 or 46.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24190008 of 52600000 or 46.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24222890 of 52700000 or 46.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24256718 of 52800000 or 45.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24291554 of 52900000 or 45.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24327182 of 53000000 or 45.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24362764 of 53100000 or 45.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24399062 of 53200000 or 45.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24435406 of 53300000 or 45.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24485734 of 53400000 or 45.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24515232 of 53500000 or 45.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24545410 of 53600000 or 45.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24576108 of 53700000 or 45.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24607084 of 53800000 or 45.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24638124 of 53900000 or 45.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24669330 of 54000000 or 45.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24701306 of 54100000 or 45.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24733212 of 54200000 or 45.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24766768 of 54300000 or 45.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24800074 of 54400000 or 45.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24833916 of 54500000 or 45.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24868140 of 54600000 or 45.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24903258 of 54700000 or 45.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24940902 of 54800000 or 45.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 24980374 of 54900000 or 45.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25011034 of 55000000 or 45.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25041600 of 55100000 or 45.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25075226 of 55200000 or 45.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25106460 of 55300000 or 45.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25136682 of 55400000 or 45.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25168674 of 55500000 or 45.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25202798 of 55600000 or 45.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25235644 of 55700000 or 45.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25270448 of 55800000 or 45.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25304868 of 55900000 or 45.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25340546 of 56000000 or 45.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25376584 of 56100000 or 45.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25414268 of 56200000 or 45.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25454570 of 56300000 or 45.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25482740 of 56400000 or 45.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25510826 of 56500000 or 45.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25540184 of 56600000 or 45.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25569618 of 56700000 or 45.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25597796 of 56800000 or 45.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25626812 of 56900000 or 45.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25657644 of 57000000 or 45.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25686852 of 57100000 or 45.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25717720 of 57200000 or 45.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25747934 of 57300000 or 44.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25778932 of 57400000 or 44.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25810514 of 57500000 or 44.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25847270 of 57600000 or 44.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25883646 of 57700000 or 44.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25912182 of 57800000 or 44.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25941086 of 57900000 or 44.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 25970844 of 58000000 or 44.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26000546 of 58100000 or 44.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26030604 of 58200000 or 44.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26061536 of 58300000 or 44.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26092696 of 58400000 or 44.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26123946 of 58500000 or 44.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26156704 of 58600000 or 44.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26189278 of 58700000 or 44.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26222804 of 58800000 or 44.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26258514 of 58900000 or 44.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26293946 of 59000000 or 44.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26331378 of 59100000 or 44.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26377064 of 59200000 or 44.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26399098 of 59300000 or 44.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26421524 of 59400000 or 44.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26444216 of 59500000 or 44.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26467450 of 59600000 or 44.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26490754 of 59700000 or 44.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26512844 of 59800000 or 44.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26535202 of 59900000 or 44.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26557902 of 60000000 or 44.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26580932 of 60100000 or 44.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26604014 of 60200000 or 44.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26626122 of 60300000 or 44.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26648432 of 60400000 or 44.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26671032 of 60500000 or 44.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26693934 of 60600000 or 44.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26716920 of 60700000 or 44.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26739068 of 60800000 or 44.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26761458 of 60900000 or 43.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26784844 of 61000000 or 43.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26808922 of 61100000 or 43.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26831414 of 61200000 or 43.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26853316 of 61300000 or 43.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26874994 of 61400000 or 43.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26897082 of 61500000 or 43.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26920010 of 61600000 or 43.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26942150 of 61700000 or 43.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26963832 of 61800000 or 43.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 26986040 of 61900000 or 43.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27008236 of 62000000 or 43.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27032362 of 62100000 or 43.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27055790 of 62200000 or 43.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27082836 of 62300000 or 43.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27109790 of 62400000 or 43.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27136392 of 62500000 or 43.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27162800 of 62600000 or 43.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27189438 of 62700000 or 43.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27216008 of 62800000 or 43.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27243208 of 62900000 or 43.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27270502 of 63000000 or 43.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27297980 of 63100000 or 43.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27325528 of 63200000 or 43.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27353874 of 63300000 or 43.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27381884 of 63400000 or 43.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27410702 of 63500000 or 43.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27443368 of 63600000 or 43.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27476202 of 63700000 or 43.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27503220 of 63800000 or 43.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27530490 of 63900000 or 43.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27556890 of 64000000 or 43.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27583144 of 64100000 or 43.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27609716 of 64200000 or 43.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27636262 of 64300000 or 43.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27664306 of 64400000 or 43.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27692148 of 64500000 or 42.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27720584 of 64600000 or 42.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27748898 of 64700000 or 42.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27777998 of 64800000 or 42.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27806904 of 64900000 or 42.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27837566 of 65000000 or 42.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27871802 of 65100000 or 42.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27900258 of 65200000 or 42.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27926674 of 65300000 or 42.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27953402 of 65400000 or 42.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 27979862 of 65500000 or 42.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28005974 of 65600000 or 42.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28032454 of 65700000 or 42.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28059554 of 65800000 or 42.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28087398 of 65900000 or 42.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28115130 of 66000000 or 42.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28143246 of 66100000 or 42.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28171628 of 66200000 or 42.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28199896 of 66300000 or 42.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28229118 of 66400000 or 42.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28259460 of 66500000 or 42.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28294990 of 66600000 or 42.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28324170 of 66700000 or 42.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28349364 of 66800000 or 42.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28374718 of 66900000 or 42.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28399242 of 67000000 or 42.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28424712 of 67100000 or 42.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28450150 of 67200000 or 42.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28475682 of 67300000 or 42.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28501084 of 67400000 or 42.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28527294 of 67500000 or 42.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28553806 of 67600000 or 42.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28581334 of 67700000 or 42.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28609600 of 67800000 or 42.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28638938 of 67900000 or 42.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28673006 of 68000000 or 42.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28733938 of 68100000 or 42.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28760000 of 68200000 or 42.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28785388 of 68300000 or 42.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28810596 of 68400000 or 42.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28835296 of 68500000 or 42.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28860290 of 68600000 or 42.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28884204 of 68700000 or 42.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28910546 of 68800000 or 42.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28937010 of 68900000 or 42.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28963594 of 69000000 or 42.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 28990558 of 69100000 or 42.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29017628 of 69200000 or 41.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29045838 of 69300000 or 41.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29074604 of 69400000 or 41.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29110856 of 69500000 or 41.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29168990 of 69600000 or 41.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29194712 of 69700000 or 41.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29220678 of 69800000 or 41.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29245700 of 69900000 or 41.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29270862 of 70000000 or 41.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29296044 of 70100000 or 41.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29321068 of 70200000 or 41.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29347356 of 70300000 or 41.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29373438 of 70400000 or 41.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29400150 of 70500000 or 41.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29427220 of 70600000 or 41.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29455140 of 70700000 or 41.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29483576 of 70800000 or 41.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+... kept 29514324 of 70900000 or 41.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz
+DONE with /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_1.trim.interleaved.fq.gz; kept 29543532 of 70987848 or 41.6%
+output in F_zebrinus_NA_FW_1.trim.interleaved.fq.gz.keep
+... kept 29546368 of 71000000 or 41.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 29570032 of 71100000 or 41.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 29593970 of 71200000 or 41.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 29617934 of 71300000 or 41.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 29642368 of 71400000 or 41.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 29666958 of 71500000 or 41.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 29691580 of 71600000 or 41.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 29714778 of 71700000 or 41.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 29740076 of 71800000 or 41.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 29765968 of 71900000 or 41.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 29793128 of 72000000 or 41.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 29819482 of 72100000 or 41.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 29846454 of 72200000 or 41.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 29873862 of 72300000 or 41.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 29901894 of 72400000 or 41.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 29929842 of 72500000 or 41.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 29961250 of 72600000 or 41.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 29993988 of 72700000 or 41.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30016248 of 72800000 or 41.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30038800 of 72900000 or 41.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30062276 of 73000000 or 41.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30085528 of 73100000 or 41.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30108460 of 73200000 or 41.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30130754 of 73300000 or 41.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30154458 of 73400000 or 41.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30178276 of 73500000 or 41.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30203164 of 73600000 or 41.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30228038 of 73700000 or 41.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30253040 of 73800000 or 41.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30278022 of 73900000 or 41.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30303480 of 74000000 or 41.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30329674 of 74100000 or 40.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30356356 of 74200000 or 40.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30408422 of 74300000 or 40.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30430792 of 74400000 or 40.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30453170 of 74500000 or 40.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30476054 of 74600000 or 40.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30499222 of 74700000 or 40.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30522480 of 74800000 or 40.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30545686 of 74900000 or 40.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30569012 of 75000000 or 40.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30593048 of 75100000 or 40.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30616692 of 75200000 or 40.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30642342 of 75300000 or 40.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30666802 of 75400000 or 40.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30691742 of 75500000 or 40.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30717222 of 75600000 or 40.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30743042 of 75700000 or 40.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30768672 of 75800000 or 40.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30796340 of 75900000 or 40.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30828378 of 76000000 or 40.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30855180 of 76100000 or 40.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30883002 of 76200000 or 40.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30907954 of 76300000 or 40.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30931940 of 76400000 or 40.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30956204 of 76500000 or 40.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 30979558 of 76600000 or 40.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31004626 of 76700000 or 40.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31030280 of 76800000 or 40.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31055632 of 76900000 or 40.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31083620 of 77000000 or 40.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31111060 of 77100000 or 40.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31139306 of 77200000 or 40.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31167614 of 77300000 or 40.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31197520 of 77400000 or 40.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31228064 of 77500000 or 40.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31276464 of 77600000 or 40.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31299122 of 77700000 or 40.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31324430 of 77800000 or 40.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31347990 of 77900000 or 40.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31369758 of 78000000 or 40.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31392450 of 78100000 or 40.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31415590 of 78200000 or 40.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31437244 of 78300000 or 40.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31460730 of 78400000 or 40.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31485292 of 78500000 or 40.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31508834 of 78600000 or 40.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31531934 of 78700000 or 40.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31554344 of 78800000 or 40.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31577836 of 78900000 or 40.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31601954 of 79000000 or 40.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31625536 of 79100000 or 40.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31657960 of 79200000 or 40.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31680404 of 79300000 or 40.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31703158 of 79400000 or 39.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31726138 of 79500000 or 39.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31749418 of 79600000 or 39.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31772490 of 79700000 or 39.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31795968 of 79800000 or 39.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31819630 of 79900000 or 39.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31843306 of 80000000 or 39.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31867848 of 80100000 or 39.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31893778 of 80200000 or 39.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31919198 of 80300000 or 39.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31944476 of 80400000 or 39.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31970896 of 80500000 or 39.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 31998484 of 80600000 or 39.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32026032 of 80700000 or 39.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32058088 of 80800000 or 39.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32089634 of 80900000 or 39.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32111452 of 81000000 or 39.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32133342 of 81100000 or 39.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32155892 of 81200000 or 39.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32178194 of 81300000 or 39.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32200696 of 81400000 or 39.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32223722 of 81500000 or 39.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32245880 of 81600000 or 39.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32269112 of 81700000 or 39.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32294012 of 81800000 or 39.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32319172 of 81900000 or 39.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32344006 of 82000000 or 39.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32370118 of 82100000 or 39.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32395562 of 82200000 or 39.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32421048 of 82300000 or 39.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32447826 of 82400000 or 39.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32477610 of 82500000 or 39.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32498790 of 82600000 or 39.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32520096 of 82700000 or 39.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32541174 of 82800000 or 39.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32563186 of 82900000 or 39.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32584900 of 83000000 or 39.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32606628 of 83100000 or 39.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32628926 of 83200000 or 39.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32650436 of 83300000 or 39.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32673348 of 83400000 or 39.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32697420 of 83500000 or 39.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32721088 of 83600000 or 39.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32744566 of 83700000 or 39.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32769360 of 83800000 or 39.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32793952 of 83900000 or 39.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32818386 of 84000000 or 39.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32844412 of 84100000 or 39.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32871366 of 84200000 or 39.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32892070 of 84300000 or 39.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32912496 of 84400000 or 39.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32933970 of 84500000 or 39.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32955646 of 84600000 or 39.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32977138 of 84700000 or 38.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 32998956 of 84800000 or 38.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33020724 of 84900000 or 38.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33043280 of 85000000 or 38.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33065884 of 85100000 or 38.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33089584 of 85200000 or 38.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33112848 of 85300000 or 38.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33135994 of 85400000 or 38.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33160252 of 85500000 or 38.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33184686 of 85600000 or 38.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33208896 of 85700000 or 38.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33235186 of 85800000 or 38.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33261600 of 85900000 or 38.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33284856 of 86000000 or 38.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33310072 of 86100000 or 38.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33333540 of 86200000 or 38.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33357906 of 86300000 or 38.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33380894 of 86400000 or 38.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33404606 of 86500000 or 38.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33429078 of 86600000 or 38.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33452700 of 86700000 or 38.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33476458 of 86800000 or 38.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33499930 of 86900000 or 38.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33523752 of 87000000 or 38.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33552054 of 87100000 or 38.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33581294 of 87200000 or 38.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33608700 of 87300000 or 38.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33634588 of 87400000 or 38.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33657772 of 87500000 or 38.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33677868 of 87600000 or 38.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33698528 of 87700000 or 38.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33719192 of 87800000 or 38.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33740024 of 87900000 or 38.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33760416 of 88000000 or 38.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33781872 of 88100000 or 38.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33802026 of 88200000 or 38.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33822330 of 88300000 or 38.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33844128 of 88400000 or 38.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33865416 of 88500000 or 38.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33886890 of 88600000 or 38.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33909692 of 88700000 or 38.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33933870 of 88800000 or 38.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33955898 of 88900000 or 38.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33977756 of 89000000 or 38.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 33998792 of 89100000 or 38.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34020210 of 89200000 or 38.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34042220 of 89300000 or 38.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34063944 of 89400000 or 38.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34085562 of 89500000 or 38.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34107836 of 89600000 or 38.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34130088 of 89700000 or 38.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34152766 of 89800000 or 38.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34176270 of 89900000 or 38.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34200352 of 90000000 or 38.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34224684 of 90100000 or 38.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34249894 of 90200000 or 38.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34275564 of 90300000 or 38.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34303492 of 90400000 or 37.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34331030 of 90500000 or 37.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34360640 of 90600000 or 37.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34379124 of 90700000 or 37.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34396158 of 90800000 or 37.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34413340 of 90900000 or 37.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34430702 of 91000000 or 37.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34448484 of 91100000 or 37.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34466506 of 91200000 or 37.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34485296 of 91300000 or 37.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34504058 of 91400000 or 37.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34523196 of 91500000 or 37.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34542918 of 91600000 or 37.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34563722 of 91700000 or 37.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34585560 of 91800000 or 37.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34603784 of 91900000 or 37.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34621748 of 92000000 or 37.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34639842 of 92100000 or 37.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34657520 of 92200000 or 37.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34675812 of 92300000 or 37.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34694224 of 92400000 or 37.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34712916 of 92500000 or 37.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34732192 of 92600000 or 37.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34751710 of 92700000 or 37.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34771948 of 92800000 or 37.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34793148 of 92900000 or 37.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34815206 of 93000000 or 37.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34834610 of 93100000 or 37.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34852348 of 93200000 or 37.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34870136 of 93300000 or 37.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34887898 of 93400000 or 37.4% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34906176 of 93500000 or 37.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34924806 of 93600000 or 37.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34943560 of 93700000 or 37.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34962860 of 93800000 or 37.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 34982820 of 93900000 or 37.3% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35004024 of 94000000 or 37.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35025982 of 94100000 or 37.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35047714 of 94200000 or 37.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35067466 of 94300000 or 37.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35085674 of 94400000 or 37.2% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35103846 of 94500000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35120822 of 94600000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35138238 of 94700000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35156010 of 94800000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35174212 of 94900000 or 37.1% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35192622 of 95000000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35211492 of 95100000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35230334 of 95200000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35249656 of 95300000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35270164 of 95400000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35288988 of 95500000 or 37.0% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35306278 of 95600000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35324124 of 95700000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35341102 of 95800000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35358640 of 95900000 or 36.9% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35375640 of 96000000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35393076 of 96100000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35410632 of 96200000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35428676 of 96300000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35446978 of 96400000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35466028 of 96500000 or 36.8% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35485450 of 96600000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35505546 of 96700000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35523220 of 96800000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35540806 of 96900000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35558118 of 97000000 or 36.7% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35575066 of 97100000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35592268 of 97200000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35609700 of 97300000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35627898 of 97400000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35646284 of 97500000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35665430 of 97600000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35685276 of 97700000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35705236 of 97800000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+... kept 35725510 of 97900000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz
+DONE with /home/ljcohen/osmotic_trim/interleaved/F_zebrinus_NA_FW_2.trim.interleaved.fq.gz; kept 35739260 of 97959976 or 36.5%
+output in F_zebrinus_NA_FW_2.trim.interleaved.fq.gz.keep
+... kept 35762421 of 98000000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/F_zebrinus.orphans.fq.gz
+... kept 35835707 of 98100000 or 36.5% sofar
+... in file /home/ljcohen/osmotic_trim/F_zebrinus.orphans.fq.gz
+... kept 35905183 of 98200000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/F_zebrinus.orphans.fq.gz
+... kept 35970464 of 98300000 or 36.6% sofar
+... in file /home/ljcohen/osmotic_trim/F_zebrinus.orphans.fq.gz
+DONE with /home/ljcohen/osmotic_trim/F_zebrinus.orphans.fq.gz; kept 35987974 of 98327251 or 36.6%
+output in F_zebrinus.orphans.fq.gz.keep
+Total number of unique k-mers: 842367207
+...saving to /home/ljcohen/osmotic_trim/diginorm/F_zebrinus/F_zebrinus.norm.C20k20.ct
+fp rate estimated to be 0.114

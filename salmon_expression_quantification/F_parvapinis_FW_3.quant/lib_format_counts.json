@@ -1,0 +1,22 @@
+{
+    "read_files": "( /home/ljcohen/osmotic_trim/F_parvapinis_FW_3.trim_1P.fq, /home/ljcohen/osmotic_trim/F_parvapinis_FW_3.trim_2P.fq )",
+    "expected_format": "IU",
+    "compatible_fragment_ratio": 0.99521557018270312,
+    "num_compatible_fragments": 6999997,
+    "num_assigned_fragments": 7033649,
+    "num_consistent_mappings": 20202162,
+    "num_inconsistent_mappings": 1472357,
+    "strand_mapping_bias": 0.50066552282869525,
+    "MSF": 0,
+    "OSF": 10032,
+    "ISF": 10087636,
+    "MSR": 0,
+    "OSR": 9120,
+    "ISR": 10114526,
+    "SF": 683783,
+    "SR": 672525,
+    "MU": 0,
+    "OU": 0,
+    "IU": 0,
+    "U": 0
+}

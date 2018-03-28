@@ -1,0 +1,22 @@
+{
+    "read_files": "( /home/ljcohen/osmotic_trim/F_diaphanus_BW_2.trim_1P.fq, /home/ljcohen/osmotic_trim/F_diaphanus_BW_2.trim_2P.fq )",
+    "expected_format": "IU",
+    "compatible_fragment_ratio": 0.99115917226450545,
+    "num_compatible_fragments": 8674073,
+    "num_assigned_fragments": 8751443,
+    "num_consistent_mappings": 20149809,
+    "num_inconsistent_mappings": 2047695,
+    "strand_mapping_bias": 0.49921411165733631,
+    "MSF": 0,
+    "OSF": 10606,
+    "ISF": 10090740,
+    "MSR": 0,
+    "OSR": 10343,
+    "ISR": 10059069,
+    "SF": 917336,
+    "SR": 918909,
+    "MU": 0,
+    "OU": 0,
+    "IU": 0,
+    "U": 0
+}

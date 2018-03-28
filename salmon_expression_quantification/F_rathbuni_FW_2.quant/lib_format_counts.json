@@ -1,0 +1,22 @@
+{
+    "read_files": "( /home/ljcohen/osmotic_trim/F_rathbuni_FW_2.trim_1P.fq, /home/ljcohen/osmotic_trim/F_rathbuni_FW_2.trim_2P.fq )",
+    "expected_format": "IU",
+    "compatible_fragment_ratio": 0.99115364603862832,
+    "num_compatible_fragments": 44004744,
+    "num_assigned_fragments": 44397500,
+    "num_consistent_mappings": 174709517,
+    "num_inconsistent_mappings": 13100040,
+    "strand_mapping_bias": 0.49888000091031104,
+    "MSF": 0,
+    "OSF": 58005,
+    "ISF": 87550433,
+    "MSR": 0,
+    "OSR": 55192,
+    "ISR": 87159084,
+    "SF": 5899685,
+    "SR": 5729245,
+    "MU": 0,
+    "OU": 0,
+    "IU": 0,
+    "U": 0
+}

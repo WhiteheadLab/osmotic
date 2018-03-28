@@ -3,7 +3,7 @@ library(RColorBrewer)
 library(gplots)
 source('~/Documents/scripts/plotPCAWithSampleNames.R')
 source('~/Documents/scripts/overLapper_original.R')
-setwd("~/Documents/UCDavis/Whitehead/osmotic/osmotic")
+setwd("~/Documents/UCDavis/osmotic/DE_analysis_by_species/counts/")
 
 data<-read.csv("killifish_allcounts.csv")
 colnames(data)
