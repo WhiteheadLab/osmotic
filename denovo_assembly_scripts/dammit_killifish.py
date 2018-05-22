@@ -14,7 +14,7 @@ source activate /home/ljcohen/anaconda2/envs/py3.dammit
 mkdir /scratch/$SLURM_JOBID
 cd /scratch/$SLURM_JOBID
 
-dammit annotate {} --busco-group metazoa --user-databases /home/ljcohen/reference/kfish2rae5/kfish2rae5g.combined.aa -o {}.dammit_out --n_threads 12
+dammit annotate {} --busco-group metazoa --user-databases /home/ljcohen/reference/kfish2rae5/kfish2rae5g.combined.aa -o {}.dammit_out --n_threads 8
 
 cp -r /scratch/$SLURM_JOBID/{}.dammit_out {}
 rm -rf /scratch/$SLURM_JOBID*
