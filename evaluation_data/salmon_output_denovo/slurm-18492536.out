@@ -1,0 +1,853 @@
+==========================================
+SLURM_JOB_ID = 18492536
+SLURM_NODELIST = c11-77
+==========================================
+Module slurm/16.05.8 loaded 
+Module openmpi/2.0.1 loaded 
+TEST
+Version Info: Could not resolve upgrade information in the alotted time.
+Check for upgrades manually at https://combine-lab.github.io/salmon
+[2018-03-07 11:02:03.091] [jLog] [info] building index
+RapMap Indexer
+
+[Step 1 of 4] : counting k-mers
+counted k-mers for 10000 transcriptscounted k-mers for 20000 transcriptscounted k-mers for 30000 transcriptscounted k-mers for 40000 transcriptscounted k-mers for 50000 transcriptscounted k-mers for 60000 transcriptscounted k-mers for 70000 transcriptscounted k-mers for 80000 transcriptscounted k-mers for 90000 transcriptscounted k-mers for 100000 transcriptscounted k-mers for 110000 transcriptscounted k-mers for 120000 transcriptscounted k-mers for 130000 transcriptscounted k-mers for 140000 transcriptscounted k-mers for 150000 transcriptscounted k-mers for 160000 transcriptscounted k-mers for 170000 transcriptscounted k-mers for 180000 transcriptscounted k-mers for 190000 transcriptscounted k-mers for 200000 transcriptscounted k-mers for 210000 transcriptscounted k-mers for 220000 transcriptscounted k-mers for 230000 transcriptscounted k-mers for 240000 transcriptscounted k-mers for 250000 transcriptscounted k-mers for 260000 transcriptscounted k-mers for 270000 transcriptscounted k-mers for 280000 transcriptscounted k-mers for 290000 transcriptscounted k-mers for 300000 transcriptsElapsed time: 40.3035s
+
+[2018-03-07 11:02:43.398] [jointLog] [warning] Removed 4 transcripts that were sequence duplicates of indexed transcripts.
+[2018-03-07 11:02:43.398] [jointLog] [warning] If you wish to retain duplicate transcripts, please use the `--keepDuplicates` flag
+Replaced 0 non-ATCG nucleotides
+Clipped poly-A tails from 12655 transcripts
+Building rank-select dictionary and saving to disk done
+Elapsed time: 0.0175877s
+Writing sequence data to file . . . done
+Elapsed time: 0.184272s
+[info] Building 32-bit suffix array (length of generalized text is 363300427)
+Building suffix array . . . success
+saving to disk . . . done
+Elapsed time: 0.552087s
+done
+Elapsed time: 46.7842s
+processed 0 positionsprocessed 1000000 positionsprocessed 2000000 positionsprocessed 3000000 positionsprocessed 4000000 positionsprocessed 5000000 positionsprocessed 6000000 positionsprocessed 7000000 positionsprocessed 8000000 positionsprocessed 9000000 positionsprocessed 10000000 positionsprocessed 11000000 positionsprocessed 12000000 positionsprocessed 13000000 positionsprocessed 14000000 positionsprocessed 15000000 positionsprocessed 16000000 positionsprocessed 17000000 positionsprocessed 18000000 positionsprocessed 19000000 positionsprocessed 20000000 positionsprocessed 21000000 positionsprocessed 22000000 positionsprocessed 23000000 positionsprocessed 24000000 positionsprocessed 25000000 positionsprocessed 26000000 positionsprocessed 27000000 positionsprocessed 28000000 positionsprocessed 29000000 positionsprocessed 30000000 positionsprocessed 31000000 positionsprocessed 32000000 positionsprocessed 33000000 positionsprocessed 34000000 positionsprocessed 35000000 positionsprocessed 36000000 positionsprocessed 37000000 positionsprocessed 38000000 positionsprocessed 39000000 positionsprocessed 40000000 positionsprocessed 41000000 positionsprocessed 42000000 positionsprocessed 43000000 positionsprocessed 44000000 positionsprocessed 45000000 positionsprocessed 46000000 positionsprocessed 47000000 positionsprocessed 48000000 positionsprocessed 49000000 positionsprocessed 50000000 positionsprocessed 51000000 positionsprocessed 52000000 positionsprocessed 53000000 positionsprocessed 54000000 positionsprocessed 55000000 positionsprocessed 56000000 positionsprocessed 57000000 positionsprocessed 58000000 positionsprocessed 59000000 positionsprocessed 60000000 positionsprocessed 61000000 positionsprocessed 62000000 positionsprocessed 63000000 positionsprocessed 64000000 positionsprocessed 65000000 positionsprocessed 66000000 positionsprocessed 67000000 positionsprocessed 68000000 positionsprocessed 69000000 positionsprocessed 70000000 positionsprocessed 71000000 positionsprocessed 72000000 positionsprocessed 73000000 positionsprocessed 74000000 positionsprocessed 75000000 positionsprocessed 76000000 positionsprocessed 77000000 positionsprocessed 78000000 positionsprocessed 79000000 positionsprocessed 80000000 positionsprocessed 81000000 positionsprocessed 82000000 positionsprocessed 83000000 positionsprocessed 84000000 positionsprocessed 85000000 positionsprocessed 86000000 positionsprocessed 87000000 positionsprocessed 88000000 positionsprocessed 89000000 positionsprocessed 90000000 positionsprocessed 91000000 positionsprocessed 92000000 positionsprocessed 93000000 positionsprocessed 94000000 positionsprocessed 95000000 positionsprocessed 96000000 positionsprocessed 97000000 positionsprocessed 98000000 positionsprocessed 99000000 positionsprocessed 100000000 positionsprocessed 101000000 positionsprocessed 102000000 positionsprocessed 103000000 positionsprocessed 104000000 positionsprocessed 105000000 positionsprocessed 106000000 positionsprocessed 107000000 positionsprocessed 108000000 positionsprocessed 109000000 positionsprocessed 110000000 positionsprocessed 111000000 positionsprocessed 112000000 positionsprocessed 113000000 positionsprocessed 114000000 positionsprocessed 115000000 positionsprocessed 116000000 positionsprocessed 117000000 positionsprocessed 118000000 positionsprocessed 119000000 positionsprocessed 120000000 positionsprocessed 121000000 positionsprocessed 122000000 positionsprocessed 123000000 positionsprocessed 124000000 positionsprocessed 125000000 positionsprocessed 126000000 positionsprocessed 127000000 positionsprocessed 128000000 positionsprocessed 129000000 positionsprocessed 130000000 positionsprocessed 131000000 positionsprocessed 132000000 positionsprocessed 133000000 positionsprocessed 134000000 positionsprocessed 135000000 positionsprocessed 136000000 positionsprocessed 137000000 positionsprocessed 138000000 positionsprocessed 139000000 positionsprocessed 140000000 positionsprocessed 141000000 positionsprocessed 142000000 positionsprocessed 143000000 positionsprocessed 144000000 positionsprocessed 145000000 positionsprocessed 146000000 positionsprocessed 147000000 positionsprocessed 148000000 positionsprocessed 149000000 positionsprocessed 150000000 positionsprocessed 151000000 positionsprocessed 152000000 positionsprocessed 153000000 positionsprocessed 154000000 positionsprocessed 155000000 positionsprocessed 156000000 positionsprocessed 157000000 positionsprocessed 158000000 positionsprocessed 159000000 positionsprocessed 160000000 positionsprocessed 161000000 positionsprocessed 162000000 positionsprocessed 163000000 positionsprocessed 164000000 positionsprocessed 165000000 positionsprocessed 166000000 positionsprocessed 167000000 positionsprocessed 168000000 positionsprocessed 169000000 positionsprocessed 170000000 positionsprocessed 171000000 positionsprocessed 172000000 positionsprocessed 173000000 positionsprocessed 174000000 positionsprocessed 175000000 positionsprocessed 176000000 positionsprocessed 177000000 positionsprocessed 178000000 positionsprocessed 179000000 positionsprocessed 180000000 positionsprocessed 181000000 positionsprocessed 182000000 positionsprocessed 183000000 positionsprocessed 184000000 positionsprocessed 185000000 positionsprocessed 186000000 positionsprocessed 187000000 positionsprocessed 188000000 positionsprocessed 189000000 positionsprocessed 190000000 positionsprocessed 191000000 positionsprocessed 192000000 positionsprocessed 193000000 positionsprocessed 194000000 positionsprocessed 195000000 positionsprocessed 196000000 positionsprocessed 197000000 positionsprocessed 198000000 positionsprocessed 199000000 positionsprocessed 200000000 positionsprocessed 201000000 positionsprocessed 202000000 positionsprocessed 203000000 positionsprocessed 204000000 positionsprocessed 205000000 positionsprocessed 206000000 positionsprocessed 207000000 positionsprocessed 208000000 positionsprocessed 209000000 positionsprocessed 210000000 positionsprocessed 211000000 positionsprocessed 212000000 positionsprocessed 213000000 positionsprocessed 214000000 positionsprocessed 215000000 positionsprocessed 216000000 positionsprocessed 217000000 positionsprocessed 218000000 positionsprocessed 219000000 positionsprocessed 220000000 positionsprocessed 221000000 positionsprocessed 222000000 positionsprocessed 223000000 positionsprocessed 224000000 positionsprocessed 225000000 positionsprocessed 226000000 positionsprocessed 227000000 positionsprocessed 228000000 positionsprocessed 229000000 positionsprocessed 230000000 positionsprocessed 231000000 positionsprocessed 232000000 positionsprocessed 233000000 positionsprocessed 234000000 positionsprocessed 235000000 positionsprocessed 236000000 positionsprocessed 237000000 positionsprocessed 238000000 positionsprocessed 239000000 positionsprocessed 240000000 positionsprocessed 241000000 positionsprocessed 242000000 positionsprocessed 243000000 positionsprocessed 244000000 positionsprocessed 245000000 positionsprocessed 246000000 positionsprocessed 247000000 positionsprocessed 248000000 positionsprocessed 249000000 positionsprocessed 250000000 positionsprocessed 251000000 positionsprocessed 252000000 positionsprocessed 253000000 positionsprocessed 254000000 positionsprocessed 255000000 positionsprocessed 256000000 positionsprocessed 257000000 positionsprocessed 258000000 positionsprocessed 259000000 positionsprocessed 260000000 positionsprocessed 261000000 positionsprocessed 262000000 positionsprocessed 263000000 positionsprocessed 264000000 positionsprocessed 265000000 positionsprocessed 266000000 positionsprocessed 267000000 positionsprocessed 268000000 positionsprocessed 269000000 positionsprocessed 270000000 positionsprocessed 271000000 positionsprocessed 272000000 positionsprocessed 273000000 positionsprocessed 274000000 positionsprocessed 275000000 positionsprocessed 276000000 positionsprocessed 277000000 positionsprocessed 278000000 positionsprocessed 279000000 positionsprocessed 280000000 positionsprocessed 281000000 positionsprocessed 282000000 positionsprocessed 283000000 positionsprocessed 284000000 positionsprocessed 285000000 positionsprocessed 286000000 positionsprocessed 287000000 positionsprocessed 288000000 positionsprocessed 289000000 positionsprocessed 290000000 positionsprocessed 291000000 positionsprocessed 292000000 positionsprocessed 293000000 positionsprocessed 294000000 positionsprocessed 295000000 positionsprocessed 296000000 positionsprocessed 297000000 positionsprocessed 298000000 positionsprocessed 299000000 positionsprocessed 300000000 positionsprocessed 301000000 positionsprocessed 302000000 positionsprocessed 303000000 positionsprocessed 304000000 positionsprocessed 305000000 positionsprocessed 306000000 positionsprocessed 307000000 positionsprocessed 308000000 positionsprocessed 309000000 positionsprocessed 310000000 positionsprocessed 311000000 positionsprocessed 312000000 positionsprocessed 313000000 positionsprocessed 314000000 positionsprocessed 315000000 positionsprocessed 316000000 positionsprocessed 317000000 positionsprocessed 318000000 positionsprocessed 319000000 positionsprocessed 320000000 positionsprocessed 321000000 positionsprocessed 322000000 positionsprocessed 323000000 positionsprocessed 324000000 positionsprocessed 325000000 positionsprocessed 326000000 positionsprocessed 327000000 positionsprocessed 328000000 positionsprocessed 329000000 positionsprocessed 330000000 positionsprocessed 331000000 positionsprocessed 332000000 positionsprocessed 333000000 positionsprocessed 334000000 positionsprocessed 335000000 positionsprocessed 336000000 positionsprocessed 337000000 positionsprocessed 338000000 positionsprocessed 339000000 positionsprocessed 340000000 positionsprocessed 341000000 positionsprocessed 342000000 positionsprocessed 343000000 positionsprocessed 344000000 positionsprocessed 345000000 positionsprocessed 346000000 positionsprocessed 347000000 positionsprocessed 348000000 positionsprocessed 349000000 positionsprocessed 350000000 positionsprocessed 351000000 positionsprocessed 352000000 positionsprocessed 353000000 positionsprocessed 354000000 positionsprocessed 355000000 positionsprocessed 356000000 positionsprocessed 357000000 positionsprocessed 358000000 positionsprocessed 359000000 positionsprocessed 360000000 positionsprocessed 361000000 positionsprocessed 362000000 positionsprocessed 363000000 positions
+khash had 189906844 keys
+saving hash to disk . . . done
+Elapsed time: 11.9826s
+[2018-03-07 11:11:48.586] [jLog] [info] done building index
+Version Info: Could not resolve upgrade information in the alotted time.
+Check for upgrades manually at https://combine-lab.github.io/salmon
+### salmon (mapping-based) v0.9.1
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /home/ljcohen/osmotic_assemblies_farm/F_similis_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_similis_BW_1.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_similis_BW_1.trim_2P.fq }
+### [ output ] => { F_similis_BW_1.quant }
+Logs will be written to F_similis_BW_1.quant/logs
+[2018-03-07 11:11:48.884] [jointLog] [info] parsing read library format
+[2018-03-07 11:11:48.884] [jointLog] [info] There is 1 library.
+[2018-03-07 11:11:49.083] [jointLog] [info] Loading Quasi index
+[2018-03-07 11:11:49.084] [jointLog] [info] Loading 32-bit quasi index
+[2018-03-07 11:11:49.086] [stderrLog] [info] Loading Suffix Array 
+[2018-03-07 11:11:50.083] [stderrLog] [info] Loading Transcript Info 
+[2018-03-07 11:11:50.397] [stderrLog] [info] Loading Rank-Select Bit Array
+[2018-03-07 11:11:50.506] [stderrLog] [info] There were 520315 set bits in the bit array
+[2018-03-07 11:11:50.563] [stderrLog] [info] Computing transcript lengths
+[2018-03-07 11:11:50.564] [stderrLog] [info] Waiting to finish loading hash
+[2018-03-07 11:11:58.228] [jointLog] [info] done
+[2018-03-07 11:11:58.228] [jointLog] [info] Index contained 520315 targets
+[2018-03-07 11:11:58.228] [stderrLog] [info] Done loading index
+
+
+
+
+[A[32mprocessed[31m 500000 [32mfragments[0m
+hits: 987709, hits per frag:  2.26762[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 1959769, hits per frag:  2.54916[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 2934244, hits per frag:  2.02317[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 3922819, hits per frag:  2.06464[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 4918452, hits per frag:  1.98006[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 5891135, hits per frag:  2.10769[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 6881322, hits per frag:  2.04497[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 7861554, hits per frag:  1.97526[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 8836779, hits per frag:  2.15531[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 9811305, hits per frag:  1.982[A[32mprocessed[31m 5500001 [32mfragments[0m
+hits: 10790819, hits per frag:  1.9972[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 11761432, hits per frag:  1.98182[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 12743879, hits per frag:  1.96513[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 13718291, hits per frag:  1.96728[A[32mprocessed[31m 7500000 [32mfragments[0m
+hits: 14690924, hits per frag:  2.03194[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 15680549, hits per frag:  1.98488[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 16663747, hits per frag:  1.98024[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 17641992, hits per frag:  1.96692[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 18636634, hits per frag:  1.97057[A[32mprocessed[31m 10000000 [32mfragments[0m
+hits: 19607816, hits per frag:  1.99978[A[32mprocessed[31m 10500000 [32mfragments[0m
+hits: 20582706, hits per frag:  1.96306[A[32mprocessed[31m 11000000 [32mfragments[0m
+hits: 21566740, hits per frag:  2.00447[A[32mprocessed[31m 11500000 [32mfragments[0m
+hits: 22560684, hits per frag:  1.97641[A[32mprocessed[31m 12000000 [32mfragments[0m
+hits: 23531479, hits per frag:  1.97336[A[32mprocessed[31m 12500000 [32mfragments[0m
+hits: 24516607, hits per frag:  2.02787[A[32mprocessed[31m 13000000 [32mfragments[0m
+hits: 25501521, hits per frag:  1.96934[A[32mprocessed[31m 13500000 [32mfragments[0m
+hits: 26492673, hits per frag:  1.97928[A[32mprocessed[31m 14000000 [32mfragments[0m
+hits: 27475733, hits per frag:  1.97881[A[32mprocessed[31m 14500000 [32mfragments[0m
+hits: 28461136, hits per frag:  1.96487
+
+
+
+
+
+
+
+
+
+[2018-03-07 11:28:43.076] [jointLog] [info] Computed 436187 rich equivalence classes for further processing
+[2018-03-07 11:28:43.076] [jointLog] [info] Counted 12233346 total reads in the equivalence classes 
+[2018-03-07 11:28:43.108] [jointLog] [warning] 0.000735256% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[2018-03-07 11:28:43.108] [jointLog] [info] Mapping rate = 81.7694%
+
+[2018-03-07 11:28:43.108] [jointLog] [info] finished quantifyLibrary()
+[2018-03-07 11:28:43.167] [jointLog] [info] Starting optimizer
+[2018-03-07 11:28:44.882] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2018-03-07 11:28:44.893] [jointLog] [info] iteration = 0 | max rel diff. = 13.5122
+[2018-03-07 11:28:46.141] [jointLog] [info] iteration = 100 | max rel diff. = 0.120464
+[2018-03-07 11:28:47.390] [jointLog] [info] iteration = 200 | max rel diff. = 0.0681559
+[2018-03-07 11:28:48.649] [jointLog] [info] iteration = 300 | max rel diff. = 0.042346
+[2018-03-07 11:28:49.891] [jointLog] [info] iteration = 400 | max rel diff. = 0.0313462
+[2018-03-07 11:28:51.142] [jointLog] [info] iteration = 500 | max rel diff. = 0.020864
+[2018-03-07 11:28:52.394] [jointLog] [info] iteration = 600 | max rel diff. = 0.0191707
+[2018-03-07 11:28:53.641] [jointLog] [info] iteration = 700 | max rel diff. = 0.0181832
+[2018-03-07 11:28:54.890] [jointLog] [info] iteration = 800 | max rel diff. = 0.018116
+[2018-03-07 11:28:56.135] [jointLog] [info] iteration = 900 | max rel diff. = 0.0143752
+[2018-03-07 11:28:57.396] [jointLog] [info] iteration = 1000 | max rel diff. = 0.0129242
+[2018-03-07 11:28:58.677] [jointLog] [info] iteration = 1100 | max rel diff. = 0.0143553
+[2018-03-07 11:28:59.941] [jointLog] [info] iteration = 1200 | max rel diff. = 0.0129018
+[2018-03-07 11:29:01.188] [jointLog] [info] iteration = 1300 | max rel diff. = 0.0105834
+[2018-03-07 11:29:01.898] [jointLog] [info] iteration = 1357 | max rel diff. = 0.00825634
+[2018-03-07 11:29:01.964] [jointLog] [info] Finished optimizer
+[2018-03-07 11:29:01.964] [jointLog] [info] writing output 
+
+Version Info: Could not resolve upgrade information in the alotted time.
+Check for upgrades manually at https://combine-lab.github.io/salmon
+### salmon (mapping-based) v0.9.1
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /home/ljcohen/osmotic_assemblies_farm/F_similis_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_similis_BW_2.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_similis_BW_2.trim_2P.fq }
+### [ output ] => { F_similis_BW_2.quant }
+Logs will be written to F_similis_BW_2.quant/logs
+[2018-03-07 11:29:05.625] [jointLog] [info] parsing read library format
+[2018-03-07 11:29:05.625] [jointLog] [info] There is 1 library.
+[2018-03-07 11:29:05.740] [jointLog] [info] Loading Quasi index
+[2018-03-07 11:29:05.742] [jointLog] [info] Loading 32-bit quasi index
+[2018-03-07 11:29:05.744] [stderrLog] [info] Loading Suffix Array 
+[2018-03-07 11:29:06.678] [stderrLog] [info] Loading Transcript Info 
+[2018-03-07 11:29:06.973] [stderrLog] [info] Loading Rank-Select Bit Array
+[2018-03-07 11:29:07.075] [stderrLog] [info] There were 520315 set bits in the bit array
+[2018-03-07 11:29:07.128] [stderrLog] [info] Computing transcript lengths
+[2018-03-07 11:29:07.129] [stderrLog] [info] Waiting to finish loading hash
+[2018-03-07 11:29:14.951] [jointLog] [info] done
+[2018-03-07 11:29:14.951] [jointLog] [info] Index contained 520315 targets
+[2018-03-07 11:29:14.951] [stderrLog] [info] Done loading index
+
+
+
+
+[A[32mprocessed[31m 500000 [32mfragments[0m
+hits: 883516, hits per frag:  1.92069[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 1757683, hits per frag:  1.77544[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 2637486, hits per frag:  1.80033[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 3508269, hits per frag:  1.79451[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 4385860, hits per frag:  1.77919[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 5271434, hits per frag:  1.81149[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 6162928, hits per frag:  1.84795[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 7038779, hits per frag:  1.77076[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 7913875, hits per frag:  1.81964[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 8791574, hits per frag:  1.80446[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 9674413, hits per frag:  1.76596[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 10538263, hits per frag:  1.77802[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 11437068, hits per frag:  1.80192[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 12318321, hits per frag:  1.79407[A[32mprocessed[31m 7500001 [32mfragments[0m
+hits: 13196147, hits per frag:  1.88113[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 14078142, hits per frag:  1.8181[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 14949691, hits per frag:  1.77973[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 15826457, hits per frag:  1.80874[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 16705864, hits per frag:  1.77875[A[32mprocessed[31m 10000000 [32mfragments[0m
+hits: 17581457, hits per frag:  1.76346[A[32mprocessed[31m 10500000 [32mfragments[0m
+hits: 18454125, hits per frag:  1.75921
+
+
+
+
+
+
+
+
+
+[2018-03-07 11:40:32.927] [jointLog] [info] Computed 386109 rich equivalence classes for further processing
+[2018-03-07 11:40:32.927] [jointLog] [info] Counted 8624062 total reads in the equivalence classes 
+[2018-03-07 11:40:32.954] [jointLog] [warning] 0.000931709% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[2018-03-07 11:40:32.954] [jointLog] [info] Mapping rate = 80.3511%
+
+[2018-03-07 11:40:32.954] [jointLog] [info] finished quantifyLibrary()
+[2018-03-07 11:40:33.089] [jointLog] [info] Starting optimizer
+[2018-03-07 11:40:33.536] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2018-03-07 11:40:33.548] [jointLog] [info] iteration = 0 | max rel diff. = 14.6899
+[2018-03-07 11:40:34.723] [jointLog] [info] iteration = 100 | max rel diff. = 0.121628
+[2018-03-07 11:40:35.928] [jointLog] [info] iteration = 200 | max rel diff. = 0.0480281
+[2018-03-07 11:40:37.129] [jointLog] [info] iteration = 300 | max rel diff. = 0.0369333
+[2018-03-07 11:40:38.339] [jointLog] [info] iteration = 400 | max rel diff. = 0.0403804
+[2018-03-07 11:40:39.550] [jointLog] [info] iteration = 500 | max rel diff. = 0.0209659
+[2018-03-07 11:40:40.756] [jointLog] [info] iteration = 600 | max rel diff. = 0.0209134
+[2018-03-07 11:40:41.975] [jointLog] [info] iteration = 700 | max rel diff. = 0.0209018
+[2018-03-07 11:40:43.218] [jointLog] [info] iteration = 800 | max rel diff. = 0.0128837
+[2018-03-07 11:40:44.418] [jointLog] [info] iteration = 900 | max rel diff. = 0.013641
+[2018-03-07 11:40:45.666] [jointLog] [info] iteration = 1000 | max rel diff. = 0.0109345
+[2018-03-07 11:40:46.871] [jointLog] [info] iteration = 1100 | max rel diff. = 0.0103566
+[2018-03-07 11:40:46.943] [jointLog] [info] iteration = 1107 | max rel diff. = 0.00991971
+[2018-03-07 11:40:47.009] [jointLog] [info] Finished optimizer
+[2018-03-07 11:40:47.010] [jointLog] [info] writing output 
+
+Version Info: Could not resolve upgrade information in the alotted time.
+Check for upgrades manually at https://combine-lab.github.io/salmon
+### salmon (mapping-based) v0.9.1
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /home/ljcohen/osmotic_assemblies_farm/F_similis_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_similis_BW_3.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_similis_BW_3.trim_2P.fq }
+### [ output ] => { F_similis_BW_3.quant }
+Logs will be written to F_similis_BW_3.quant/logs
+[2018-03-07 11:40:50.012] [jointLog] [info] parsing read library format
+[2018-03-07 11:40:50.012] [jointLog] [info] There is 1 library.
+[2018-03-07 11:40:50.088] [jointLog] [info] Loading Quasi index
+[2018-03-07 11:40:50.088] [jointLog] [info] Loading 32-bit quasi index
+[2018-03-07 11:40:50.088] [stderrLog] [info] Loading Suffix Array 
+[2018-03-07 11:40:51.032] [stderrLog] [info] Loading Transcript Info 
+[2018-03-07 11:40:51.318] [stderrLog] [info] Loading Rank-Select Bit Array
+[2018-03-07 11:40:51.412] [stderrLog] [info] There were 520315 set bits in the bit array
+[2018-03-07 11:40:51.462] [stderrLog] [info] Computing transcript lengths
+[2018-03-07 11:40:51.463] [stderrLog] [info] Waiting to finish loading hash
+[2018-03-07 11:40:58.867] [jointLog] [info] done
+[2018-03-07 11:40:58.867] [jointLog] [info] Index contained 520315 targets
+[2018-03-07 11:40:58.867] [stderrLog] [info] Done loading index
+
+
+
+
+[A[32mprocessed[31m 500000 [32mfragments[0m
+hits: 873243, hits per frag:  1.85048[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 1747230, hits per frag:  1.94137[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 2622135, hits per frag:  1.81148[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 3496342, hits per frag:  1.88526[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 4366056, hits per frag:  1.75009[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 5249065, hits per frag:  1.77942[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 6124603, hits per frag:  1.76513[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 7003777, hits per frag:  1.76405[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 7872626, hits per frag:  1.77712[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 8745412, hits per frag:  1.85481[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 9616367, hits per frag:  1.90008[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 10488415, hits per frag:  1.75392[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 11361310, hits per frag:  1.75194[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 12234439, hits per frag:  1.7501[A[32mprocessed[31m 7500000 [32mfragments[0m
+hits: 13114113, hits per frag:  1.76469[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 13997098, hits per frag:  1.8119[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 14881197, hits per frag:  1.76631[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 15744707, hits per frag:  1.81937[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 16623125, hits per frag:  1.75829
+
+
+
+
+
+
+
+
+
+[2018-03-07 11:48:07.977] [jointLog] [info] Computed 358109 rich equivalence classes for further processing
+[2018-03-07 11:48:07.977] [jointLog] [info] Counted 8121825 total reads in the equivalence classes 
+[2018-03-07 11:48:07.993] [jointLog] [warning] 0.000982604% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[2018-03-07 11:48:07.993] [jointLog] [info] Mapping rate = 81.4341%
+
+[2018-03-07 11:48:07.993] [jointLog] [info] finished quantifyLibrary()
+[2018-03-07 11:48:08.139] [jointLog] [info] Starting optimizer
+[2018-03-07 11:48:08.584] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2018-03-07 11:48:08.598] [jointLog] [info] iteration = 0 | max rel diff. = 14.7837
+[2018-03-07 11:48:09.769] [jointLog] [info] iteration = 100 | max rel diff. = 0.101652
+[2018-03-07 11:48:10.905] [jointLog] [info] iteration = 200 | max rel diff. = 0.0536259
+[2018-03-07 11:48:12.065] [jointLog] [info] iteration = 300 | max rel diff. = 0.0462679
+[2018-03-07 11:48:13.305] [jointLog] [info] iteration = 400 | max rel diff. = 0.0259892
+[2018-03-07 11:48:14.441] [jointLog] [info] iteration = 500 | max rel diff. = 0.0212217
+[2018-03-07 11:48:15.580] [jointLog] [info] iteration = 600 | max rel diff. = 0.0178633
+[2018-03-07 11:48:16.818] [jointLog] [info] iteration = 700 | max rel diff. = 0.0152876
+[2018-03-07 11:48:17.996] [jointLog] [info] iteration = 800 | max rel diff. = 0.0141674
+[2018-03-07 11:48:19.156] [jointLog] [info] iteration = 900 | max rel diff. = 0.0123257
+[2018-03-07 11:48:20.308] [jointLog] [info] iteration = 1000 | max rel diff. = 0.0112508
+[2018-03-07 11:48:21.503] [jointLog] [info] iteration = 1100 | max rel diff. = 0.0115891
+[2018-03-07 11:48:21.601] [jointLog] [info] iteration = 1109 | max rel diff. = 0.00991351
+[2018-03-07 11:48:21.648] [jointLog] [info] Finished optimizer
+[2018-03-07 11:48:21.648] [jointLog] [info] writing output 
+
+Version Info: Could not resolve upgrade information in the alotted time.
+Check for upgrades manually at https://combine-lab.github.io/salmon
+### salmon (mapping-based) v0.9.1
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /home/ljcohen/osmotic_assemblies_farm/F_similis_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_similis_FW_1.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_similis_FW_1.trim_2P.fq }
+### [ output ] => { F_similis_FW_1.quant }
+Logs will be written to F_similis_FW_1.quant/logs
+[2018-03-07 11:48:25.239] [jointLog] [info] parsing read library format
+[2018-03-07 11:48:25.239] [jointLog] [info] There is 1 library.
+[2018-03-07 11:48:25.423] [stderrLog] [info] Loading Suffix Array 
+[2018-03-07 11:48:25.422] [jointLog] [info] Loading Quasi index
+[2018-03-07 11:48:25.422] [jointLog] [info] Loading 32-bit quasi index
+[2018-03-07 11:48:26.370] [stderrLog] [info] Loading Transcript Info 
+[2018-03-07 11:48:26.659] [stderrLog] [info] Loading Rank-Select Bit Array
+[2018-03-07 11:48:26.759] [stderrLog] [info] There were 520315 set bits in the bit array
+[2018-03-07 11:48:26.830] [stderrLog] [info] Computing transcript lengths
+[2018-03-07 11:48:26.831] [stderrLog] [info] Waiting to finish loading hash
+[2018-03-07 11:48:34.289] [jointLog] [info] done
+[2018-03-07 11:48:34.289] [jointLog] [info] Index contained 520315 targets
+[2018-03-07 11:48:34.289] [stderrLog] [info] Done loading index
+
+
+
+
+[A[32mprocessed[31m 500000 [32mfragments[0m
+hits: 930737, hits per frag:  1.90828[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 1820860, hits per frag:  1.94775[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 2731470, hits per frag:  1.9105[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 3645533, hits per frag:  1.94428[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 4547497, hits per frag:  1.85956[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 5451582, hits per frag:  1.986[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 6368075, hits per frag:  1.83354[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 7317188, hits per frag:  1.90271[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 8237584, hits per frag:  1.83751[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 9152865, hits per frag:  1.84852[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 10064730, hits per frag:  1.83316[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 10967496, hits per frag:  1.87791[A[32mprocessed[31m 6500001 [32mfragments[0m
+hits: 11872039, hits per frag:  1.84044[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 12779338, hits per frag:  1.836[A[32mprocessed[31m 7500000 [32mfragments[0m
+hits: 13689061, hits per frag:  1.85136[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 14590892, hits per frag:  1.84317[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 15502285, hits per frag:  1.8275[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 16394043, hits per frag:  1.82257[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 17311682, hits per frag:  1.91501[A[32mprocessed[31m 10000000 [32mfragments[0m
+hits: 18229565, hits per frag:  1.82911[A[32mprocessed[31m 10500000 [32mfragments[0m
+hits: 19145153, hits per frag:  1.82944[A[32mprocessed[31m 11000000 [32mfragments[0m
+hits: 20045337, hits per frag:  1.82794[A[32mprocessed[31m 11500000 [32mfragments[0m
+hits: 20976797, hits per frag:  1.83685[A[32mprocessed[31m 12000000 [32mfragments[0m
+hits: 21885561, hits per frag:  1.83131[A[32mprocessed[31m 12500000 [32mfragments[0m
+hits: 22809953, hits per frag:  1.83026[A[32mprocessed[31m 13000000 [32mfragments[0m
+hits: 23726591, hits per frag:  1.83129[A[32mprocessed[31m 13500000 [32mfragments[0m
+hits: 24647177, hits per frag:  1.8291[A[32mprocessed[31m 14000000 [32mfragments[0m
+hits: 25568808, hits per frag:  1.84573[A[32mprocessed[31m 14500000 [32mfragments[0m
+hits: 26487313, hits per frag:  1.82764[A[32mprocessed[31m 15000000 [32mfragments[0m
+hits: 27406902, hits per frag:  1.84411[A[32mprocessed[31m 15500000 [32mfragments[0m
+hits: 28330508, hits per frag:  1.8307[A[32mprocessed[31m 16000000 [32mfragments[0m
+hits: 29245257, hits per frag:  1.84092[A[32mprocessed[31m 16500000 [32mfragments[0m
+hits: 30167813, hits per frag:  1.83771
+
+
+
+
+
+
+
+
+
+[2018-03-07 11:55:35.498] [jointLog] [info] Computed 342467 rich equivalence classes for further processing
+[2018-03-07 11:55:35.498] [jointLog] [info] Counted 13163931 total reads in the equivalence classes 
+[2018-03-07 11:55:35.539] [jointLog] [warning] 0.000771661% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[2018-03-07 11:55:35.539] [jointLog] [info] Mapping rate = 78.1392%
+
+[2018-03-07 11:55:35.539] [jointLog] [info] finished quantifyLibrary()
+[2018-03-07 11:55:35.564] [jointLog] [info] Starting optimizer
+[2018-03-07 11:55:37.625] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2018-03-07 11:55:37.635] [jointLog] [info] iteration = 0 | max rel diff. = 14.3346
+[2018-03-07 11:55:38.785] [jointLog] [info] iteration = 100 | max rel diff. = 0.106946
+[2018-03-07 11:55:40.049] [jointLog] [info] iteration = 200 | max rel diff. = 0.095919
+[2018-03-07 11:55:41.168] [jointLog] [info] iteration = 300 | max rel diff. = 0.0679246
+[2018-03-07 11:55:42.328] [jointLog] [info] iteration = 400 | max rel diff. = 0.0284937
+[2018-03-07 11:55:43.457] [jointLog] [info] iteration = 500 | max rel diff. = 0.0231767
+[2018-03-07 11:55:44.684] [jointLog] [info] iteration = 600 | max rel diff. = 0.0184435
+[2018-03-07 11:55:45.836] [jointLog] [info] iteration = 700 | max rel diff. = 0.0158096
+[2018-03-07 11:55:46.986] [jointLog] [info] iteration = 800 | max rel diff. = 0.0154106
+[2018-03-07 11:55:48.116] [jointLog] [info] iteration = 900 | max rel diff. = 0.0127931
+[2018-03-07 11:55:49.261] [jointLog] [info] iteration = 1000 | max rel diff. = 0.0113502
+[2018-03-07 11:55:50.529] [jointLog] [info] iteration = 1100 | max rel diff. = 0.0104992
+[2018-03-07 11:55:51.813] [jointLog] [info] iteration = 1200 | max rel diff. = 0.0101302
+[2018-03-07 11:55:52.505] [jointLog] [info] iteration = 1262 | max rel diff. = 0.00879456
+[2018-03-07 11:55:52.572] [jointLog] [info] Finished optimizer
+[2018-03-07 11:55:52.572] [jointLog] [info] writing output 
+
+Version Info: Could not resolve upgrade information in the alotted time.
+Check for upgrades manually at https://combine-lab.github.io/salmon
+### salmon (mapping-based) v0.9.1
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /home/ljcohen/osmotic_assemblies_farm/F_similis_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_similis_FW_2.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_similis_FW_2.trim_2P.fq }
+### [ output ] => { F_similis_FW_2.quant }
+Logs will be written to F_similis_FW_2.quant/logs
+[2018-03-07 11:55:55.070] [jointLog] [info] parsing read library format
+[2018-03-07 11:55:55.070] [jointLog] [info] There is 1 library.
+[2018-03-07 11:55:55.153] [stderrLog] [info] Loading Suffix Array 
+[2018-03-07 11:55:55.152] [jointLog] [info] Loading Quasi index
+[2018-03-07 11:55:55.152] [jointLog] [info] Loading 32-bit quasi index
+[2018-03-07 11:55:56.077] [stderrLog] [info] Loading Transcript Info 
+[2018-03-07 11:55:56.373] [stderrLog] [info] Loading Rank-Select Bit Array
+[2018-03-07 11:55:56.470] [stderrLog] [info] There were 520315 set bits in the bit array
+[2018-03-07 11:55:56.521] [stderrLog] [info] Computing transcript lengths
+[2018-03-07 11:55:56.522] [stderrLog] [info] Waiting to finish loading hash
+[2018-03-07 11:56:03.955] [stderrLog] [info] Done loading index
+[2018-03-07 11:56:03.955] [jointLog] [info] done
+[2018-03-07 11:56:03.955] [jointLog] [info] Index contained 520315 targets
+
+
+
+
+[A[32mprocessed[31m 500001 [32mfragments[0m
+hits: 869972, hits per frag:  2.70217[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 1731923, hits per frag:  1.91971[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 2588049, hits per frag:  2.04672[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 3457292, hits per frag:  1.80385[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 4310725, hits per frag:  1.77616[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 5202187, hits per frag:  1.85319[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 6059819, hits per frag:  1.74684[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 6923969, hits per frag:  1.75064[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 7783263, hits per frag:  1.81308[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 8647059, hits per frag:  1.74512[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 9506379, hits per frag:  1.84411[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 10382642, hits per frag:  1.73606[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 11261695, hits per frag:  1.7339[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 12120686, hits per frag:  1.78245[A[32mprocessed[31m 7500000 [32mfragments[0m
+hits: 13000886, hits per frag:  1.75129[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 13861093, hits per frag:  1.75679[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 14730111, hits per frag:  1.76116[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 15586478, hits per frag:  1.74333
+
+
+
+
+
+
+
+
+
+[2018-03-07 12:01:25.357] [jointLog] [info] Computed 361300 rich equivalence classes for further processing
+[2018-03-07 12:01:25.357] [jointLog] [info] Counted 7389216 total reads in the equivalence classes 
+[2018-03-07 12:01:25.374] [jointLog] [warning] 0.00149056% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[2018-03-07 12:01:25.374] [jointLog] [info] Mapping rate = 79.8121%
+
+[2018-03-07 12:01:25.374] [jointLog] [info] finished quantifyLibrary()
+[2018-03-07 12:01:25.375] [jointLog] [info] Starting optimizer
+[2018-03-07 12:01:25.691] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2018-03-07 12:01:25.705] [jointLog] [info] iteration = 0 | max rel diff. = 13.3066
+[2018-03-07 12:01:27.169] [jointLog] [info] iteration = 100 | max rel diff. = 0.093643
+[2018-03-07 12:01:28.676] [jointLog] [info] iteration = 200 | max rel diff. = 0.0550082
+[2018-03-07 12:01:30.148] [jointLog] [info] iteration = 300 | max rel diff. = 0.0328817
+[2018-03-07 12:01:31.663] [jointLog] [info] iteration = 400 | max rel diff. = 0.0270639
+[2018-03-07 12:01:33.097] [jointLog] [info] iteration = 500 | max rel diff. = 0.0204598
+[2018-03-07 12:01:34.439] [jointLog] [info] iteration = 600 | max rel diff. = 0.0188993
+[2018-03-07 12:01:35.713] [jointLog] [info] iteration = 700 | max rel diff. = 0.0155849
+[2018-03-07 12:01:36.973] [jointLog] [info] iteration = 800 | max rel diff. = 0.0138981
+[2018-03-07 12:01:38.352] [jointLog] [info] iteration = 900 | max rel diff. = 0.0116689
+[2018-03-07 12:01:39.596] [jointLog] [info] iteration = 1000 | max rel diff. = 0.0105767
+[2018-03-07 12:01:40.835] [jointLog] [info] iteration = 1100 | max rel diff. = 0.0110265
+[2018-03-07 12:01:41.270] [jointLog] [info] iteration = 1136 | max rel diff. = 0.0098125
+[2018-03-07 12:01:41.344] [jointLog] [info] Finished optimizer
+[2018-03-07 12:01:41.344] [jointLog] [info] writing output 
+
+Version Info: Could not resolve upgrade information in the alotted time.
+Check for upgrades manually at https://combine-lab.github.io/salmon
+### salmon (mapping-based) v0.9.1
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /home/ljcohen/osmotic_assemblies_farm/F_similis_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_similis_FW_3.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_similis_FW_3.trim_2P.fq }
+### [ output ] => { F_similis_FW_3.quant }
+Logs will be written to F_similis_FW_3.quant/logs
+[2018-03-07 12:01:43.740] [jointLog] [info] parsing read library format
+[2018-03-07 12:01:43.740] [jointLog] [info] There is 1 library.
+[2018-03-07 12:01:43.828] [stderrLog] [info] Loading Suffix Array 
+[2018-03-07 12:01:43.827] [jointLog] [info] Loading Quasi index
+[2018-03-07 12:01:43.828] [jointLog] [info] Loading 32-bit quasi index
+[2018-03-07 12:01:44.830] [stderrLog] [info] Loading Transcript Info 
+[2018-03-07 12:01:45.133] [stderrLog] [info] Loading Rank-Select Bit Array
+[2018-03-07 12:01:45.232] [stderrLog] [info] There were 520315 set bits in the bit array
+[2018-03-07 12:01:45.283] [stderrLog] [info] Computing transcript lengths
+[2018-03-07 12:01:45.284] [stderrLog] [info] Waiting to finish loading hash
+[2018-03-07 12:01:52.730] [jointLog] [info] done
+[2018-03-07 12:01:52.730] [jointLog] [info] Index contained 520315 targets
+[2018-03-07 12:01:52.730] [stderrLog] [info] Done loading index
+
+
+
+
+[A[32mprocessed[31m 500000 [32mfragments[0m
+hits: 800245, hits per frag:  1.78051[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 1603950, hits per frag:  2.05853[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 2406212, hits per frag:  1.66055[A[32mprocessed[31m 2000001 [32mfragments[0m
+hits: 3216294, hits per frag:  1.64674[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 4018489, hits per frag:  1.73798[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 4848641, hits per frag:  1.62167[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 5633271, hits per frag:  1.67721[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 6422740, hits per frag:  1.67599[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 7225465, hits per frag:  1.71147[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 8028110, hits per frag:  1.64878[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 8832409, hits per frag:  1.63144[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 9640356, hits per frag:  1.66385[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 10436038, hits per frag:  1.61916[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 11229029, hits per frag:  1.62387[A[32mprocessed[31m 7500000 [32mfragments[0m
+hits: 12034872, hits per frag:  1.6119[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 12845153, hits per frag:  1.6101[A[32mprocessed[31m 8500001 [32mfragments[0m
+hits: 13667682, hits per frag:  1.61748[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 14494468, hits per frag:  1.62676[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 15270500, hits per frag:  1.61764[A[32mprocessed[31m 10000000 [32mfragments[0m
+hits: 16077504, hits per frag:  1.61656
+
+
+
+
+
+
+
+
+
+[2018-03-07 12:07:20.242] [jointLog] [info] Computed 385641 rich equivalence classes for further processing
+[2018-03-07 12:07:20.242] [jointLog] [info] Counted 8114233 total reads in the equivalence classes 
+[2018-03-07 12:07:20.259] [jointLog] [warning] 0.00120502% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[2018-03-07 12:07:20.259] [jointLog] [info] Mapping rate = 80.8085%
+
+[2018-03-07 12:07:20.259] [jointLog] [info] finished quantifyLibrary()
+[2018-03-07 12:07:20.260] [jointLog] [info] Starting optimizer
+[2018-03-07 12:07:20.576] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2018-03-07 12:07:20.590] [jointLog] [info] iteration = 0 | max rel diff. = 17.0287
+[2018-03-07 12:07:21.900] [jointLog] [info] iteration = 100 | max rel diff. = 0.0969031
+[2018-03-07 12:07:23.218] [jointLog] [info] iteration = 200 | max rel diff. = 0.0543691
+[2018-03-07 12:07:24.530] [jointLog] [info] iteration = 300 | max rel diff. = 0.0420744
+[2018-03-07 12:07:25.804] [jointLog] [info] iteration = 400 | max rel diff. = 0.0283122
+[2018-03-07 12:07:27.098] [jointLog] [info] iteration = 500 | max rel diff. = 0.0226152
+[2018-03-07 12:07:28.376] [jointLog] [info] iteration = 600 | max rel diff. = 0.019339
+[2018-03-07 12:07:29.664] [jointLog] [info] iteration = 700 | max rel diff. = 0.0180017
+[2018-03-07 12:07:31.003] [jointLog] [info] iteration = 800 | max rel diff. = 0.0149862
+[2018-03-07 12:07:32.357] [jointLog] [info] iteration = 900 | max rel diff. = 0.0167406
+[2018-03-07 12:07:33.677] [jointLog] [info] iteration = 1000 | max rel diff. = 0.0107405
+[2018-03-07 12:07:34.846] [jointLog] [info] iteration = 1088 | max rel diff. = 0.00995318
+[2018-03-07 12:07:34.919] [jointLog] [info] Finished optimizer
+[2018-03-07 12:07:34.919] [jointLog] [info] writing output 
+
+Version Info: Could not resolve upgrade information in the alotted time.
+Check for upgrades manually at https://combine-lab.github.io/salmon
+### salmon (mapping-based) v0.9.1
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /home/ljcohen/osmotic_assemblies_farm/F_similis_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_similis_transfer_1.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_similis_transfer_1.trim_2P.fq }
+### [ output ] => { F_similis_transfer_1.quant }
+Logs will be written to F_similis_transfer_1.quant/logs
+[2018-03-07 12:07:37.485] [jointLog] [info] parsing read library format
+[2018-03-07 12:07:37.485] [jointLog] [info] There is 1 library.
+[2018-03-07 12:07:37.577] [jointLog] [info] Loading Quasi index
+[2018-03-07 12:07:37.578] [jointLog] [info] Loading 32-bit quasi index
+[2018-03-07 12:07:37.578] [stderrLog] [info] Loading Suffix Array 
+[2018-03-07 12:07:38.585] [stderrLog] [info] Loading Transcript Info 
+[2018-03-07 12:07:38.888] [stderrLog] [info] Loading Rank-Select Bit Array
+[2018-03-07 12:07:38.986] [stderrLog] [info] There were 520315 set bits in the bit array
+[2018-03-07 12:07:39.037] [stderrLog] [info] Computing transcript lengths
+[2018-03-07 12:07:39.039] [stderrLog] [info] Waiting to finish loading hash
+[2018-03-07 12:07:46.464] [jointLog] [info] done
+[2018-03-07 12:07:46.464] [jointLog] [info] Index contained 520315 targets
+[2018-03-07 12:07:46.464] [stderrLog] [info] Done loading index
+
+
+
+
+[A[32mprocessed[31m 500002 [32mfragments[0m
+hits: 939739, hits per frag:  1.9784[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 1860098, hits per frag:  2.37057[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 2807431, hits per frag:  2.11987[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 3735118, hits per frag:  2[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 4678414, hits per frag:  1.97497[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 5622984, hits per frag:  1.90215[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 6568449, hits per frag:  1.89027[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 7500630, hits per frag:  1.91986[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 8429501, hits per frag:  1.88159[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 9360916, hits per frag:  1.88451[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 10296798, hits per frag:  1.90858[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 11227514, hits per frag:  1.99423[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 12159610, hits per frag:  1.93164[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 13087777, hits per frag:  1.89277[A[32mprocessed[31m 7500000 [32mfragments[0m
+hits: 14015440, hits per frag:  1.95345[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 14960826, hits per frag:  1.92254[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 15890819, hits per frag:  1.90469[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 16823676, hits per frag:  1.87411[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 17756515, hits per frag:  1.89676[A[32mprocessed[31m 10000000 [32mfragments[0m
+hits: 18682120, hits per frag:  1.89752[A[32mprocessed[31m 10500000 [32mfragments[0m
+hits: 19617526, hits per frag:  1.87703[A[32mprocessed[31m 11000000 [32mfragments[0m
+hits: 20556554, hits per frag:  1.89897[A[32mprocessed[31m 11500000 [32mfragments[0m
+hits: 21491118, hits per frag:  1.88392[A[32mprocessed[31m 12000000 [32mfragments[0m
+hits: 22428394, hits per frag:  1.87896[A[32mprocessed[31m 12500000 [32mfragments[0m
+hits: 23366605, hits per frag:  1.9008[A[32mprocessed[31m 13000000 [32mfragments[0m
+hits: 24303339, hits per frag:  1.89113[A[32mprocessed[31m 13500000 [32mfragments[0m
+hits: 25246939, hits per frag:  1.88874[A[32mprocessed[31m 14000000 [32mfragments[0m
+hits: 26193439, hits per frag:  1.87317
+
+
+
+
+
+
+
+
+
+[2018-03-07 12:11:23.297] [jointLog] [info] Computed 457206 rich equivalence classes for further processing
+[2018-03-07 12:11:23.297] [jointLog] [info] Counted 11329622 total reads in the equivalence classes 
+[2018-03-07 12:11:23.321] [jointLog] [warning] 0.000532168% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[2018-03-07 12:11:23.321] [jointLog] [info] Mapping rate = 78.3022%
+
+[2018-03-07 12:11:23.321] [jointLog] [info] finished quantifyLibrary()
+[2018-03-07 12:11:23.322] [jointLog] [info] Starting optimizer
+[2018-03-07 12:11:23.639] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2018-03-07 12:11:23.653] [jointLog] [info] iteration = 0 | max rel diff. = 13.0517
+[2018-03-07 12:11:25.181] [jointLog] [info] iteration = 100 | max rel diff. = 0.0933851
+[2018-03-07 12:11:26.682] [jointLog] [info] iteration = 200 | max rel diff. = 0.0543265
+[2018-03-07 12:11:28.145] [jointLog] [info] iteration = 300 | max rel diff. = 0.0687041
+[2018-03-07 12:11:29.645] [jointLog] [info] iteration = 400 | max rel diff. = 0.0302417
+[2018-03-07 12:11:31.238] [jointLog] [info] iteration = 500 | max rel diff. = 0.0199189
+[2018-03-07 12:11:32.770] [jointLog] [info] iteration = 600 | max rel diff. = 0.01785
+[2018-03-07 12:11:34.255] [jointLog] [info] iteration = 700 | max rel diff. = 0.0156953
+[2018-03-07 12:11:35.641] [jointLog] [info] iteration = 800 | max rel diff. = 0.0138021
+[2018-03-07 12:11:36.953] [jointLog] [info] iteration = 900 | max rel diff. = 0.0135344
+[2018-03-07 12:11:38.347] [jointLog] [info] iteration = 1000 | max rel diff. = 0.0120175
+[2018-03-07 12:11:39.671] [jointLog] [info] iteration = 1100 | max rel diff. = 0.0108329
+[2018-03-07 12:11:40.622] [jointLog] [info] iteration = 1165 | max rel diff. = 0.00994659
+[2018-03-07 12:11:40.701] [jointLog] [info] Finished optimizer
+[2018-03-07 12:11:40.701] [jointLog] [info] writing output 
+
+Version Info: Could not resolve upgrade information in the alotted time.
+Check for upgrades manually at https://combine-lab.github.io/salmon
+### salmon (mapping-based) v0.9.1
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /home/ljcohen/osmotic_assemblies_farm/F_similis_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_similis_transfer_2.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_similis_transfer_2.trim_2P.fq }
+### [ output ] => { F_similis_transfer_2.quant }
+Logs will be written to F_similis_transfer_2.quant/logs
+[2018-03-07 12:11:43.226] [jointLog] [info] parsing read library format
+[2018-03-07 12:11:43.227] [jointLog] [info] There is 1 library.
+[2018-03-07 12:11:43.318] [jointLog] [info] Loading Quasi index
+[2018-03-07 12:11:43.319] [jointLog] [info] Loading 32-bit quasi index
+[2018-03-07 12:11:43.319] [stderrLog] [info] Loading Suffix Array 
+[2018-03-07 12:11:44.312] [stderrLog] [info] Loading Transcript Info 
+[2018-03-07 12:11:44.616] [stderrLog] [info] Loading Rank-Select Bit Array
+[2018-03-07 12:11:44.714] [stderrLog] [info] There were 520315 set bits in the bit array
+[2018-03-07 12:11:44.764] [stderrLog] [info] Computing transcript lengths
+[2018-03-07 12:11:44.766] [stderrLog] [info] Waiting to finish loading hash
+[2018-03-07 12:11:52.208] [jointLog] [info] done
+[2018-03-07 12:11:52.208] [jointLog] [info] Index contained 520315 targets
+[2018-03-07 12:11:52.208] [stderrLog] [info] Done loading index
+
+
+
+
+[A[32mprocessed[31m 500000 [32mfragments[0m
+hits: 851884, hits per frag:  1.91763[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 1711112, hits per frag:  1.78341[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 2561685, hits per frag:  1.79126[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 3424407, hits per frag:  1.72817[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 4278559, hits per frag:  1.74341[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 5128362, hits per frag:  1.724[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 5986057, hits per frag:  1.75964[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 6836062, hits per frag:  1.75916[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 7704394, hits per frag:  1.73992[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 8555664, hits per frag:  1.7313[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 9410883, hits per frag:  1.72054[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 10265152, hits per frag:  1.71564[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 11115250, hits per frag:  1.72876
+
+
+
+
+
+
+
+
+
+[2018-03-07 12:12:46.127] [jointLog] [info] Computed 321062 rich equivalence classes for further processing
+[2018-03-07 12:12:46.127] [jointLog] [info] Counted 5518354 total reads in the equivalence classes 
+[2018-03-07 12:12:46.139] [jointLog] [warning] 0.00112674% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[2018-03-07 12:12:46.139] [jointLog] [info] Mapping rate = 80.7502%
+
+[2018-03-07 12:12:46.139] [jointLog] [info] finished quantifyLibrary()
+[2018-03-07 12:12:46.140] [jointLog] [info] Starting optimizer
+[2018-03-07 12:12:46.435] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2018-03-07 12:12:46.446] [jointLog] [info] iteration = 0 | max rel diff. = 11.1051
+[2018-03-07 12:12:47.657] [jointLog] [info] iteration = 100 | max rel diff. = 0.133227
+[2018-03-07 12:12:48.815] [jointLog] [info] iteration = 200 | max rel diff. = 0.0628393
+[2018-03-07 12:12:49.993] [jointLog] [info] iteration = 300 | max rel diff. = 0.0356411
+[2018-03-07 12:12:51.144] [jointLog] [info] iteration = 400 | max rel diff. = 0.0259338
+[2018-03-07 12:12:52.305] [jointLog] [info] iteration = 500 | max rel diff. = 0.0198496
+[2018-03-07 12:12:53.468] [jointLog] [info] iteration = 600 | max rel diff. = 0.0197347
+[2018-03-07 12:12:54.602] [jointLog] [info] iteration = 700 | max rel diff. = 0.0165521
+[2018-03-07 12:12:55.764] [jointLog] [info] iteration = 800 | max rel diff. = 0.0139801
+[2018-03-07 12:12:56.962] [jointLog] [info] iteration = 900 | max rel diff. = 0.0140353
+[2018-03-07 12:12:58.158] [jointLog] [info] iteration = 1000 | max rel diff. = 0.0143155
+[2018-03-07 12:12:59.321] [jointLog] [info] iteration = 1100 | max rel diff. = 0.01062
+[2018-03-07 12:12:59.503] [jointLog] [info] iteration = 1117 | max rel diff. = 0.00954179
+[2018-03-07 12:12:59.577] [jointLog] [info] Finished optimizer
+[2018-03-07 12:12:59.577] [jointLog] [info] writing output 
+
+Version Info: Could not resolve upgrade information in the alotted time.
+Check for upgrades manually at https://combine-lab.github.io/salmon
+### salmon (mapping-based) v0.9.1
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /home/ljcohen/osmotic_assemblies_farm/F_similis_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_similis_transfer_3.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_similis_transfer_3.trim_2P.fq }
+### [ output ] => { F_similis_transfer_3.quant }
+Logs will be written to F_similis_transfer_3.quant/logs
+[2018-03-07 12:13:02.083] [jointLog] [info] parsing read library format
+[2018-03-07 12:13:02.084] [jointLog] [info] There is 1 library.
+[2018-03-07 12:13:02.172] [jointLog] [info] Loading Quasi index
+[2018-03-07 12:13:02.173] [jointLog] [info] Loading 32-bit quasi index
+[2018-03-07 12:13:02.173] [stderrLog] [info] Loading Suffix Array 
+[2018-03-07 12:13:03.207] [stderrLog] [info] Loading Transcript Info 
+[2018-03-07 12:13:03.533] [stderrLog] [info] Loading Rank-Select Bit Array
+[2018-03-07 12:13:03.642] [stderrLog] [info] There were 520315 set bits in the bit array
+[2018-03-07 12:13:03.695] [stderrLog] [info] Computing transcript lengths
+[2018-03-07 12:13:03.696] [stderrLog] [info] Waiting to finish loading hash
+[2018-03-07 12:13:11.170] [jointLog] [info] done
+[2018-03-07 12:13:11.170] [jointLog] [info] Index contained 520315 targets
+[2018-03-07 12:13:11.170] [stderrLog] [info] Done loading index
+
+
+
+
+[A[32mprocessed[31m 500001 [32mfragments[0m
+hits: 837778, hits per frag:  2.36905[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 1680480, hits per frag:  1.73459[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 2524668, hits per frag:  1.83044[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 3364302, hits per frag:  1.6989[A[32mprocessed[31m 2500001 [32mfragments[0m
+hits: 4199903, hits per frag:  1.72423[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 5057297, hits per frag:  1.69562[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 5892427, hits per frag:  1.75699[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 6731630, hits per frag:  1.73414[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 7574277, hits per frag:  1.71614[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 8424302, hits per frag:  1.73429[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 9253302, hits per frag:  1.69891[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 10095033, hits per frag:  1.69725[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 10931866, hits per frag:  1.7062[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 11768550, hits per frag:  1.6998[A[32mprocessed[31m 7500000 [32mfragments[0m
+hits: 12611232, hits per frag:  1.70104[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 13464367, hits per frag:  1.69947[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 14306658, hits per frag:  1.69581[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 15150235, hits per frag:  1.69734[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 15991342, hits per frag:  1.69173[A[32mprocessed[31m 10000000 [32mfragments[0m
+hits: 16830632, hits per frag:  1.70299
+
+
+
+
+
+
+
+
+
+[2018-03-07 12:14:29.232] [jointLog] [info] Computed 383311 rich equivalence classes for further processing
+[2018-03-07 12:14:29.232] [jointLog] [info] Counted 8303035 total reads in the equivalence classes 
+[2018-03-07 12:14:29.250] [jointLog] [warning] 0.00124693% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[2018-03-07 12:14:29.250] [jointLog] [info] Mapping rate = 80.8852%
+
+[2018-03-07 12:14:29.250] [jointLog] [info] finished quantifyLibrary()
+[2018-03-07 12:14:29.251] [jointLog] [info] Starting optimizer
+[2018-03-07 12:14:29.560] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2018-03-07 12:14:29.571] [jointLog] [info] iteration = 0 | max rel diff. = 15.9842
+[2018-03-07 12:14:30.922] [jointLog] [info] iteration = 100 | max rel diff. = 0.0978116
+[2018-03-07 12:14:32.330] [jointLog] [info] iteration = 200 | max rel diff. = 0.0532511
+[2018-03-07 12:14:33.718] [jointLog] [info] iteration = 300 | max rel diff. = 0.0361234
+[2018-03-07 12:14:35.119] [jointLog] [info] iteration = 400 | max rel diff. = 0.0278686
+[2018-03-07 12:14:36.545] [jointLog] [info] iteration = 500 | max rel diff. = 0.0203832
+[2018-03-07 12:14:37.878] [jointLog] [info] iteration = 600 | max rel diff. = 0.0190675
+[2018-03-07 12:14:39.216] [jointLog] [info] iteration = 700 | max rel diff. = 0.0148747
+[2018-03-07 12:14:40.428] [jointLog] [info] iteration = 800 | max rel diff. = 0.0139458
+[2018-03-07 12:14:41.666] [jointLog] [info] iteration = 900 | max rel diff. = 0.0142056
+[2018-03-07 12:14:42.902] [jointLog] [info] iteration = 1000 | max rel diff. = 0.0117867
+[2018-03-07 12:14:44.137] [jointLog] [info] iteration = 1100 | max rel diff. = 0.0101694
+[2018-03-07 12:14:44.365] [jointLog] [info] iteration = 1120 | max rel diff. = 0.009868
+[2018-03-07 12:14:44.439] [jointLog] [info] Finished optimizer
+[2018-03-07 12:14:44.439] [jointLog] [info] writing output 
+
+
+===========================================================================
+Job Finished
+
+Name                : salmon
+User                : ljcohen
+Partition           : med
+Nodes               : c11-77
+Cores               : 8
+State               : COMPLETED
+Submit              : 2018-03-07T11:02:02
+Start               : 2018-03-07T11:02:02
+End                 : 2018-03-07T12:14:46
+Reserved walltime   : 08:00:00
+Used walltime       : 01:12:44
+Used CPU time       : 02:04:38
+% User (Computation): 90.96%
+% System (I/O)      :  9.04%
+Mem reserved        : 32000M/node
+Max Mem used        : 6.67G (c11-77)
+Max Disk Write      : 4.88G (c11-77)
+Max Disk Read       : 93.50G (c11-77)

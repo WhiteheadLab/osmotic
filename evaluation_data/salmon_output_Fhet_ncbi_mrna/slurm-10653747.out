@@ -1,0 +1,46 @@
+Module slurm/16.05.5 loaded 
+Module openmpi/2.0.1 loaded 
+TEST
+Version Info: This is the most recent version of Salmon.
+### salmon (mapping-based) v0.7.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { kfish2rae5g.main.tub.mrna_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/busco*trim_1P.fq.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/busco*trim_1P.fq.trim_2P.fq }
+### [ output ] => { busco*trim_1P.fq.quant }
+Logs will be written to busco*trim_1P.fq.quant/logs
+[1m[2017-01-04 21:40:22.207] [jointLog] [info] parsing read library format
+[00m[1m[2017-01-04 21:40:22.208] [jointLog] [info] There is 1 library.
+[00mException : [
+The following errors were detected with the read files
+======================================================
+ERROR: file [/home/ljcohen/osmotic_trim/busco*trim_1P.fq.trim_1P.fq] does not appear to exist!
+
+]
+salmon quant was invoked improperly.
+For usage information, try salmon quant --help
+Exiting.
+
+===========================================================================
+Job Finished
+
+Name                : salmon
+User                : ljcohen
+Partition           : med
+Nodes               : c9-54
+Cores               : 16
+State               : FAILED
+Submit              : 2017-01-04T13:40:20
+Start               : 2017-01-04T13:40:21
+End                 : 2017-01-04T13:40:22
+Reserved walltime   : 04:00:00
+Used walltime       : 00:00:01
+Used CPU time       : --
+% User (Computation): 52.24%
+% System (I/O)      : 47.46%
+Mem reserved        : 32000M/node
+Max Mem used        : 0.00  (c9-54)
+Max Disk Write      : 0.00  (c9-54)
+Max Disk Read       : 0.00  (c9-54)

@@ -1,0 +1,902 @@
+Module slurm/16.05.5 loaded 
+Module openmpi/2.0.1 loaded 
+TEST
+Version Info: This is the most recent version of Salmon.
+### salmon (mapping-based) v0.7.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { kfish2rae5g.main.tub.mrna_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_BW_1.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_BW_1.trim_2P.fq }
+### [ output ] => { F_rathbuni_NA_BW_1.quant }
+Logs will be written to F_rathbuni_NA_BW_1.quant/logs
+[1m[2017-01-04 21:40:22.905] [jointLog] [info] parsing read library format
+[00m[1m[2017-01-04 21:40:22.906] [jointLog] [info] There is 1 library.
+[00m[1m[2017-01-04 21:40:22.977] [stderrLog] [info] Loading Suffix Array 
+[00m[1m[2017-01-04 21:40:22.976] [jointLog] [info] Loading Quasi index
+[00m[1m[2017-01-04 21:40:22.977] [jointLog] [info] Loading 32-bit quasi index
+[00m[1m[2017-01-04 21:40:30.513] [stderrLog] [info] Loading Transcript Info 
+[00m[1m[2017-01-04 21:40:32.770] [stderrLog] [info] Loading Rank-Select Bit Array
+[00m[1m[2017-01-04 21:40:33.062] [stderrLog] [info] There were 34924 set bits in the bit array
+[00m[1m[2017-01-04 21:40:33.092] [stderrLog] [info] Computing transcript lengths
+[00m[1m[2017-01-04 21:40:33.092] [stderrLog] [info] Waiting to finish loading hash
+[00m
+
+
+
+[1m[2017-01-04 21:40:45.645] [stderrLog] [info] Successfully loaded position hash
+[00m[1m[2017-01-04 21:40:45.645] [stderrLog] [info] Done loading index
+[00m[1m[2017-01-04 21:40:45.645] [jointLog] [info] done
+[00m[1m[2017-01-04 21:40:45.645] [jointLog] [info] Index contained 34924 targets
+[00m[A[32mprocessed[31m 500000 [32mfragments[0m
+hits: 336497, hits per frag:  0.922031[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 672529, hits per frag:  0.68629[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 1001704, hits per frag:  0.675637[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 1334207, hits per frag:  0.673493[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 1669912, hits per frag:  0.673934[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 2011027, hits per frag:  0.676179[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 2328683, hits per frag:  0.67008[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 2665329, hits per frag:  0.770326[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 2998377, hits per frag:  0.669011[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 3327466, hits per frag:  0.666204[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 3671060, hits per frag:  0.671424[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 4006265, hits per frag:  0.677404[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 4328826, hits per frag:  0.666656[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 4662832, hits per frag:  0.666874[A[32mprocessed[31m 7500000 [32mfragments[0m
+hits: 5010143, hits per frag:  0.675221[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 5341814, hits per frag:  0.671504[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 5684762, hits per frag:  0.67235[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 6030847, hits per frag:  0.765336[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 6384459, hits per frag:  0.674688[A[32mprocessed[31m 10000000 [32mfragments[0m
+hits: 6733489, hits per frag:  0.674257[A[32mprocessed[31m 10500000 [32mfragments[0m
+hits: 7086823, hits per frag:  0.709885[A[32mprocessed[31m 11000000 [32mfragments[0m
+hits: 7432876, hits per frag:  0.677424[A[32mprocessed[31m 11500000 [32mfragments[0m
+hits: 7770723, hits per frag:  0.693249[A[32mprocessed[31m 12000000 [32mfragments[0m
+hits: 8119059, hits per frag:  0.677182[A[32mprocessed[31m 12500000 [32mfragments[0m
+hits: 8466103, hits per frag:  0.677851[A[32mprocessed[31m 13000000 [32mfragments[0m
+hits: 8805556, hits per frag:  0.677461
+
+
+
+
+
+
+
+
+
+[1m[2017-01-04 21:53:52.796] [jointLog] [info] Computed 44905 rich equivalence classes for further processing
+[00m[1m[2017-01-04 21:53:52.796] [jointLog] [info] Counted 8521751 total reads in the equivalence classes 
+[00m[33m[1m[2017-01-04 21:53:52.805] [jointLog] [warning] 0.000686768% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[00m[1m[2017-01-04 21:53:52.805] [jointLog] [info] Mapping rate = 63.6138%
+
+[00m[1m[2017-01-04 21:53:52.805] [jointLog] [info] finished quantifyLibrary()
+[00m[1m[2017-01-04 21:53:52.823] [jointLog] [info] Starting optimizer
+[00m[1m[2017-01-04 21:53:52.855] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[00m[1m[2017-01-04 21:53:52.883] [jointLog] [info] iteration = 0 | max rel diff. = 193.677
+[00m[1m[2017-01-04 21:53:53.002] [jointLog] [info] iteration = 100 | max rel diff. = 0.08396
+[00m[1m[2017-01-04 21:53:53.124] [jointLog] [info] iteration = 200 | max rel diff. = 0.0376477
+[00m[1m[2017-01-04 21:53:53.248] [jointLog] [info] iteration = 300 | max rel diff. = 0.0130386
+[00m[1m[2017-01-04 21:53:53.372] [jointLog] [info] iteration = 400 | max rel diff. = 0.0132209
+[00m[1m[2017-01-04 21:53:53.494] [jointLog] [info] iteration = 500 | max rel diff. = 0.0101493
+[00m[1m[2017-01-04 21:53:53.617] [jointLog] [info] iteration = 600 | max rel diff. = 0.0101082
+[00m[1m[2017-01-04 21:53:53.699] [jointLog] [info] iteration = 667 | max rel diff. = 0.00876732
+[00m[1m[2017-01-04 21:53:53.704] [jointLog] [info] Finished optimizer
+[00m[1m[2017-01-04 21:53:53.704] [jointLog] [info] writing output 
+
+[00mVersion Info: This is the most recent version of Salmon.
+### salmon (mapping-based) v0.7.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { kfish2rae5g.main.tub.mrna_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_BW_2.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_BW_2.trim_2P.fq }
+### [ output ] => { F_rathbuni_NA_BW_2.quant }
+Logs will be written to F_rathbuni_NA_BW_2.quant/logs
+[1m[2017-01-04 21:53:55.767] [jointLog] [info] parsing read library format
+[00m[1m[2017-01-04 21:53:55.767] [jointLog] [info] There is 1 library.
+[00m[1m[2017-01-04 21:53:55.832] [jointLog] [info] Loading Quasi index
+[00m[1m[2017-01-04 21:53:55.832] [jointLog] [info] Loading 32-bit quasi index
+[00m[1m[2017-01-04 21:53:55.833] [stderrLog] [info] Loading Suffix Array 
+[00m[1m[2017-01-04 21:53:56.001] [stderrLog] [info] Loading Transcript Info 
+[00m[1m[2017-01-04 21:53:56.058] [stderrLog] [info] Loading Rank-Select Bit Array
+[00m[1m[2017-01-04 21:53:56.071] [stderrLog] [info] There were 34924 set bits in the bit array
+[00m[1m[2017-01-04 21:53:56.092] [stderrLog] [info] Computing transcript lengths
+[00m[1m[2017-01-04 21:53:56.092] [stderrLog] [info] Waiting to finish loading hash
+[00m[1m[2017-01-04 21:54:01.741] [jointLog] [info] done
+[00m[1m[2017-01-04 21:54:01.741] [jointLog] [info] Index contained 34924 targets
+[00m
+
+
+
+[1m[2017-01-04 21:54:01.741] [stderrLog] [info] Successfully loaded position hash
+[00m[1m[2017-01-04 21:54:01.741] [stderrLog] [info] Done loading index
+[00m[A[32mprocessed[31m 500000 [32mfragments[0m
+hits: 339226, hits per frag:  0.703774[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 670996, hits per frag:  0.685006[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 1007852, hits per frag:  0.712466[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 1344155, hits per frag:  0.680864[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 1675620, hits per frag:  0.681146[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 2006892, hits per frag:  0.838554[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 2346704, hits per frag:  0.690207[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 2681757, hits per frag:  0.671278[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 3026078, hits per frag:  0.673261[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 3358622, hits per frag:  0.673476[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 3684863, hits per frag:  0.675655[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 4027569, hits per frag:  0.677098[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 4359891, hits per frag:  0.672107[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 4686595, hits per frag:  0.676096[A[32mprocessed[31m 7500000 [32mfragments[0m
+hits: 5025705, hits per frag:  0.67116[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 5362299, hits per frag:  0.670851[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 5700995, hits per frag:  0.673815[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 6046339, hits per frag:  0.672573[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 6390301, hits per frag:  0.677803[A[32mprocessed[31m 10000000 [32mfragments[0m
+hits: 6738338, hits per frag:  0.674965[A[32mprocessed[31m 10500000 [32mfragments[0m
+hits: 7080562, hits per frag:  0.676298
+
+
+
+
+
+
+
+
+
+[1m[2017-01-04 22:11:03.066] [jointLog] [info] Computed 43174 rich equivalence classes for further processing
+[00m[1m[2017-01-04 22:11:03.066] [jointLog] [info] Counted 6882073 total reads in the equivalence classes 
+[00m[33m[1m[2017-01-04 22:11:03.076] [jointLog] [warning] 0.000320532% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[00m[1m[2017-01-04 22:11:03.076] [jointLog] [info] Mapping rate = 63.0265%
+
+[00m[1m[2017-01-04 22:11:03.076] [jointLog] [info] finished quantifyLibrary()
+[00m[1m[2017-01-04 22:11:03.077] [jointLog] [info] Starting optimizer
+[00m[1m[2017-01-04 22:11:03.101] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[00m[1m[2017-01-04 22:11:03.104] [jointLog] [info] iteration = 0 | max rel diff. = 161.744
+[00m[1m[2017-01-04 22:11:03.220] [jointLog] [info] iteration = 100 | max rel diff. = 0.0781898
+[00m[1m[2017-01-04 22:11:03.333] [jointLog] [info] iteration = 200 | max rel diff. = 0.0366711
+[00m[1m[2017-01-04 22:11:03.447] [jointLog] [info] iteration = 300 | max rel diff. = 0.0170204
+[00m[1m[2017-01-04 22:11:03.560] [jointLog] [info] iteration = 400 | max rel diff. = 0.0131887
+[00m[1m[2017-01-04 22:11:03.673] [jointLog] [info] iteration = 500 | max rel diff. = 0.010699
+[00m[1m[2017-01-04 22:11:03.696] [jointLog] [info] iteration = 521 | max rel diff. = 0.00532183
+[00m[1m[2017-01-04 22:11:03.701] [jointLog] [info] Finished optimizer
+[00m[1m[2017-01-04 22:11:03.701] [jointLog] [info] writing output 
+
+[00mVersion Info: This is the most recent version of Salmon.
+### salmon (mapping-based) v0.7.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { kfish2rae5g.main.tub.mrna_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_BW_3.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_BW_3.trim_2P.fq }
+### [ output ] => { F_rathbuni_NA_BW_3.quant }
+Logs will be written to F_rathbuni_NA_BW_3.quant/logs
+[1m[2017-01-04 22:11:04.407] [jointLog] [info] parsing read library format
+[00m[1m[2017-01-04 22:11:04.407] [jointLog] [info] There is 1 library.
+[00m[1m[2017-01-04 22:11:04.470] [stderrLog] [info] Loading Suffix Array 
+[00m[1m[2017-01-04 22:11:04.469] [jointLog] [info] Loading Quasi index
+[00m[1m[2017-01-04 22:11:04.470] [jointLog] [info] Loading 32-bit quasi index
+[00m[1m[2017-01-04 22:11:04.629] [stderrLog] [info] Loading Transcript Info 
+[00m[1m[2017-01-04 22:11:04.679] [stderrLog] [info] Loading Rank-Select Bit Array
+[00m[1m[2017-01-04 22:11:04.689] [stderrLog] [info] There were 34924 set bits in the bit array
+[00m[1m[2017-01-04 22:11:04.713] [stderrLog] [info] Computing transcript lengths
+[00m[1m[2017-01-04 22:11:04.713] [stderrLog] [info] Waiting to finish loading hash
+[00m[1m[2017-01-04 22:11:10.277] [jointLog] [info] done
+[00m[1m[2017-01-04 22:11:10.277] [jointLog] [info] Index contained 34924 targets
+[00m[1m[2017-01-04 22:11:10.276] [stderrLog] [info] Successfully loaded position hash
+[00m[1m[2017-01-04 22:11:10.277] [stderrLog] [info] Done loading index
+[00m
+
+
+
+[A[32mprocessed[31m 500000 [32mfragments[0m
+hits: 357540, hits per frag:  0.768801[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 709059, hits per frag:  0.716022[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 1067380, hits per frag:  0.727688[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 1416663, hits per frag:  0.711964[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 1771194, hits per frag:  0.712186[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 2130056, hits per frag:  0.712667[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 2479706, hits per frag:  0.711117[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 2834259, hits per frag:  0.710916[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 3207223, hits per frag:  0.726114[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 3540053, hits per frag:  0.710823[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 3896632, hits per frag:  0.711064[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 4249622, hits per frag:  0.711751[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 4605247, hits per frag:  0.775115[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 4954946, hits per frag:  0.727599[A[32mprocessed[31m 7500000 [32mfragments[0m
+hits: 5305644, hits per frag:  0.751508[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 5663897, hits per frag:  0.719189[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 6012633, hits per frag:  0.711473[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 6370275, hits per frag:  0.718691[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 6726556, hits per frag:  0.709198[A[32mprocessed[31m 10000000 [32mfragments[0m
+hits: 7088338, hits per frag:  0.709218[A[32mprocessed[31m 10500000 [32mfragments[0m
+hits: 7444997, hits per frag:  0.710009[A[32mprocessed[31m 11000000 [32mfragments[0m
+hits: 7803701, hits per frag:  0.721329[A[32mprocessed[31m 11500000 [32mfragments[0m
+hits: 8169149, hits per frag:  0.717074[A[32mprocessed[31m 12000000 [32mfragments[0m
+hits: 8523150, hits per frag:  0.713188[A[32mprocessed[31m 12500000 [32mfragments[0m
+hits: 8885230, hits per frag:  0.718447
+
+
+
+
+
+
+
+
+
+[1m[2017-01-04 22:22:37.856] [jointLog] [info] Computed 43763 rich equivalence classes for further processing
+[00m[1m[2017-01-04 22:22:37.856] [jointLog] [info] Counted 8417520 total reads in the equivalence classes 
+[00m[33m[1m[2017-01-04 22:22:37.865] [jointLog] [warning] 0.000300811% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[00m[1m[2017-01-04 22:22:37.865] [jointLog] [info] Mapping rate = 66.6339%
+
+[00m[1m[2017-01-04 22:22:37.865] [jointLog] [info] finished quantifyLibrary()
+[00m[1m[2017-01-04 22:22:37.867] [jointLog] [info] Starting optimizer
+[00m[1m[2017-01-04 22:22:38.232] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[00m[1m[2017-01-04 22:22:38.240] [jointLog] [info] iteration = 0 | max rel diff. = 191.083
+[00m[1m[2017-01-04 22:22:38.357] [jointLog] [info] iteration = 100 | max rel diff. = 0.0612824
+[00m[1m[2017-01-04 22:22:38.475] [jointLog] [info] iteration = 200 | max rel diff. = 0.0348842
+[00m[1m[2017-01-04 22:22:38.594] [jointLog] [info] iteration = 300 | max rel diff. = 0.025391
+[00m[1m[2017-01-04 22:22:38.713] [jointLog] [info] iteration = 400 | max rel diff. = 0.011226
+[00m[1m[2017-01-04 22:22:38.720] [jointLog] [info] iteration = 407 | max rel diff. = 0.00662686
+[00m[1m[2017-01-04 22:22:38.725] [jointLog] [info] Finished optimizer
+[00m[1m[2017-01-04 22:22:38.725] [jointLog] [info] writing output 
+
+[00mVersion Info: This is the most recent version of Salmon.
+### salmon (mapping-based) v0.7.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { kfish2rae5g.main.tub.mrna_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_FW_1.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_FW_1.trim_2P.fq }
+### [ output ] => { F_rathbuni_NA_FW_1.quant }
+Logs will be written to F_rathbuni_NA_FW_1.quant/logs
+[1m[2017-01-04 22:22:39.348] [jointLog] [info] parsing read library format
+[00m[1m[2017-01-04 22:22:39.348] [jointLog] [info] There is 1 library.
+[00m[1m[2017-01-04 22:22:39.409] [stderrLog] [info] Loading Suffix Array 
+[00m[1m[2017-01-04 22:22:39.409] [jointLog] [info] Loading Quasi index
+[00m[1m[2017-01-04 22:22:39.409] [jointLog] [info] Loading 32-bit quasi index
+[00m[1m[2017-01-04 22:22:39.588] [stderrLog] [info] Loading Transcript Info 
+[00m[1m[2017-01-04 22:22:39.642] [stderrLog] [info] Loading Rank-Select Bit Array
+[00m[1m[2017-01-04 22:22:39.656] [stderrLog] [info] There were 34924 set bits in the bit array
+[00m[1m[2017-01-04 22:22:39.682] [stderrLog] [info] Computing transcript lengths
+[00m[1m[2017-01-04 22:22:39.682] [stderrLog] [info] Waiting to finish loading hash
+[00m[1m[2017-01-04 22:22:45.223] [jointLog] [info] done
+[00m[1m[2017-01-04 22:22:45.223] [jointLog] [info] Index contained 34924 targets
+[00m[1m[2017-01-04 22:22:45.223] [stderrLog] [info] Successfully loaded position hash
+[00m[1m[2017-01-04 22:22:45.223] [stderrLog] [info] Done loading index
+[00m
+
+
+
+[A[32mprocessed[31m 500000 [32mfragments[0m
+hits: 335987, hits per frag:  0.747743[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 666280, hits per frag:  0.815016[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 997057, hits per frag:  0.68432[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 1327998, hits per frag:  0.683476[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 1658266, hits per frag:  0.727671[A[32mprocessed[31m 3000001 [32mfragments[0m
+hits: 1990255, hits per frag:  0.677261[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 2323860, hits per frag:  0.675593[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 2647008, hits per frag:  0.665027[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 2985527, hits per frag:  0.667305[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 3311437, hits per frag:  0.67017[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 3641786, hits per frag:  0.672236[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 3976132, hits per frag:  0.674515[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 4304395, hits per frag:  0.669453[A[32mprocessed[31m 7000001 [32mfragments[0m
+hits: 4638923, hits per frag:  0.67348[A[32mprocessed[31m 7500000 [32mfragments[0m
+hits: 4970854, hits per frag:  0.673403[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 5300095, hits per frag:  0.668383[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 5641514, hits per frag:  0.675207[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 5978458, hits per frag:  0.67052[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 6305516, hits per frag:  0.670192[A[32mprocessed[31m 10000000 [32mfragments[0m
+hits: 6657897, hits per frag:  0.675202[A[32mprocessed[31m 10500000 [32mfragments[0m
+hits: 7010485, hits per frag:  0.669849[A[32mprocessed[31m 11000000 [32mfragments[0m
+hits: 7361785, hits per frag:  0.670773[A[32mprocessed[31m 11500000 [32mfragments[0m
+hits: 7706694, hits per frag:  0.674768[A[32mprocessed[31m 12000000 [32mfragments[0m
+hits: 8052086, hits per frag:  0.676224[A[32mprocessed[31m 12500000 [32mfragments[0m
+hits: 8393946, hits per frag:  0.678635[A[32mprocessed[31m 13000000 [32mfragments[0m
+hits: 8740341, hits per frag:  0.675429[A[32mprocessed[31m 13500000 [32mfragments[0m
+hits: 9082507, hits per frag:  0.675625[A[32mprocessed[31m 14000000 [32mfragments[0m
+hits: 9425984, hits per frag:  0.675148[A[32mprocessed[31m 14500000 [32mfragments[0m
+hits: 9770324, hits per frag:  0.675037[A[32mprocessed[31m 15000000 [32mfragments[0m
+hits: 10112062, hits per frag:  0.678363[A[32mprocessed[31m 15500000 [32mfragments[0m
+hits: 10454849, hits per frag:  0.677263
+
+
+
+
+
+
+
+
+
+[1m[2017-01-04 22:25:44.608] [jointLog] [info] Computed 46966 rich equivalence classes for further processing
+[00m[1m[2017-01-04 22:25:44.608] [jointLog] [info] Counted 9837884 total reads in the equivalence classes 
+[00m[33m[1m[2017-01-04 22:25:44.617] [jointLog] [warning] 0.000752421% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[00m[1m[2017-01-04 22:25:44.617] [jointLog] [info] Mapping rate = 63.2669%
+
+[00m[1m[2017-01-04 22:25:44.617] [jointLog] [info] finished quantifyLibrary()
+[00m[1m[2017-01-04 22:25:44.618] [jointLog] [info] Starting optimizer
+[00m[1m[2017-01-04 22:25:44.647] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[00m[1m[2017-01-04 22:25:44.659] [jointLog] [info] iteration = 0 | max rel diff. = 217.145
+[00m[1m[2017-01-04 22:25:44.789] [jointLog] [info] iteration = 100 | max rel diff. = 0.0872476
+[00m[1m[2017-01-04 22:25:44.918] [jointLog] [info] iteration = 200 | max rel diff. = 0.0364872
+[00m[1m[2017-01-04 22:25:45.049] [jointLog] [info] iteration = 300 | max rel diff. = 0.0276907
+[00m[1m[2017-01-04 22:25:45.179] [jointLog] [info] iteration = 400 | max rel diff. = 0.0135487
+[00m[1m[2017-01-04 22:25:45.308] [jointLog] [info] iteration = 500 | max rel diff. = 0.0112865
+[00m[1m[2017-01-04 22:25:45.333] [jointLog] [info] iteration = 520 | max rel diff. = 0.00556808
+[00m[1m[2017-01-04 22:25:45.337] [jointLog] [info] Finished optimizer
+[00m[1m[2017-01-04 22:25:45.337] [jointLog] [info] writing output 
+
+[00mVersion Info: This is the most recent version of Salmon.
+### salmon (mapping-based) v0.7.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { kfish2rae5g.main.tub.mrna_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_FW_2.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_FW_2.trim_2P.fq }
+### [ output ] => { F_rathbuni_NA_FW_2.quant }
+Logs will be written to F_rathbuni_NA_FW_2.quant/logs
+[1m[2017-01-04 22:25:46.063] [jointLog] [info] parsing read library format
+[00m[1m[2017-01-04 22:25:46.063] [jointLog] [info] There is 1 library.
+[00m[1m[2017-01-04 22:25:46.125] [stderrLog] [info] Loading Suffix Array 
+[00m[1m[2017-01-04 22:25:46.125] [jointLog] [info] Loading Quasi index
+[00m[1m[2017-01-04 22:25:46.125] [jointLog] [info] Loading 32-bit quasi index
+[00m[1m[2017-01-04 22:25:46.307] [stderrLog] [info] Loading Transcript Info 
+[00m[1m[2017-01-04 22:25:46.361] [stderrLog] [info] Loading Rank-Select Bit Array
+[00m[1m[2017-01-04 22:25:46.374] [stderrLog] [info] There were 34924 set bits in the bit array
+[00m[1m[2017-01-04 22:25:46.400] [stderrLog] [info] Computing transcript lengths
+[00m[1m[2017-01-04 22:25:46.400] [stderrLog] [info] Waiting to finish loading hash
+[00m[1m[2017-01-04 22:25:51.937] [jointLog] [info] done
+[00m[1m[2017-01-04 22:25:51.937] [jointLog] [info] Index contained 34924 targets
+[00m[1m[2017-01-04 22:25:51.937] [stderrLog] [info] Successfully loaded position hash
+[00m[1m[2017-01-04 22:25:51.937] [stderrLog] [info] Done loading index
+[00m
+
+
+
+[A[32mprocessed[31m 500000 [32mfragments[0m
+hits: 343071, hits per frag:  0.748864[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 680371, hits per frag:  0.69873[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 1020609, hits per frag:  0.730314[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 1351670, hits per frag:  0.69534[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 1682067, hits per frag:  0.688335[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 2010178, hits per frag:  0.672679[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 2341423, hits per frag:  0.686124[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 2679801, hits per frag:  0.681327[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 3019346, hits per frag:  0.674144[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 3364613, hits per frag:  0.687897[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 3694032, hits per frag:  0.675185[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 4027898, hits per frag:  0.680257[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 4354960, hits per frag:  0.679605[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 4688719, hits per frag:  0.673569[A[32mprocessed[31m 7500000 [32mfragments[0m
+hits: 5029108, hits per frag:  0.673082[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 5368227, hits per frag:  0.673914[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 5703894, hits per frag:  0.673597[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 6037835, hits per frag:  0.674762[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 6369424, hits per frag:  0.679234[A[32mprocessed[31m 10000000 [32mfragments[0m
+hits: 6699593, hits per frag:  0.673203[A[32mprocessed[31m 10500000 [32mfragments[0m
+hits: 7036745, hits per frag:  0.670608[A[32mprocessed[31m 11000000 [32mfragments[0m
+hits: 7375139, hits per frag:  0.670669[A[32mprocessed[31m 11500000 [32mfragments[0m
+hits: 7712092, hits per frag:  0.677508[A[32mprocessed[31m 12000000 [32mfragments[0m
+hits: 8044934, hits per frag:  0.67706[A[32mprocessed[31m 12500000 [32mfragments[0m
+hits: 8375221, hits per frag:  0.673976[A[32mprocessed[31m 13000000 [32mfragments[0m
+hits: 8698432, hits per frag:  0.672523[A[32mprocessed[31m 13500000 [32mfragments[0m
+hits: 9028711, hits per frag:  0.669601[A[32mprocessed[31m 14000000 [32mfragments[0m
+hits: 9374577, hits per frag:  0.671464[A[32mprocessed[31m 14500000 [32mfragments[0m
+hits: 9716936, hits per frag:  0.671888[A[32mprocessed[31m 15000000 [32mfragments[0m
+hits: 10059103, hits per frag:  0.673098[A[32mprocessed[31m 15500000 [32mfragments[0m
+hits: 10402902, hits per frag:  0.67155[A[32mprocessed[31m 16000001 [32mfragments[0m
+hits: 10746772, hits per frag:  0.674132[A[32mprocessed[31m 16500000 [32mfragments[0m
+hits: 11084912, hits per frag:  0.6753[A[32mprocessed[31m 17000000 [32mfragments[0m
+hits: 11424120, hits per frag:  0.672379[A[32mprocessed[31m 17500000 [32mfragments[0m
+hits: 11762091, hits per frag:  0.673933[A[32mprocessed[31m 18000000 [32mfragments[0m
+hits: 12098360, hits per frag:  0.675214[A[32mprocessed[31m 18500001 [32mfragments[0m
+hits: 12432591, hits per frag:  0.672989[A[32mprocessed[31m 19000000 [32mfragments[0m
+hits: 12762053, hits per frag:  0.675009[A[32mprocessed[31m 19500000 [32mfragments[0m
+hits: 13082342, hits per frag:  0.670995[A[32mprocessed[31m 20000000 [32mfragments[0m
+hits: 13421099, hits per frag:  0.673801[A[32mprocessed[31m 20500000 [32mfragments[0m
+hits: 13760043, hits per frag:  0.672164[A[32mprocessed[31m 21000000 [32mfragments[0m
+hits: 14097949, hits per frag:  0.673352[A[32mprocessed[31m 21500000 [32mfragments[0m
+hits: 14432981, hits per frag:  0.672187[A[32mprocessed[31m 22000000 [32mfragments[0m
+hits: 14764645, hits per frag:  0.674993[A[32mprocessed[31m 22500000 [32mfragments[0m
+hits: 15092670, hits per frag:  0.673714[A[32mprocessed[31m 23000000 [32mfragments[0m
+hits: 15423899, hits per frag:  0.671991[A[32mprocessed[31m 23500000 [32mfragments[0m
+hits: 15764270, hits per frag:  0.674868[A[32mprocessed[31m 24000000 [32mfragments[0m
+hits: 16104026, hits per frag:  0.674541[A[32mprocessed[31m 24500000 [32mfragments[0m
+hits: 16442635, hits per frag:  0.674497[A[32mprocessed[31m 25000000 [32mfragments[0m
+hits: 16777295, hits per frag:  0.674056[A[32mprocessed[31m 25500000 [32mfragments[0m
+hits: 17109082, hits per frag:  0.672295[A[32mprocessed[31m 26000000 [32mfragments[0m
+hits: 17437523, hits per frag:  0.673525[A[32mprocessed[31m 26500000 [32mfragments[0m
+hits: 17777266, hits per frag:  0.671464[A[32mprocessed[31m 27000001 [32mfragments[0m
+hits: 18117083, hits per frag:  0.671164[A[32mprocessed[31m 27500000 [32mfragments[0m
+hits: 18455222, hits per frag:  0.671626[A[32mprocessed[31m 28000000 [32mfragments[0m
+hits: 18790538, hits per frag:  0.672574[A[32mprocessed[31m 28500000 [32mfragments[0m
+hits: 19124386, hits per frag:  0.673865[A[32mprocessed[31m 29000000 [32mfragments[0m
+hits: 19454554, hits per frag:  0.673557[A[32mprocessed[31m 29500000 [32mfragments[0m
+hits: 19782244, hits per frag:  0.671521[A[32mprocessed[31m 30000000 [32mfragments[0m
+hits: 20122119, hits per frag:  0.670883[A[32mprocessed[31m 30500000 [32mfragments[0m
+hits: 20458860, hits per frag:  0.671642[A[32mprocessed[31m 31000000 [32mfragments[0m
+hits: 20795296, hits per frag:  0.67228[A[32mprocessed[31m 31500000 [32mfragments[0m
+hits: 21133353, hits per frag:  0.671737[A[32mprocessed[31m 32000000 [32mfragments[0m
+hits: 21465077, hits per frag:  0.67245[A[32mprocessed[31m 32500001 [32mfragments[0m
+hits: 21802247, hits per frag:  0.672316[A[32mprocessed[31m 33000000 [32mfragments[0m
+hits: 22143849, hits per frag:  0.672724[A[32mprocessed[31m 33500000 [32mfragments[0m
+hits: 22485853, hits per frag:  0.672579[A[32mprocessed[31m 34000000 [32mfragments[0m
+hits: 22828472, hits per frag:  0.672462[A[32mprocessed[31m 34500000 [32mfragments[0m
+hits: 23171135, hits per frag:  0.673792[A[32mprocessed[31m 35000000 [32mfragments[0m
+hits: 23513969, hits per frag:  0.672774[A[32mprocessed[31m 35500000 [32mfragments[0m
+hits: 23853871, hits per frag:  0.674295[A[32mprocessed[31m 36000000 [32mfragments[0m
+hits: 24192844, hits per frag:  0.67216[A[32mprocessed[31m 36500000 [32mfragments[0m
+hits: 24530628, hits per frag:  0.674027[A[32mprocessed[31m 37000000 [32mfragments[0m
+hits: 24866747, hits per frag:  0.67265[A[32mprocessed[31m 37500000 [32mfragments[0m
+hits: 25200136, hits per frag:  0.672715[A[32mprocessed[31m 38000000 [32mfragments[0m
+hits: 25530631, hits per frag:  0.674225[A[32mprocessed[31m 38500000 [32mfragments[0m
+hits: 25854946, hits per frag:  0.67162[A[32mprocessed[31m 39000000 [32mfragments[0m
+hits: 26199187, hits per frag:  0.672595[A[32mprocessed[31m 39500000 [32mfragments[0m
+hits: 26551435, hits per frag:  0.672314[A[32mprocessed[31m 40000000 [32mfragments[0m
+hits: 26901660, hits per frag:  0.674197[A[32mprocessed[31m 40500000 [32mfragments[0m
+hits: 27249590, hits per frag:  0.674893[A[32mprocessed[31m 41000000 [32mfragments[0m
+hits: 27595876, hits per frag:  0.673601[A[32mprocessed[31m 41500001 [32mfragments[0m
+hits: 27950049, hits per frag:  0.674888[A[32mprocessed[31m 42000000 [32mfragments[0m
+hits: 28300354, hits per frag:  0.67518[A[32mprocessed[31m 42500000 [32mfragments[0m
+hits: 28649778, hits per frag:  0.674144[A[32mprocessed[31m 43000000 [32mfragments[0m
+hits: 28995004, hits per frag:  0.676396[A[32mprocessed[31m 43500000 [32mfragments[0m
+hits: 29347549, hits per frag:  0.675086[A[32mprocessed[31m 44000000 [32mfragments[0m
+hits: 29697719, hits per frag:  0.675395[A[32mprocessed[31m 44500000 [32mfragments[0m
+hits: 30046621, hits per frag:  0.675243[A[32mprocessed[31m 45000000 [32mfragments[0m
+hits: 30392971, hits per frag:  0.67671[A[32mprocessed[31m 45500000 [32mfragments[0m
+hits: 30737506, hits per frag:  0.675767[A[32mprocessed[31m 46000001 [32mfragments[0m
+hits: 31088078, hits per frag:  0.677016[A[32mprocessed[31m 46500000 [32mfragments[0m
+hits: 31438267, hits per frag:  0.676711[A[32mprocessed[31m 47000000 [32mfragments[0m
+hits: 31786123, hits per frag:  0.67698[A[32mprocessed[31m 47500000 [32mfragments[0m
+hits: 32134348, hits per frag:  0.677168[A[32mprocessed[31m 48000000 [32mfragments[0m
+hits: 32481434, hits per frag:  0.678041[A[32mprocessed[31m 48500000 [32mfragments[0m
+hits: 32831442, hits per frag:  0.67717[A[32mprocessed[31m 49000000 [32mfragments[0m
+hits: 33181438, hits per frag:  0.677249[A[32mprocessed[31m 49500000 [32mfragments[0m
+hits: 33530071, hits per frag:  0.678489[A[32mprocessed[31m 50000000 [32mfragments[0m
+hits: 33875672, hits per frag:  0.6776[A[32mprocessed[31m 50500000 [32mfragments[0m
+hits: 34227694, hits per frag:  0.679786[A[32mprocessed[31m 51000000 [32mfragments[0m
+hits: 34576812, hits per frag:  0.678799[A[32mprocessed[31m 51500000 [32mfragments[0m
+hits: 34926096, hits per frag:  0.67908[A[32mprocessed[31m 52000000 [32mfragments[0m
+hits: 35273129, hits per frag:  0.678454
+
+
+
+[1m[2017-01-04 22:33:13.305] [jointLog] [info] Computed 54852 rich equivalence classes for further processing
+[00m[1m[2017-01-04 22:33:13.305] [jointLog] [info] Counted 33366186 total reads in the equivalence classes 
+[00m
+
+
+
+
+
+[33m[1m[2017-01-04 22:33:13.315] [jointLog] [warning] 0.000430451% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[00m[1m[2017-01-04 22:33:13.315] [jointLog] [info] Mapping rate = 63.8334%
+
+[00m[1m[2017-01-04 22:33:13.315] [jointLog] [info] finished quantifyLibrary()
+[00m[1m[2017-01-04 22:33:13.316] [jointLog] [info] Starting optimizer
+[00m[1m[2017-01-04 22:33:13.356] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[00m[1m[2017-01-04 22:33:13.452] [jointLog] [info] iteration = 0 | max rel diff. = 330.747
+[00m[1m[2017-01-04 22:33:13.597] [jointLog] [info] iteration = 100 | max rel diff. = 0.0546079
+[00m[1m[2017-01-04 22:33:13.744] [jointLog] [info] iteration = 200 | max rel diff. = 0.0460315
+[00m[1m[2017-01-04 22:33:13.888] [jointLog] [info] iteration = 300 | max rel diff. = 0.0228764
+[00m[1m[2017-01-04 22:33:14.031] [jointLog] [info] iteration = 400 | max rel diff. = 0.0134452
+[00m[1m[2017-01-04 22:33:14.172] [jointLog] [info] iteration = 499 | max rel diff. = 0.00613905
+[00m[1m[2017-01-04 22:33:14.176] [jointLog] [info] Finished optimizer
+[00m[1m[2017-01-04 22:33:14.176] [jointLog] [info] writing output 
+
+[00mVersion Info: This is the most recent version of Salmon.
+### salmon (mapping-based) v0.7.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { kfish2rae5g.main.tub.mrna_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_FW_3.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_FW_3.trim_2P.fq }
+### [ output ] => { F_rathbuni_NA_FW_3.quant }
+Logs will be written to F_rathbuni_NA_FW_3.quant/logs
+[1m[2017-01-04 22:33:15.155] [jointLog] [info] parsing read library format
+[00m[1m[2017-01-04 22:33:15.155] [jointLog] [info] There is 1 library.
+[00m[1m[2017-01-04 22:33:15.223] [stderrLog] [info] Loading Suffix Array 
+[00m[1m[2017-01-04 22:33:15.222] [jointLog] [info] Loading Quasi index
+[00m[1m[2017-01-04 22:33:15.223] [jointLog] [info] Loading 32-bit quasi index
+[00m[1m[2017-01-04 22:33:15.397] [stderrLog] [info] Loading Transcript Info 
+[00m[1m[2017-01-04 22:33:15.451] [stderrLog] [info] Loading Rank-Select Bit Array
+[00m[1m[2017-01-04 22:33:15.464] [stderrLog] [info] There were 34924 set bits in the bit array
+[00m[1m[2017-01-04 22:33:15.491] [stderrLog] [info] Computing transcript lengths
+[00m[1m[2017-01-04 22:33:15.491] [stderrLog] [info] Waiting to finish loading hash
+[00m[1m[2017-01-04 22:33:21.025] [jointLog] [info] done
+[00m[1m[2017-01-04 22:33:21.025] [jointLog] [info] Index contained 34924 targets
+[00m[1m[2017-01-04 22:33:21.025] [stderrLog] [info] Successfully loaded position hash
+[00m[1m[2017-01-04 22:33:21.025] [stderrLog] [info] Done loading index
+[00m
+
+
+
+[A[32mprocessed[31m 500000 [32mfragments[0m
+hits: 336451, hits per frag:  0.790002[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 666936, hits per frag:  0.686354[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 1002712, hits per frag:  0.722294[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 1335205, hits per frag:  0.693299[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 1669863, hits per frag:  0.695578[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 2001417, hits per frag:  0.690719[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 2335370, hits per frag:  0.671523[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 2666606, hits per frag:  0.678219[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 3003498, hits per frag:  0.683299[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 3339074, hits per frag:  0.668576[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 3667919, hits per frag:  0.66965[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 4002728, hits per frag:  0.679503[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 4335070, hits per frag:  0.667474[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 4671289, hits per frag:  0.67613[A[32mprocessed[31m 7500002 [32mfragments[0m
+hits: 5002264, hits per frag:  0.671843[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 5337417, hits per frag:  0.672366[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 5667526, hits per frag:  0.667109[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 6002539, hits per frag:  0.667436[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 6333971, hits per frag:  0.670917[A[32mprocessed[31m 10000000 [32mfragments[0m
+hits: 6668354, hits per frag:  0.668304[A[32mprocessed[31m 10500000 [32mfragments[0m
+hits: 7000605, hits per frag:  0.671398[A[32mprocessed[31m 11000000 [32mfragments[0m
+hits: 7332108, hits per frag:  0.667527[A[32mprocessed[31m 11500000 [32mfragments[0m
+hits: 7669064, hits per frag:  0.671953[A[32mprocessed[31m 12000000 [32mfragments[0m
+hits: 8007630, hits per frag:  0.668609[A[32mprocessed[31m 12500000 [32mfragments[0m
+hits: 8350096, hits per frag:  0.672527[A[32mprocessed[31m 13000000 [32mfragments[0m
+hits: 8691136, hits per frag:  0.673776[A[32mprocessed[31m 13500000 [32mfragments[0m
+hits: 9029750, hits per frag:  0.672919[A[32mprocessed[31m 14000000 [32mfragments[0m
+hits: 9369753, hits per frag:  0.6703[A[32mprocessed[31m 14500001 [32mfragments[0m
+hits: 9710323, hits per frag:  0.672255[A[32mprocessed[31m 15000000 [32mfragments[0m
+hits: 10049420, hits per frag:  0.67066[A[32mprocessed[31m 15500001 [32mfragments[0m
+hits: 10389431, hits per frag:  0.671901
+
+
+
+
+
+
+
+
+
+[1m[2017-01-04 22:35:28.124] [jointLog] [info] Computed 45893 rich equivalence classes for further processing
+[00m[1m[2017-01-04 22:35:28.124] [jointLog] [info] Counted 9931706 total reads in the equivalence classes 
+[00m[33m[1m[2017-01-04 22:35:28.132] [jointLog] [warning] 0.000254827% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[00m[1m[2017-01-04 22:35:28.132] [jointLog] [info] Mapping rate = 63.2717%
+
+[00m[1m[2017-01-04 22:35:28.132] [jointLog] [info] finished quantifyLibrary()
+[00m[1m[2017-01-04 22:35:28.134] [jointLog] [info] Starting optimizer
+[00m[1m[2017-01-04 22:35:28.203] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[00m[1m[2017-01-04 22:35:28.213] [jointLog] [info] iteration = 0 | max rel diff. = 219.372
+[00m[1m[2017-01-04 22:35:28.335] [jointLog] [info] iteration = 100 | max rel diff. = 0.0751213
+[00m[1m[2017-01-04 22:35:28.463] [jointLog] [info] iteration = 200 | max rel diff. = 0.0283449
+[00m[1m[2017-01-04 22:35:28.592] [jointLog] [info] iteration = 300 | max rel diff. = 0.0109105
+[00m[1m[2017-01-04 22:35:28.642] [jointLog] [info] iteration = 340 | max rel diff. = 0.00893789
+[00m[1m[2017-01-04 22:35:28.646] [jointLog] [info] Finished optimizer
+[00m[1m[2017-01-04 22:35:28.646] [jointLog] [info] writing output 
+
+[00mVersion Info: This is the most recent version of Salmon.
+### salmon (mapping-based) v0.7.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { kfish2rae5g.main.tub.mrna_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_transfer_1.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_transfer_1.trim_2P.fq }
+### [ output ] => { F_rathbuni_NA_transfer_1.quant }
+Logs will be written to F_rathbuni_NA_transfer_1.quant/logs
+[1m[2017-01-04 22:35:29.372] [jointLog] [info] parsing read library format
+[00m[1m[2017-01-04 22:35:29.372] [jointLog] [info] There is 1 library.
+[00m[1m[2017-01-04 22:35:29.435] [stderrLog] [info] Loading Suffix Array 
+[00m[1m[2017-01-04 22:35:29.435] [jointLog] [info] Loading Quasi index
+[00m[1m[2017-01-04 22:35:29.435] [jointLog] [info] Loading 32-bit quasi index
+[00m[1m[2017-01-04 22:35:29.614] [stderrLog] [info] Loading Transcript Info 
+[00m[1m[2017-01-04 22:35:29.669] [stderrLog] [info] Loading Rank-Select Bit Array
+[00m[1m[2017-01-04 22:35:29.682] [stderrLog] [info] There were 34924 set bits in the bit array
+[00m[1m[2017-01-04 22:35:29.709] [stderrLog] [info] Computing transcript lengths
+[00m[1m[2017-01-04 22:35:29.709] [stderrLog] [info] Waiting to finish loading hash
+[00m[1m[2017-01-04 22:35:35.250] [jointLog] [info] done
+[00m[1m[2017-01-04 22:35:35.250] [jointLog] [info] Index contained 34924 targets
+[00m[1m[2017-01-04 22:35:35.249] [stderrLog] [info] Successfully loaded position hash
+[00m[1m[2017-01-04 22:35:35.250] [stderrLog] [info] Done loading index
+[00m
+
+
+
+[A[32mprocessed[31m 500000 [32mfragments[0m
+hits: 337494, hits per frag:  0.807605[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 665505, hits per frag:  0.715188[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 996456, hits per frag:  0.696201[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 1328148, hits per frag:  0.674129[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 1654556, hits per frag:  0.694647[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 1991770, hits per frag:  0.693173[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 2318763, hits per frag:  0.676278[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 2652555, hits per frag:  0.670518[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 2980387, hits per frag:  0.678894[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 3314574, hits per frag:  0.669647[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 3647207, hits per frag:  0.674713[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 3968218, hits per frag:  0.66484[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 4301914, hits per frag:  0.66949[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 4630312, hits per frag:  0.671512[A[32mprocessed[31m 7500000 [32mfragments[0m
+hits: 4960980, hits per frag:  0.667633[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 5292270, hits per frag:  0.669557[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 5622052, hits per frag:  0.663922[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 5957474, hits per frag:  0.666584[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 6283075, hits per frag:  0.663517[A[32mprocessed[31m 10000000 [32mfragments[0m
+hits: 6620887, hits per frag:  0.66572[A[32mprocessed[31m 11000000 [32mfragments[0m
+hits: 7282926, hits per frag:  0.665014[A[32mprocessed[31m 11500000 [32mfragments[0m
+hits: 7613516, hits per frag:  0.66474[A[32mprocessed[31m 12000000 [32mfragments[0m
+hits: 7943415, hits per frag:  0.664974[A[32mprocessed[31m 12500000 [32mfragments[0m
+hits: 8280314, hits per frag:  0.663458[A[32mprocessed[31m 13000000 [32mfragments[0m
+hits: 8615054, hits per frag:  0.665777[A[32mprocessed[31m 13500000 [32mfragments[0m
+hits: 8950663, hits per frag:  0.665477[A[32mprocessed[31m 14000000 [32mfragments[0m
+hits: 9276886, hits per frag:  0.665593[A[32mprocessed[31m 14500000 [32mfragments[0m
+hits: 9621060, hits per frag:  0.669552[A[32mprocessed[31m 15000000 [32mfragments[0m
+hits: 9971460, hits per frag:  0.669361[A[32mprocessed[31m 15500000 [32mfragments[0m
+hits: 10319168, hits per frag:  0.669277[A[32mprocessed[31m 16000002 [32mfragments[0m
+hits: 10667654, hits per frag:  0.670659[A[32mprocessed[31m 16500000 [32mfragments[0m
+hits: 11015062, hits per frag:  0.668303[A[32mprocessed[31m 17000000 [32mfragments[0m
+hits: 11356961, hits per frag:  0.668285[A[32mprocessed[31m 17500000 [32mfragments[0m
+hits: 11694940, hits per frag:  0.673383[A[32mprocessed[31m 18000000 [32mfragments[0m
+hits: 12034162, hits per frag:  0.672906[A[32mprocessed[31m 18500000 [32mfragments[0m
+hits: 12372270, hits per frag:  0.668909[A[32mprocessed[31m 19000000 [32mfragments[0m
+hits: 12707631, hits per frag:  0.67279[A[32mprocessed[31m 19500000 [32mfragments[0m
+hits: 13048939, hits per frag:  0.672184[A[32mprocessed[31m 20000000 [32mfragments[0m
+hits: 13385080, hits per frag:  0.672697[A[32mprocessed[31m 20500000 [32mfragments[0m
+hits: 13723712, hits per frag:  0.672642[A[32mprocessed[31m 21000000 [32mfragments[0m
+hits: 14062436, hits per frag:  0.67344[A[32mprocessed[31m 21500000 [32mfragments[0m
+hits: 14395111, hits per frag:  0.670125[A[32mprocessed[31m 22000000 [32mfragments[0m
+hits: 14736988, hits per frag:  0.671692[A[32mprocessed[31m 22500000 [32mfragments[0m
+hits: 15072970, hits per frag:  0.672828[A[32mprocessed[31m 23000000 [32mfragments[0m
+hits: 15409589, hits per frag:  0.671751[A[32mprocessed[31m 23500000 [32mfragments[0m
+hits: 15748189, hits per frag:  0.6713
+
+
+
+
+
+
+
+
+
+[1m[2017-01-04 22:38:47.780] [jointLog] [info] Computed 52009 rich equivalence classes for further processing
+[00m[1m[2017-01-04 22:38:47.780] [jointLog] [info] Counted 14999249 total reads in the equivalence classes 
+[00m[33m[1m[2017-01-04 22:38:47.789] [jointLog] [warning] 0.000600104% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[00m[1m[2017-01-04 22:38:47.789] [jointLog] [info] Mapping rate = 62.9448%
+
+[00m[1m[2017-01-04 22:38:47.789] [jointLog] [info] finished quantifyLibrary()
+[00m[1m[2017-01-04 22:38:47.791] [jointLog] [info] Starting optimizer
+[00m[1m[2017-01-04 22:38:47.824] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[00m[1m[2017-01-04 22:38:47.832] [jointLog] [info] iteration = 0 | max rel diff. = 291.104
+[00m[1m[2017-01-04 22:38:47.983] [jointLog] [info] iteration = 100 | max rel diff. = 0.0796772
+[00m[1m[2017-01-04 22:38:48.134] [jointLog] [info] iteration = 200 | max rel diff. = 0.0266383
+[00m[1m[2017-01-04 22:38:48.286] [jointLog] [info] iteration = 300 | max rel diff. = 0.0131541
+[00m[1m[2017-01-04 22:38:48.438] [jointLog] [info] iteration = 400 | max rel diff. = 0.0133324
+[00m[1m[2017-01-04 22:38:48.560] [jointLog] [info] iteration = 481 | max rel diff. = 0.00753062
+[00m[1m[2017-01-04 22:38:48.566] [jointLog] [info] Finished optimizer
+[00m[1m[2017-01-04 22:38:48.566] [jointLog] [info] writing output 
+
+[00mVersion Info: This is the most recent version of Salmon.
+### salmon (mapping-based) v0.7.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { kfish2rae5g.main.tub.mrna_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_transfer_2.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_transfer_2.trim_2P.fq }
+### [ output ] => { F_rathbuni_NA_transfer_2.quant }
+Logs will be written to F_rathbuni_NA_transfer_2.quant/logs
+[1m[2017-01-04 22:38:49.317] [jointLog] [info] parsing read library format
+[00m[1m[2017-01-04 22:38:49.317] [jointLog] [info] There is 1 library.
+[00m[1m[2017-01-04 22:38:49.380] [stderrLog] [info] Loading Suffix Array 
+[00m[1m[2017-01-04 22:38:49.379] [jointLog] [info] Loading Quasi index
+[00m[1m[2017-01-04 22:38:49.379] [jointLog] [info] Loading 32-bit quasi index
+[00m[1m[2017-01-04 22:38:49.557] [stderrLog] [info] Loading Transcript Info 
+[00m[1m[2017-01-04 22:38:49.611] [stderrLog] [info] Loading Rank-Select Bit Array
+[00m[1m[2017-01-04 22:38:49.625] [stderrLog] [info] There were 34924 set bits in the bit array
+[00m[1m[2017-01-04 22:38:49.651] [stderrLog] [info] Computing transcript lengths
+[00m[1m[2017-01-04 22:38:49.651] [stderrLog] [info] Waiting to finish loading hash
+[00m[1m[2017-01-04 22:38:55.190] [jointLog] [info] done
+[00m[1m[2017-01-04 22:38:55.190] [jointLog] [info] Index contained 34924 targets
+[00m[1m[2017-01-04 22:38:55.189] [stderrLog] [info] Successfully loaded position hash
+[00m[1m[2017-01-04 22:38:55.190] [stderrLog] [info] Done loading index
+[00m
+
+
+
+[A[32mprocessed[31m 500000 [32mfragments[0m
+hits: 344398, hits per frag:  0.870065[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 687099, hits per frag:  0.760099[A[32mprocessed[31m 1500001 [32mfragments[0m
+hits: 1027909, hits per frag:  0.699028[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 1371704, hits per frag:  0.697775[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 1714921, hits per frag:  0.690618[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 2055512, hits per frag:  0.689943[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 2402474, hits per frag:  0.700607[A[32mprocessed[31m 4000001 [32mfragments[0m
+hits: 2747303, hits per frag:  0.694233[A[32mprocessed[31m 4500001 [32mfragments[0m
+hits: 3090506, hits per frag:  0.68938[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 3430229, hits per frag:  0.689357[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 3774598, hits per frag:  0.690819[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 4118614, hits per frag:  0.699683[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 4459168, hits per frag:  0.697808[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 4802376, hits per frag:  0.68969[A[32mprocessed[31m 7500000 [32mfragments[0m
+hits: 5149715, hits per frag:  0.696891[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 5494876, hits per frag:  0.69037[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 5839122, hits per frag:  0.688155[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 6192918, hits per frag:  0.697993[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 6545307, hits per frag:  0.692732[A[32mprocessed[31m 10000000 [32mfragments[0m
+hits: 6897319, hits per frag:  0.691669[A[32mprocessed[31m 10500000 [32mfragments[0m
+hits: 7249344, hits per frag:  0.692773[A[32mprocessed[31m 11000000 [32mfragments[0m
+hits: 7602341, hits per frag:  0.695413
+
+
+
+
+
+
+
+
+
+[1m[2017-01-04 22:40:28.437] [jointLog] [info] Computed 43741 rich equivalence classes for further processing
+[00m[1m[2017-01-04 22:40:28.437] [jointLog] [info] Counted 7486401 total reads in the equivalence classes 
+[00m[33m[1m[2017-01-04 22:40:28.445] [jointLog] [warning] 0.000489321% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[00m[1m[2017-01-04 22:40:28.445] [jointLog] [info] Mapping rate = 65.4152%
+
+[00m[1m[2017-01-04 22:40:28.445] [jointLog] [info] finished quantifyLibrary()
+[00m[1m[2017-01-04 22:40:28.447] [jointLog] [info] Starting optimizer
+[00m[1m[2017-01-04 22:40:28.474] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[00m[1m[2017-01-04 22:40:28.476] [jointLog] [info] iteration = 0 | max rel diff. = 174.818
+[00m[1m[2017-01-04 22:40:28.609] [jointLog] [info] iteration = 100 | max rel diff. = 0.0707831
+[00m[1m[2017-01-04 22:40:28.732] [jointLog] [info] iteration = 200 | max rel diff. = 0.0318834
+[00m[1m[2017-01-04 22:40:28.850] [jointLog] [info] iteration = 300 | max rel diff. = 0.0184192
+[00m[1m[2017-01-04 22:40:28.868] [jointLog] [info] iteration = 317 | max rel diff. = 0.00998911
+[00m[1m[2017-01-04 22:40:28.873] [jointLog] [info] Finished optimizer
+[00m[1m[2017-01-04 22:40:28.873] [jointLog] [info] writing output 
+
+[00mVersion Info: This is the most recent version of Salmon.
+### salmon (mapping-based) v0.7.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { kfish2rae5g.main.tub.mrna_index }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_transfer_3.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_rathbuni_NA_transfer_3.trim_2P.fq }
+### [ output ] => { F_rathbuni_NA_transfer_3.quant }
+Logs will be written to F_rathbuni_NA_transfer_3.quant/logs
+[1m[2017-01-04 22:40:29.521] [jointLog] [info] parsing read library format
+[00m[1m[2017-01-04 22:40:29.521] [jointLog] [info] There is 1 library.
+[00m[1m[2017-01-04 22:40:29.582] [jointLog] [info] Loading Quasi index
+[00m[1m[2017-01-04 22:40:29.582] [stderrLog] [info] Loading Suffix Array 
+[00m[1m[2017-01-04 22:40:29.582] [jointLog] [info] Loading 32-bit quasi index
+[00m[1m[2017-01-04 22:40:29.741] [stderrLog] [info] Loading Transcript Info 
+[00m[1m[2017-01-04 22:40:29.796] [stderrLog] [info] Loading Rank-Select Bit Array
+[00m[1m[2017-01-04 22:40:29.807] [stderrLog] [info] There were 34924 set bits in the bit array
+[00m[1m[2017-01-04 22:40:29.829] [stderrLog] [info] Computing transcript lengths
+[00m[1m[2017-01-04 22:40:29.829] [stderrLog] [info] Waiting to finish loading hash
+[00m[1m[2017-01-04 22:40:35.397] [jointLog] [info] done
+[00m[1m[2017-01-04 22:40:35.397] [jointLog] [info] Index contained 34924 targets
+[00m[1m[2017-01-04 22:40:35.397] [stderrLog] [info] Successfully loaded position hash
+[00m[1m[2017-01-04 22:40:35.397] [stderrLog] [info] Done loading index
+[00m
+
+
+
+[A[32mprocessed[31m 500000 [32mfragments[0m
+hits: 359085, hits per frag:  0.880896[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 714135, hits per frag:  0.745772[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 1072293, hits per frag:  0.748201[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 1428007, hits per frag:  0.732092[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 1784642, hits per frag:  0.74215[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 2140871, hits per frag:  0.730651[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 2497218, hits per frag:  0.728918[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 2852622, hits per frag:  0.734203[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 3206792, hits per frag:  0.720733[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 3564776, hits per frag:  0.720425[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 3922776, hits per frag:  0.719933[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 4278748, hits per frag:  0.72511[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 4630325, hits per frag:  0.722025[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 4990036, hits per frag:  0.723529[A[32mprocessed[31m 7500000 [32mfragments[0m
+hits: 5343856, hits per frag:  0.721085[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 5702926, hits per frag:  0.713383[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 6057939, hits per frag:  0.713052[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 6416157, hits per frag:  0.718472[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 6769921, hits per frag:  0.714995[A[32mprocessed[31m 10000000 [32mfragments[0m
+hits: 7127833, hits per frag:  0.71867[A[32mprocessed[31m 10500000 [32mfragments[0m
+hits: 7482723, hits per frag:  0.719535[A[32mprocessed[31m 11000000 [32mfragments[0m
+hits: 7840345, hits per frag:  0.716143[A[32mprocessed[31m 11500000 [32mfragments[0m
+hits: 8196264, hits per frag:  0.717104[A[32mprocessed[31m 12000000 [32mfragments[0m
+hits: 8552361, hits per frag:  0.71845[A[32mprocessed[31m 12500000 [32mfragments[0m
+hits: 8908024, hits per frag:  0.715419[A[32mprocessed[31m 13000000 [32mfragments[0m
+hits: 9264898, hits per frag:  0.713229[A[32mprocessed[31m 13500000 [32mfragments[0m
+hits: 9624222, hits per frag:  0.716105[A[32mprocessed[31m 14000000 [32mfragments[0m
+hits: 9985859, hits per frag:  0.717217[A[32mprocessed[31m 14500000 [32mfragments[0m
+hits: 10343628, hits per frag:  0.719409[A[32mprocessed[31m 15000000 [32mfragments[0m
+hits: 10706179, hits per frag:  0.718302[A[32mprocessed[31m 15500000 [32mfragments[0m
+hits: 11064572, hits per frag:  0.716428[A[32mprocessed[31m 16000000 [32mfragments[0m
+hits: 11424476, hits per frag:  0.715856[A[32mprocessed[31m 16500000 [32mfragments[0m
+hits: 11785126, hits per frag:  0.714954[A[32mprocessed[31m 17000000 [32mfragments[0m
+hits: 12144487, hits per frag:  0.716695[A[32mprocessed[31m 17500000 [32mfragments[0m
+hits: 12505292, hits per frag:  0.717159
+
+
+
+
+
+
+
+
+
+[1m[2017-01-04 22:42:53.840] [jointLog] [info] Computed 45429 rich equivalence classes for further processing
+[00m[1m[2017-01-04 22:42:53.840] [jointLog] [info] Counted 12150353 total reads in the equivalence classes 
+[00m[33m[1m[2017-01-04 22:42:53.849] [jointLog] [warning] 0.000511365% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[00m[1m[2017-01-04 22:42:53.849] [jointLog] [info] Mapping rate = 67.5355%
+
+[00m[1m[2017-01-04 22:42:53.849] [jointLog] [info] finished quantifyLibrary()
+[00m[1m[2017-01-04 22:42:53.851] [jointLog] [info] Starting optimizer
+[00m[1m[2017-01-04 22:42:53.876] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[00m[1m[2017-01-04 22:42:53.878] [jointLog] [info] iteration = 0 | max rel diff. = 254.106
+[00m[1m[2017-01-04 22:42:54.002] [jointLog] [info] iteration = 100 | max rel diff. = 0.0831061
+[00m[1m[2017-01-04 22:42:54.123] [jointLog] [info] iteration = 200 | max rel diff. = 0.034888
+[00m[1m[2017-01-04 22:42:54.244] [jointLog] [info] iteration = 300 | max rel diff. = 0.0238547
+[00m[1m[2017-01-04 22:42:54.365] [jointLog] [info] iteration = 400 | max rel diff. = 0.0137966
+[00m[1m[2017-01-04 22:42:54.486] [jointLog] [info] iteration = 500 | max rel diff. = 0.0110805
+[00m[1m[2017-01-04 22:42:54.608] [jointLog] [info] iteration = 600 | max rel diff. = 0.0110572
+[00m[1m[2017-01-04 22:42:54.730] [jointLog] [info] iteration = 700 | max rel diff. = 0.0110494
+[00m[1m[2017-01-04 22:42:54.733] [jointLog] [info] iteration = 703 | max rel diff. = 0.00777935
+[00m[1m[2017-01-04 22:42:54.739] [jointLog] [info] Finished optimizer
+[00m[1m[2017-01-04 22:42:54.739] [jointLog] [info] writing output 
+
+[00m
+===========================================================================
+Job Finished
+
+Name                : salmon
+User                : ljcohen
+Partition           : med
+Nodes               : c9-49
+Cores               : 16
+State               : COMPLETED
+Submit              : 2017-01-04T13:40:20
+Start               : 2017-01-04T13:40:21
+End                 : 2017-01-04T14:42:55
+Reserved walltime   : 04:00:00
+Used walltime       : 01:02:34
+Used CPU time       : 16:04:33
+% User (Computation): 99.60%
+% System (I/O)      :  0.40%
+Mem reserved        : 32000M/node
+Max Mem used        : 5.32G (c9-49)
+Max Disk Write      : 11.00M (c9-49)
+Max Disk Read       : 99.52G (c9-49)
