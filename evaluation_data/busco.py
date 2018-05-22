@@ -31,6 +31,10 @@ def parse_busco_stats(busco_filename,sample):
         busco_data=pd.DataFrame.from_dict(busco_dict,orient='index')
         busco_data.columns=["Complete","Complete/Single-Copy","Complete/Duplicated","Fragmented","Missing","Total"]
         busco_data['Complete_BUSCO_perc']=busco_data['Complete']/busco_data['Total']
+        busco_data['CompleteSingleCopy_perc']=busco_data['Complete/Single-Copy']/busco_data['Total']
+        busco_data['CompleteDuplicated_perc']=busco_data["Complete/Duplicated"]/busco_data['Total']
+        busco_data['Fragmented_perc']=busco_data['Fragmented']/busco_data['Total']
+        busco_data['Missing_perc']=busco_data['Missing']/busco_data['Total']
         return busco_data
 
 def build_DataFrame(data_frame,transrate_data):
@@ -52,7 +56,7 @@ def execute(data_frame,busco_dir,species,basedir):
         return data_frame
 
 data_frame=pd.DataFrame()
-basedir = "/home/ljcohen/osmotic_killifish/euk_busco/"
+basedir = "/home/ljcohen/osmotic_killifish/metazoa_busco/"
 listofdirs=os.listdir(basedir)
 print(listofdirs)
 for busco_dir in listofdirs:
@@ -61,5 +65,5 @@ for busco_dir in listofdirs:
     print(species)
     data_frame=execute(data_frame,busco_dir,species,basedir)
 
-data_frame.to_csv("busco_scores_v3_euk.csv")
+data_frame.to_csv("busco_scores_v3_met.csv")
 print("BUSCO stats written.")                     
