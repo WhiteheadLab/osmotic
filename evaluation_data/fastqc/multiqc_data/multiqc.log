@@ -1,0 +1,349 @@
+[2018-05-21 18:39:00,304] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/ljcohen/anaconda2/envs/py3.dammit/lib/python3.5/site-packages/multiqc_config.yaml
+[2018-05-21 18:39:00,305] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/ljcohen/.multiqc_config.yaml
+[2018-05-21 18:39:00,305] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2018-05-21 18:39:00,306] multiqc                                            [DEBUG  ]  Command used: /home/ljcohen/anaconda2/envs/py3.dammit/bin/multiqc .
+[2018-05-21 18:39:01,504] multiqc                                            [DEBUG  ]  Latest MultiQC version is v1.5
+[2018-05-21 18:39:01,505] multiqc                                            [INFO   ]  This is MultiQC v1.5
+[2018-05-21 18:39:01,505] multiqc                                            [DEBUG  ]  Command     : /home/ljcohen/anaconda2/envs/py3.dammit/bin/multiqc .
+[2018-05-21 18:39:01,505] multiqc                                            [DEBUG  ]  Working dir : /home/ljcohen/osmotic/evaluation_data/fastqc
+[2018-05-21 18:39:01,505] multiqc                                            [INFO   ]  Template    : default
+[2018-05-21 18:39:01,505] multiqc                                            [INFO   ]  Searching '.'
+[2018-05-21 18:39:01,506] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, conpair, peddy, methylQA, qualimap, preseq, quast, qorts, rna_seqc, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, dedup, picard, prokka, samblaster, samtools, bamtools, jellyfish, vcftools, bbmap, bismark, hicexplorer, hicup, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, trimmomatic, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastqc, clusterflow, bcl2fastq, interop
+[2018-05-21 18:39:01,506] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmp_u5dg3m4
+[2018-05-21 18:39:02,004] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_FW_3_R1_fastqc.html
+[2018-05-21 18:39:02,035] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_BW_2_R1_fastqc.html
+[2018-05-21 18:39:02,131] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_BW_1_R1_fastqc.html
+[2018-05-21 18:39:02,184] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_sciadicus_NA_FW_2_R1_fastqc.html
+[2018-05-21 18:39:02,205] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_BW_3_R2_fastqc.html
+[2018-05-21 18:39:02,258] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_catanatus_NA_BW_2_R2_fastqc.html
+[2018-05-21 18:39:02,344] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_BW_3_R2_fastqc.html
+[2018-05-21 18:39:02,391] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_parvapinis_NA_FW_3_R2_fastqc.html
+[2018-05-21 18:39:02,413] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_chrysotus_NA_BW_1_R2_fastqc.html
+[2018-05-21 18:39:02,506] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_BW_2_R2_fastqc.html
+[2018-05-21 18:39:02,534] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_FW_2_R1_fastqc.html
+[2018-05-21 18:39:02,624] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_diaphanus_NA_FW_3_R1_fastqc.html
+[2018-05-21 18:39:02,690] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_FW_1_R1_fastqc.html
+[2018-05-21 18:39:02,754] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_BW_3_R2_fastqc.html
+[2018-05-21 18:39:02,775] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_parvapinis_NA_FW_1_R1_fastqc.html
+[2018-05-21 18:39:02,832] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_parvapinis_NA_BW_3_R1_fastqc.html
+[2018-05-21 18:39:02,911] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_transfer_3_R2_fastqc.html
+[2018-05-21 18:39:02,975] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_BW_3_R2_fastqc.html
+[2018-05-21 18:39:03,025] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_sciadicus_NA_BW_1_R1_fastqc.html
+[2018-05-21 18:39:03,084] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_catanatus_NA_FW_1_R2_fastqc.html
+[2018-05-21 18:39:03,147] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_BW_2_R2_fastqc.html
+[2018-05-21 18:39:03,178] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_diaphanus_NA_BW_1_R1_fastqc.html
+[2018-05-21 18:39:03,265] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_BW_1_R2_fastqc.html
+[2018-05-21 18:39:03,340] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_BW_1_R2_fastqc.html
+[2018-05-21 18:39:03,399] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_chrysotus_NA_transfer_1_R1_fastqc.html
+[2018-05-21 18:39:03,464] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_transfer_3_R1_fastqc.html
+[2018-05-21 18:39:03,526] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_FW_2_R2_fastqc.html
+[2018-05-21 18:39:03,590] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_olivaceous_NA_BW_1_R1_fastqc.html
+[2018-05-21 18:39:03,618] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_FW_1_R1_fastqc.html
+[2018-05-21 18:39:03,676] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_parvapinis_NA_BW_1_R1_fastqc.html
+[2018-05-21 18:39:03,772] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_FW_2_R2_fastqc.html
+[2018-05-21 18:39:03,833] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_FW_2_R1_fastqc.html
+[2018-05-21 18:39:03,863] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_FW_2_R1_fastqc.html
+[2018-05-21 18:39:03,929] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_catanatus_NA_BW_1_R1_fastqc.html
+[2018-05-21 18:39:03,995] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_zebrinus_NA_FW_2_R2_fastqc.html
+[2018-05-21 18:39:04,085] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_FW_2_R1_fastqc.html
+[2018-05-21 18:39:04,145] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_olivaceous_NA_BW_3_R1_fastqc.html
+[2018-05-21 18:39:04,212] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_transfer_1_R1_fastqc.html
+[2018-05-21 18:39:04,270] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_FW_3_R1_fastqc.html
+[2018-05-21 18:39:04,336] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_BW_2_R2_fastqc.html
+[2018-05-21 18:39:04,398] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_diaphanus_NA_FW_2_R1_fastqc.html
+[2018-05-21 18:39:04,426] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_transfer_2_R2_fastqc.html
+[2018-05-21 18:39:04,510] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_FW_1_R1_fastqc.html
+[2018-05-21 18:39:04,571] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_transfer_2_R1_fastqc.html
+[2018-05-21 18:39:04,628] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_FW_1_R1_fastqc.html
+[2018-05-21 18:39:04,685] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_FW_2_R2_fastqc.html
+[2018-05-21 18:39:04,741] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_parvapinis_NA_BW_3_R2_fastqc.html
+[2018-05-21 18:39:04,798] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_BW_2_R1_fastqc.html
+[2018-05-21 18:39:04,851] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_BW_1_R2_fastqc.html
+[2018-05-21 18:39:04,908] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_FW_1_R2_fastqc.html
+[2018-05-21 18:39:04,963] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_catanatus_NA_BW_3_R1_fastqc.html
+[2018-05-21 18:39:05,027] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_sciadicus_NA_transfer_1_R1_fastqc.html
+[2018-05-21 18:39:05,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_transfer_2_R2_fastqc.html
+[2018-05-21 18:39:05,133] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_zebrinus_NA_BW_2_R2_fastqc.html
+[2018-05-21 18:39:05,199] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_transfer_3_R1_fastqc.html
+[2018-05-21 18:39:05,253] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_transfer_1_R1_fastqc.html
+[2018-05-21 18:39:05,276] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_BW_3_R1_fastqc.html
+[2018-05-21 18:39:05,329] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_FW_3_R2_fastqc.html
+[2018-05-21 18:39:05,408] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_FW_3_R2_fastqc.html
+[2018-05-21 18:39:05,461] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_catanatus_NA_FW_2_R1_fastqc.html
+[2018-05-21 18:39:05,506] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_transfer_2_R2_fastqc.html
+[2018-05-21 18:39:05,537] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_transfer_3_R2_fastqc.html
+[2018-05-21 18:39:05,608] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_olivaceous_NA_FW_2_R2_fastqc.html
+[2018-05-21 18:39:05,702] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_BW_1_R1_fastqc.html
+[2018-05-21 18:39:05,755] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_transfer_1_R1_fastqc.html
+[2018-05-21 18:39:05,815] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_chrysotus_NA_FW_1_R1_fastqc.html
+[2018-05-21 18:39:05,846] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_olivaceous_NA_transfer_1_R1_fastqc.html
+[2018-05-21 18:39:05,901] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_transfer_2_R1_fastqc.html
+[2018-05-21 18:39:05,974] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_olivaceous_NA_BW_1_R2_fastqc.html
+[2018-05-21 18:39:06,029] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_BW_2_R2_fastqc.html
+[2018-05-21 18:39:06,092] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_sciadicus_NA_transfer_1_R2_fastqc.html
+[2018-05-21 18:39:06,151] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notti_NA_FW_1_R2_fastqc.html
+[2018-05-21 18:39:06,205] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_transfer_3_R2_fastqc.html
+[2018-05-21 18:39:06,257] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_transfer_2_R2_fastqc.html
+[2018-05-21 18:39:06,289] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_sciadicus_NA_BW_2_R1_fastqc.html
+[2018-05-21 18:39:06,382] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_FW_1_R2_fastqc.html
+[2018-05-21 18:39:06,414] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_transfer_2_R1_fastqc.html
+[2018-05-21 18:39:06,510] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_transfer_2_R2_fastqc.html
+[2018-05-21 18:39:06,570] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_FW_3_R2_fastqc.html
+[2018-05-21 18:39:06,601] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_FW_3_R2_fastqc.html
+[2018-05-21 18:39:06,682] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_FW_2_R1_fastqc.html
+[2018-05-21 18:39:06,713] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_BW_2_R2_fastqc.html
+[2018-05-21 18:39:06,805] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_sciadicus_NA_FW_1_R1_fastqc.html
+[2018-05-21 18:39:06,864] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_FW_1_R2_fastqc.html
+[2018-05-21 18:39:06,895] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_FW_3_R2_fastqc.html
+[2018-05-21 18:39:06,950] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_transfer_3_R1_fastqc.html
+[2018-05-21 18:39:07,006] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_BW_2_R2_fastqc.html
+[2018-05-21 18:39:07,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_FW_3_R2_fastqc.html
+[2018-05-21 18:39:07,169] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_catanatus_NA_BW_1_R2_fastqc.html
+[2018-05-21 18:39:07,196] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_FW_2_R1_fastqc.html
+[2018-05-21 18:39:07,263] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_FW_2_R1_fastqc.html
+[2018-05-21 18:39:07,357] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_FW_3_R1_fastqc.html
+[2018-05-21 18:39:07,386] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_BW_3_R1_fastqc.html
+[2018-05-21 18:39:07,474] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_parvapinis_NA_BW_2_R1_fastqc.html
+[2018-05-21 18:39:07,518] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_BW_1_R2_fastqc.html
+[2018-05-21 18:39:07,573] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_transfer_2_R1_fastqc.html
+[2018-05-21 18:39:07,628] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_olivaceous_NA_transfer_1_R2_fastqc.html
+[2018-05-21 18:39:07,695] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_transfer_2_R1_fastqc.html
+[2018-05-21 18:39:07,751] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_transfer_2_R2_fastqc.html
+[2018-05-21 18:39:07,807] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_chrysotus_NA_BW_3_R2_fastqc.html
+[2018-05-21 18:39:07,861] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_BW_2_R2_fastqc.html
+[2018-05-21 18:39:07,923] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_diaphanus_NA_FW_1_R1_fastqc.html
+[2018-05-21 18:39:07,971] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_FW_2_R2_fastqc.html
+[2018-05-21 18:39:08,027] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_transfer_1_R2_fastqc.html
+[2018-05-21 18:39:08,073] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notti_NA_FW_1_R1_fastqc.html
+[2018-05-21 18:39:08,129] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_FW_2_R2_fastqc.html
+[2018-05-21 18:39:08,149] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_diaphanus_NA_transfer_2_R1_fastqc.html
+[2018-05-21 18:39:08,208] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_FW_2_R2_fastqc.html
+[2018-05-21 18:39:08,275] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_FW_3_R2_fastqc.html
+[2018-05-21 18:39:08,329] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_sciadicus_NA_BW_2_R2_fastqc.html
+[2018-05-21 18:39:08,350] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_zebrinus_NA_FW_1_R2_fastqc.html
+[2018-05-21 18:39:08,415] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_transfer_2_R2_fastqc.html
+[2018-05-21 18:39:08,441] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_sciadicus_NA_FW_2_R2_fastqc.html
+[2018-05-21 18:39:08,495] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_BW_2_R1_fastqc.html
+[2018-05-21 18:39:08,567] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_BW_1_R1_fastqc.html
+[2018-05-21 18:39:08,598] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_olivaceous_NA_BW_2_R1_fastqc.html
+[2018-05-21 18:39:08,685] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_FW_3_R1_fastqc.html
+[2018-05-21 18:39:08,738] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_transfer_1_R1_fastqc.html
+[2018-05-21 18:39:08,769] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_catanatus_NA_BW_2_R1_fastqc.html
+[2018-05-21 18:39:08,856] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_FW_3_R2_fastqc.html
+[2018-05-21 18:39:08,881] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_BW_3_R1_fastqc.html
+[2018-05-21 18:39:08,936] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_BW_3_R2_fastqc.html
+[2018-05-21 18:39:08,993] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_parvapinis_NA_transfer_2_R1_fastqc.html
+[2018-05-21 18:39:09,090] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_transfer_3_R1_fastqc.html
+[2018-05-21 18:39:09,145] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_transfer_2_R2_fastqc.html
+[2018-05-21 18:39:09,188] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_FW_3_R1_fastqc.html
+[2018-05-21 18:39:09,241] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_olivaceous_NA_BW_2_R2_fastqc.html
+[2018-05-21 18:39:09,283] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notti_NA_FW_2_R2_fastqc.html
+[2018-05-21 18:39:09,310] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_FW_2_R1_fastqc.html
+[2018-05-21 18:39:09,385] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_diaphanus_NA_BW_1_R2_fastqc.html
+[2018-05-21 18:39:09,442] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_FW_1_R1_fastqc.html
+[2018-05-21 18:39:09,488] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_FW_2_R2_fastqc.html
+[2018-05-21 18:39:09,518] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_diaphanus_NA_transfer_2_R2_fastqc.html
+[2018-05-21 18:39:09,563] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_chrysotus_NA_FW_3_R2_fastqc.html
+[2018-05-21 18:39:09,657] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_BW_1_R1_fastqc.html
+[2018-05-21 18:39:09,704] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_transfer_1_R2_fastqc.html
+[2018-05-21 18:39:09,749] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_chrysotus_NA_BW_3_R1_fastqc.html
+[2018-05-21 18:39:09,792] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_transfer_1_R2_fastqc.html
+[2018-05-21 18:39:09,840] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_diaphanus_NA_FW_1_R2_fastqc.html
+[2018-05-21 18:39:09,888] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_BW_3_R2_fastqc.html
+[2018-05-21 18:39:09,916] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_olivaceous_NA_FW_3_R2_fastqc.html
+[2018-05-21 18:39:09,961] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_transfer_2_R1_fastqc.html
+[2018-05-21 18:39:10,053] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_chrysotus_NA_transfer_1_R2_fastqc.html
+[2018-05-21 18:39:10,099] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_transfer_2_R1_fastqc.html
+[2018-05-21 18:39:10,150] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_transfer_1_R1_fastqc.html
+[2018-05-21 18:39:10,196] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_diaphanus_NA_FW_3_R2_fastqc.html
+[2018-05-21 18:39:10,249] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_FW_1_R2_fastqc.html
+[2018-05-21 18:39:10,295] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_transfer_2_R2_fastqc.html
+[2018-05-21 18:39:10,323] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_transfer_1_R2_fastqc.html
+[2018-05-21 18:39:10,370] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_olivaceous_NA_transfer_2_R1_fastqc.html
+[2018-05-21 18:39:10,451] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_zebrinus_NA_BW_1_R2_fastqc.html
+[2018-05-21 18:39:10,495] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_FW_3_R1_fastqc.html
+[2018-05-21 18:39:10,520] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_catanatus_NA_FW_2_R2_fastqc.html
+[2018-05-21 18:39:10,564] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_sciadicus_NA_FW_1_R2_fastqc.html
+[2018-05-21 18:39:10,641] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_sciadicus_NA_BW_1_R2_fastqc.html
+[2018-05-21 18:39:10,660] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_chrysotus_NA_transfer_2_R1_fastqc.html
+[2018-05-21 18:39:10,731] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_transfer_2_R1_fastqc.html
+[2018-05-21 18:39:10,794] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_catanatus_NA_transfer_1_R1_fastqc.html
+[2018-05-21 18:39:10,854] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_BW_1_R1_fastqc.html
+[2018-05-21 18:39:10,898] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_FW_3_R1_fastqc.html
+[2018-05-21 18:39:10,948] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_FW_1_R2_fastqc.html
+[2018-05-21 18:39:10,997] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_diaphanus_NA_BW_2_R2_fastqc.html
+[2018-05-21 18:39:11,048] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_chrysotus_NA_BW_2_R2_fastqc.html
+[2018-05-21 18:39:11,092] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_transfer_3_R2_fastqc.html
+[2018-05-21 18:39:11,120] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_BW_3_R1_fastqc.html
+[2018-05-21 18:39:11,197] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_BW_1_R1_fastqc.html
+[2018-05-21 18:39:11,223] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_chrysotus_NA_FW_1_R2_fastqc.html
+[2018-05-21 18:39:11,313] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_BW_2_R1_fastqc.html
+[2018-05-21 18:39:11,371] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_FW_1_R1_fastqc.html
+[2018-05-21 18:39:11,426] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_transfer_1_R2_fastqc.html
+[2018-05-21 18:39:11,486] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_diaphanus_NA_FW_2_R2_fastqc.html
+[2018-05-21 18:39:11,519] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_olivaceous_NA_FW_1_R2_fastqc.html
+[2018-05-21 18:39:11,575] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_FW_2_R2_fastqc.html
+[2018-05-21 18:39:11,659] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_olivaceous_NA_BW_3_R2_fastqc.html
+[2018-05-21 18:39:11,720] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_transfer_3_R2_fastqc.html
+[2018-05-21 18:39:11,770] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_BW_3_R2_fastqc.html
+[2018-05-21 18:39:11,817] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_olivaceous_NA_FW_1_R1_fastqc.html
+[2018-05-21 18:39:11,848] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_transfer_1_R1_fastqc.html
+[2018-05-21 18:39:11,932] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_transfer_1_R2_fastqc.html
+[2018-05-21 18:39:11,995] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_FW_3_R1_fastqc.html
+[2018-05-21 18:39:12,040] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_BW_2_R1_fastqc.html
+[2018-05-21 18:39:12,087] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_zebrinus_NA_BW_2_R1_fastqc.html
+[2018-05-21 18:39:12,134] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_transfer_3_R2_fastqc.html
+[2018-05-21 18:39:12,166] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_zebrinus_NA_BW_1_R1_fastqc.html
+[2018-05-21 18:39:12,260] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_BW_1_R1_fastqc.html
+[2018-05-21 18:39:12,318] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_BW_1_R2_fastqc.html
+[2018-05-21 18:39:12,351] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_FW_3_R1_fastqc.html
+[2018-05-21 18:39:12,406] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_BW_2_R1_fastqc.html
+[2018-05-21 18:39:12,498] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_diaphanus_NA_transfer_1_R1_fastqc.html
+[2018-05-21 18:39:12,529] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_transfer_3_R2_fastqc.html
+[2018-05-21 18:39:12,601] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_BW_3_R1_fastqc.html
+[2018-05-21 18:39:12,647] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_parvapinis_NA_transfer_1_R1_fastqc.html
+[2018-05-21 18:39:12,693] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_olivaceous_NA_transfer_2_R2_fastqc.html
+[2018-05-21 18:39:12,715] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_transfer_3_R1_fastqc.html
+[2018-05-21 18:39:12,784] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_FW_2_R2_fastqc.html
+[2018-05-21 18:39:12,845] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_BW_3_R1_fastqc.html
+[2018-05-21 18:39:12,901] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_chrysotus_NA_BW_2_R1_fastqc.html
+[2018-05-21 18:39:12,953] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notti_NA_FW_2_R1_fastqc.html
+[2018-05-21 18:39:13,007] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_chrysotus_NA_BW_1_R1_fastqc.html
+[2018-05-21 18:39:13,038] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_BW_3_R2_fastqc.html
+[2018-05-21 18:39:13,115] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_transfer_3_R1_fastqc.html
+[2018-05-21 18:39:13,143] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_FW_1_R1_fastqc.html
+[2018-05-21 18:39:13,192] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_catanatus_NA_transfer_1_R2_fastqc.html
+[2018-05-21 18:39:13,283] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_olivaceous_NA_FW_2_R1_fastqc.html
+[2018-05-21 18:39:13,341] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_FW_1_R2_fastqc.html
+[2018-05-21 18:39:13,399] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_chrysotus_NA_FW_2_R2_fastqc.html
+[2018-05-21 18:39:13,423] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_parvapinis_NA_FW_2_R1_fastqc.html
+[2018-05-21 18:39:13,515] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_FW_1_R2_fastqc.html
+[2018-05-21 18:39:13,561] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_transfer_1_R1_fastqc.html
+[2018-05-21 18:39:13,585] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_zebrinus_NA_FW_2_R1_fastqc.html
+[2018-05-21 18:39:13,653] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_zebrinus_NA_FW_1_R1_fastqc.html
+[2018-05-21 18:39:13,703] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_parvapinis_NA_FW_1_R2_fastqc.html
+[2018-05-21 18:39:13,758] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_transfer_1_R2_fastqc.html
+[2018-05-21 18:39:13,781] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_FW_1_R1_fastqc.html
+[2018-05-21 18:39:13,859] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_catanatus_NA_transfer_2_R2_fastqc.html
+[2018-05-21 18:39:13,891] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_BW_3_R1_fastqc.html
+[2018-05-21 18:39:13,950] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_parvapinis_NA_transfer_1_R2_fastqc.html
+[2018-05-21 18:39:14,008] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_BW_1_R2_fastqc.html
+[2018-05-21 18:39:14,104] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_BW_1_R2_fastqc.html
+[2018-05-21 18:39:14,126] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_catanatus_NA_BW_3_R2_fastqc.html
+[2018-05-21 18:39:14,208] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_chrysotus_NA_FW_2_R1_fastqc.html
+[2018-05-21 18:39:14,260] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_transfer_3_R1_fastqc.html
+[2018-05-21 18:39:14,315] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_transfer_1_R2_fastqc.html
+[2018-05-21 18:39:14,359] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_BW_1_R1_fastqc.html
+[2018-05-21 18:39:14,411] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_transfer_1_R1_fastqc.html
+[2018-05-21 18:39:14,429] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_parvapinis_NA_BW_1_R2_fastqc.html
+[2018-05-21 18:39:14,498] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_FW_3_R2_fastqc.html
+[2018-05-21 18:39:14,526] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_chrysotus_NA_transfer_2_R2_fastqc.html
+[2018-05-21 18:39:14,610] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_transfer_1_R1_fastqc.html
+[2018-05-21 18:39:14,640] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_diaphanus_NA_transfer_1_R2_fastqc.html
+[2018-05-21 18:39:14,704] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPP_BW_1_R2_fastqc.html
+[2018-05-21 18:39:14,736] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_catanatus_NA_FW_1_R1_fastqc.html
+[2018-05-21 18:39:14,777] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_rathbuni_NA_BW_3_R1_fastqc.html
+[2018-05-21 18:39:14,852] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_BW_1_R1_fastqc.html
+[2018-05-21 18:39:14,896] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_transfer_3_R2_fastqc.html
+[2018-05-21 18:39:14,943] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_BW_2_R1_fastqc.html
+[2018-05-21 18:39:14,982] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_transfer_3_R2_fastqc.html
+[2018-05-21 18:39:15,028] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_BW_3_R1_fastqc.html
+[2018-05-21 18:39:15,045] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_grandis_NA_transfer_1_R2_fastqc.html
+[2018-05-21 18:39:15,091] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_BW_2_R2_fastqc.html
+[2018-05-21 18:39:15,169] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_FW_1_R2_fastqc.html
+[2018-05-21 18:39:15,221] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_catanatus_NA_transfer_2_R1_fastqc.html
+[2018-05-21 18:39:15,269] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_olivaceous_NA_FW_3_R1_fastqc.html
+[2018-05-21 18:39:15,321] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_BW_2_R2_fastqc.html
+[2018-05-21 18:39:15,370] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_similis_NA_FW_1_R1_fastqc.html
+[2018-05-21 18:39:15,421] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_goodei_NA_BW_2_R1_fastqc.html
+[2018-05-21 18:39:15,485] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_BW_2_R1_fastqc.html
+[2018-05-21 18:39:15,503] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_parvapinis_NA_FW_2_R2_fastqc.html
+[2018-05-21 18:39:15,573] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_BW_3_R2_fastqc.html
+[2018-05-21 18:39:15,592] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_parvapinis_NA_transfer_2_R2_fastqc.html
+[2018-05-21 18:39:15,636] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: A_xenica_NA_BW_1_R2_fastqc.html
+[2018-05-21 18:39:15,710] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_transfer_2_R1_fastqc.html
+[2018-05-21 18:39:15,757] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_parvapinis_NA_BW_2_R2_fastqc.html
+[2018-05-21 18:39:15,774] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_parvapinis_NA_FW_3_R1_fastqc.html
+[2018-05-21 18:39:15,844] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_FW_2_R1_fastqc.html
+[2018-05-21 18:39:15,861] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_notatus_NA_transfer_3_R1_fastqc.html
+[2018-05-21 18:39:15,923] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_chrysotus_NA_FW_3_R1_fastqc.html
+[2018-05-21 18:39:15,998] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_diaphanus_NA_BW_2_R1_fastqc.html
+[2018-05-21 18:39:16,026] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: L_parva_NA_FW_1_R2_fastqc.html
+[2018-05-21 18:39:16,086] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: F_heteroclitus_MDPL_transfer_3_R1_fastqc.html
+[2018-05-21 18:39:16,953] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2018-05-21 18:39:16,961] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2018-05-21 18:39:16,968] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2018-05-21 18:39:16,976] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2018-05-21 18:39:16,985] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2018-05-21 18:39:16,993] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2018-05-21 18:39:17,000] multiqc                                            [DEBUG  ]  No samples found: quast
+[2018-05-21 18:39:17,007] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2018-05-21 18:39:17,015] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2018-05-21 18:39:17,021] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2018-05-21 18:39:17,035] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2018-05-21 18:39:17,042] multiqc                                            [DEBUG  ]  No samples found: busco
+[2018-05-21 18:39:17,048] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2018-05-21 18:39:17,055] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2018-05-21 18:39:17,061] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2018-05-21 18:39:17,072] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2018-05-21 18:39:17,079] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2018-05-21 18:39:17,085] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2018-05-21 18:39:17,094] multiqc                                            [DEBUG  ]  No samples found: homer
+[2018-05-21 18:39:17,100] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2018-05-21 18:39:17,108] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2018-05-21 18:39:17,114] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2018-05-21 18:39:17,134] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2018-05-21 18:39:17,142] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2018-05-21 18:39:17,150] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2018-05-21 18:39:17,157] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2018-05-21 18:39:17,164] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2018-05-21 18:39:17,180] multiqc                                            [DEBUG  ]  No samples found: picard
+[2018-05-21 18:39:17,187] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2018-05-21 18:39:17,193] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2018-05-21 18:39:17,204] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2018-05-21 18:39:17,212] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2018-05-21 18:39:17,219] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2018-05-21 18:39:17,230] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2018-05-21 18:39:17,246] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2018-05-21 18:39:17,253] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2018-05-21 18:39:17,260] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2018-05-21 18:39:17,266] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2018-05-21 18:39:17,272] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2018-05-21 18:39:17,280] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2018-05-21 18:39:17,288] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2018-05-21 18:39:17,295] multiqc                                            [DEBUG  ]  No samples found: star
+[2018-05-21 18:39:17,301] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2018-05-21 18:39:17,308] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2018-05-21 18:39:17,314] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2018-05-21 18:39:17,321] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2018-05-21 18:39:17,328] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2018-05-21 18:39:17,334] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2018-05-21 18:39:17,341] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2018-05-21 18:39:17,348] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2018-05-21 18:39:17,354] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2018-05-21 18:39:17,361] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2018-05-21 18:39:17,368] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2018-05-21 18:39:17,375] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2018-05-21 18:39:17,381] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2018-05-21 18:39:17,387] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2018-05-21 18:39:17,393] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2018-05-21 18:39:19,138] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 260 reports
+[2018-05-21 18:39:29,385] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  adapter_content not found in FastQC reports
+[2018-05-21 18:39:29,393] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2018-05-21 18:39:29,398] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2018-05-21 18:39:29,404] multiqc                                            [DEBUG  ]  No samples found: interop
+[2018-05-21 18:39:29,676] multiqc                                            [INFO   ]  Compressing plot data
+[2018-05-21 18:39:29,700] multiqc                                            [INFO   ]  Report      : multiqc_report.html
+[2018-05-21 18:39:29,700] multiqc                                            [INFO   ]  Data        : multiqc_data
+[2018-05-21 18:39:29,712] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmp_u5dg3m4/multiqc_data/multiqc_fastqc.txt' to '/home/ljcohen/osmotic/evaluation_data/fastqc/multiqc_data'
+[2018-05-21 18:39:29,715] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmp_u5dg3m4/multiqc_data/mqc_fastqc_per_base_n_content_plot_1.txt' to '/home/ljcohen/osmotic/evaluation_data/fastqc/multiqc_data'
+[2018-05-21 18:39:29,718] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmp_u5dg3m4/multiqc_data/mqc_fastqc_per_sequence_gc_content_plot_Counts.txt' to '/home/ljcohen/osmotic/evaluation_data/fastqc/multiqc_data'
+[2018-05-21 18:39:29,721] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmp_u5dg3m4/multiqc_data/multiqc_sources.txt' to '/home/ljcohen/osmotic/evaluation_data/fastqc/multiqc_data'
+[2018-05-21 18:39:29,723] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmp_u5dg3m4/multiqc_data/mqc_fastqc_per_sequence_quality_scores_plot_1.txt' to '/home/ljcohen/osmotic/evaluation_data/fastqc/multiqc_data'
+[2018-05-21 18:39:29,725] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmp_u5dg3m4/multiqc_data/multiqc_general_stats.txt' to '/home/ljcohen/osmotic/evaluation_data/fastqc/multiqc_data'
+[2018-05-21 18:39:29,726] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmp_u5dg3m4/multiqc_data/mqc_fastqc_per_base_sequence_quality_plot_1.txt' to '/home/ljcohen/osmotic/evaluation_data/fastqc/multiqc_data'
+[2018-05-21 18:39:29,729] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmp_u5dg3m4/multiqc_data/mqc_fastqc_per_sequence_gc_content_plot_Percentages.txt' to '/home/ljcohen/osmotic/evaluation_data/fastqc/multiqc_data'
+[2018-05-21 18:39:29,733] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmp_u5dg3m4/multiqc_data/multiqc_data.json' to '/home/ljcohen/osmotic/evaluation_data/fastqc/multiqc_data'
+[2018-05-21 18:39:29,736] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmp_u5dg3m4/multiqc_data/mqc_fastqc_overrepresented_sequencesi_plot_1.txt' to '/home/ljcohen/osmotic/evaluation_data/fastqc/multiqc_data'
+[2018-05-21 18:39:29,737] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmp_u5dg3m4/multiqc_data/mqc_fastqc_sequence_duplication_levels_plot_1.txt' to '/home/ljcohen/osmotic/evaluation_data/fastqc/multiqc_data'
+[2018-05-21 18:39:30,006] multiqc                                            [INFO   ]  MultiQC complete
