@@ -52,13 +52,14 @@ def execute(data_frame,busco_dir,species,basedir):
         return data_frame
 
 data_frame=pd.DataFrame()
-basedir = "/home/ljcohen/osmotic_killifish/metazoa_busco/"
+basedir = "/home/ljcohen/osmotic_killifish/euk_busco/"
 listofdirs=os.listdir(basedir)
 print(listofdirs)
 for busco_dir in listofdirs:
-    species = busco_dir.split(".")[0][5:]
+    print(busco_dir)
+    species = busco_dir.split(".")[0][4:]
     print(species)
     data_frame=execute(data_frame,busco_dir,species,basedir)
 
-data_frame.to_csv("busco_scores_v3_met.csv")
+data_frame.to_csv("busco_scores_v3_euk.csv")
 print("BUSCO stats written.")                     
