@@ -19,7 +19,7 @@ def quant_salmon(salmondir,trimdir,genus_species,trinity_fasta):
 for i in {}{}*trim_1P.fq
 do
 	BASE=$(basename $i .trim_1P.fq)
-        salmon quant -i {} --libType IU -1 {}$BASE.trim_1P.fq -2 {}$BASE.trim_2P.fq -o $BASE.quant --dumpEq --auxDir aux
+        salmon quant -i {} --libType IU -1 {}$BASE.trim_1P.fq -2 {}$BASE.trim_2P.fq -o $BASE.quant
 done
 """.format(trimdir,genus_species,index,trimdir,trimdir)
         salmonstring=[salmon_index_string,salmon_string]
@@ -29,7 +29,7 @@ done
 
 def execute(assemblies,salmondir,assemblydir,basedir,trimdir):
         for assembly in assemblies:
-            if assembly.endswith(".dammit.fasta"):
+            if assembly.endswith(".trinity_out.Trinity.fasta"):
                         genus_species = assembly.split(".")[0]
                         print(genus_species)
                         trinity_fasta=assemblydir+assembly

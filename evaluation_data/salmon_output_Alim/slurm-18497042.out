@@ -1,0 +1,209 @@
+==========================================
+SLURM_JOB_ID = 18497042
+SLURM_NODELIST = c10-87
+==========================================
+Module slurm/16.05.8 loaded 
+Module openmpi/2.0.1 loaded 
+TEST
+Version Info: Could not resolve upgrade information in the alotted time.
+Check for upgrades manually at https://combine-lab.github.io/salmon
+### salmon (mapping-based) v0.9.1
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /home/ljcohen/reference/Austrofundulus_limnaeus }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_notti_FW_1.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_notti_FW_1.trim_2P.fq }
+### [ output ] => { F_notti_FW_1.quant }
+Logs will be written to F_notti_FW_1.quant/logs
+[2018-03-08 10:54:46.321] [jointLog] [info] parsing read library format
+[2018-03-08 10:54:46.321] [jointLog] [info] There is 1 library.
+[2018-03-08 10:54:46.423] [stderrLog] [info] Loading Suffix Array 
+[2018-03-08 10:54:46.422] [jointLog] [info] Loading Quasi index
+[2018-03-08 10:54:46.422] [jointLog] [info] Loading 32-bit quasi index
+[2018-03-08 10:54:52.154] [stderrLog] [info] Loading Transcript Info 
+[2018-03-08 10:54:53.693] [stderrLog] [info] Loading Rank-Select Bit Array
+[2018-03-08 10:54:53.903] [stderrLog] [info] There were 38491 set bits in the bit array
+[2018-03-08 10:54:53.941] [stderrLog] [info] Computing transcript lengths
+[2018-03-08 10:54:53.941] [stderrLog] [info] Waiting to finish loading hash
+[2018-03-08 10:54:58.823] [jointLog] [info] done
+[2018-03-08 10:54:58.823] [jointLog] [info] Index contained 38491 targets
+[2018-03-08 10:54:58.823] [stderrLog] [info] Done loading index
+
+
+
+
+[A[32mprocessed[31m 500000 [32mfragments[0m
+hits: 104447, hits per frag:  0.258814[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 209691, hits per frag:  0.211343[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 307708, hits per frag:  0.23694[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 411587, hits per frag:  0.217017[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 514498, hits per frag:  0.210035[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 608541, hits per frag:  0.209674[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 731646, hits per frag:  0.218924[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 815508, hits per frag:  0.205898[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 912498, hits per frag:  0.208096[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 1012340, hits per frag:  0.208517[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 1117414, hits per frag:  0.212695[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 1220565, hits per frag:  0.208136[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 1321895, hits per frag:  0.204688[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 1420146, hits per frag:  0.203653[A[32mprocessed[31m 7500000 [32mfragments[0m
+hits: 1521648, hits per frag:  0.203761[A[32mprocessed[31m 8000001 [32mfragments[0m
+hits: 1625707, hits per frag:  0.204223[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 1725528, hits per frag:  0.204447[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 1838255, hits per frag:  0.206992[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 1949820, hits per frag:  0.207321[A[32mprocessed[31m 10000000 [32mfragments[0m
+hits: 2061419, hits per frag:  0.212275[A[32mprocessed[31m 10500000 [32mfragments[0m
+hits: 2171817, hits per frag:  0.20715[A[32mprocessed[31m 11000000 [32mfragments[0m
+hits: 2283976, hits per frag:  0.210005
+
+
+
+
+
+
+
+
+
+[2018-03-08 10:58:30.785] [jointLog] [info] Computed 18357 rich equivalence classes for further processing
+[2018-03-08 10:58:30.785] [jointLog] [info] Counted 1426906 total reads in the equivalence classes 
+[2018-03-08 10:58:30.795] [jointLog] [warning] 0.000179174% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[2018-03-08 10:58:30.799] [jointLog] [warning] Only 1426906 fragments were mapped, but the number of burn-in fragments was set to 5000000.
+The effective lengths have been computed using the observed mappings.
+
+[2018-03-08 10:58:30.799] [jointLog] [info] Mapping rate = 12.7832%
+
+[2018-03-08 10:58:30.799] [jointLog] [info] finished quantifyLibrary()
+[2018-03-08 10:58:30.800] [jointLog] [info] Starting optimizer
+[2018-03-08 10:58:30.855] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2018-03-08 10:58:30.856] [jointLog] [info] iteration = 0 | max rel diff. = 55.7443
+[2018-03-08 10:58:30.970] [jointLog] [info] iteration = 100 | max rel diff. = 0.105535
+[2018-03-08 10:58:31.082] [jointLog] [info] iteration = 200 | max rel diff. = 0.0552194
+[2018-03-08 10:58:31.195] [jointLog] [info] iteration = 300 | max rel diff. = 0.0358839
+[2018-03-08 10:58:31.308] [jointLog] [info] iteration = 400 | max rel diff. = 0.0258548
+[2018-03-08 10:58:31.422] [jointLog] [info] iteration = 500 | max rel diff. = 0.0226102
+[2018-03-08 10:58:31.533] [jointLog] [info] iteration = 600 | max rel diff. = 0.0177581
+[2018-03-08 10:58:31.643] [jointLog] [info] iteration = 700 | max rel diff. = 0.0153139
+[2018-03-08 10:58:31.755] [jointLog] [info] iteration = 800 | max rel diff. = 0.0133947
+[2018-03-08 10:58:31.866] [jointLog] [info] iteration = 900 | max rel diff. = 0.0122981
+[2018-03-08 10:58:31.953] [jointLog] [info] iteration = 980 | max rel diff. = 0.00988
+[2018-03-08 10:58:31.957] [jointLog] [info] Finished optimizer
+[2018-03-08 10:58:31.957] [jointLog] [info] writing output 
+
+Version Info: Could not resolve upgrade information in the alotted time.
+Check for upgrades manually at https://combine-lab.github.io/salmon
+### salmon (mapping-based) v0.9.1
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /home/ljcohen/reference/Austrofundulus_limnaeus }
+### [ libType ] => { IU }
+### [ mates1 ] => { /home/ljcohen/osmotic_trim/F_notti_FW_2.trim_1P.fq }
+### [ mates2 ] => { /home/ljcohen/osmotic_trim/F_notti_FW_2.trim_2P.fq }
+### [ output ] => { F_notti_FW_2.quant }
+Logs will be written to F_notti_FW_2.quant/logs
+[2018-03-08 10:58:34.125] [jointLog] [info] parsing read library format
+[2018-03-08 10:58:34.125] [jointLog] [info] There is 1 library.
+[2018-03-08 10:58:34.213] [stderrLog] [info] Loading Suffix Array 
+[2018-03-08 10:58:34.212] [jointLog] [info] Loading Quasi index
+[2018-03-08 10:58:34.212] [jointLog] [info] Loading 32-bit quasi index
+[2018-03-08 10:58:34.558] [stderrLog] [info] Loading Transcript Info 
+[2018-03-08 10:58:34.650] [stderrLog] [info] Loading Rank-Select Bit Array
+[2018-03-08 10:58:34.687] [stderrLog] [info] There were 38491 set bits in the bit array
+[2018-03-08 10:58:34.716] [stderrLog] [info] Computing transcript lengths
+[2018-03-08 10:58:34.716] [stderrLog] [info] Waiting to finish loading hash
+[2018-03-08 10:58:38.449] [stderrLog] [info] Done loading index
+
+
+
+
+[2018-03-08 10:58:38.449] [jointLog] [info] done
+[2018-03-08 10:58:38.449] [jointLog] [info] Index contained 38491 targets
+[A[32mprocessed[31m 500000 [32mfragments[0m
+hits: 111864, hits per frag:  0.375302[A[32mprocessed[31m 1000000 [32mfragments[0m
+hits: 219863, hits per frag:  0.227158[A[32mprocessed[31m 1500000 [32mfragments[0m
+hits: 328119, hits per frag:  0.225786[A[32mprocessed[31m 2000000 [32mfragments[0m
+hits: 435132, hits per frag:  0.23896[A[32mprocessed[31m 2500000 [32mfragments[0m
+hits: 536696, hits per frag:  0.217628[A[32mprocessed[31m 3000000 [32mfragments[0m
+hits: 634478, hits per frag:  0.221148[A[32mprocessed[31m 3500000 [32mfragments[0m
+hits: 738514, hits per frag:  0.212978[A[32mprocessed[31m 4000000 [32mfragments[0m
+hits: 845592, hits per frag:  0.212789[A[32mprocessed[31m 4500000 [32mfragments[0m
+hits: 953104, hits per frag:  0.219138[A[32mprocessed[31m 5000000 [32mfragments[0m
+hits: 1060272, hits per frag:  0.214163[A[32mprocessed[31m 5500000 [32mfragments[0m
+hits: 1170872, hits per frag:  0.218321[A[32mprocessed[31m 6000000 [32mfragments[0m
+hits: 1279038, hits per frag:  0.218277[A[32mprocessed[31m 6500000 [32mfragments[0m
+hits: 1388439, hits per frag:  0.214973[A[32mprocessed[31m 7000000 [32mfragments[0m
+hits: 1501912, hits per frag:  0.215519[A[32mprocessed[31m 7500000 [32mfragments[0m
+hits: 1609731, hits per frag:  0.21548[A[32mprocessed[31m 8000000 [32mfragments[0m
+hits: 1734856, hits per frag:  0.218501[A[32mprocessed[31m 8500000 [32mfragments[0m
+hits: 1859997, hits per frag:  0.224631[A[32mprocessed[31m 9000000 [32mfragments[0m
+hits: 1978387, hits per frag:  0.222385[A[32mprocessed[31m 9500000 [32mfragments[0m
+hits: 2092969, hits per frag:  0.22359[A[32mprocessed[31m 10000000 [32mfragments[0m
+hits: 2208547, hits per frag:  0.222896[A[32mprocessed[31m 10500000 [32mfragments[0m
+hits: 2325850, hits per frag:  0.223646[A[32mprocessed[31m 11000000 [32mfragments[0m
+hits: 2437560, hits per frag:  0.223424[A[32mprocessed[31m 11500000 [32mfragments[0m
+hits: 2549848, hits per frag:  0.22223
+
+
+
+
+
+
+
+
+
+[2018-03-08 11:01:52.111] [jointLog] [info] Computed 18466 rich equivalence classes for further processing
+[2018-03-08 11:01:52.111] [jointLog] [info] Counted 1641414 total reads in the equivalence classes 
+[2018-03-08 11:01:52.121] [jointLog] [warning] 0.000584994% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 25.
+
+
+[2018-03-08 11:01:52.125] [jointLog] [warning] Only 1641414 fragments were mapped, but the number of burn-in fragments was set to 5000000.
+The effective lengths have been computed using the observed mappings.
+
+[2018-03-08 11:01:52.125] [jointLog] [info] Mapping rate = 13.7174%
+
+[2018-03-08 11:01:52.125] [jointLog] [info] finished quantifyLibrary()
+[2018-03-08 11:01:52.127] [jointLog] [info] Starting optimizer
+[2018-03-08 11:01:52.164] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2018-03-08 11:01:52.165] [jointLog] [info] iteration = 0 | max rel diff. = 61.067
+[2018-03-08 11:01:52.271] [jointLog] [info] iteration = 100 | max rel diff. = 0.118771
+[2018-03-08 11:01:52.386] [jointLog] [info] iteration = 200 | max rel diff. = 0.0592583
+[2018-03-08 11:01:52.499] [jointLog] [info] iteration = 300 | max rel diff. = 0.0393165
+[2018-03-08 11:01:52.612] [jointLog] [info] iteration = 400 | max rel diff. = 0.0278569
+[2018-03-08 11:01:52.724] [jointLog] [info] iteration = 500 | max rel diff. = 0.022121
+[2018-03-08 11:01:52.840] [jointLog] [info] iteration = 600 | max rel diff. = 0.0183096
+[2018-03-08 11:01:52.954] [jointLog] [info] iteration = 700 | max rel diff. = 0.014633
+[2018-03-08 11:01:53.068] [jointLog] [info] iteration = 800 | max rel diff. = 0.0142834
+[2018-03-08 11:01:53.182] [jointLog] [info] iteration = 900 | max rel diff. = 0.0123129
+[2018-03-08 11:01:53.296] [jointLog] [info] iteration = 1000 | max rel diff. = 0.0109688
+[2018-03-08 11:01:53.331] [jointLog] [info] iteration = 1032 | max rel diff. = 0.0098991
+[2018-03-08 11:01:53.338] [jointLog] [info] Finished optimizer
+[2018-03-08 11:01:53.338] [jointLog] [info] writing output 
+
+
+===========================================================================
+Job Finished
+
+Name                : salmon
+User                : ljcohen
+Partition           : med
+Nodes               : c10-87
+Cores               : 8
+State               : COMPLETED
+Submit              : 2018-03-08T10:54:45
+Start               : 2018-03-08T10:54:45
+End                 : 2018-03-08T11:01:54
+Reserved walltime   : 08:00:00
+Used walltime       : 00:07:09
+Used CPU time       : 00:46:04
+% User (Computation): 97.56%
+% System (I/O)      :  2.44%
+Mem reserved        : 32000M/node
+Max Mem used        : 2.22G (c10-87)
+Max Disk Write      : 1.00M (c10-87)
+Max Disk Read       : 14.27G (c10-87)
