@@ -56,14 +56,15 @@ def execute(data_frame,busco_dir,species,basedir):
         return data_frame
 
 data_frame=pd.DataFrame()
-basedir = "/home/ljcohen/osmotic_killifish/euk_busco/"
+basedir = "/mnt/scratch/ljcohen/osmotic_killifish/busco/"
 listofdirs=os.listdir(basedir)
 print(listofdirs)
 for busco_dir in listofdirs:
-    print(busco_dir)
-    species = busco_dir.split(".")[0][4:]
-    print(species)
-    data_frame=execute(data_frame,busco_dir,species,basedir)
+    if busco_dir.startswith("run_"):
+        print(busco_dir)
+        species = busco_dir.split(".")[0][4:]
+        print(species)
+        data_frame=execute(data_frame,busco_dir,species,basedir)
 
-data_frame.to_csv("busco_scores_v3_euk.csv")
+data_frame.to_csv("busco_scores_v3_actino.csv")
 print("BUSCO stats written.")                     
