@@ -79,8 +79,8 @@ def sbatch_file(basedir,process_name,module_name_list,filename,process_string):
         sbatch_file.write("#SBATCH -N 1"+"\n")
         sbatch_file.write("#SBATCH -n 1"+"\n")
         sbatch_file.write("#SBATCH -p high\n")
-        sbatch_file.write("#SBATCH -c 4"+"\n")
-        sbatch_file.write("#SBATCH --mem=32000"+"\n")
+        sbatch_file.write("#SBATCH -c 6"+"\n")
+        sbatch_file.write("#SBATCH --mem=48000"+"\n")
         for module_string in module_load:
             sbatch_file.write(module_string+"\n")
             #print(module_string)

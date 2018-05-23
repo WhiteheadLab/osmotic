@@ -19,18 +19,6 @@ def get_pairs(listoffiles,basedir):
                                 pairs_dictionary[sample_name]=[basedir+basefilename]
         return pairs_dictionary
 
-def fix_fasta(trinity_fasta, trinity_dir, sample):
-        # os.chdir(trinity_dir)
-    trinity_out = trinity_dir + sample + ".Trinity.fixed.fa"
-    fix = """
-sed 's_|_-_g' {} > {}
-""".format(trinity_fasta, trinity_out)
-    # s=subprocess.Popen(fix,shell=True)
-    print(fix)
-    # s.wait()
-    # os.chdir("/mnt/home/ljcohen/MMETSP/")
-    return trinity_out
-
 
 def transrate_forward(transratedir,transrate_out,trinity_fasta,sample,reference):
 	transrate_command = """
@@ -71,28 +59,28 @@ def build_DataFrame(data_frame, transrate_data):
     return data_frame
 
 def execute(data_frame1, data_frame2,listoffiles, assemblydir,transratedir,reference):
-	#pairs_dictionary=get_pairs(listoffiles,basedir)
-    	# construct an empty pandas dataframe to add on each assembly.csv to
-    	for fasta in listoffiles:
-            if fasta.endswith(".fasta"):
-                sample = fasta.split(".")[0]
-        	trinity_fasta = assemblydir + fasta  
-		transrate_out_forward = transratedir + sample + "_trinity_v_Fhet.NCBI/"
-        	transrate_out_reverse = transratedir + sample + "_Fhet.NCBI_v_trinity/"
-                transrate_assemblies_forward = transrate_out_forward + "/" + "assemblies.csv"
-                transrate_assemblies_reverse = transrate_out_reverse + "/" + "assemblies.csv"
-		if os.path.isfile(transrate_assemblies_forward):
-        	        data1 = parse_transrate_stats(transrate_assemblies_forward)
-                    	data_frame1 = build_DataFrame(data_frame1, data1)
-        	else:  
-                    	print("Running transrate forward...")
-                  	transrate_forward(transratedir,transrate_out_forward,trinity_fasta,sample,reference)
-                if os.path.isfile(transrate_assemblies_reverse):
-                        data2 = parse_transrate_stats(transrate_assemblies_reverse)
-                        data_frame2 = build_DataFrame(data_frame2,data2)
-                else:
-                        print("Running transrate reverse...")
-                        transrate_reverse(transratedir,transrate_out_reverse,trinity_fasta,sample,reference)
+    #pairs_dictionary=get_pairs(listoffiles,basedir)
+    # construct an empty pandas dataframe to add on each assembly.csv to
+    for fasta in listoffiles:
+        if fasta.endswith(".fasta"):
+            sample = fasta.split(".")[0]
+            trinity_fasta = assemblydir + fasta  
+	    transrate_out_forward = transratedir + sample + "_trinity_v_Fhet.NCBI/"
+            transrate_out_reverse = transratedir + sample + "_Fhet.NCBI_v_trinity/"
+            transrate_assemblies_forward = transrate_out_forward + "/" + "assemblies.csv"
+            transrate_assemblies_reverse = transrate_out_reverse + "/" + "assemblies.csv"
+	    if os.path.isfile(transrate_assemblies_forward):
+                data1 = parse_transrate_stats(transrate_assemblies_forward)
+                data_frame1 = build_DataFrame(data_frame1, data1)
+            else:  
+                print("Running transrate forward...")
+                transrate_forward(transratedir,transrate_out_forward,trinity_fasta,sample,reference)
+            if os.path.isfile(transrate_assemblies_reverse):
+                data2 = parse_transrate_stats(transrate_assemblies_reverse)
+                data_frame2 = build_DataFrame(data_frame2,data2)
+            else:
+                print("Running transrate reverse...")
+                transrate_reverse(transratedir,transrate_out_reverse,trinity_fasta,sample,reference)
         return data_frame1, data_frame2
 
 assemblydir = "/home/ljcohen/public_html/killifish/transcriptome_assemblies/"
