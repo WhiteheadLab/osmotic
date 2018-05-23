@@ -63,12 +63,13 @@ def execute(data_frame1, data_frame2,listoffiles, assemblydir,transratedir,refer
     # construct an empty pandas dataframe to add on each assembly.csv to
     for fasta in listoffiles:
         if fasta.endswith(".fasta"):
+            print(fasta)
             sample = fasta.split(".")[0]
             trinity_fasta = assemblydir + fasta  
 	    transrate_out_forward = transratedir + sample + "_trinity_v_Fhet.NCBI/"
             transrate_out_reverse = transratedir + sample + "_Fhet.NCBI_v_trinity/"
-            transrate_assemblies_forward = transrate_out_forward + "/" + "assemblies.csv"
-            transrate_assemblies_reverse = transrate_out_reverse + "/" + "assemblies.csv"
+            transrate_assemblies_forward = transrate_out_forward + "assemblies.csv"
+            transrate_assemblies_reverse = transrate_out_reverse + "assemblies.csv"
 	    if os.path.isfile(transrate_assemblies_forward):
                 data1 = parse_transrate_stats(transrate_assemblies_forward)
                 data_frame1 = build_DataFrame(data_frame1, data1)
@@ -81,7 +82,7 @@ def execute(data_frame1, data_frame2,listoffiles, assemblydir,transratedir,refer
             else:
                 print("Running transrate reverse...")
                 transrate_reverse(transratedir,transrate_out_reverse,trinity_fasta,sample,reference)
-        return data_frame1, data_frame2
+    return data_frame1, data_frame2
 
 assemblydir = "/home/ljcohen/public_html/killifish/transcriptome_assemblies/"
 #transratedir = "/home/ljcohen/osmotic_transrate/kfish2rae5g_mrna.combined/"
