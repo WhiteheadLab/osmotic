@@ -42,7 +42,7 @@ def qsub_file(basedir, process_name, module_name_list, filename, process_string)
 #PBS -A ged
     f = """#!/bin/bash
 #PBS -l walltime=24:00:00,nodes=1:ppn=24
-#PBS -l mem=200gb
+#PBS -l mem=500gb
 #PBS -A ged
 #PBS -j oe
 cd ${{PBS_O_WORKDIR}}
@@ -60,8 +60,8 @@ cd ${{PBS_O_WORKDIR}}
             "env | grep PBS # Print out values of the current jobs PBS environment variables\n")
     qsub_string = 'qsub -V ' + qsub_filename
     print(qsub_string)
-    #s = subprocess.Popen(qsub_string, shell=True)
-    #s.wait()
+    s = subprocess.Popen(qsub_string, shell=True)
+    s.wait()
     os.chdir(working_dir)                          
 
 def sbatch_file(basedir,process_name,module_name_list,filename,process_string):

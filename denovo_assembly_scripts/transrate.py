@@ -1,55 +1,65 @@
 import os
 import os.path
 from os.path import basename
-from urllib import urlopen
-from urlparse import urlparse
-import subprocess
-from subprocess import Popen, PIPE
-import urllib
-import shutil
-import glob
 # custom Lisa module
-import clusterfunc
+import clusterfunc_py3
 import pandas as pd
 
 def get_pairs(listoffiles,basedir):
-        pairs_dictionary={}
-        for basefilename in listoffiles:
-                if basefilename.endswith(".fastq.gz"):
-                        filename=basedir+basefilename
-                        fields=basefilename.split("_")
-                        sample_name_info=fields[:-1]
-                        sample_name="_".join(sample_name_info)
-                        if sample_name in pairs_dictionary.keys():
-                                pairs_dictionary[sample_name].append(basedir+basefilename)
-                        else:
-                                pairs_dictionary[sample_name]=[basedir+basefilename]
-        return pairs_dictionary
+    pairs={}
+    for reads_filename in listoffiles:
+        if reads_filename.endswith(".fq"):
+            print(reads_filename)
+            filename=basedir+reads_filename
+            fields=reads_filename.split("_")
+            genus = fields[0]
+            species = fields[1]
+            genus_species = genus + "_" + species
+            #print(pairs)
+            if genus_species in pairs:
+                pairs[genus_species].append(filename)
+                sort_pairs = pairs[genus_species]
+                sort_pairs.sort()
+                pairs[genus_species] = sort_pairs
+            else:
+                pairs[genus_species]=[filename]
+    return pairs
 
+def combined_trim_treads(pairs):
+    for sample in pairs:
+       files = " ".join(pairs[sample])
+       combine_string = "cat "+files+" > "+sample+".fq"
+       print(combine_string)
+    
 def fix_fasta(trinity_fasta, fixed_trinity_fasta):
-	fix = """
+    fix = """
 sed 's_|_-_g' {} > {}
 """.format(trinity_fasta, fixed_trinity_fasta)
-    	s=subprocess.Popen(fix,shell=True)
-    	print fix
-    	s.wait()
+    #s=subprocess.Popen(fix,shell=True)
+    print(fix)
+    #s.wait()
 
 def transrate(transratedir,transrate_out,trinity_fasta,sample,left,right):
-	transrate_command = """
-transrate --assembly={} --threads=4 \
+    transrate_command = """
+source ~/.bashrc
+module load GNU/4.8.3
+module unload python
+module load parallel
+source activate dammit_new
+transrate --assembly={} --threads=16 \
 --left={} \
 --right={} \
 --output={}
 """.format(trinity_fasta,left,right,transrate_out)
-    	print transrate_command
-    	commands = [transrate_command]
-    	process_name = "transrate"
-   	module_name_list = ""
-    	filename = sample
-    	#clusterfunc.qsub_file(transratedir, process_name,module_name_list, filename, commands)
+    print(transrate_command)
+    commands = [transrate_command]
+    process_name = "transrate"
+    module_name_list = ""
+    filename = sample
+    clusterfunc_py3.qsub_file(transratedir, process_name,module_name_list, filename, commands)
 
 def parse_transrate_stats(transrate_assemblies):
-    print transrate_assemblies
+    print(transrate_assemblies)
     if os.stat(transrate_assemblies).st_size != 0:
         data = pd.DataFrame.from_csv(transrate_assemblies, header=0, sep=',')
         return data
@@ -60,58 +70,34 @@ def build_DataFrame(data_frame, transrate_data):
     data_frame = pd.concat(frames)
     return data_frame
 
-def execute(data_frame, listoffiles, transratedir):
-	samples = ["F_diaphanus","F_grandis","F_heteroclitus.MDPL","F_heteroclitus.MDPP","F_sciadicus","A_xenica","F_catanatus","F_chrysotus","F_notatus","F_notti","F_olivaceous","F_parvapinis","F_rathbuni","F_similis","F_zebrinus","L_goodei","L_parva"]
-	#pairs_dictionary=get_pairs(listoffiles,basedir)
-    	# construct an empty pandas dataframe to add on each assembly.csv to
-    	for sample in samples:
-        	if sample.startswith("F_heteroclitus"):
-			diginormdir = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/"
-			trinity_fasta = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/trinity_out/"+"Trinity.fasta"
-			fixed_trinity_fasta = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/"+sample + ".Trinity.fixed.fa"
-		elif sample.startswith("F_diaphanus"):
-			diginormdir = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/"
-			trinity_fasta = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/trinity_out/"+"Trinity.fasta"
-			fixed_trinity_fasta = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/"+sample + ".Trinity.fixed.fa"
-		elif sample.startswith("F_sciadicus"):
-			diginormdir = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/"
-			trinity_fasta = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/trinity_out/"+"Trinity.fasta"
-			fixed_trinity_fasta = "/mnt/research/ged/lisa/osmotic_killifish/fix_assemblies_msu/"+sample+"/"+sample + ".Trinity.fixed.fa"
-		else:
-			diginormdir = "/mnt/research/ged/lisa/osmotic_killifish/assemblies_msu/"+sample+"/"
-			trinity_fasta = "/mnt/research/ged/lisa/osmotic_killifish/assemblies_msu/"+sample+"/trinity_out/"+"Trinity.fasta"
-		if os.path.isdir(diginormdir):
-			#print diginormdir
-			left = diginormdir + sample +".left.fq"
-			right = diginormdir + sample + ".right.fq"
-			if os.path.isfile(left) and os.path.isfile(right):
-				print left
-				print right
-			else:
-				print "Does not exist.",left,right
-		else:
-			print "Does not exist:",diginormdir
-		transrate_out = transratedir + sample + "/"
-        	transrate_assemblies = transrate_out + "/" + "assemblies.csv"
-		if os.path.isfile(trinity_fasta):
-        		print trinity_fasta
-        	else:
-                	print "Trinity failed:", trinity_fasta
-		if os.path.isfile(transrate_assemblies):
-        	        data = parse_transrate_stats(transrate_assemblies)
-                    	data_frame = build_DataFrame(data_frame, data)
-        	else:  
-                    	print "Running transrate..."
-			if os.path.isfile(fixed_trinity_fasta):
-				transrate(transratedir,transrate_out,fixed_trinity_fasta,sample,left,right)
-			else:
-				fix_fasta(trinity_fasta,fixed_trinity_fasta)
-	return data_frame
+def execute(data_frame, listoffiles, listofassemblies, assemblydir, transratedir):
+    pairs_dictionary=get_pairs(listoffiles,basedir)
+    # construct an empty pandas dataframe to add on each assembly.csv to
+    for assembly in listofassemblies:
+        print(assembly)
+        if assembly.endswith(".fasta"):
+            sample = assembly.split("_")[0] + "_" + assembly.split("_")[1][:-8]
+            if sample in pairs_dictionary:
+                files = pairs_dictionary[sample]
+                left = files[0]
+                right = files[1]
+                trinity_fasta = assemblydir + assembly
+                transrate_out = transratedir + sample + "/"
+                transrate_assemblies = transrate_out + "/" + "assemblies.csv"
+                if os.path.isfile(transrate_assemblies):
+                    data = parse_transrate_stats(transrate_assemblies)
+                    data_frame = build_DataFrame(data_frame, data)
+                else: 
+                    print("Running transrate...")
+                    #transrate(transratedir,transrate_out,trinity_fasta,sample,left,right)
+    return data_frame
 
-basedir = "/mnt/research/ged/lisa/osmotic_killifish/assemblies_msu/"
-transratedir = "/mnt/research/ged/lisa/osmotic_killifish/transrate/"
-clusterfunc.check_dir(transratedir)
+assemblies = "/mnt/home/ljcohen/osmotic_killifish_assemblies/assemblies/"
+basedir = "/mnt/scratch/ljcohen/osmotic_killifish/combined_trimmed/"
+transratedir = "/mnt/scratch/ljcohen/osmotic_killifish/transrate/"
+clusterfunc_py3.check_dir(transratedir)
 listoffiles = os.listdir(basedir)
+listofassemblies = os.listdir(assemblies)
 data_frame = pd.DataFrame()
-data_frame = execute(data_frame, listoffiles, transratedir)
-#data_frame.to_csv("transrate_scores.csv")
+data_frame = execute(data_frame, listoffiles, listofassemblies, assemblies, transratedir)
+data_frame.to_csv("../evaluation_data/transrate_scores.csv")
