@@ -12,6 +12,11 @@ def check_dir(dirname):
         os.mkdir(dirname)
         print("Directory created:", dirname)
 
+def get_sbatch_filename(basedir,process_name,filename):
+    sbatch_dir = basedir + "sbatch_files/"
+    check_dir(sbatch_dir)
+    sbatch_filename = sbatch_dir + process_name + "_" + filename + ".qsub"
+    return sbatch_dir, sbatch_filename
 
 def get_qsub_filename(basedir, process_name, filename):
     qsub_dir = basedir + "qsub_files/"
@@ -79,8 +84,8 @@ def sbatch_file(basedir,process_name,module_name_list,filename,process_string):
         sbatch_file.write("#SBATCH -N 1"+"\n")
         sbatch_file.write("#SBATCH -n 1"+"\n")
         sbatch_file.write("#SBATCH -p high\n")
-        sbatch_file.write("#SBATCH -c 4"+"\n")
-        sbatch_file.write("#SBATCH --mem=32000"+"\n")
+        sbatch_file.write("#SBATCH -c 6"+"\n")
+        sbatch_file.write("#SBATCH --mem=48000"+"\n")
         for module_string in module_load:
             sbatch_file.write(module_string+"\n")
             #print(module_string)
@@ -89,6 +94,6 @@ def sbatch_file(basedir,process_name,module_name_list,filename,process_string):
             print(string)
     sbatch_string="sbatch --get-user-env "+sbatch_filename
     print(sbatch_string)
-    #s=subprocess.Popen(sbatch_string,shell=True)
-    #s.wait()
+    s=subprocess.Popen(sbatch_string,shell=True)
+    s.wait()
     os.chdir(working_dir)
