@@ -35,7 +35,7 @@ cp $PROJECTDIR/$SPECIES.trinity_out.Trinity.fasta {}
 rm -rf $PROJECTDIR
 """.format(species,filesdir,species,filesdir,species,species,species,assemblydir)
     trinity_command=[trinity_command]
-    module_load_list=["samtools/1.7","jellyfish2/2.2.6","bowtie2/2.3.4.1","salmon/0.9.1","trinity/2.8.4"]
+    module_load_list=["gcc/8.2.0","samtools/1.7","jellyfish2/2.2.6","bowtie2/2.3.4.1","salmon/0.9.1","trinity/2.8.4"]
     process_name="trinity"
     clusterfunc.sbatch_file(assemblydir,process_name,module_load_list,species,trinity_command)
 
