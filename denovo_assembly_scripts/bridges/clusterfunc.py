@@ -86,8 +86,8 @@ def sbatch_file(basedir,process_name,module_name_list,filename,process_string):
         #sbatch_file.write("#SBATCH -p LM"+"\n")
         #sbatch_file.write("#SBATCH -n 1"+"\n")
         #sbatch_file.write("#SBATCH -c 8"+"\n")
-        SBATCH --ntasks-per-node 14
-        SBATCH --cpus-per-task 2
+        sbatch_file.write("SBATCH --ntasks-per-node 14"+"\n")
+        sbatch_file.write("SBATCH --cpus-per-task 2"+"\n")
         #sbatch_file.write("#SBATCH --mem=50GB"+"\n")
         #sbatch_file.write("#SBATCH --mem=4300MB"+"\n")
         for module_string in module_load:

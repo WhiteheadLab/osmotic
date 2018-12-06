@@ -10,7 +10,7 @@ source ~/.bashrc
 source activate py3.dammit
 export DAMMIT_DB_DIR=$SCRATCH/dammit
 cd /pylon5/bi5fpmp/ljcohen/kfish_busco
-run_BUSCO.py -i {} -o {} -l /pylon5/bi5fpmp/ljcohen/dammit/busco2db/eukaryota_odb9 -m tran --cpu 4
+run_BUSCO.py -i {} -o {} -l /pylon5/bi5fpmp/ljcohen/dammit/busco2db/metazoa_odb9 -m tran --cpu 4
 """.format(fasta,sample)
     print(busco_command)
     commands = [busco_command]
@@ -54,11 +54,9 @@ def execute(fasta_files,basedir,busco_dir,data_frame):
             sample= filename.split(".")[0]
             print(sample)
             fasta = basedir + filename
-            busco_file = busco_dir + "qsub_files/run_" + sample + "/short_summary_" + sample + ".txt"
-            #busco_file = "/mnt/home/ljcohen/imicrobe_busco/eukaryota/run_"+ sample + "/short_summary_" + sample + ".txt"
+            busco_file = busco_dir + "run_" + sample + "/short_summary_" + sample + ".txt"
             if os.path.isfile(busco_file):
                 count += 1
-                #run_busco(busco_dir,trinity_fasta,sample,sra)
                 data = parse_busco_stats(busco_file, sample)
                 data_frame = build_DataFrame(data_frame, data)
             else:
@@ -70,7 +68,6 @@ busco_dir = "/pylon5/bi5fpmp/ljcohen/kfish_busco/"
 data_frame = pd.DataFrame()
 fasta_files = os.listdir(basedir)
 data_frame = execute(fasta_files,basedir,busco_dir,data_frame)
-#print("File written: /mnt/home/ljcohen/MMETSP/assembly_evaluation_data/busco_scores_redoMarch2018_protista.csv")
-#data_frame.to_csv("/mnt/home/ljcohen/MMETSP/assembly_evaluation_data/busco_scores_v3_dib_eukaryota.csv")
-#print("File written: /mnt/home/ljcohen/MMETSP/assembly_evaluation_data/busco_scores_v3_dib_eukaryota.csv")
+data_frame.to_csv("../../evaluation_data/busco_scores_Dec2018_metazoa.csv")
+print("File written: ../../evaluation_data/busco_scores_Dec2018_metazoa.csv")
 
