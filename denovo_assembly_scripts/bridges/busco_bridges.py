@@ -21,7 +21,7 @@ run_BUSCO.py -i {} -o {} -l /pylon5/bi5fpmp/ljcohen/dammit/busco2db/actinopteryg
 
 def parse_busco_stats(busco_filename, sample):
     count = 0
-    important_lines = [10, 13, 14, 15]
+    important_lines = [10, 11, 12, 13, 14, 15]
     busco_dict = {}
     busco_dict[sample] = []
     if os.path.isfile(busco_filename):
@@ -35,7 +35,7 @@ def parse_busco_stats(busco_filename, sample):
                                 if count in important_lines:
                                     busco_dict[sample].append(int(line_data[0]))
     busco_data = pd.DataFrame.from_dict(busco_dict, orient='index')
-    busco_data.columns = ["Complete", "Fragmented", "Missing", "Total"]
+    busco_data.columns = ["Complete", "Complete and single-copy", "Complete and duplicated", "Fragmented", "Missing", "Total"]
     busco_data['Complete_BUSCO_perc'] = busco_data[
         'Complete'] / busco_data['Total'] * 100
     return busco_data
@@ -64,10 +64,15 @@ def execute(fasta_files,basedir,busco_dir,data_frame):
     return data_frame
 
 basedir = "/pylon5/bi5fpmp/ljcohen/kfish_trinity/"
-busco_dir = "/pylon5/bi5fpmp/ljcohen/kfish_busco/"
+#busco_dir = "/pylon5/bi5fpmp/ljcohen/kfish_busco/"
+#busco_dir = "/pylon5/bi5fpmp/ljcohen/kfish_busco_euk/"
+busco_dir = "/pylon5/bi5fpmp/ljcohen/kfish_busco_metazoa/"
 data_frame = pd.DataFrame()
 fasta_files = os.listdir(basedir)
 data_frame = execute(fasta_files,basedir,busco_dir,data_frame)
 #data_frame.to_csv("../../evaluation_data/busco_scores_Dec2018_actino.csv")
 #print("File written: ../../evaluation_data/busco_scores_Dec2018_actino.csv")
-
+#data_frame.to_csv("../../evaluation_data/busco_scores_Dec2018_eukaryota.csv")
+#print("File written: ../../evaluation_data/busco_scores_Dec2018_eukaryota.csv")
+data_frame.to_csv("../../evaluation_data/busco_scores_Dec2018_metazoa.csv")
+print("File written: ../../evaluation_data/busco_scores_Dec2018_metazoa.csv")
