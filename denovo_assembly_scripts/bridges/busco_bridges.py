@@ -10,7 +10,7 @@ source ~/.bashrc
 source activate py3.dammit
 export DAMMIT_DB_DIR=$SCRATCH/dammit
 cd /pylon5/bi5fpmp/ljcohen/kfish_busco
-run_BUSCO.py -i {} -o {} -l /pylon5/bi5fpmp/ljcohen/dammit/busco2db/metazoa_odb9 -m tran --cpu 4
+run_BUSCO.py -i {} -o {} -l /pylon5/bi5fpmp/ljcohen/dammit/busco2db/actinopterygii_odb9 -m tran --cpu 4
 """.format(fasta,sample)
     print(busco_command)
     commands = [busco_command]
@@ -37,7 +37,7 @@ def parse_busco_stats(busco_filename, sample):
     busco_data = pd.DataFrame.from_dict(busco_dict, orient='index')
     busco_data.columns = ["Complete", "Fragmented", "Missing", "Total"]
     busco_data['Complete_BUSCO_perc'] = busco_data[
-        'Complete'] / busco_data['Total']
+        'Complete'] / busco_data['Total'] * 100
     return busco_data
 
 def build_DataFrame(data_frame, busco_data):
@@ -68,6 +68,6 @@ busco_dir = "/pylon5/bi5fpmp/ljcohen/kfish_busco/"
 data_frame = pd.DataFrame()
 fasta_files = os.listdir(basedir)
 data_frame = execute(fasta_files,basedir,busco_dir,data_frame)
-data_frame.to_csv("../../evaluation_data/busco_scores_Dec2018_metazoa.csv")
-print("File written: ../../evaluation_data/busco_scores_Dec2018_metazoa.csv")
+#data_frame.to_csv("../../evaluation_data/busco_scores_Dec2018_actino.csv")
+#print("File written: ../../evaluation_data/busco_scores_Dec2018_actino.csv")
 
