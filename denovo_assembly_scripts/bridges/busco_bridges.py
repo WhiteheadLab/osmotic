@@ -10,8 +10,9 @@ source ~/.bashrc
 source activate py3.dammit
 export DAMMIT_DB_DIR=$SCRATCH/dammit
 cd /pylon5/bi5fpmp/ljcohen/kfish_busco
+rm -rf run_{}
 run_BUSCO.py -i {} -o {} -l /pylon5/bi5fpmp/ljcohen/dammit/busco2db/actinopterygii_odb9 -m tran --cpu 4
-""".format(fasta,sample)
+""".format(sample,fasta,sample)
     print(busco_command)
     commands = [busco_command]
     process_name = "busco"
@@ -64,15 +65,15 @@ def execute(fasta_files,basedir,busco_dir,data_frame):
     return data_frame
 
 basedir = "/pylon5/bi5fpmp/ljcohen/kfish_trinity/"
-#busco_dir = "/pylon5/bi5fpmp/ljcohen/kfish_busco/"
+busco_dir = "/pylon5/bi5fpmp/ljcohen/kfish_busco/"
 #busco_dir = "/pylon5/bi5fpmp/ljcohen/kfish_busco_euk/"
-busco_dir = "/pylon5/bi5fpmp/ljcohen/kfish_busco_metazoa/"
+#busco_dir = "/pylon5/bi5fpmp/ljcohen/kfish_busco_metazoa/"
 data_frame = pd.DataFrame()
 fasta_files = os.listdir(basedir)
 data_frame = execute(fasta_files,basedir,busco_dir,data_frame)
-#data_frame.to_csv("../../evaluation_data/busco_scores_Dec2018_actino.csv")
-#print("File written: ../../evaluation_data/busco_scores_Dec2018_actino.csv")
+data_frame.to_csv("../../evaluation_data/busco_scores_Dec2018_actino.csv")
+print("File written: ../../evaluation_data/busco_scores_Dec2018_actino.csv")
 #data_frame.to_csv("../../evaluation_data/busco_scores_Dec2018_eukaryota.csv")
 #print("File written: ../../evaluation_data/busco_scores_Dec2018_eukaryota.csv")
-data_frame.to_csv("../../evaluation_data/busco_scores_Dec2018_metazoa.csv")
-print("File written: ../../evaluation_data/busco_scores_Dec2018_metazoa.csv")
+#data_frame.to_csv("../../evaluation_data/busco_scores_Dec2018_metazoa.csv")
+#print("File written: ../../evaluation_data/busco_scores_Dec2018_metazoa.csv")

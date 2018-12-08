@@ -80,7 +80,7 @@ def sbatch_file(basedir,process_name,module_name_list,filename,process_string):
         sbatch_file.write("#SBATCH -J "+process_name+"\n")
         sbatch_file.write("#SBATCH -o "+sbatch_dir+process_name+"-%j.o"+"\n")
         sbatch_file.write("#SBATCH -e "+sbatch_dir+process_name+"-%j.o"+"\n")
-        sbatch_file.write("#SBATCH -t 8:00:00"+"\n")
+        sbatch_file.write("#SBATCH -t 24:00:00"+"\n")
         #sbatch_file.write("#SBATCH -N 1"+"\n")
         sbatch_file.write("#SBATCH -p RM"+"\n")
         #sbatch_file.write("#SBATCH -p LM"+"\n")
@@ -98,6 +98,6 @@ def sbatch_file(basedir,process_name,module_name_list,filename,process_string):
             print(string)
     sbatch_string="sbatch --get-user-env "+sbatch_filename
     print(sbatch_string)
-    s=subprocess.Popen(sbatch_string,shell=True)
-    s.wait()
+    #s=subprocess.Popen(sbatch_string,shell=True)
+    #s.wait()
     os.chdir(working_dir)
