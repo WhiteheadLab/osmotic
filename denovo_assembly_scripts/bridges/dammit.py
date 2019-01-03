@@ -8,7 +8,7 @@ import clusterfunc
 def run_dammit(aa_databases,assembly,species,databases,basedir,dammit_dir):
     dammit_string="""
 source /home/ljcohen/.bashrc
-source activate dammit_conda
+source activate dammit_master
 export DAMMIT_DB_DIR=/pylon5/bi5fpmp/ljcohen/dammit
 SPECIES={}
 PROJECTDIR=$LOCAL/$SPECIES
@@ -37,18 +37,18 @@ def execute(fasta_files,databases,basedir,dammit_dir,aa_databases):
             print(species)
             run_dammit(aa_databases,assembly,species,databases,basedir,dammit_dir)
 
-#dammit_dir="/pylon5/bi5fpmp/ljcohen/kfish_dammit/"
+dammit_dir="/pylon5/bi5fpmp/ljcohen/kfish_dammit/"
 #dammit_dir="/pylon5/bi5fpmp/ljcohen/kfish_dammit_evigene/"
-dammit_dir = "/pylon5/bi5fpmp/ljcohen/kfish_dammit_ncbi"
+#dammit_dir = "/pylon5/bi5fpmp/ljcohen/kfish_dammit_ncbi/"
 basedir = "/pylon5/bi5fpmp/ljcohen/kfish_trinity/"
 aa_databases = "/pylon5/bi5fpmp/ljcohen/Fhet_reference_genome/"
 ncbi = "Fhet_reference_genome/ncbi/protein.fa"
 evigene = "Fhet_reference_genome/evigene/kfish2rae5g.pub.aa"
 ensembl = "Fhet_reference_genome/ensembl/Fundulus_heteroclitus.Fundulus_heteroclitus-3.0.2.pep.all.fa"
-#databases = ncbi + " " + evigene + " " + ensembl
+databases = ncbi + " " + evigene + " " + ensembl
 #databases = ensembl
 #databases = evigene
-databases = ncbi
+#databases = ncbi
 fasta_files = os.listdir(basedir)
 execute(fasta_files,databases,basedir,dammit_dir,aa_databases) 
 
