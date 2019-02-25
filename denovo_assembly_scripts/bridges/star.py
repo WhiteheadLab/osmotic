@@ -26,15 +26,17 @@ def get_files(listoffiles,basedir):
 def run_star(sample,read1,read2,stardir):
         star_string="""
 source /home/ljcohen/.bashrc
-STAR --genomeDir /pylon5/bi5fpmp/ljcohen/Fhet_reference_genome/ncbi/Fhet_ncbi_star/ \
---runThreadN 24 \
---readFilesIn {} {} \
---outFileNamePrefix {}{} \
---outSAMtype BAM SortedByCoordinate \
---outSAMunmapped Within \
---outSAMattributes Standard \
---sjdbInsertSave All 
-""".format(read1,read2,stardir,sample)
+STAR --genomeDir /pylon5/bi5fpmp/ljcohen/Fhet_reference_genome/ncbi/Fhet_ncbi_star/ \\
+--runThreadN 24 \\
+--readFilesIn {} {} \\
+--outFileNamePrefix {}{} \\
+--outSAMtype BAM SortedByCoordinate \\
+--outSAMunmapped Within \\
+--outSAMattributes Standard \\
+--sjdbInsertSave All \\
+--quantMode TranscriptomeSAM \\
+--outStd BAM_Quant
+""".format(read1,read2,stardir,sample,stardir,sample)
         print(star_string)
         star_command = [star_string]
         module_load_list = []

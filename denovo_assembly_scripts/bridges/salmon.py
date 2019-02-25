@@ -27,7 +27,7 @@ cd {}
 for i in {}{}*trim_1P.fq
 do
         BASE=$(basename $i .trim_1P.fq)
-        salmon quant -i {}{} -p 12 --libType IU -1 {}$BASE.trim_1P.fq -2 {}$BASE.trim_2P.fq -o $BASE.quant
+        salmon quant -i {}{} -p 12 --validateMappings --libType IU -1 {}$BASE.trim_1P.fq -2 {}$BASE.trim_2P.fq -o $BASE.quant
 done
 """.format(salmondir,trimdir,genus_species,indexdir,genus_species,trimdir,trimdir)
     #salmon_index_string  = salmon_index(salmondir,genus_species)
