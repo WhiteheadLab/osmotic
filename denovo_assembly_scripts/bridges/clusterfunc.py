@@ -99,6 +99,6 @@ def sbatch_file(basedir,process_name,module_name_list,filename,process_string):
             print(string)
     sbatch_string="sbatch --get-user-env "+sbatch_filename
     print(sbatch_string)
-    s=subprocess.Popen(sbatch_string,shell=True)
-    s.wait()
+    #s=subprocess.Popen(sbatch_string,shell=True)
+    #s.wait()
     os.chdir(working_dir)
