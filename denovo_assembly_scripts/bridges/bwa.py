@@ -76,12 +76,13 @@ def execute(listoffiles,trimdir,stardir):
             else:
                 read1=files_dictionary[sample][0]
                 read2=files_dictionary[sample][1]
-                run_bwa_genome(sample,read1,read2,stardir)
-                #run_bwa(sample,read1,read2,stardir)
+                #run_bwa_genome(sample,read1,read2,stardir)
+                run_bwa(sample,read1,read2,stardir)
 
 trimdir="/pylon5/bi5fpmp/ljcohen/kfish_trimmed/"
 #stardir="/pylon5/bi5fpmp/ljcohen/kfish_bwa_txome_clipping/"
 #stardir="/pylon5/bi5fpmp/ljcohen/kfish_bwa_genome_clippenalty/"
-stardir="/pylon5/bi5fpmp/ljcohen/kfish_bwa_genome_mismatchgap/"
+#stardir="/pylon5/bi5fpmp/ljcohen/kfish_bwa_genome_mismatchgap/"
+stardir="/pylon5/bi5fpmp/ljcohen/kfish_bwa_txome_mismatchgap/"
 listoffiles=os.listdir(trimdir)
 execute(listoffiles,trimdir,stardir)
