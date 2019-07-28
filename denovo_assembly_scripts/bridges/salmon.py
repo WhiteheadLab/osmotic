@@ -8,7 +8,7 @@ import clusterfunc
 def salmon_index(salmondir,assembly,genus_species):
     salmon_index_string="""
 #source /home/ljcohen/.bashrc
-#cd {}
+cd {}
 salmon index --index {} --transcripts {} --type quasi --threads 8
 """.format(salmondir,genus_species,assembly)
     print(salmon_index_string)
@@ -17,7 +17,7 @@ salmon index --index {} --transcripts {} --type quasi --threads 8
     module_name_list=""
     #s=subprocess.Popen(salmon_index_string,shell=True)
     #s.wait()
-    #clusterfunc.sbatch_file(salmondir,process_name,module_name_list,genus_species,commands)
+    clusterfunc.sbatch_file(salmondir,process_name,module_name_list,genus_species,commands)
     #return salmon_index_string
 
 def quant_salmon(salmondir,trimdir,genus_species,indexdir):

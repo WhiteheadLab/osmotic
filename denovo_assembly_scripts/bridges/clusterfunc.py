@@ -80,7 +80,7 @@ def sbatch_file(basedir,process_name,module_name_list,filename,process_string):
         sbatch_file.write("#SBATCH -J "+process_name+"\n")
         sbatch_file.write("#SBATCH -o "+sbatch_dir+process_name+"-%j.o"+"\n")
         sbatch_file.write("#SBATCH -e "+sbatch_dir+process_name+"-%j.o"+"\n")
-        sbatch_file.write("#SBATCH -t 12:00:00"+"\n")
+        sbatch_file.write("#SBATCH -t 8:00:00"+"\n")
         #sbatch_file.write("#SBATCH -N 1"+"\n")
         sbatch_file.write("#SBATCH -p RM"+"\n")
         #sbatch_file.write("#SBATCH -p LM"+"\n")
