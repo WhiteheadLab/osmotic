@@ -2,7 +2,7 @@
 
 **Work in Progress**
 
-[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/ljcohen/osmotic)
+[![DOI](https://zenodo.org/badge/49474409.svg)](https://zenodo.org/badge/latestdoi/49474409)
 
 References
 ===========
